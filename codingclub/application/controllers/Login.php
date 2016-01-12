@@ -28,7 +28,9 @@ class Login extends CI_Controller {
     {
       // test code 
       return true;
-      
+     
+
+
       return $this->user_model->chkLobin($account_id, $passwd);
     }
 }
