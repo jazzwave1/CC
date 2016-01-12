@@ -1,0 +1,2 @@
+<?=$info_display?>
+<?=$table?>
