@@ -1,5 +1,5 @@
 <?php
-function cc_get_instance($sClassName, $sType='library')
+function cc_get_instance($sClassName, $sType='library')/*{{{*/
 {
   $CI = & get_instance();
   
@@ -20,8 +20,8 @@ function cc_get_instance($sClassName, $sType='library')
   }
   
   return $CI->{$sCiValName};
-}
-function cc_get_config($sKey, $sFileName, $bUsePart=true)
+}/*}}}*/
+function cc_get_config($sKey, $sFileName, $bUsePart=true)/*{{{*/
 {
   $CI = & get_instance();
   $CI->config->load($sFileName, $bUsePart); 
@@ -30,9 +30,8 @@ function cc_get_config($sKey, $sFileName, $bUsePart=true)
     return $CI->config->item($sKey, $sFileName);
   else 
     return $CI->config->item($sKey);
-}
-
-function response_json($aRtn)
+}/*}}}*/
+function response_json($aRtn)/*{{{*/
 {
   $res = "";
   
@@ -46,5 +45,11 @@ function response_json($aRtn)
   header('Content-type: text/json');
   header('Content-type: application/json');
   echo $res;
-}
+}/*}}}*/
+function getCookieInfo()/*{{{*/
+{
+  $CI = & get_instance();
+  $CI->load->helper('cookie');
+  return  get_cookie('codingclub_MemberInfo');
+}/*}}}*/
 ?>

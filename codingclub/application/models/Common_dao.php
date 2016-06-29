@@ -5,7 +5,7 @@ class Common_dao extends CI_Model
   {
     parent::__construct();
   }
-  public function chkParam( $aConfig , $aParam, $aNull=array() )
+  public function chkParam( $aConfig , $aParam, $aNull=array() )/*{{{*/
   {
     $chkParam = true;
 
@@ -18,7 +18,7 @@ class Common_dao extends CI_Model
         break;
       }
       if($aParam[$val] == '')
-        $aParam[$val] = 'NULL';
+        $aParam[$val] = NULL;
 
       $aData[] = $aParam[$val];
     }
@@ -27,8 +27,8 @@ class Common_dao extends CI_Model
       return $aData;
     else
       return $chkParam;
-  }
-  public function runQuery($query , $aInputData, $bType)
+  }/*}}}*/
+  public function runQuery($query , $aInputData, $bType)/*{{{*/
   {
     //echo "<pre>";
     //echo "Query : ".$query."<br>" ;
@@ -38,7 +38,7 @@ class Common_dao extends CI_Model
     
     if ($oResult = $this->db->query($query, $aInputData, true, $bType))
     {
-      if(strstr(strtoupper( $query ),"SELECT") && !(strstr(strtoupper( $query ),"DELETE") || strstr(strtoupper( $query ),"UPDATE")))
+      if(strstr(strtoupper( $query ),"SELECT") && !(strstr(strtoupper( $query ),"DELETE") || strstr(strtoupper( $query ),"INSERT") || strstr(strtoupper( $query ),"UPDATE")))
       {
         $result = $oResult->result();
         return $result;
@@ -51,8 +51,8 @@ class Common_dao extends CI_Model
       print_r($this->db);
     }
     return false;
-  }
-  public function setStepQuery($aParam='')
+  }/*}}}*/
+  public function setStepQuery($aParam='')/*{{{*/
   {
     $cnt = 0;
 
@@ -91,8 +91,8 @@ class Common_dao extends CI_Model
 //   $this->setLog($aLog);
 
     return $ret;
-  }
-  public function actModelFuc($aConfig, $aParam)
+  }/*}}}*/
+  public function actModelFuc($aConfig, $aParam)/*{{{*/
   {
     if(!$aConfig || !$aParam) return false;
     
@@ -103,12 +103,13 @@ class Common_dao extends CI_Model
     $aNull = $aConfig['null'];
   
     if ( ! $aInputData = $this->chkParam($aData, $aParam, $aNull) )
+    {
       return false;
-    
+    }
     if ($result = $this->runQuery($query , $aInputData, $bType))
       return $result;
     else
       return false;
-  }
+  }/*}}}*/
 }
 ?>

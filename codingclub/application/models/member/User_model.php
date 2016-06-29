@@ -4,38 +4,42 @@ class User_model extends CI_model
   public function __construct()
   {
     $this->user_dao = cc_get_instance('member/user_dao', 'model'); 
+    $this->membership_model = cc_get_instance('member/membership_model', 'model'); 
   }
  
-  public function getUserInfo($aParam)
+  public function getAccountInfo($usn)/*{{{*/
   {
-    return $this->user_dao->getUserInfo($aParam); 
-  }
-  public function setMembership($aParam)
-  {
-    // sp 로 나중에 바꾸자 최소한 디비 트랜잭션이라도 걸어야함
-    $this->user_dao->setAccount($aParam); 
-    $this->user_dao->setUser($aParam); 
-  }
-  public function chkLogin($account_id, $passwd)
-  {
-    if(!$account_id || !$passwd) return false;
-
-    return $this->_chkPWD($account_id, $passwd);
-  }
-  private function _chkPWD($account_id, $passwd)
-  {
-    if(!$account_id || !$passwd) return false;
-   
-    $aInput = array('account_id' => $account_id);
-    if( $sPWD = $this->user_dao->getPwd($aInput) )
-    {
-      if($passwd == $sPWD)
-        return true;
-      else
-        return false;
-    }
+    if(!$usn) return false;
     
-    return false;
-  }
+    $aInput = array('usn' => $usn);
+
+    return $this->user_dao->getAccountInfo($aInput); 
+  }/*}}}*/
+  public function setAccountInfo($aParam)/*{{{*/
+  {
+    
+    $aParam['pwd'] = $this->membership_model->getMkPWD($aParam['pwd']);  
+
+    if($this->user_dao->setAccount($aParam))
+      return true;
+    else
+      return false;
+  }/*}}}*/
+  public function getUserInfo($usn)/*{{{*/
+  {
+    if(!$usn) return false;
+    
+    $aInput = array('usn' => $usn);
+
+    return $this->user_dao->getUserInfo($aInput); 
+  }/*}}}*/
+  public function setUserInfo($aParam)/*{{{*/
+  {
+    if($this->user_dao->setUser($aParam))
+      return true;
+    else
+      return false;
+  }/*}}}*/
+
 }
 ?>

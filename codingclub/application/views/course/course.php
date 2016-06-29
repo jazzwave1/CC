@@ -139,7 +139,7 @@
         <div class="container-fluid">
             <a href="http://codingclubs.org" class="brand">
                 Codinbclub 
-                <small class="text-muted hidden-xs">수강신청</small>
+                <small class="text-muted hidden-xs">Course</small>
             </a>
             <!--div class="buttons pull-right">
                 <a class="first hidden-xs" id="display-full" href="#" data-toggle="tooltip" data-placement="bottom" title="Display Desktop - full width"><i class="fa fa-desktop fa-lg"></i></a>
@@ -154,149 +154,120 @@
 </header>
 <br>
 <div >
-  <div class="col-md-4">
-    <!-- general form elements disabled -->
-    <div class="box box-warning">
-      <div class="box-header with-border">
-        <h3 class="box-title">General Elements</h3>
+    <!-- Main content -->
+    <div class="col-md-4">
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <i class="fa fa-fw fa-book"></i>
+
+          <h3 class="box-title">주니어메이커</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="alert alert-danger alert-dismissible">
+            <h4><i class="icon fa fa-ban"></i>주니어메이커</h4>
+            MIT 스크래치, 네이버 엔트리로 나만의 디지털 컨텐츠를 만드는
+            주니어메이커, 주니어디자이너, 주니어해커
+            3개과정 중 첫번째 입문 프로그램!
+            <br><br>
+            <h4><i class="icon fa fa-fw fa-male"></i>대상</h4>
+            소프트웨어 교육을 처음 접하거나 정규적으로 해보고 싶은 초중생 친구들
+            <br><br>
+            <h4><i class="icon fa fa-calendar"></i>일정</h4>
+            * 7월 9일, 16일, 23일, 30일 토요일
+             14시 ~ 18시
+            세종대학교 율곡관
+            <br><br>
+            * 8월 13일 데모데이
+            10시~14시
+            은행권청년창업재단 D.Camp
+            <br><br>
+            ( 5주 20시간 )  
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-block btn-danger">신청하기</button>
+        </div>
+        <!-- /.box-body -->
       </div>
-      <!-- /.box-header -->
-      <div class="box-body">
-        <form role="form">
-          <!-- text input -->
-          <div class="form-group">
-            <label>Text</label>
-            <input type="text" class="form-control" placeholder="Enter ...">
-          </div>
-          <div class="form-group">
-            <label>Text Disabled</label>
-            <input type="text" class="form-control" placeholder="Enter ..." disabled>
-          </div>
-
-          <!-- textarea -->
-          <div class="form-group">
-            <label>Textarea</label>
-            <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-          </div>
-          <div class="form-group">
-            <label>Textarea Disabled</label>
-            <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
-          </div>
-
-          <!-- input states -->
-          <div class="form-group has-success">
-            <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>
-            <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
-            <span class="help-block">Help block with success</span>
-          </div>
-          <div class="form-group has-warning">
-            <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Input with
-              warning</label>
-            <input type="text" class="form-control" id="inputWarning" placeholder="Enter ...">
-            <span class="help-block">Help block with warning</span>
-          </div>
-          <div class="form-group has-error">
-            <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Input with
-              error</label>
-            <input type="text" class="form-control" id="inputError" placeholder="Enter ...">
-            <span class="help-block">Help block with error</span>
-          </div>
-
-          <!-- checkbox -->
-          <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox">
-                Checkbox 1
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <label>
-                <input type="checkbox">
-                Checkbox 2
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" disabled>
-                Checkbox disabled
-              </label>
-            </div>
-          </div>
-
-          <!-- radio -->
-          <div class="form-group">
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Option one is this and that&mdash;be sure to include why it's great
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                Option two can be something else and selecting it will deselect option one
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                Option three is disabled
-              </label>
-            </div>
-          </div>
-
-          <!-- select -->
-          <div class="form-group">
-            <label>Select</label>
-            <select class="form-control">
-              <option>option 1</option>
-              <option>option 2</option>
-              <option>option 3</option>
-              <option>option 4</option>
-              <option>option 5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Select Disabled</label>
-            <select class="form-control" disabled>
-              <option>option 1</option>
-              <option>option 2</option>
-              <option>option 3</option>
-              <option>option 4</option>
-              <option>option 5</option>
-            </select>
-          </div>
-
-          <!-- Select multiple-->
-          <div class="form-group">
-            <label>Select Multiple</label>
-            <select multiple class="form-control">
-              <option>option 1</option>
-              <option>option 2</option>
-              <option>option 3</option>
-              <option>option 4</option>
-              <option>option 5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Select Multiple Disabled</label>
-            <select multiple class="form-control" disabled>
-              <option>option 1</option>
-              <option>option 2</option>
-              <option>option 3</option>
-              <option>option 4</option>
-              <option>option 5</option>
-            </select>
-          </div>
-
-        </form>
-      </div>
-      <!-- /.box-body -->
+      <!-- /.box -->
     </div>
-  </div>
+    <div class="col-md-4">
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <i class="fa fa-fw fa-book"></i>
+
+          <h3 class="box-title">앱메이커</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <div class="alert alert-info alert-dismissible">
+            <h4><i class="icon fa fa-ban"></i>앱메이커</h4>
+            MIT 앱인벤터로 안드로이드앱을 만드는
+            앱메이커, 앱디자이너, 앱해커 3개 과정 중 첫번째 프로그램! 
+            <br><br>
+            <h4><i class="icon fa fa-fw fa-male"></i>대상</h4>
+            코딩클럽 주니어소프트웨어클럽 주니어메이커 (스크래치/엔트리), 앱메이커 (앱인벤터) 에 참여했거나
+            코딩경험이 있는 초중생 친구들 
+            <br><br>
+            <h4><i class="icon fa fa-calendar"></i>일정</h4>
+            * 7월 9일, 16일, 23일, 30일 토요일
+            10시 ~ 14시
+            세종대학교 율곡관
+            <br><br>
+            * 8월 13일 데모데이
+            10시 ~ 14시
+            은행권청년창업재단 D.Camp
+            <br><br>
+            ( 5주 20 시간 )            
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-block btn-info">신청하기</button>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div> 
+    <div class="col-md-4">
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <i class="fa fa-fw fa-book"></i>
+
+          <h3 class="box-title">웹메이커</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <div class=" alert alert-warning alert-dismissible">
+            <h4><i class="icon fa fa-ban"></i>웹메이커</h4>
+            Codecademy 코드카데미와 함께 웹서비스를 만드는
+            웹메이커, 웹디자이너, 웹해커 3개과정 중 첫번째 프로그램! 
+            <br><br>
+            <h4><i class="icon fa fa-fw fa-male"></i>대상</h4>
+            MIT 스크래치, 앱인벤터 같은 블록프로그래밍 언어로
+            다양한 소프트웨어를 능숙하게 만들 수 있는,
+            언어형 프로그래밍 언어로
+            웹기반의 소프트웨어를 만들고 싶은 청소년            
+            <br><br>
+            <h4><i class="icon fa fa-calendar"></i>일정</h4>
+            * 7월 9일, 16일, 23일, 30일 토요일
+            10시 ~ 14시
+            세종대학교 율곡관
+            <br><br>
+            * 8월 13일 데모데이
+            10시 ~ 14시
+            은행권청년창업재단 D.Camp
+            <br><br>
+            ( 5주 20 시간 )            
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-block btn-warning">신청하기</button>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>       
 </div>
 </body>
 </html>

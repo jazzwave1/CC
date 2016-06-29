@@ -5,29 +5,38 @@ class User_dao extends Common_dao
   public function __construct()
   {
     $this->load->database('codingclub');
-    $this->queryInfo = cc_get_config('query', 'query');  
+    $aQueryInfo = cc_get_config('query', 'query');  
+    $this->queryInfoMem = $aQueryInfo['membership'];  
   }
   
-  public function getUserInfo($aParam='')
+  public function getAccountInfo($aParam='')/*{{{*/
   {
-    $aConfig = $this->queryInfo['membership']['getUserInfo'];
+    $aConfig = $this->queryInfoMem['getAccountInfo'];
     return $this->actModelFuc($aConfig, $aParam);
-  }
-  public function setAccount($aParam='')
+  }/*}}}*/
+  public function getUserInfo($aParam='')/*{{{*/
   {
-    $aConfig = $this->queryInfo['membership']['setAccountInfo'];
+    $aConfig = $this->queryInfoMem['getUserInfo'];
     return $this->actModelFuc($aConfig, $aParam);
-  }
-  public function setUser($aParam='')
+  }/*}}}*/
+  public function setAccount($aParam='')/*{{{*/
   {
-    $aConfig = $this->queryInfo['membership']['setUserInfo'];
+    $aConfig = $this->queryInfoMem['setAccountInfo'];
     return $this->actModelFuc($aConfig, $aParam);
-  }
-  public function getPwd($aParam='')
+  }/*}}}*/
+  public function setUser($aParam='')/*{{{*/
   {
-    $aConfig = $this->queryInfo['membership']['getPwd'];
+    $aConfig = $this->queryInfoMem['setUserInfo'];
     return $this->actModelFuc($aConfig, $aParam);
-  }
+  }/*}}}*/
+
+
+  public function getPwd($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['getPwd'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  
 
 
 }
