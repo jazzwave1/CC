@@ -65,13 +65,15 @@
 	 	<div  style="border: 3px solid; border-color: gray; width: 90%; margin-left: 5%; margin-top: 20px;">
 			<form style="margin-left: 5%; margin-right: 5%; margin-top: 3%;" id="apply">
 			  <div class="form-group">
+          <p>
+          <label style="margin-top: 10px;">프로그램 신청자 사전조사 및 그룹편성, 운영, 프로그램 공지 및 관련 정보 공유를 목적으로 한 수집입니다. 이 외의 용도로 사용하지 않습니다.<label style="color:red;">*</label></label>
+          <label><input type="checkbox" id="agree" name="agree">&nbsp;개인정보 수집에 동의하십니까?</label>
+          </p>
           <label style="margin-top: 10px;">ID<label style="color:red;">*</label></label>
-          
           <p>
             <input type="text" class="form-control"  style="border-radius: 0; width: 100%;" name="account_id" id="account_id" placeholder="codingclub@gmail.com">
 				    <a class="btn btn-default btn-lg" id="bIdCheck">ID 중복확인</a>
           </P> 
-          
           <label style="margin-top: 10px;">PWD<label style="color:red;">*</label></label>
           <input type="password" class="form-control"  style="border-radius: 0; width: 100%;" name="passwd1" id="passwd1" placeholder="비밀번호입력">
           <label style="margin-top: 10px;">PWD 확인<label style="color:red;">*</label></label>
@@ -151,7 +153,7 @@
             <label><input type="radio" name="channel" value="뉴스 등 언론" >뉴스 등 언론</label>
             <label><input type="radio" name="channel" value="지인추천" >지인추천</label>
             <label><input type="radio" name="channel" value="온오프믹스" >온오프믹스</label>
-            <label><input type="radio" name="channel" value="" >기타</label>
+            <label><input type="radio" name="channel" value="999" >기타</label>
           </div>
 			    <input type="text" class="form-control"  style="border-radius: 0; width: 100%;" name="channel_txt" id="channel_txt" placeholder="프로그램을 알게된 경로">
 				
@@ -171,11 +173,167 @@
 	
   </div>
   <script>
+    
     $(function(){
       $('#bSend').click(function(){
-      
+     
+        if ($("input:checkbox[id='agree']").is(":checked") == false)
+        {
+          alert('개인정보 수집에 동의 해 주세요');
+          $('#agree').focus();
+          return;
+        }
+
         var like_tf = $('#like_tf1').val() + '|' + $('#like_tf2').val(); 
         
+        if($.trim($('#account_id').val()) == '')
+        {
+          alert('ID를 입력해 주세요');
+          $('#account_id').focus();
+          return;
+        }
+        if($.trim($('#passwd1').val()) == '' || $.trim($('#passwd2').val()) == '' )
+        {
+          alert('패스워드를 입력해 주세요');
+          $('#passwd1').focus();
+          return;
+        }
+        if($.trim($('#passwd1').val()) != $.trim($('#passwd2').val()))
+        {
+          alert('입력한 패스워드가 틀립니다.');
+          $('#passwd1').focus();
+          return;
+        }
+         
+        if($.trim($('#pname').val()) == '')
+        {
+          alert('학부모이름을 입력해 주세요.');
+          $('#pname').focus();
+          return;
+        }
+        if($.trim($('#php').val()) == '')
+        {
+          alert('학부모핸드폰번호를 입력해 주세요.');
+          $('#php').focus();
+          return;
+        }
+        if($.trim($('#pemail').val()) == '')
+        {
+          alert('학부모 이메일을 입력해 주세요.');
+          $('#pemail').focus();
+          return;
+        }
+        if($.trim($('#pjob').val()) == '')
+        {
+          alert('학부모 직업을 입력해 주세요.');
+          $('#pjob').focus();
+          return;
+        }
+        if($.trim($('#pschool').val()) == '')
+        {
+          alert('학부모 학력을 입력해 주세요.');
+          $('#pschool').focus();
+          return;
+        }
+        if($.trim($('#addrcode').val()) == '')
+        {
+          alert('거주지역을 입력해 주세요.');
+          $('#addrcode').focus();
+          return;
+        }
+        
+        if($.trim($('#name').val()) == '')
+        {
+          alert('학생이름을 입력해 주세요.');
+          $('#name').focus();
+          return;
+        }
+        if($.trim($('#school').val()) == '')
+        {
+          alert('참여신청 학생 학교를 입력해 주세요.');
+          $('#school').focus();
+          return;
+        }
+        if($.trim($('#grde').val()) == '')
+        {
+          alert('참여신청 학생 학년을 입력해 주세요.');
+          $('#grde').focus();
+          return;
+        }
+        if($.trim($('#course_idx').val()) == '')
+        {
+          alert('참가신청프로그램을 선택해 주세요');
+          $('#course_idx').focus();
+          return;
+        }
+        if($.trim($('#recommend').val()) == '')
+        {
+          alert('피드백 및 건의 사항 작성을 부탁 드립니다.');
+          $('#recommend').focus();
+          return;
+        }
+        if($.trim($('#motive').val()) == '')
+        {
+          alert('동기 및 목적 작성을 부탁 드립니다.');
+          $('#motive').focus();
+          return;
+        }
+        if(like_tf == '|')
+        {
+          alert('코딩클럽 페이지, 그룹 가입 체크 부탁 드립니다.');
+          $('#like_tf').focus();
+          return;
+        }
+        if($.trim($('#experience').val()) == '')
+        {
+          alert('코딩교육 경험을 작성해 주세요');
+          $('#experience').focus();
+          return;
+        }
+        if($.trim($('#nature').val()) == '')
+        {
+          alert('학생의 성향 및 성격 작성 부탁 드립니다.');
+          $('#nature').focus();
+          return;
+        }
+        if($.trim($('#favor').val()) == '')
+        {
+          alert('학생의 선호 하고나 싫어하는 부분을 적어 주세요');
+          $('#favor').focus();
+          return;
+        }
+        if($.trim($('#jr_hope').val()) == '')
+        {
+          alert('주니어소프트웨어 클럽에 바라는 점을 적어 주세요');
+          $('#jr_hope').focus();
+          return;
+        }
+        if($.trim($("input:radio[name=channel]:checked").val()) == 999)
+        {
+          var channel_txt = $.trim($("#channel_txt").val());
+        }
+        else
+        {
+          var channel_txt = $.trim($("input:radio[name=channel]:checked").val());
+        }
+        if(channel_txt == '')
+        {
+          alert('알게된 경로를 선택해 주세요');
+          return;
+        }
+        if($.trim($('#club_hope').val()) == '')
+        {
+          alert('코딩클럽에 바라는 점을 적어 주세요');
+          $('#club_hope').focus();
+          return;
+        }
+        if($.trim($('#inquiry').val()) == '')
+        {
+          alert('문의사항을 적어 주세요');
+          $('#inquiry').focus();
+          return;
+        }
+
         $.post(
           //"http://localhost/~leehojun/CC/codingclub/Member/rpcJoin"
           "http://member.codingclubs.org/Member/rpcJoin"
@@ -197,7 +355,7 @@
             ,"pschool" : $('#pschool').val()
           
             // member_svc 
-            ,"course_idx" : $(":input:radio[name=course_idx]:checked").val() 
+            ,"course_idx" : $("input:radio[name=course_idx]:checked").val() 
 
             // questionnaire
             
@@ -208,7 +366,7 @@
             ,"nature" : $('#nature').val()
             ,"favor" : $('#favor').val()
             ,"jr_hope" : $('#jr_hope').val()
-            ,"channel" : $(":input:radio[name=channel]:checked").val() 
+            ,"channel" : channel_txt 
             ,"club_hope" : $('#club_hope').val()
             ,"inquiry" : $('#inquiry').val()
           }
@@ -229,7 +387,12 @@
         );
       });
       $('#bIdCheck').click(function(){
-      
+        if($.trim($('#account_id').val()) == '')
+        {
+          alert('ID를 입력해 주세요');
+          $('#account_id').focus();
+          return;
+        }     
         $.post(
           //"http://localhost/~leehojun/CC/codingclub/Member/rpcIdCheck"
           "http://member.codingclubs.org/Member/rpcIdCheck"
