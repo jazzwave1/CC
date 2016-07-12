@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | General UI</title>
+  <title>Codinbclub | Course</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -22,6 +22,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <!-- Font-Awesome -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+  <!-- jQuery 2.1.4 -->
+  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+  <!-- Bootstrap 3.3.5 -->
+  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/bootstrap/js/bootstrap.min.js"></script>
+  <!-- iCheck -->
+  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/plugins/iCheck/icheck.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -186,7 +193,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-block btn-danger">신청하기</button>
+          <button type="button" title="1" class="btn btn-block btn-danger">신청하기</button>
         </div>
         <!-- /.box-body -->
       </div>
@@ -223,7 +230,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-block btn-info">신청하기</button>
+          <button type="button" title='2' class="btn btn-block btn-info">신청하기</button>
         </div>
         <!-- /.box-body -->
       </div>
@@ -262,12 +269,42 @@
           </div>
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-block btn-warning">신청하기</button>
+          <button id='bReq' title='3' class="btn btn-block btn-warning">신청하기</button>
         </div>
         <!-- /.box-body -->
       </div>
       <!-- /.box -->
     </div>       
 </div>
+    
+    <input type='hidden' id='usn' value='1'>
+    
+    <script>
+      // add //
+      $(function(){
+        $('#bReq').click(function(){
+        
+        $.post(
+          "http://localhost/~leehojun/CC/codingclub/Member/rpcSetMemberSVC"
+          ,{
+             "usn" : $('#usn').val()
+            ,"course_idx" : $(this).attr("title") 
+          }
+          ,function(data, status){
+            if(status == 'success' && data.code == 1)
+            {
+              alert("기본정보 입력이 완료 되었습니다. \n 신청버튼을 다시 한번 눌러 주세요"); 
+              window.location.replace("http://localhost/~leehojun/CC/codingclub/Course"); 
+            }
+            else
+            {
+              alert('틀렸단다');
+            }
+          }
+        );
+          
+        });
+      });
+    </script>
 </body>
 </html>

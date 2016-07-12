@@ -14,6 +14,14 @@ $config['query'] = array(
       ,'btype'=> 'i'
       ,'null' => array() 
     )
+    ,'getAccountInfoID' => array( 
+      'query' => 'SELECT usn, account_id 
+                    from account 
+                   where account_id=?'
+      ,'data' => array('account_id')
+      ,'btype'=> 's'
+      ,'null' => array() 
+    )
     ,'getUserInfo' => array( 
       'query' => 'SELECT usn, name, hp, school, grde, addrcode, pusn 
                     FROM users 
@@ -24,18 +32,18 @@ $config['query'] = array(
     )
 
     ,'setUserInfo' => array( 
-       'query' => 'INSERT INTO users ( usn, name, hp, school, grde, addrcode, pusn, regdate)
-                   VALUES (?,?,?,?,?,?,?,?)'
-       ,'data' => array( 'usn', 'name', 'hp', 'school', 'grde', 'addrcode', 'pusn', 'regdate')
-       ,'btype'=> 'isssssis'
-       ,'null' => array('pusn', 'grde', 'addrcode')
+       'query' => 'INSERT INTO users ( usn, name, school, grde, addrcode, pname, php, pemail, pjob, pschool, regdate)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?)'
+       ,'data' => array( 'usn', 'name', 'school', 'grde', 'addrcode', 'pname', 'php', 'pemail', 'pjob', 'pschool', 'regdate')
+       ,'btype'=> 'issssssssss'
+       ,'null' => array('school','grde','addrcode','pname','php','pemail','pjob','pschool','regdate')
     )
     ,'setAccountInfo' => array( 
-     'query' => 'INSERT INTO account ( account_id, pwd, regdate )
-                 VALUES (?,?,?)'
-     ,'data' => array( 'account_id', 'pwd', 'regdate')
-     ,'btype'=> 'sss'
-     ,'null' => array()
+      'query' => 'INSERT INTO account ( account_id, pwd, regdate )
+                  VALUES (?,?,?)'
+      ,'data' => array( 'account_id', 'pwd', 'regdate')
+      ,'btype'=> 'sss'
+      ,'null' => array()
     )
     ,'getPwd' => array( 
       'query' => 'SELECT usn, pwd 
@@ -45,7 +53,28 @@ $config['query'] = array(
       ,'btype'=> 's'
       ,'null' => array() 
     )
- 
+    ,'getIDCount' => array( 
+      'query' => 'SELECT count(*) as cnt 
+                    FROM account  
+                   WHERE account_id = ?' 
+      ,'data' => array('account_id')
+      ,'btype'=> 's'
+      ,'null' => array() 
+    )
+    ,'setMemberSVC' => array( 
+      'query' => 'INSERT INTO member_svc( usn, course_idx, state, regdate)
+                  VALUES (?,?,?,?)'
+      ,'data' => array( 'usn', 'course_idx', 'state', 'regdate')
+      ,'btype'=> 'iiss'
+      ,'null' => array()
+    )
+    ,'setQuestionInfo' => array( 
+      'query' => 'INSERT INTO questionnaire( usn, course_idx, recommend, motive, like_tf, experience, nature, favor, jr_hope, channel, club_hope, inquiry)
+                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
+      ,'data' => array( 'usn', 'course_idx', 'recommend', 'motive', 'like_tf', 'experience', 'nature', 'favor', 'jr_hope', 'channel', 'club_hope', 'inquiry')
+      ,'btype'=> 'iissssssssss'
+      ,'null' => array()
+    )
   )/*}}}*/
   ,'course' => array( /*{{{*/
     'getCourseInfo' => array( 

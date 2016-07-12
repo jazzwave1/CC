@@ -46,12 +46,113 @@ class Member extends CI_Controller {
       }
    }/*}}}*/
     
-    public function mypage()
+    public function mypage()/*{{{*/
     {
-      $this->load->view('member/mypage');  
+      $aContents = array();
+      $data = array(
+         'contents' => $this->load->view('member/mypage', $aContents, true) 
+        //,'pagename' => 'Join Account Info' 
+      );
+
+      $this->load->view('member/member_my_layout', $data);
+    }/*}}}*/
+
+    public function summercamp()/*{{{*/
+    {
+         
+    }/*}}}*/
+    public function summercampJoin()/*{{{*/
+    {
+      $data = array();
+      $this->load->view('summercamp/campjoin', $data);
+    }/*}}}*/
+
+    public function rpcJoin()
+    {
+      $aAccount['account_id'] = trim($this->input->post('account_id')); 
+      $aAccount['pwd1']       = trim($this->input->post('passwd1')); 
+      $aAccount['pwd2']       = trim($this->input->post('passwd2')); 
+      
+      $aAccount['pwd']        = trim($this->input->post('passwd2')); 
+      $aAccount['regdate']    = date('YmdHis'); 
+      
+      if($aAccount['pwd1'] != $aAccount['pwd2'])    
+      {
+        response_json(array("code"=>999,"msg"=>"input pwd fail"));
+        die;
+      }
+      // set account info
+      if( ! $usn = $this->_setAccountInfo($aAccount) )
+      {
+        response_json(array("code"=>999,"msg"=>"input pwd fail"));
+        die;
+      }
+     
+      // set user info
+      $aUser['usn']       = $usn;
+      $aUser['name']      = trim($this->input->post('name')); 
+      $aUser['school']    = trim($this->input->post('school')); 
+      $aUser['grde']      = trim($this->input->post('grde')); 
+      $aUser['addrcode']  = trim($this->input->post('addrcode')); 
+      $aUser['pname']     = trim($this->input->post('pname')); 
+      $aUser['php']       = trim($this->input->post('php')); 
+      $aUser['pemail']    = trim($this->input->post('pemail')); 
+      $aUser['pjob']      = trim($this->input->post('pjob')); 
+      $aUser['pschool']   = trim($this->input->post('pschool')); 
+      $aUser['regdate']   = date('YmdHis'); 
+      
+      if(! $this->_setUserInfo($aUser) )
+      {  
+        response_json(array("code"=>0,"msg"=>"Fail"));
+        die;
+      }
+     
+      // set member_svc
+      $aMemberSVC['usn']         = $usn;
+      $aMemberSVC['course_idx']  = trim($this->input->post('course_idx')); 
+      $aMemberSVC['state']       = "REQ";
+      $aMemberSVC['regdate']     = date('YmdHis');
+     
+      if(! $this->_setMemberSVC($aMemberSVC) )
+      {  
+        response_json(array("code"=>0,"msg"=>"Fail"));
+        die;
+      }
+      
+      $aQuestion['usn']        = $usn;
+      $aQuestion['course_idx'] = trim($this->input->post('course_idx')); 
+      $aQuestion['recommend']  = trim($this->input->post('recommend')); 
+      $aQuestion['motive']     = trim($this->input->post('motive')); 
+      $aQuestion['like_tf']    = trim($this->input->post('like_tf')); 
+      $aQuestion['experience'] = trim($this->input->post('experience')); 
+      $aQuestion['nature']     = trim($this->input->post('nature')); 
+      $aQuestion['favor']      = trim($this->input->post('favor')); 
+      $aQuestion['jr_hope']    = trim($this->input->post('jr_hope')); 
+      $aQuestion['channel']    = trim($this->input->post('channel')); 
+      $aQuestion['club_hope']  = trim($this->input->post('club_hope')); 
+      $aQuestion['inquiry']    = trim($this->input->post('inquiry')); 
+     
+      if(! $this->_setQuestionInfo($aQuestion) )
+      {  
+        response_json(array("code"=>0,"msg"=>"Fail"));
+        die;
+      }
+      
+      response_json(array("code"=>1,"msg"=>"OK"));
+      die;
+    
     }
-
-
+    public function rpcIdCheck()/*{{{*/
+    {
+      $accountID = trim($this->input->post('account_id')); 
+   
+      if( $this->user_model->chkID($accountID) ) 
+        response_json(array("code"=>1,"msg"=>"OK"));
+      else
+        response_json(array("code"=>0,"msg"=>"Fail"));
+      
+      die; 
+    } /*}}}*/
     public function rpcJoinAccount()/*{{{*/
     {
       $accountID = trim($this->input->post('account_id')); 
@@ -111,7 +212,29 @@ class Member extends CI_Controller {
       else
         response_json(array("code"=>0,"msg"=>"Fail"));
     }/*}}}*/
+    public function rpcSetMemberSVC()/*{{{*/
+    {
+      $usn= trim($this->input->post('usn')); 
+      $courseIDX = trim($this->input->post('course_idx')); 
 
+      if(!$usn|| !$courseIDX)
+      {
+        response_json(array("code"=>0,"msg"=>"Fail"));
+        die;
+      }
+
+      $aInput = array(
+         'usn' => $usn
+        ,'course_idx'  => $courseIDX
+        ,'state'      => 'REQ' // REQ : 신청 , ING : 수강중, END : 완료 
+        ,'regdate'    => date('YmdHis') 
+      );
+
+      if( $this->_setMemberSVC($aInput) )
+        response_json(array("code"=>1,"msg"=>"OK"));
+      else
+        response_json(array("code"=>0,"msg"=>"Fail"));
+    }/*}}}*/
     
     private function _setAccountInfo($aInput)/*{{{*/
     {
@@ -124,6 +247,18 @@ class Member extends CI_Controller {
       $user = cc_get_instance('UserClass');
       $oUser = new $user();
       return $oUser->setUserInfo($aInput); 
+    }/*}}}*/
+    private function _setQuestionInfo($aInput)/*{{{*/
+    {
+      $user = cc_get_instance('UserClass');
+      $oUser = new $user();
+      return $oUser->setQuestionInfo($aInput); 
+    }/*}}}*/
+    private function _setMemberSVC($aInput)/*{{{*/
+    {
+      $user = cc_get_instance('UserClass');
+      $oUser = new $user();
+      return $oUser->setMemberSVCInfo($aInput); 
     }/*}}}*/
 }
 ?>

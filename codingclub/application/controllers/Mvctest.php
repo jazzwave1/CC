@@ -14,7 +14,7 @@ class MvcTest extends CI_Controller {
       // test setting    
       $this->load->view('mvctest/client');  
     }
-    public function login()
+    public function login()/*{{{*/
     {
       if(!$this->_chkParam($_POST))
       {
@@ -30,12 +30,12 @@ class MvcTest extends CI_Controller {
       {
         $this->calendar(); 
       }
-    }
-    public function calendar()
+    }/*}}}*/
+    public function calendar()/*{{{*/
     {
       $this->load->view('mvctest/calendar');  
-    }
-    private function _chkParam($aParam)
+    }/*}}}*/
+    private function _chkParam($aParam)/*{{{*/
     {
       foreach($aParam as $key=>$val)
       {
@@ -43,8 +43,8 @@ class MvcTest extends CI_Controller {
           return false;
       }
       return true;
-    }
-    private function _loginprocess($aParam)
+    }/*}}}*/
+    private function _loginprocess($aParam)/*{{{*/
     {
       $aRtn = $this->model->loginProcess($aParam['user_id'], $aParam['user_pwd']);
      
@@ -52,7 +52,7 @@ class MvcTest extends CI_Controller {
         return true;
         
       return false;
-    }
+    }/*}}}*/
     
 }
     

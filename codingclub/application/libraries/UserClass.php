@@ -50,12 +50,26 @@ class UserClass {
     }/*}}}*/
     public function setUserInfo($aParam=array())/*{{{*/
     {
-      return $this->user_model->setUserInfo($aParam);
+      return $this->user_model->setUserInfo($aParam) ;
     }/*}}}*/
     public function setAccountInfo($aParam=array())/*{{{*/
     {
-      return $this->user_model->setAccountInfo($aParam);
+      if( !$this->user_model->setAccountInfo($aParam) )
+        return false;
+      else
+      {
+        // return usn;
+        $aResult = $this->user_model->getUSN($aParam['account_id']);
+        return $aResult[0]->usn;
+      } 
     }/*}}}*/
- 
+    public function setQuestionInfo($aParam=array())/*{{{*/
+    {
+      return $this->user_model->setQuestionInfo($aParam) ;
+    }/*}}}*/
+    public function setMemberSVCInfo($aParam=array())/*{{{*/
+    {
+      return $this->user_model->setMemberSVCInfo($aParam);
+    }/*}}}*/
 } 
 ?>

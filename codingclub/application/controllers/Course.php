@@ -34,19 +34,21 @@ class Course extends CI_Controller {
       if(!$oUser->oUserInfo->usn)
       {
         // user info input  
-        $this->_setUserInfo($oUser->oUserInfo->usn);
+        $this->_setUserInfo();
       }
       else
       {
         // member_svc input
         // set member_svc call
+        echo "set members_svc";
       }
 
       //$this->load->view('course/request_course');  
     }
-    private function _setUserInfo($usn) 
+    private function _setUserInfo() 
     {
       // member page call 
+      header('Location: http://localhost/~leehojun/CC/codingclub/Member/memberJoinUser');
     }
 
     public function junior_course()

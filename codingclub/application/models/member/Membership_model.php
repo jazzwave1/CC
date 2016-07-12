@@ -47,7 +47,26 @@ class Membership_model extends CI_model
   {
     return $this->_getMkPwd($passwd);  
   }/*}}}*/
+  public function chkID($accountID)/*{{{*/
+  {
+    if(!$accountID) return false;
+    
+    if($this->_getIDCount($accountID) == 0)
+      return true;
+    else
+      return false;
+  }/*}}}*/
 
+  
+  private function _getIDCount($accountID)/*{{{*/
+  {
+    if(!$accountID) return false;
+  
+    $aInput = array('account_id' => $accountID);
+  
+    $aResult = $this->user_dao->getID($aInput);
+    return $aResult[0]->cnt; 
+  } /*}}}*/
   private function _getMkPwd($passwd)/*{{{*/
   {
     if(!$passwd) return false;

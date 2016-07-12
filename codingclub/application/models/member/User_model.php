@@ -15,9 +15,16 @@ class User_model extends CI_model
 
     return $this->user_dao->getAccountInfo($aInput); 
   }/*}}}*/
+  public function getUSN($accountID)/*{{{*/
+  {
+    if(!$accountID) return false;
+    
+    $aInput = array('account_id' => $accountID);
+    
+    return $this->user_dao->getUSN($aInput); 
+  }/*}}}*/
   public function setAccountInfo($aParam)/*{{{*/
   {
-    
     $aParam['pwd'] = $this->membership_model->getMkPWD($aParam['pwd']);  
 
     if($this->user_dao->setAccount($aParam))
@@ -40,6 +47,27 @@ class User_model extends CI_model
     else
       return false;
   }/*}}}*/
+  public function setQuestionInfo($aParam)/*{{{*/
+  {
+    if($this->user_dao->setQuestionInfo($aParam))
+      return true;
+    else
+      return false;
+  }/*}}}*/
 
+  public function setMemberSVCInfo($aParam)/*{{{*/
+  {
+    if(!$aParam['usn']) return false;  
+
+    return $this->user_dao->setMemberSVCInfo($aParam); 
+  }/*}}}*/
+
+  public function chkID($accountID)/*{{{*/
+  {
+    if(!$accountID)
+      return false;
+
+    return $this->membership_model->chkID($accountID);
+  }/*}}}*/
 }
 ?>

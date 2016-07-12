@@ -29,15 +29,31 @@ class User_dao extends Common_dao
     $aConfig = $this->queryInfoMem['setUserInfo'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
-
-
   public function getPwd($aParam='')/*{{{*/
   {
     $aConfig = $this->queryInfoMem['getPwd'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
-  
-
+  public function getID($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['getIDCount'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function getUSN($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['getAccountInfoID'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function setQuestionInfo($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['setQuestionInfo'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function setMemberSVCInfo($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['setMemberSVC'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
 
 }
 ?>
