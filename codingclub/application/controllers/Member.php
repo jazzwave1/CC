@@ -149,7 +149,7 @@ class Member extends CI_Controller {
       if( $this->user_model->chkID($accountID) ) 
         response_json(array("code"=>1,"msg"=>"OK"));
       else
-        response_json(array("code"=>0,"msg"=>"Fail"));
+        response_json(array("code"=>999,"msg"=>"Fail"));
       
       die; 
     } /*}}}*/
