@@ -177,7 +177,8 @@
         var like_tf = $('#like_tf1').val() + '|' + $('#like_tf2').val(); 
         
         $.post(
-          "http://localhost/~leehojun/CC/codingclub/Member/rpcJoin"
+          //"http://localhost/~leehojun/CC/codingclub/Member/rpcJoin"
+          "http://member.codingclubs.org/Member/rpcJoin"
           ,{
             // account
              "account_id" : $('#account_id').val()
@@ -230,7 +231,8 @@
       $('#bIdCheck').click(function(){
       
         $.post(
-          "http://localhost/~leehojun/CC/codingclub/Member/rpcIdCheck"
+          //"http://localhost/~leehojun/CC/codingclub/Member/rpcIdCheck"
+          "http://member.codingclubs.org/Member/rpcIdCheck"
           ,{
              "account_id" : $('#account_id').val()
             ,"idCheck" : $('#idCheck').val()
