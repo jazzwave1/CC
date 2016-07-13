@@ -63,7 +63,7 @@ class Membership_model extends CI_model
 
     $this->load->helper('email');
 
-    if (! valid_email('email@somesite.com'))
+    if (! valid_email($accountID))
       return false;
     else
       $this->_sendMail($accountID, $courseIDX);
@@ -101,7 +101,7 @@ class Membership_model extends CI_model
     $this->load->library('email');
 
     $this->email->from('contact.codingclub@gmail.com', 'CodingClub');
-    $this->email->to('jazzwave14@gmail.com'); 
+    $this->email->to($accountID); 
     //$this->email->cc('another@another-example.com'); 
     //$this->email->bcc('them@their-example.com'); 
 
