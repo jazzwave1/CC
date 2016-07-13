@@ -7,12 +7,16 @@ class Course_dao extends Common_dao
     $this->load->database('codingclub');
     $this->queryInfo = cc_get_config('query', 'query');  
   }
- 
-  public function getCourseInfoToday($aParam='')
+  public function getCourseInfo($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfo['course']['getCourseInfo'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function getCourseInfoToday($aParam='')/*{{{*/
   {
     $aConfig = $this->queryInfo['course']['getCourseInfoToday'];
     return $this->actModelFuc($aConfig, $aParam);
-  }
+  }/*}}}*/
   
   
 }

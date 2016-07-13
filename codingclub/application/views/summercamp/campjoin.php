@@ -373,6 +373,7 @@
           ,function(data, status){
             if(status == 'success' && data.code == 1)
             {
+              alert("뉴 멤버쉽 가입 및 수강등록이 완료 되었습니다\n본인확인메일을 확인 부탁 드립니다");
               window.location.replace("http://codingclubs.org"); 
             }
             else if(data.code == 999)
@@ -422,8 +423,6 @@
     });
   </script>
 </body>
-
-
 
 <!--/form-->
 </html>

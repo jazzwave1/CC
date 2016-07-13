@@ -3,8 +3,9 @@ class Membership_model extends CI_model
 {
   public function __construct()/*{{{*/
   {
-    $this->user_dao = cc_get_instance('member/user_dao', 'model'); 
-    $this->log_model = cc_get_instance('log/log_model', 'model'); 
+    $this->user_dao   = cc_get_instance('member/user_dao', 'model'); 
+    $this->course_dao = cc_get_instance('course/course_dao', 'model'); 
+    $this->log_model  = cc_get_instance('log/log_model', 'model'); 
   }/*}}}*/
    
   public function loginprocess($accountID, $passwd)/*{{{*/
@@ -56,8 +57,67 @@ class Membership_model extends CI_model
     else
       return false;
   }/*}}}*/
+  public function sendJoinMail($accountID, $courseIDX)/*{{{*/
+  {
+    if(!$accountID || !$courseIDX) return false;
 
-  
+    $this->load->helper('email');
+
+    if (! valid_email('email@somesite.com'))
+      return false;
+    else
+      $this->_sendMail($accountID, $courseIDX);
+    return;
+  }/*}}}*/
+  public function setConfirm($usn)
+  {
+    if(!$usn) return false;
+    
+    $this->user_dao->updateAccountConfirm(array('regdate'=>date('YmdHis'),'usn'=>$usn));
+  }
+  public function chkConfirm($usn, $fingerprint)
+  {
+    $mkFingerPrint = $this->_getFingerPrint($usn); 
+    if($mkFingerPrint == $fingerprint)
+      return true;
+    else
+      return false;
+  }
+  private function _sendMail($accountID, $courseIDX)/*{{{*/
+  {
+    if(!$accountID || !$courseIDX) return false;
+    
+    // get usn
+    $aAccount = $this->user_dao->getUSN(array("account_id"=>$accountID));
+    $usn = $aAccount[0]->usn; 
+    // get course Info
+    $aCourse = $this->course_dao->getCourseInfo(array("idx"=>$courseIDX));
+
+    // make fingerprint
+    $sFingerPrint = $this->_getFingerPrint($usn); 
+    // make url sting
+    $sURL = "http://member.codingclubs.org/Member/chkConfirm/".$usn."/".$sFingerPrint;
+    
+    $this->load->library('email');
+
+    $this->email->from('contact.codingclub@gmail.com', 'CodingClub');
+    $this->email->to('jazzwave14@gmail.com'); 
+    //$this->email->cc('another@another-example.com'); 
+    //$this->email->bcc('them@their-example.com'); 
+
+    $this->email->subject('[코딩클럽] 가입 및 수강신청 확인');
+    $this->email->message(
+    '안녕하세요 코딩클럽입니다.
+    * 신청과목 : '.$aCourse[0]->name.'
+    * 본인확인 인증 링크 :{unwrap} '.$sURL.'{/unwrap}');  
+
+    $this->email->send();
+    return;
+  }/*}}}*/
+  private function _getFingerPrint($usn)/*{{{*/
+  {
+    return md5("codingclub".$usn); 
+  }/*}}}*/
   private function _getIDCount($accountID)/*{{{*/
   {
     if(!$accountID) return false;

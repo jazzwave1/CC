@@ -7,6 +7,7 @@ class Member extends CI_Controller {
     {
       parent::__construct();
       $this->user_model = cc_get_instance('member/user_model', 'model'); 
+      $this->membership_model = cc_get_instance('member/membership_model', 'model'); 
     }
 
     public function index()/*{{{*/
@@ -14,7 +15,7 @@ class Member extends CI_Controller {
       $this->load->view('member/mypage');  
     }/*}}}*/
    
-    public function memberJoinAccount()
+    public function memberJoinAccount()/*{{{*/
     {
       $aContents = array();
       $data = array(
@@ -23,7 +24,7 @@ class Member extends CI_Controller {
       );
 
       $this->load->view('member/member_layout', $data);
-    }
+    }/*}}}*/
     public function memberJoinUser()/*{{{*/
     {
       // login check
@@ -45,6 +46,7 @@ class Member extends CI_Controller {
         $this->load->view('member/member_layout', $data);
       }
    }/*}}}*/
+
     
     public function mypage()/*{{{*/
     {
@@ -67,7 +69,20 @@ class Member extends CI_Controller {
       $this->load->view('summercamp/campjoin', $data);
     }/*}}}*/
 
-    public function rpcJoin()
+  public function chkConfirm($usn, $fingerprint)
+  {
+    if( $this->membership_model->chkConfirm($usn, $fingerprint) )
+    {
+      echo "코딩클럽 본인확인이 완료 되었습니다. <br> 감사합니다.";
+      $this->membership_model->setConfirm($usn);  
+    }
+    else
+    {
+      echo "코딩클럽 본인확인이 실패하였습니다";
+    }
+  }
+
+    public function rpcJoin()/*{{{*/
     {
       $aAccount['account_id'] = trim($this->input->post('account_id')); 
       $aAccount['pwd1']       = trim($this->input->post('passwd1')); 
@@ -137,11 +152,13 @@ class Member extends CI_Controller {
         response_json(array("code"=>0,"msg"=>"Fail"));
         die;
       }
-      
+     
+      // send mail
+      $this->membership_model->sendJoinMail($aAccount['account_id'],$aQuestion['course_idx']);
       response_json(array("code"=>1,"msg"=>"OK"));
       die;
     
-    }
+    }/*}}}*/
     public function rpcIdCheck()/*{{{*/
     {
       $accountID = trim($this->input->post('account_id')); 

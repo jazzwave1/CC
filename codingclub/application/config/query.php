@@ -75,13 +75,22 @@ $config['query'] = array(
       ,'btype'=> 'iissssssssss'
       ,'null' => array()
     )
+    ,'updateAccountConfirm' => array( 
+      'query' => 'update account 
+                    set confirm = ?  
+                   WHERE usn = ?' 
+      ,'data' => array('regdate','usn')
+      ,'btype'=> 'si'
+      ,'null' => array() 
+    )
+
   )/*}}}*/
   ,'course' => array( /*{{{*/
     'getCourseInfo' => array( 
-      'query' => 'SELECT course_name, contents, student_count, sdate, edate, regdate 
+      'query' => 'SELECT name, content, target, schedule, need, recruit, sdate, edate 
                     FROM course 
-                   WHERE course_idx = ?'
-      ,'data' => array('course_idx')
+                   WHERE idx = ?'
+      ,'data' => array('idx')
       ,'btype'=> 'i'
       ,'null' => array() 
     )
