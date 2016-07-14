@@ -177,7 +177,7 @@ class Member extends CI_Controller {
       }
      
       // send mail
-      $this->membership_model->sendJoinMail($aAccount['account_id'],$aQuestion['course_idx']);
+      //$this->membership_model->sendJoinMail($aAccount['account_id'],$aQuestion['course_idx']);
       response_json(array("code"=>1,"msg"=>"OK"));
       die;
     
