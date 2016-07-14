@@ -49,17 +49,26 @@ class User_model extends CI_model
   }/*}}}*/
   public function setQuestionInfo($aParam)/*{{{*/
   {
-    if($this->user_dao->setQuestionInfo($aParam))
-      return true;
-    else
-      return false;
+    $aCourse = explode('|', $aParam['course_idx']);
+    foreach($aCourse as $key=>$val)
+    {
+      $aParam['course_idx'] = $val;
+      $this->user_dao->setQuestionInfo($aParam);
+    }
+    return true;
   }/*}}}*/
 
   public function setMemberSVCInfo($aParam)/*{{{*/
   {
     if(!$aParam['usn']) return false;  
 
-    return $this->user_dao->setMemberSVCInfo($aParam); 
+    $aCourse = explode('|', $aParam['course_idx']);
+    foreach($aCourse as $key=>$val)
+    {
+      $aParam['course_idx'] = $val;
+      $this->user_dao->setMemberSVCInfo($aParam); 
+    }
+    return true; 
   }/*}}}*/
 
   public function chkID($accountID)/*{{{*/

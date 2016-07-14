@@ -1,0 +1,268 @@
+/* ------------------------------------------------------------
+
+  코딩클럽 리뉴얼 썸머캠프 스타일
+
+  파일명 : summercamp.css
+  작성자 : Mihee Moon
+  작성일 : 2016-07-13(최종수정)
+
+  썸머캠프 스타일입니다.
+
+------------------------------------------------------------- */
+
+@charset "utf-8";
+
+
+
+/* ------------------------------------------
+  웹폰트
+--------------------------------------------- */
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 700;
+    src: local('SpoqaHanSans-Bold'), local('SpoqaHanSans-Bold'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.eot) format('eot'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.svg) format('svg'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.ttf) format('truetype'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('SpoqaHanSans-Regular'), local('SpoqaHanSans-Regular'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.eot) format('eot'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.svg) format('svg'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.ttf) format('truetype'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 200;
+    src: local('SpoqaHanSans-Thin'), local('SpoqaHanSans-Thin'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.eot) format('eot'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.svg) format('svg'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.ttf) format('truetype'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.woff) format('woff');
+}
+
+
+
+/* ------------------------------------------
+  폰트 초기화
+--------------------------------------------- */
+* {font-family:'Spoqa Han Sans', 'Sans-serif' !important}
+html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6, p, span, i {color:#444;font-style:normal;font-size:18px;line-height:100%;font-weight:400;font-family:'Spoqa Han Sans', 'Sans-serif' !important;letter-spacing:0}
+
+p {margin:0 !important}
+.summercamp_join {color:#444}
+
+* {word-break:break-all}
+
+
+/* ------------------------------------------
+  viewport
+--------------------------------------------- */
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+
+
+/* ------------------------------------------
+  HEADER
+--------------------------------------------- */
+.navbar-inverse {background:#486bed;height:62px;border:0;line-height:62px}
+.navbar-inverse .container {padding-left:0;padding-right:0}
+.navbar-right {margin-right:0}
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {color:#fff}
+.navbar-inverse .navbar-nav>li>a {font-size:16px;padding:0 0 46px 0 !important;margin:0 28px;height:30px;line-height:62px}
+.navbar-inverse .navbar-nav>li:last-child>a {margin-right:0}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {color:#fff;background:none;border-bottom:1px solid #fff}
+.navbar-inverse .navbar-brand {font-size:24px;font-weight:200;padding-left:46px;background:url('../img_summercamp/logo_symbol.png') no-repeat 0 50%}
+.navbar-inverse .navbar-brand strong {font-weight:400}
+.container>.navbar-header, .navbar-brand {height:62px;line-height:62px;padding-top:0;padding-bottom:0;margin-left:15px}
+
+
+.navbar-inverse .navbar-toggle {border-color:#fff;background:transparent}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {border-color:#355ce9;background:#486bed}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {background:#486bed}
+
+
+/* ------------------------------------------
+  상단배너
+--------------------------------------------- */
+.page_banner {padding-top:62px;background:url('../img_summercamp/bg_banner.png') repeat top left;width:100%}
+.page_banner:after {display:block;content:'';height:0;clear:both}
+
+.page_banner .container {position:relative;z-index:2;left:0;padding-left:0;padding-right:0}
+.absolute_box{overflow:visible}
+
+.camp_info {position:relative;z-index:3;top:95px;width:100%}
+.camp_info:after {display:block;height:0;content:'';clear:both}
+.camp_info h2 {text-align:center;color:#fff;line-height:44px;margin:20px 0 42px 0}
+.camp_info span {display:inline-block;font-size:64px;color:#fff;font-weight:200;font-style:normal;color:#fff}
+.jusocle, .x {margin-bottom:20px;margin-right:10px}
+.sejong {margin-bottom:20px}
+.camp_info span.term {display:block;font-size:28px;font-weight:400}
+.camp_txt {background:#fff}
+.camp_txt:after {display:block;height:0;content:'';clear:both}
+.camp_txt h3 {float:left;width:357px;padding:52px 0 43px 53px;margin:0;font-size:36px;line-height:124%;color:#2cde88}
+.camp_txt h3 i {font-size:60px;font-weight:200;font-style:normal;display:block;margin-top:20px;color:#2cde88}
+.camp_txt p {float:left;width:calc(100% - 357px);padding:52px 53px 43px 21px;line-height:134%;text-align:justify}
+.camp_txt p i {text-decoration:underline;color:#282828}
+.camp_intro {background:#2cde88}
+.camp_intro:after {display:block;height:0;content:'';clear:both}
+.camp_intro h3 {float:left;width:357px;padding:30px 0 29px 53px;margin:0;font-size:24px;line-height:130%;color:#fff}
+.camp_intro p {background:#52eaa1;float:left;width:calc(100% - 357px);padding:30px 53px 29px 21px;line-height:134%;color:#fff;text-align:justify}
+
+
+
+/* ------------------------------------------
+  신청폼
+--------------------------------------------- */
+.page_cont {background:#f8f8fa;padding-bottom:62px;margin-top:110px;width:100%}
+.page_cont .container {padding-left:0;padding-right:0}
+.page_cont h3 {background:#5277fd url('../img_summercamp/ico_apply.png') no-repeat 53px 50%;display:block;height:78px;line-height:78px;color:#fff;padding:0 53px 0 86px;font-size:24px;margin:0}
+
+.apply_form {background:#fff;width:100%;box-sizing:border-box}
+.form-group {margin-bottom:0}
+
+.privacy {display:block;padding:36px 53px;background:#fff;text-align:justify}
+.privacy label {display:inline-block;font-size:16px;font-weight:700;color:#282828;vertical-align:top;line-height:130%}
+.privacy input[type=checkbox] {display:inline-block;outline:0;width:15px;height:15px;border:2px solid #282828;margin:0;vertical-align:top}
+.privacy span {display:block;font-size:16px;line-height:130%}
+
+.form-cont {margin:0;padding:0}
+.form-cont li {list-style:none;display:block;background:#fbfbfb;padding:43px 53px 16px 53px}
+.form-cont li:nth-child(2n) {background:#fff}
+.form-cont li label {display:block;margin-bottom:8px;font-weight:400;font-size:20px;line-height:120%}
+.form-cont li label i {color:#ff5f5f}
+
+
+input[type=text], textarea, .form-control {background:none;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-ms-border-radius:0;-khtml-border-radius:0;-o-border-radius:0}
+input[type=text], textarea, .form-control, .form-control:focus {-webkit-appearance:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}/*아이폰*/
+
+.form-control {display:block;margin-bottom:37px;color:#999;border:0;border-bottom:1px solid #ececec;font-size:18px}
+.form-control:focus {color:#5277fd;border:0;border-bottom:1px solid #5277fd;}
+input.form-control, select.form-control {height:44px;line-height:44px;padding:0}
+textarea.form-control {
+	-webkit-box-flex:1;
+	box-flex:1;
+	-webkit-flex-grow:1;
+	flex-grow:1;
+	-webkit-flex-shrink:1;
+	flex-shrink:1;
+	display:block;
+	line-height:134%;
+	padding:14px 0 14px 0;
+	height:52px;
+	outline:none;
+	resize:none;
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	z-index:0;
+	overflow-y:hidden;
+	overflow-x:hidden;	
+	-webkit-transition: height .4s ease; 
+	-moz-transition: height .4s ease; 
+	-ms-transition: height .4s ease; 
+	-o-transition: height .4s ease; 
+	transition: height .4s ease;  
+}
+select.form-control {background:url('../img_summercamp/drop_down.png') no-repeat 100% 50%;-webkit-appearance:none}
+@media all and (min-width:720px) {
+	select.form-control {width:auto;min-width:200px}
+}
+select.form-control:focus option {color:#999}
+
+li.form-id label, li.form-id a {display:inline-block;vertical-align:middle;width:auto;max-width:none}
+li.form-id a {margin-left:16px;background:#5277fd;color:#fff;font-size:14px;padding:5px 8px 4px 8px;margin-bottom:8px;border:0;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-ms-border-radius:0;-khtml-border-radius:0;-o-border-radius:0}
+
+.form-cont li .radio, .form-cont li .checkbox {margin-bottom:24px}
+.form-cont li .radio label {display:inline-block;vertical-align:middle;margin-right:14px;margin-bottom:6px;color:#999;line-height:inherit;font-size:18px}
+.form-cont li .checkbox label {display:inline-block;vertical-align:middle;margin-right:14px;margin-bottom:6px;color:#999;line-height:inherit;font-size:18px}
+.radio input[type=radio] {display:inline-block;vertical-align:middle;margin-top:0;outline:0;width:15px;height:15px;border:2px solid #a0a0a0;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;-ms-border-radius:50%;-khtml-border-radius:50%;-o-border-radius:50%}
+.radio input[type=radio]:focus, .radio input[type=radio]:active, .radio input[type=radio]:checked {border:5px solid #5277fd}
+.checkbox {margin-top:20px}
+.checkbox input[type=checkbox] {display:inline-block;outline:0;width:15px;height:15px;border:2px solid #282828;margin-top:0;vertical-align:top}
+.checkbox a {display:inline-block;vertical-align:middle;margin-bottom:6px;color:#5277fd;text-decoration:underline}
+
+
+
+/* ------------------------------------------
+  버튼영역
+--------------------------------------------- */
+.text-center {background:#fff}
+.text-center a.btn {width:200px;height:53px;border:1px solid #b8c7fc;color:#5277fd;padding:16px;margin:0 0 64px 0;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-ms-border-radius:0;-khtml-border-radius:0;-o-border-radius:0}
+.text-center a.btn:hover, .text-center a.btn:active {border:1px solid #5277fd;color:#fff;background:#5277fd}
+
+
+@media all and (max-width:1080px) {
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left:-15px;padding-left:46px}
+
+	.camp_info {top:65px}
+	.camp_info span {display:block}
+	.jusocle {margin-bottom:0}
+	.x {margin-bottom:20px}
+	.sejong {margin-bottom:30px}
+}
+@media all and (max-width:800px) {
+	html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6, p, span, i {font-size:14px}
+	
+	.navbar-inverse .container {padding-right:15px !important;padding-left:15px !important}
+	.navbar-toggle {margin-top:14px}
+	.page_banner .container, .page_cont .container {padding-left:15px;padding-right:15px;}
+
+	.camp_txt h3 {width:257px;padding:32px 0 23px 33px;font-size:24px}
+	.camp_txt h3 i {font-size:40px;margin-top:20px;font-size:40px}
+	.camp_txt p {float:left;width:calc(100% - 257px);padding:32px 33px 33px 21px;line-height:134%}
+	.camp_intro h3 {width:257px;padding:15px 0 14px 33px;font-size:18px;line-height:130%}
+	.camp_intro p {width:calc(100% - 257px);padding:15px 33px 14px 21px;line-height:134%}
+	
+	.page_cont h3 {background:#5277fd url('../img_summercamp/ico_apply.png') no-repeat 23px 50%;background-size:auto 28%;height:58px;line-height:58px;padding:0 33px 0 46px;font-size:18px}
+	.privacy {padding:26px 33px}
+	.form-cont li {padding:23px 33px 10px 33px}
+	.form-cont li label {margin-bottom:8px;font-size:16px}
+	input.form-control, select.form-control, textarea.form-control {font-size:14px;margin-bottom:27px}
+	input.form-control, select.form-control {height:34px;line-height:34px}
+	.form-cont li .radio {margin-bottom:0}
+	.form-cont li .radio label, .form-cont li .checkbox label {font-size:14px}
+	.text-center a.btn {font-size:16px;width:120px;height:43px;padding:11px;margin:0 0 34px 0}
+}
+@media all and (max-width:768px) {
+	.navbar-inverse .navbar-nav>li {text-align:center}
+	.navbar-inverse .navbar-nav>li>a {display:inline-block;margin:0}
+}
+@media all and (max-width:720px) {
+	.camp_info h2 {line-height:44px;margin:10px 0 21px 0}
+	.camp_info span {font-size:44px}
+	.jusocle, .x {margin-bottom:10px;margin-right:0}
+	.sejong {margin-bottom:30px}
+	.camp_info span.term {font-size:24px}
+}
+@media all and (max-width:640px) {
+	.camp_txt h3 {width:100%;display:block;clear:both;padding:32px 33px 23px 33px;font-size:36px}
+	.camp_txt h3 i {width:100%;display:block;clear:both;font-size:40px;margin-top:20px;font-size:60px}
+	.camp_txt p {width:100%;display:block;clear:both;padding:22px 21px 23px 21px}
+	.camp_intro h3 {width:100%;display:block;clear:both;padding:15px 21px 14px 21px}
+	.camp_intro p {width:100%;display:block;clear:both;padding:15px 21px 14px 21px}
+}
+@media all and (max-width:414px) {
+	.camp_info h2 {line-height:30px;margin:0 0 21px 0}
+	.camp_info span {font-size:30px}
+	.camp_info span.term {font-size:18px}
+
+	.camp_txt h3 {font-size:24px;padding:22px 16px 0 16px}
+	.camp_txt h3 i {margin-top:20px;font-size:40px}
+
+	.privacy {padding:13px 16px}
+	.form-cont li {padding:13px 16px 10px 16px}
+	input.form-control, select.form-control, textarea.form-control {margin-bottom:17px}
+	textarea.form-control {height:42px}
+}
+
+.page_banner:before, .page_banner:after {display:table;content:'';}

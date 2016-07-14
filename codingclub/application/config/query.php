@@ -69,11 +69,11 @@ $config['query'] = array(
       ,'null' => array()
     )
     ,'setQuestionInfo' => array( 
-      'query' => 'INSERT INTO questionnaire( usn, course_idx, recommend, motive, like_tf, experience, nature, favor, jr_hope, channel, club_hope, inquiry)
-                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
-      ,'data' => array( 'usn', 'course_idx', 'recommend', 'motive', 'like_tf', 'experience', 'nature', 'favor', 'jr_hope', 'channel', 'club_hope', 'inquiry')
-      ,'btype'=> 'iissssssssss'
-      ,'null' => array()
+      'query' => 'INSERT INTO questionnaire( usn, course_idx, recommend, motive, like_tf, experience, nature, favor, jr_hope, channel, club_hope, inquiry, exprogram)
+                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
+      ,'data' => array( 'usn', 'course_idx', 'recommend', 'motive', 'like_tf', 'experience', 'nature', 'favor', 'jr_hope', 'channel', 'club_hope', 'inquiry', 'exprogram')
+      ,'btype'=> 'iisssssssssss'
+      ,'null' => array('exprogram')
     )
     ,'updateAccountConfirm' => array( 
       'query' => 'update account 

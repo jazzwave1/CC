@@ -123,8 +123,19 @@ class Member extends CI_Controller {
       }
      
       // set member_svc
+      $course_idx  = trim($this->input->post('course_idx')); 
+      $aCurse = explode("|", $course_idx);
+      $course_idx = ''; 
+      foreach($aCurse as $key=>$val)
+      {
+        if($val != 'undefined')
+          $course_idx .= $val."|"; 
+        
+      }
+      $course_idx = substr($course_idx,0,-1); 
+      
       $aMemberSVC['usn']         = $usn;
-      $aMemberSVC['course_idx']  = trim($this->input->post('course_idx')); 
+      $aMemberSVC['course_idx']  = $course_idx; 
       $aMemberSVC['state']       = "REQ";
       $aMemberSVC['regdate']     = date('YmdHis');
      
@@ -134,8 +145,19 @@ class Member extends CI_Controller {
         die;
       }
       
+      $exprogram  = trim($this->input->post('exprogram')); 
+      $aExprogram = explode("|", $exprogram);
+      $exprogram = ''; 
+      foreach($aExprogram as $key=>$val)
+      {
+        if($val != 'undefined')
+          $exprogram .= $val."|"; 
+        
+      }
+      $exprogram  = substr($exprogram,0,-1); 
+
       $aQuestion['usn']        = $usn;
-      $aQuestion['course_idx'] = trim($this->input->post('course_idx')); 
+      $aQuestion['course_idx'] = $course_idx; 
       $aQuestion['recommend']  = trim($this->input->post('recommend')); 
       $aQuestion['motive']     = trim($this->input->post('motive')); 
       $aQuestion['like_tf']    = trim($this->input->post('like_tf')); 
@@ -146,6 +168,7 @@ class Member extends CI_Controller {
       $aQuestion['channel']    = trim($this->input->post('channel')); 
       $aQuestion['club_hope']  = trim($this->input->post('club_hope')); 
       $aQuestion['inquiry']    = trim($this->input->post('inquiry')); 
+      $aQuestion['exprogram']  = $exprogram; 
      
       if(! $this->_setQuestionInfo($aQuestion) )
       {  
