@@ -478,8 +478,7 @@
 								<input type="text" class="form-control" name="pemail" id="pemail" placeholder="연락을 위해 정확하게 작성 부탁 드립니다.">
 								<label>참여신청학부모 직업&전공 <i>*</i></label>
 								<input type="text" class="form-control" name="pjob" id="pjob" placeholder="학부모님 직업 및 전공 ">
-								<label>참여신청학부모 학력 <i>*</i></label>
-								<input type="text" class="form-control" name="pschool" id="pschool" placeholder="학부모님 학력 ">
+								<input type="hidden" class="form-control" name="pschool" id="pschool" placeholder="학부모님 학력 ">
 								<label>거주지역 <i>*</i></label>
 								<input type="text" class="form-control" name="addrcode" id="addrcode" placeholder="예: 서울시 송파구 방이동">
 							</li>
