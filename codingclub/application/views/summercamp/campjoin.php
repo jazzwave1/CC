@@ -35,7 +35,7 @@
 </head>
 <!--form name="fo" action="submit.php" method="post"-->
 <body id="wrapper" class="summercamp_join">
-
+ 
     <nav class="navbar  navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -65,56 +65,8 @@
 					<div class="camp_txt">
 						<h3>재밌는 컴퓨팅,<br>신나는 메이킹,<br>즐거운 소프트웨어!<i>코딩클럽</i></h3>
 						
-            <p><strong>주니어소프트웨어클럽</strong>은 <br>주니어소프트웨어클럽은 친구들과 함께 직접 원하는 컨텐츠를 디자인하고, 애니메이션/ 게임/ 앱/ 웹과 같은 소프트웨어로 만들어보는 즐거운 코딩클럽 주니어들을 위한 디지털창작모임입니다!<br>주니어소프트웨어클럽 활동은 담임선생님 한명이 소규모 모둠 (5-6명)을 담당, 다양한 팀프로젝트를 중심으로 진행되며, 주니어소프트웨어클럽 멤버에게는 코딩클럽 청년샘의 1:1 멘토링이 제공됩니다.<br><br>8월에는 주중 썸머캠프를 통해 MIT 스크래치, 네이버 엔트리를 이용하여 친구들과 함께 게임, 애니메이션, 뮤직비디오를 기획, 디자인, 개발하는 SW 입문과정 “주니어메이커”<br><br></p>
-            
-            <div style="padding-left: 50px; margin-right: 50px; margin-bottom: 50px;">
-            아두이노 기반의 소형 컴퓨터, 메이키메이키, 비트브릭, 비트블록 등의 피지컬 컴퓨팅 도구를 MIT 스크래치, 앱인벤터로 프로그래밍하여 우리 생활에서 사용할 수 있는 다양한 사물인터넷 기반 제품을 친구들과 함께 직접 만드는 “IoT메이커” <br><br>MIT 앱인벤터로 친구들과 함께 실생활에서 직접 쓰고 즐길 수 있는 안드로이드앱을 만드는 “앱메이커"를 만날 수 있습니다. . <br><br>* 모집 인원 : 각 프로그램 별 초중생 20명 (참가비 납입 기준 선착순)<br>* 일정/장소 : 각 캠프별 5일간 총 20시간 (1-4일 부트캠프 단계별 단위 프로젝트 & 5일 데모데이 파이널프로젝트 제작 및 작품발표/시연회)<br>** 8/27 토요일에는 제2회 코딩클럽 주니어해커톤이 개최될 예정입니다. 상세내용은 곧 공지되며, 많은 참여 부탁드립니다!<br><br> ** 코딩클럽관련 최근 주요 기사:<br> -사이언스타임즈 [인터뷰] 하은희 코딩클럽 대표 "아이들 스스로 즐기는 ‘꿀잼’ 코딩" http://bit.ly/CodingClubScienceTimes151218<br> -마이크로소프트웨어 [에듀토피아] 맨투맨 SW교육 위해 http://bit.ly/microsoftware_codingclub092115<br> -전자신문 [창간 33주년 특집 Let`s SEE SW] 하은희 코딩클럽 대표 인터뷰 http://bit.ly/etnews_codingclub092115<br> -다음스토리펀딩 [빅픽처2016 대한민국 이슈전망] "나는 왜 어려서부터 코딩을 배우지 못했을까" http://bit.ly/BigPicture2016CodingClub<br> -플래텀/ 벤처스퀘어 [초등학교 6학년 양태영 학생의 주니어해커톤 참가기록] http://bit.ly/Platum_codingclubJrHack2015<br> -동아사이언스 ["마라톤처럼 즐기는 SW 대회 ‘주니어해커톤’ 열린다"] http://bit.ly/DongaScienceCodingClubJrHack2015<br>-머니투데이 [모두다인재] 코딩은 어렵다?…"논리적 사고 길러주는 훌륭한 친구" http://bit.ly/moneytoday_codingclub070815<br>-한국경제 [21세기생존법'코딩']“논리와 창의성, 코딩서 배우죠” http://bit.ly/Hankyung_codingclub040815 <br><br>
-            - 대상: <br>
-            소프트웨어 교육을 처음 접하거나 정규적으로 해보고 싶은 초중생 친구들   <br>
-            
-            - 준비물: 노트북, 마우스  <br><br>
-               
-               
-               2) IoT메이커 <br>
-               
-               코딩클럽 x 세종대학교 <br>
-               주니어소프트웨어클럽 썸머캠프 IoT메이커 <br><br>
-               
-               8/8~8/11일 부트캠프 단계별 단위프로젝트: 매일 10-14시 세종대학교 광개토관  <br>
-               8/13일 데모데이 파이널프로젝트 & 발표/시연회: 8/13 토요일 10-14시 디캠프 6층  <br>
-               5일간 총 20시간 <br>
-               후원: 세종대학교, 은행권청년창업재단 D.Camp <br><br>
-               
-               - 소개:  <br>
-               아두이노 기반의 피지컬 컴퓨팅 도구를 소프트웨어로 프로그래밍하여 우리 생활에서 사용하고 즐길 수 있는 사물인터넷 제품을 <br>
-               직접 기획하고 개발하고 만드는 IoT메이커, IoT디자이너, IoT해커 3개과정 중 첫번째 프로그램!  <br>
-               - MIT 스크래치, 앱인벤터를 아두이노 기반의 소형 컴퓨터, 메이키메이키, 비트브릭, 비트블록 등의 피지컬 컴퓨팅 도구와 연결하여 우리 생활에서 사용할 수 있는 다양한 사물인터넷 기반 제품을 친구들과 함께 직접 만드는 코딩클럽 주니어들의 여름방학 모임 <br>
-               - 회로, 입출력, 센서 등 소프트웨어로 작동하는 하드웨어의 원리를 이해하고, 함수, 변수 등 기초 컴퓨터과학을 적용한 프로그래밍을 통해 스마트램프, 게임기, 라인트레이서 등 나만의 IoT 제품을 직접 만드는 시간 <br><br>
-               
-               - 대상: <br>
-               MIT 스크래치, 앱인벤터 등으로 소프트웨어를 만든 경험이 있고, 피지컬 도구를 사용하여 실제 제품을 만들고 싶은 초중고 청소년   <br>
-               
-               
-               - 준비물: 노트북, 마우스, 아두이노키트 (다른 피지컬컴퓨팅 도구는 코딩클럽에서 준비, 대여함)<br>
-                ** 필요한 아두이노키트와 구매처는 참가자 대상 별도 공지 예정 (키트 2-3만원 예상)      <br><br>
-                
-                
-                3) 앱메이커 <br>
-                
-                코딩클럽 x 세종대학교 <br>
-                주니어소프트웨어클럽 썸머캠프 앱메이커 <br>
-                
-                8/15~8/19일 매일 10-14시 세종대학교 광개토관<br>   
-                1-4일 부트캠프 단계별 단위프로젝트/ 5일차 데모데이 파이널프로젝트 & 발표/시연회  <br>
-                5일간 총 20시간 <br>
-                후원: 세종대학교, 은행권청년창업재단 D.Camp <br><br>
-                
-                - 소개:   <br>
-                MIT 앱인벤터로 안드로이드앱을 만드는 앱메이커, 앱디자이너, 앱해커 3개 과정 중 첫번째 프로그램!     <br>
-                - 친구들과 함께 즐기고 소통할 수 있는 기본적 앱을 직접 디자인하고 만드는 코딩클럽 주니어들의 여름학기 모임 <br>
-                - 센서, 디스플레이, 버튼 등 스마트폰의 핵심 기능과 레이아웃, 캔버스 등 디자인적 요소, 함수, 변수 등 기초 컴퓨터과학을 적용하여 앱을 설계하고 만드는 시간 <br>
-                <br>
-            </div> 
+						<p><strong>주니어소프트웨어클럽</strong>은 <br>주니어소프트웨어클럽은 친구들과 함께 직접 원하는 컨텐츠를 디자인하고, 애니메이션/ 게임/ 앱/ 웹과 같은 소프트웨어로 만들어보는 즐거운 코딩클럽 주니어들을 위한 디지털창작모임입니다!<br>주니어소프트웨어클럽 활동은 담임선생님 한명이 소규모 모둠 (5-6명)을 담당, 다양한 팀프로젝트를 중심으로 진행되며, 주니어소프트웨어클럽 멤버에게는 코딩클럽 청년샘의 1:1 멘토링이 제공됩니다.<br><br>8월에는 주중 썸머캠프를 통해 MIT 스크래치, 네이버 엔트리를 이용하여 친구들과 함께 게임, 애니메이션, 뮤직비디오를 기획, 디자인, 개발하는 SW 입문과정 “주니어메이커”<br><br></p>            
+ 
 					</div>
 					<div class="camp_intro">
 						<h3>참가 확정 및<br>신청비 입금안내</h3>
@@ -126,6 +78,377 @@
 	</div>
 		
 	<div class="page_cont">
+		<div class="container">
+			
+			<!-- 썸머캠프 :: s -->
+            <div class="summer_camp">
+				<div class="tbl_info">
+					<h3>8월 주중<br><i>썸머캠프</i></h3>
+
+					<div class="summary_box">
+						<table class="summary_box_inner">
+							<caption>썸머캠프 안내</caption>	
+							<colgroup>
+								<col class="camp_th" />
+								<col class="camp_td" />
+							</colgroup>
+							<tbody>
+							<tr>
+								<th scope="row">프로그램</th>
+								<td>주니어메이커 / IoT메이커 / 앱메이커</td>
+							</tr>
+							<tr>
+								<th scope="row">모집 인원</th>
+								<td>각 프로그램 별 초중생 20명 (참가비 납입 기준 선착순)</td>
+							</tr>
+							<tr>
+								<th scope="row">일정/장소</th>
+								<td>각 캠프별 5일간 총 20시간<br>(1-4일 부트캠프 단계별 단위 프로젝트 & 5일 데모데이 파이널프로젝트 제작 및 작품발표/시연회)</td>
+							</tr>
+						</table> 
+					</div>
+				</div>
+
+				<div class="summary_program">
+					<table class="program_box">
+						<caption>썸머캠프 안내</caption>	
+						<colgroup>
+							<col class="program_list" />
+							<col class="program_list" />
+							<col class="program_list" />
+						</colgroup>
+						<thead>
+							<th scope="row"><img src="../static/img_summercamp/sum_junior.png" ></th>
+							<th scope="row"><img src="../static/img_summercamp/sum_iot.png" ></th>
+							<th scope="row"><img src="../static/img_summercamp/sum_app.png" ></th>
+						</thead>
+						<tbody>
+						<tr>
+							<td>
+								<h4><strong>주니어</strong>메이커</h4>
+								<p>MIT 스크래치, 네이버 엔트리를 이용하여 친구들과 함께 게임, 애니메이션, 뮤직비디오를 기획, 디자인, 개발하는 SW 입문과정</p>
+							</td>
+							<td>
+								<h4><strong>IoT</strong>메이커</h4>
+								<p>아두이노 기반의 소형 컴퓨터, 메이키메이키, 비트브릭, 비트블록 등의 피지컬 컴퓨팅 도구를 MIT 스크래치, 앱인벤터로 프로그래밍하여 우리 생활에서 사용할 수 있는 다양한 사물인터넷 기반 제품을 친구들과 함께 직접 만드는 프로그램</p>
+							</td>
+							<td>
+								<h4><strong>앱</strong>메이커</h4>
+								<p>MIT 앱인벤터로 친구들과 함께 실생활에 서 직접 쓰고 즐길 수 있는 안드로이드앱을 만드는 프로그램</p>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="#junior">자세히 보기</a></td>
+							<td><a href="#iot">자세히 보기</a></td>
+							<td><a href="#app">자세히 보기</a></td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+			<!-- 썸머캠프 :: e -->
+		</div>
+
+
+		<div class="container">				
+			<!-- 해커톤 :: s -->
+			<div class="hackathon">
+				<h3>제2회 코딩클럽<br><i>주니어해커톤<br>개최</i></h3>
+				<p><i>8/27 토요일</i><span>상세내용은 곧 공지되며, 많은 참여 부탁드립니다!</span></p>
+			</div>
+		</div>
+
+
+		<div class="container">
+
+			<!-- 최근 기사 :: s -->
+			<div class="latest_news">
+				<h3>코딩클럽관련 최근 주요 기사</h3>
+
+
+				<!-- 뉴스 :: s -->
+				<div class="news">
+					<ul>
+						<li>
+							<a href="http://bit.ly/CodingClubScienceTimes151218" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">사이언스타임즈 [인터뷰]</span>
+										<p class="news_tit">"아이들 스스로 즐기는 ‘꿀잼’ 코딩"</p>
+										<p class="news_desc">하은희 코딩클럽 대표</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news01.png" ></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.google.co.kr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=6&cad=rja&uact=8&ved=0ahUKEwjt26ebmfPNAhUGsJQKHevuDWkQFggpMAU&url=http%3A%2F%2Fcodingclubs.org%2Fnews-posts%2F%25EC%2597%2590%25EB%2593%2580%25ED%2586%25A0%25ED%2594%25BC%25EC%2595%2584-%25EB%25A7%25A8%25ED%2588%25AC%25EB%25A7%25A8-sw-%25EA%25B5%2590%25EC%259C%25A1-%25EC%259C%2584%25ED%2595%25B4-%25ED%2595%2598%25EC%259D%2580%25ED%259D%25AC-%25EC%25BD%2594%25EB%2594%25A9%25ED%2581%25B4&usg=AFQjCNGzOUsADOG2MiZtU_insNLBhjSVtg&sig2=f4rO2Ha3WYIPZeQLhMi9Yw&bvm=bv.127178174,d.dGo" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">마이크로소프트웨어 [에듀토피아]</span>
+										<p class="news_tit">맨투맨 SW교육 위해</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news02.png" ></span>
+							</a>
+						</li>
+						<li>
+							<a href="http://bit.ly/etnews_codingclub092115" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">전자신문</span>
+										<p class="news_tit">[창간 33주년 특집 Let`s SEE SW]</p>
+										<p class="news_desc">하은희 코딩클럽 대표 인터뷰</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news03.png" ></span>
+							</a>
+						</li>
+						<li>
+							<a href="http://bit.ly/BigPicture2016CodingClub" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">다음스토리펀딩</span>
+										<p class="news_tit">[빅픽처2016 대한민국 이슈전망]</p>
+										<p class="news_desc">"나는 왜 어려서부터 코딩을 배우지 못했을까"</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news04.png" ></span>
+							</a>
+						</li>
+						<li>
+							<a href="http://bit.ly/Platum_codingclubJrHack2015" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">플래텀/ 벤처스퀘어</span>
+										<p class="news_tit">[초등학교 6학년 양태영 학생의 주니어해커톤 참가기록]</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news05.png" ></span>
+							</a>
+						</li>
+						<li>
+							<a href="http://bit.ly/DongaScienceCodingClubJrHack2015" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">동아사이언스</span>
+										<p class="news_tit">"마라톤처럼 즐기는 SW 대회 ‘주니어해커톤’ 열린다"</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news06.png" ></span>
+							</a>
+						</li>
+						<li>
+							<a href="http://bit.ly/moneytoday_codingclub070815" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">머니투데이 [모두다인재]</span>
+										<p class="news_tit"> 코딩은 어렵다?…"논리적 사고 길러주는 훌륭한 친구"</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news07.png" ></span>
+							</a>
+						</li>
+						<li>
+							<a href="http://bit.ly/Hankyung_codingclub040815" target="_blank" >
+								<div class="news_caption">
+									<div class="blur"></div>
+									<div class="caption_text">
+										<span class="news_cate">한국경제</span>
+										<p class="news_tit"> [21세기생존법'코딩']</p>
+										<p class="news_desc">“논리와 창의성, 코딩서 배우죠”</p>
+									</div>
+								</div>
+								<span class="news_img"><img src="../static/img_summercamp/news08.png" ></span>
+							</a>
+						</li>
+					</ul>
+				</div>	
+				<!-- 뉴스 :: e -->
+			
+			</div>
+			<!-- 최근 기사 :: e -->
+		</div>
+
+
+		<div class="container">
+
+			<!-- 주니어메이커 :: s -->
+            <div class="summer_junior" id="junior">
+				<div class="tbl_info">
+					<h3><i><strong>주니어</strong><span>메이커</span></i></h3>
+
+					<div class="summary_box">
+						<table class="summary_box_inner">
+							<caption>주니어메이커</caption>	
+							<colgroup>
+								<col class="camp_th" />
+								<col class="camp_td" />
+							</colgroup>
+							<tbody>
+							<tr>
+								<th scope="row">일정/장소</th>
+								<td><strong>8/1~8/4일</strong><br>부트캠프 단계별 단위프로젝트: 매일 10-14시 세종대학교 광개토관<br><br><strong>8/13일</strong><br>데모데이 파이널프로젝트 & 발표/시연회: 8/13 토요일 10-14시 디캠프 6층<br><br>5일간 총 20시간</td>
+							</tr>
+							<tr>
+								<th scope="row">후원</th>
+								<td>세종대학교, 은행권청년창업재단 D.Camp</td>
+							</tr>
+							<tr>
+								<th scope="row">대상</th>
+								<td>소프트웨어 교육을 처음 접하거나 정규적으로 해보고 싶은 초중생 친구들</td>
+							</tr>
+							<tr>
+								<th scope="row">준비물</th>
+								<td>노트북, 마우스</td>
+							</tr>
+							<tr>
+								<th scope="row">참가비</th>
+								<td>20만원 (참가비 입금 기준 선착순 20명) </td>
+							</tr>
+						</table>
+					</div>  
+				</div>
+
+				<div class="summary_junior">
+					<div class="sum_img_junior"></div>
+					<div class="introduction">
+						<h4>소개</h4>
+						<p>
+							<i>MIT 스크래치, 네이버 엔트리로 나만의 디지털 컨텐츠를 만드는 주니어메이커, 주니어디자이너, 주니어해커 3개과정 중 첫번째 입문 프로그램!</i>
+							<span>친구들과 함께 내가 좋아하는 애니메이션, 게임, 뮤직비디오를 직접 디자인하고, 소프트웨어로 만드는 코딩클럽 주니어들의 여름방학 모임</span>
+							<span>집에서 <a href="code.org" target="_blank" >Code.org</a> 및 <a href="codely.co.kr" target="_blank" >Codely.co.kr</a> 의 블록 프로그래밍 강좌로 컴퓨터과학을 배우고, 오프라인 모임에서 나의 생각을 모둠활동을 통해 구체화해서 프로젝트로 만드는 시간</span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+			<!-- 주니어메이커 :: e -->
+				
+		</div>
+
+
+		<div class="container">
+
+			<!-- IOT메이커 :: s -->
+            <div class="summer_iot" id="iot">
+				<div class="tbl_info">
+					<h3><i><strong>IOT</strong><span>메이커</span></i></h3>
+
+					<div class="summary_box">
+						<table class="summary_box_inner">
+							<caption>IOT메이커</caption>	
+							<colgroup>
+								<col class="camp_th" />
+								<col class="camp_td" />
+							</colgroup>
+							<tbody>
+							<tr>
+								<th scope="row">일정/장소</th> 
+								<td><strong>8/8~8/11일</strong><br>부트캠프 단계별 단위프로젝트: 매일 10-14시 세종대학교 광개토관<br><strong>8/13일</strong><br>데모데이 파이널프로젝트 & 발표/시연회: 8/13 토요일 10-14시 디캠프 6층<br>5일간 총 20시간</td>
+							</tr>
+							<tr>
+								<th scope="row">후원</th>
+								<td>세종대학교, 은행권청년창업재단 D.Camp</td>
+							</tr>
+							<tr>
+								<th scope="row">대상</th>
+								<td>MIT 스크래치, 앱인벤터 등으로 소프트웨어를 만든 경험이 있고, 피지컬 도구를 사용하여 실제 제품을 만들고 싶은 초중고 청소년</td>
+							</tr>
+							<tr>
+								<th scope="row">준비물</th>
+								<td>노트북, 마우스, 아두이노키트 (다른 피지컬컴퓨팅 도구는 코딩클럽에서 준비, 대여함)<br>** 필요한 아두이노키트와 구매처는 참가자 대상 별도 공지 예정 (키트 2-3만원 예상)</td>
+							</tr>
+							<tr>
+								<th scope="row">참가비</th>
+								<td>20만원 (참가비 입금 기준 선착순 20명) </td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="summary_iot">
+					<div class="sum_img_iot"></div>
+					<div class="introduction">
+						<h4>소개</h4>
+						<p>
+							<i>MIT 앱인벤터로 안드로이드앱을 만드는 앱메이커, 앱디자이너, 앱해커 3개 과정 중 첫번째 프로그램!</i>
+							<span>친구들과 함께 즐기고 소통할 수 있는 기본적 앱을 직접 디자인하고 만드는 코딩클럽 주니어들의 여름학기 모임</span>
+							<span>센서, 디스플레이, 버튼 등 스마트폰의 핵심 기능과 레이아웃, 캔버스 등 디자인적 요소, 함수, 변수 등 기초 컴퓨터과학을 적용하여 앱을 설계하고 만드는 시간</span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+			<!-- IOT메이커 :: e -->
+
+		</div>
+
+
+		<div class="container">
+
+			<!-- 앱메이커 :: s -->
+            <div class="summer_app" id="app">
+				<div class="tbl_info">
+					<h3><i><strong>앱</strong><span>메이커</span></i></h3>
+
+					<div class="summary_box">
+						<table class="summary_box_inner">
+							<caption>앱메이커</caption>	
+							<colgroup>
+								<col class="camp_th" />
+								<col class="camp_td" />
+							</colgroup>
+							<tbody>
+							<tr>
+								<th scope="row">일정/장소</th> 
+								<td><strong>8/15~8/19일</strong><br>매일 10-14시 세종대학교 광개토관<br>1-4일 부트캠프 단계별 단위프로젝트/ 5일차 데모데이 파이널프로젝트 & 발표/시연회<br>5일간 총 20시간</td>
+							</tr>
+							<tr>
+								<th scope="row">후원</th>
+								<td>세종대학교, 은행권청년창업재단 D.Camp</td>
+							</tr>
+							<tr>
+								<th scope="row">대상</th>
+								<td>코딩클럽 주니어소프트웨어클럽 주니어메이커 (스크래치/엔트리)<br>앱메이커 (앱인벤터) 프로그램에 참여했거나 코딩경험이 있는 초중생 친구들</td>
+							</tr>
+							<tr>
+								<th scope="row">준비물</th>
+								<td>노트북, 마우스, 안드로이드 스마트폰 또는 태블릿</td>
+							</tr>
+							<tr>
+								<th scope="row">참가비</th>
+								<td>20만원 (참가비 입금 기준 선착순 20명) </td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="summary_app">
+					<div class="sum_img_app"></div>
+					<div class="introduction">
+						<h4>소개</h4>
+						<p>
+							<i>MIT 앱인벤터로 안드로이드앱을 만드는 앱메이커, 앱디자이너, 앱해커 3개 과정 중 첫번째 프로그램!</i>
+							<span>친구들과 함께 즐기고 소통할 수 있는 기본적 앱을 직접 디자인하고 만드는 코딩클럽 주니어들의 여름학기 모임</span>
+							<span>센서, 디스플레이, 버튼 등 스마트폰의 핵심 기능과 레이아웃, 캔버스 등 디자인적 요소, 함수, 변수 등 기초 컴퓨터과학을 적용하여 앱을 설계하고 만드는 시간</span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+			<!-- 앱메이커 :: e -->
+
+		</div>
+
+
 		<div class="container">
 			<h3>캠프 신청서</h3>
 				<form class="apply_form" id="apply">
@@ -539,6 +862,7 @@
       });
     });
   </script>
+ 
 </body>
 
 
