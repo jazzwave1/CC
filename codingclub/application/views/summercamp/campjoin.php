@@ -668,12 +668,7 @@
           $('#pjob').focus();
           return;
         }
-        if($.trim($('#pschool').val()) == '')
-        {
-          alert('학부모 학력을 입력해 주세요.');
-          $('#pschool').focus();
-          return;
-        }
+        
         if($.trim($('#addrcode').val()) == '')
         {
           alert('거주지역을 입력해 주세요.');
