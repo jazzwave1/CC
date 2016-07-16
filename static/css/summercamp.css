@@ -1,22 +1,22 @@
 /* ------------------------------------------------------------
-
-  코딩클럽 리뉴얼 썸머캠프 스타일
-
-  파일명 : summercamp.css
-  작성자 : Mihee Moon
-  작성일 : 2016-07-13(최종수정)
-
-  썸머캠프 스타일입니다.
-
-------------------------------------------------------------- */
+ *
+ *   코딩클럽 리뉴얼 썸머캠프 스타일
+ *
+ *     파일명 : summercamp.css
+ *       작성자 : Mihee Moon
+ *         작성일 : 2016-07-13(최종수정)
+ *
+ *           썸머캠프 스타일입니다.
+ *
+ *           ------------------------------------------------------------- */
 
 @charset "utf-8";
 
 
 
 /* ------------------------------------------
-  웹폰트
---------------------------------------------- */
+ *   웹폰트
+ *   --------------------------------------------- */
 @font-face {
     font-family: 'Spoqa Han Sans';
     font-weight: 700;
@@ -50,18 +50,18 @@
 
 
 /* ------------------------------------------
-  폰트 초기화
---------------------------------------------- */
+ *   폰트 초기화
+ *   --------------------------------------------- */
 * {font-family:'Spoqa Han Sans', 'Sans-serif' !important}
-html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6, p, span, i {color:#444;font-style:normal;font-size:18px;line-height:100%;font-weight:400;font-family:'Spoqa Han Sans', 'Sans-serif' !important;letter-spacing:0}
-
-p {margin:0 !important}
-.summercamp_join {color:#444}
-
-* {word-break:break-all}
-
-
-/* ------------------------------------------
+* html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6, p, span, i {color:#444;font-style:normal;font-size:18px;line-height:100%;font-weight:400;font-family:'Spoqa Han Sans', 'Sans-serif' !important;letter-spacing:0}
+*
+* p {margin:0 !important}
+* .summercamp_join {color:#444}
+*
+* * {word-break:break-all}
+*
+*
+*/* ------------------------------------------
   viewport
 --------------------------------------------- */
 @-webkit-viewport { width: device-width; }
@@ -73,8 +73,8 @@ p {margin:0 !important}
 
 
 /* ------------------------------------------
-  HEADER
---------------------------------------------- */
+ *   HEADER
+ *   --------------------------------------------- */
 .navbar-inverse {background:#486bed;height:62px;border:0;line-height:62px}
 .navbar-inverse .container {padding-left:0;padding-right:0}
 .navbar-right {margin-right:0}
@@ -93,8 +93,8 @@ p {margin:0 !important}
 
 
 /* ------------------------------------------
-  상단배너
---------------------------------------------- */
+ *   상단배너
+ *   --------------------------------------------- */
 .page_banner {padding-top:62px;background:url('../img_summercamp/bg_banner.png') repeat top left;width:100%}
 .page_banner:after {display:block;content:'';height:0;clear:both}
 
@@ -122,8 +122,8 @@ p {margin:0 !important}
 
 
 /* ------------------------------------------
-  신청폼
---------------------------------------------- */
+ *   신청폼
+ *   --------------------------------------------- */
 .page_cont {background:#f8f8fa;padding-bottom:62px;padding-top:110px;width:100%}
 .page_cont .container {padding-left:0;padding-right:0;margin-bottom:20px}
 .page_cont .container > h3 {background:#5277fd url('../img_summercamp/ico_apply.png') no-repeat 53px 50%;display:block;height:78px;line-height:78px;color:#fff;padding:0 53px 0 86px;font-size:24px;margin:0}
@@ -150,32 +150,32 @@ input[type=text], textarea, .form-control, .form-control:focus {-webkit-appearan
 .form-control:focus {color:#5277fd;border:0;border-bottom:1px solid #5277fd;}
 input.form-control, select.form-control {height:44px;line-height:44px;padding:0}
 textarea.form-control {
-	-webkit-box-flex:1;
-	box-flex:1;
-	-webkit-flex-grow:1;
-	flex-grow:1;
-	-webkit-flex-shrink:1;
-	flex-shrink:1;
-	display:block;
-	line-height:134%;
-	padding:14px 0 14px 0;
-	height:52px;
-	outline:none;
-	resize:none;
-	white-space:pre-wrap;
-	word-wrap:break-word;
-	z-index:0;
-	overflow-y:hidden;
-	overflow-x:hidden;	
-	-webkit-transition: height .4s ease; 
-	-moz-transition: height .4s ease; 
-	-ms-transition: height .4s ease; 
-	-o-transition: height .4s ease; 
-	transition: height .4s ease;  
+  -webkit-box-flex:1;
+  box-flex:1;
+  -webkit-flex-grow:1;
+  flex-grow:1;
+  -webkit-flex-shrink:1;
+  flex-shrink:1;
+  display:block;
+  line-height:134%;
+  padding:14px 0 14px 0;
+  height:52px;
+  outline:none;
+  resize:none;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  z-index:0;
+  overflow-y:hidden;
+  overflow-x:hidden;  
+  -webkit-transition: height .4s ease; 
+  -moz-transition: height .4s ease; 
+  -ms-transition: height .4s ease; 
+  -o-transition: height .4s ease; 
+  transition: height .4s ease;  
 }
 select.form-control {background:url('../img_summercamp/drop_down.png') no-repeat 100% 50%;-webkit-appearance:none}
 @media all and (min-width:720px) {
-	select.form-control {width:auto;min-width:200px}
+  select.form-control {width:auto;min-width:200px}
 }
 select.form-control:focus option {color:#999}
 
@@ -194,8 +194,8 @@ li.form-id a {margin-left:16px;background:#5277fd;color:#fff;font-size:14px;padd
 
 
 /* ------------------------------------------
-  버튼영역
---------------------------------------------- */
+ *   버튼영역
+ *   --------------------------------------------- */
 .text-center {background:#fff}
 .text-center a.btn {width:200px;height:53px;border:1px solid #b8c7fc;color:#5277fd;padding:16px;margin:0 0 64px 0;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-ms-border-radius:0;-khtml-border-radius:0;-o-border-radius:0}
 .text-center a.btn:hover, .text-center a.btn:active {border:1px solid #5277fd;color:#fff;background:#5277fd}
@@ -203,8 +203,8 @@ li.form-id a {margin-left:16px;background:#5277fd;color:#fff;font-size:14px;padd
 
 
 /* ------------------------------------------
-  썸머캠프
---------------------------------------------- */
+ *   썸머캠프
+ *   --------------------------------------------- */
 .summer_camp {background:#fff;display:table}
 .summer_camp:after {display:block;height:0;content:'';clear:both}
 
@@ -217,18 +217,19 @@ li.form-id a {margin-left:16px;background:#5277fd;color:#fff;font-size:14px;padd
 table {padding:0; border-spacing:0px; border:0;}
 .summary_box {display:table-cell;background:#fff;width:calc(100% - 357px);padding:0}
 .summary_box_inner {width:100%;line-height:134%}
-.camp_th {width:140px}
-.camp_td {width:calc(100% - 140px)}
+.camp_th, .summary_box_inner th {width:140px}
+.camp_td, .summary_box_inner td {width:calc(100% - 140px)}
 .summary_box_inner th {background:#fff;padding:18px 18px 14px 18px;color:#5277fd;font-weight:normal;border-right:1px solid #ececec;border-bottom:1px solid #ececec;vertical-align:top}
 .summary_box_inner td {background:#fff;padding:18px 18px 14px 18px;color:#666;border-bottom:1px solid #ececec;vertical-align:top}
 .summary_box_inner tr:last-child th, .summary_box_inner tr:last-child td {border-bottom:0}
 
 .summary_program {}
 .program_box {width:100%}
-.program_list {width:33%;width:calc(100% / 3)}
+.program_list, .program_box th, .program_box td {width:33%;width:calc(100% / 3)}
 .program_box th img {width:100%}
 .program_box td {padding:0 41px;vertical-align:top}
 .program_box td h4 {margin:32px 0 22px 0;color:#3150bf;font-size:24px}
+.program_box td h4 i {text-decoration:underline}
 .program_box td p {margin:0 0 30px 0 !important;color:#666;font-size:18px;line-height:134%;text-align:justify}
 .program_box tr:last-child td  {padding-bottom:26px}
 .program_box td a {display:inline-block;background:url() no-repeat 100% 50%;color:#4d70f0}
@@ -240,13 +241,13 @@ table {padding:0; border-spacing:0px; border:0;}
 .hackathon p {background:#ff5f5f;display:table-cell;width:calc(100% - 357px);padding:30px 53px 29px 21px;line-height:134%;color:#fff;text-align:justify}
 .hackathon p > i, .hackathon p > span {display:block;color:#fff}
 .hackathon p > i {font-style:normal;font-size:34px;font-weight:200;margin-bottom:20px}
-.hackathon p > span {color:#fff;font-size:20px}
+.hackathon p > span {color:#fff;font-size:20px;line-height:120%}
 
 
 
 /* ------------------------------------------
-  뉴스
---------------------------------------------- */
+ *   뉴스
+ *   --------------------------------------------- */
 .latest_news {display:block;background:rgba(44, 222, 136, .8)}
 .latest_news h3 {display:none;color:#fff;padding:10px 15px 0 15px}
 .news ul {margin:0;padding:0}
@@ -273,6 +274,7 @@ table {padding:0; border-spacing:0px; border:0;}
 /*.summary_img img {width:100%}*/
 .introduction {display:table-cell;vertical-align:top;padding:30px;width:375px}
 .introduction h4 {font-size:24px;margin-bottom:16px;font-weight:700;color:#3150bf}
+.introduction p {text-align:justify}
 .introduction p span {color:#666;line-height:134%;margin-bottom:26px;display:inline-block}
 .introduction p span:last-child {margin-bottom:0}
 .introduction p i {text-decoration:underline;color:#4c6fed;margin-bottom:26px;display:inline-block;line-height:134%}
@@ -284,90 +286,130 @@ table {padding:0; border-spacing:0px; border:0;}
 
 
 @media all and (max-width:1200px) { 
-	.caption_text {padding-top:40px}
-	.news_cate {margin-bottom:30px}
+  .caption_text {padding-top:40px}
+  .news_cate {margin-bottom:30px}
 }
 @media all and (max-width:1080px) {
-	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left:-15px;padding-left:46px}
+  .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left:-15px;padding-left:46px}
 
-	.camp_info {top:65px}
-	.camp_info span {display:block}
-	.jusocle {margin-bottom:0}
-	.x {margin-bottom:20px}
-	.sejong {margin-bottom:30px}
+  .camp_info {top:65px}
+  .camp_info span {display:block}
+  .jusocle {margin-bottom:0}
+  .x {margin-bottom:20px}
+  .sejong {margin-bottom:30px}
 }
 @media all and (max-width:919px) {
-	.tbl_info h3 {display:block;width:100%;padding:10px 20px}
-	.tbl_info h3 i strong, .tbl_info h3 i span {display:inline;margin-right:10px;font-size:24px}
+  .tbl_info h3 {display:block;width:100%;padding:10px 20px}
+  .tbl_info h3 i strong, .tbl_info h3 i span {display:inline;margin-right:10px;font-size:24px}
 
-	.summary_box {display:block;width:100%}
-	.sum_img_junior, .sum_img_iot, .sum_img_app {display:block;width:100%;height:20em}
-	.introduction {display:block;width:100%}
+  .summary_box {display:block;width:100%}
+  .sum_img_junior, .sum_img_iot, .sum_img_app {display:block;width:100%;height:20em}
+  .introduction {display:block;width:100%;padding:20px}
 }
 @media all and (max-width:800px) {
-	html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6, p, span, i {font-size:14px}
-	
-	.navbar-inverse .container {padding-right:15px !important;padding-left:15px !important}
-	.navbar-toggle {margin-top:14px}
-	.page_banner .container, .page_cont .container {padding-left:15px;padding-right:15px;}
+  html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6, p, span, i {font-size:14px}
+  
+  .navbar-inverse .container {padding-right:15px !important;padding-left:15px !important}
+  .navbar-toggle {margin-top:14px}
+  .page_banner .container, .page_cont .container {padding-left:15px;padding-right:15px;}
 
-	.camp_txt h3 {width:257px;padding:32px 0 23px 33px;font-size:24px}
-	.camp_txt h3 i {font-size:40px;margin-top:20px;font-size:40px}
-	.camp_txt p {float:left;width:calc(100% - 257px);padding:32px 33px 33px 21px;line-height:134%}
-	.camp_intro h3 {width:257px;padding:15px 0 14px 33px;font-size:18px;line-height:130%}
-	.camp_intro p {width:calc(100% - 257px);padding:15px 33px 14px 21px;line-height:134%}
-	
-	.page_cont > container > h3 {background:#5277fd url('../img_summercamp/ico_apply.png') no-repeat 23px 50%;background-size:auto 28%;height:58px;line-height:58px;padding:0 33px 0 46px;font-size:18px}
-	.privacy {padding:26px 33px}
-	.form-cont li {padding:23px 33px 10px 33px}
-	.form-cont li label {margin-bottom:8px;font-size:16px}
-	input.form-control, select.form-control, textarea.form-control {font-size:14px;margin-bottom:27px}
-	input.form-control, select.form-control {height:34px;line-height:34px}
-	.form-cont li .radio {margin-bottom:0}
-	.form-cont li .radio label, .form-cont li .checkbox label {font-size:14px}
-	.text-center a.btn {font-size:16px;width:120px;height:43px;padding:11px;margin:0 0 34px 0}
+  .camp_txt h3 {width:257px;padding:32px 0 23px 33px;font-size:24px}
+  .camp_txt h3 i {font-size:40px;margin-top:20px;font-size:40px}
+  .camp_txt p {float:left;width:calc(100% - 257px);padding:32px 33px 33px 21px;line-height:134%}
+  .camp_intro h3 {width:257px;padding:15px 0 14px 33px;font-size:18px;line-height:130%}
+  .camp_intro p {width:calc(100% - 257px);padding:15px 33px 14px 21px;line-height:134%}
+  
+  .page_cont > container > h3 {background:#5277fd url('../img_summercamp/ico_apply.png') no-repeat 23px 50%;background-size:auto 28%;height:58px;line-height:58px;padding:0 33px 0 46px;font-size:18px}
+  .privacy {padding:26px 33px}
+  .form-cont li {padding:23px 33px 10px 33px}
+  .form-cont li label {margin-bottom:8px;font-size:16px}
+  input.form-control, select.form-control, textarea.form-control {font-size:14px;margin-bottom:27px}
+  input.form-control, select.form-control {height:34px;line-height:34px}
+  .form-cont li .radio {margin-bottom:0}
+  .form-cont li .radio label, .form-cont li .checkbox label {font-size:14px}
+  .text-center a.btn {font-size:16px;width:120px;height:43px;padding:11px;margin:0 0 34px 0}
 
-	.program_box td {padding:0 20px;}
-	.program_box td h4 {font-size:20px}
-	.program_box td p {font-size:14px}
+  .program_box td {padding:0 20px;}
+  .program_box td h4 {font-size:20px}
+  .program_box td p {font-size:14px}
 
-	.caption_text {padding-top:20px}
-	.news_cate, .news_desc {font-size:14px}
-	.news_tit {font-size:18px}
+  .caption_text {padding-top:20px}
+  .news_cate, .news_desc {font-size:14px}
+  .news_tit {font-size:18px}
+
+  .camp_th, .summary_box_inner th {width:100px}
+  .camp_td, .summary_box_inner td {width:calc(100% - 100px)}
 }
 @media all and (max-width:768px) {
-	.navbar-inverse .navbar-nav>li {text-align:center}
-	.navbar-inverse .navbar-nav>li>a {display:inline-block;margin:0}
+  .navbar-inverse .navbar-nav>li {text-align:center}
+  .navbar-inverse .navbar-nav>li>a {display:inline-block;margin:0}
+
+  .hackathon h3 {width:30%;padding:10px 0 14px 22px;font-size:18px}
+  .hackathon h3 i {font-size:24px}
+  .hackathon p {width:70%;padding:20px 22px 14px 21px}
+  .hackathon p i {font-size:24px;margin-bottom:10px}
+  .hackathon p span {font-size:16px}
 }
 @media all and (max-width:720px) {
-	.camp_info h2 {line-height:44px;margin:10px 0 21px 0}
-	.camp_info span {font-size:44px}
-	.jusocle, .x {margin-bottom:10px;margin-right:0}
-	.sejong {margin-bottom:30px}
-	.camp_info span.term {font-size:24px}
+  .camp_info h2 {line-height:44px;margin:10px 0 21px 0}
+  .camp_info span {font-size:44px}
+  .jusocle, .x {margin-bottom:10px;margin-right:0}
+  .sejong {margin-bottom:30px}
+  .camp_info span.term {font-size:24px}
+
+  .summer_camp {height:1524px}
+  .program_box {position:relative}
+  .program_list, .program_box th, .program_box td {width:100%;display:block}
+  .program_box th {width:100%;height:200px;display:block;position:relative}
+  .program_box th img {display:none}
+  .program_box th:nth-child(1) {background:url('../img_summercamp/sum_junior.png') no-repeat 50% 50%;background-size:cover}
+  .program_box th:nth-child(2) {background:url('../img_summercamp/sum_iot.png') no-repeat 50% 50%;background-size:cover;top:200px}
+  .program_box th:nth-child(3) {background:url('../img_summercamp/sum_app.png') no-repeat 50% 50%;background-size:cover;top:440px}
+  .program_box tr:nth-child(1) td:nth-child(1) {position:absolute;top:200px}
+  .program_box tr:nth-child(2) td:nth-child(1) {position:absolute;top:364px}
+  .program_box tr:nth-child(1) td:nth-child(2) {position:absolute;top:600px}
+  .program_box tr:nth-child(2) td:nth-child(2) {position:absolute;top:802px}
+  .program_box tr:nth-child(1) td:nth-child(3) {position:absolute;top:1040px}
+  .program_box tr:nth-child(2) td:nth-child(3) {position:absolute;top:1190px}
 }
 @media all and (max-width:640px) {
-	.camp_txt h3 {width:100%;display:block;clear:both;padding:32px 33px 23px 33px;font-size:36px}
-	.camp_txt h3 i {width:100%;display:block;clear:both;font-size:40px;margin-top:20px;font-size:60px}
-	.camp_txt p {width:100%;display:block;clear:both;padding:22px 21px 23px 21px}
-	.camp_intro h3 {width:100%;display:block;clear:both;padding:15px 21px 14px 21px}
-	.camp_intro p {width:100%;display:block;clear:both;padding:15px 21px 14px 21px}
+  .camp_txt h3 {width:100%;display:block;clear:both;padding:32px 33px 23px 33px;font-size:36px}
+  .camp_txt h3 i {width:100%;display:block;clear:both;font-size:40px;margin-top:20px;font-size:60px}
+  .camp_txt p {width:100%;display:block;clear:both;padding:22px 21px 23px 21px}
+  .camp_intro h3 {width:100%;display:block;clear:both;padding:15px 21px 14px 21px}
+  .camp_intro p {width:100%;display:block;clear:both;padding:15px 21px 14px 21px}
 
-	.news li {width:50%;width:calc(100% / 2)}
-	.caption_text {padding-top:60px}
+  .news li {width:50%;width:calc(100% / 2)}
+  .caption_text {padding-top:60px}
+
+  .hackathon h3 {width:50%;padding:10px 0 14px 22px;font-size:18px}
+  .hackathon h3 i {font-size:24px}
+  .hackathon p {width:50%;padding:20px 22px 14px 21px}
+  .hackathon p i {font-size:24px;margin-bottom:10px}
+  .hackathon p span {font-size:16px}
+}
+@media all and (max-width:480px) {
+  .hackathon h3 {width:50%}
+  .hackathon p {width:50%}
+
+  .camp_th, .summary_box_inner th {width:calc(100% - 30px);display:block;border-bottom:0;padding:0 0 4px 0;border-bottom:0;margin:18px 15px 0 15px;border-right:0}
+  .camp_th, .summary_box_inner th:before {display:block;width:14px;height:1px;content:'';background:#5277fd;margin-bottom:4px}
+  .camp_td, .summary_box_inner td {width:100%;display:block;padding-top:10px;border-bottom:1px solid #ececec}
+
+  .summer_camp {height:1670px}
 }
 @media all and (max-width:414px) {
-	.camp_info h2 {line-height:30px;margin:0 0 21px 0}
-	.camp_info span {font-size:30px}
-	.camp_info span.term {font-size:18px}
+  .camp_info h2 {line-height:30px;margin:0 0 21px 0}
+  .camp_info span {font-size:30px}
+  .camp_info span.term {font-size:18px}
 
-	.camp_txt h3 {font-size:24px;padding:22px 16px 0 16px}
-	.camp_txt h3 i {margin-top:20px;font-size:40px}
+  .camp_txt h3 {font-size:24px;padding:22px 16px 0 16px}
+  .camp_txt h3 i {margin-top:20px;font-size:40px}
 
-	.privacy {padding:13px 16px}
-	.form-cont li {padding:13px 16px 10px 16px}
-	input.form-control, select.form-control, textarea.form-control {margin-bottom:17px}
-	textarea.form-control {height:42px}
+  .privacy {padding:13px 16px}
+  .form-cont li {padding:13px 16px 10px 16px}
+  input.form-control, select.form-control, textarea.form-control {margin-bottom:17px}
+  textarea.form-control {height:42px}
 }
 
 
