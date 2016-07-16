@@ -808,6 +808,7 @@
           ,function(data, status){
             if(status == 'success' && data.code == 1)
             {
+              alert('신청이 완료 되었습니다.');
               window.location.replace("http://codingclubs.org"); 
             }
             else if(data.code == 999)
