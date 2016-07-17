@@ -37,8 +37,8 @@ class Membership_model extends CI_model
       'name'   => 'MemberInfo',
       'value'  => json_encode(array('accountID' => $accountID, 'usn' => $usn)),
       'expire' => '86500',
-      //'domain' => '.codingclubs.org',
-      'domain' => 'localhost',
+      'domain' => '.codingclubs.org',
+      //'domain' => 'localhost',
       'prefix' => 'codingclub_', 
     );
     set_cookie($cookie); 
