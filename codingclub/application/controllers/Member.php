@@ -46,8 +46,7 @@ class Member extends CI_Controller {
       $this->load->view('member/member_layout', $data);
     }
   }/*}}}*/
-
-    
+  
   public function mypage()/*{{{*/
   {
     $sUserInfo = getCookieInfo();
@@ -55,7 +54,8 @@ class Member extends CI_Controller {
    
     if(!$oUserInfo->usn)
     {
-      header('Location: http://localhost/~leehojun/CC/codingclub/Login'); 
+      //header('Location: http://localhost/~leehojun/CC/codingclub/Login'); 
+      header('Location: http://member.codingclubs.org/Login'); 
     }
     else
     {
