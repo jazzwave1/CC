@@ -598,6 +598,15 @@
           return;
         }
 
+        var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+        var strValue = $('#account_id').val(); 
+        if (!strValue.match(regExp))
+        {
+          alert( "ID는 이메일 형식으로 입력하세요");
+          $('#account_id').focus();
+          return;
+        }
+
         var course_idx = $("input:checkbox[name=course_idx1]:checked").val() + '|' 
              + $("input:checkbox[name=course_idx2]:checked").val() + '|' 
              + $("input:checkbox[name=course_idx3]:checked").val();
