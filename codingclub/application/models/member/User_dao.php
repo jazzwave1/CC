@@ -54,6 +54,11 @@ class User_dao extends Common_dao
     $aConfig = $this->queryInfoMem['setMemberSVC'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
+  public function getMemberSVCInfo($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['getMemberSVC'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
 
   public function updateAccountConfirm($aParam='')
   {

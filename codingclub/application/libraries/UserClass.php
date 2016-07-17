@@ -32,6 +32,7 @@ class UserClass {
       
       $this->oAccountInfo = $this->getAccountInfo($this->usn);
       $this->oUserInfo    = $this->getUserInfo($this->usn);
+      $this->aMemberSVC   = $this->getMemberSVCInfo($this->usn); 
     }/*}}}*/
  
     public function getAccountInfo($usn)/*{{{*/
@@ -40,17 +41,6 @@ class UserClass {
       
       $result = $this->user_model->getAccountInfo($usn);
       return $result[0];
-    }/*}}}*/
-    public function getUserInfo($usn)/*{{{*/
-    {
-      if(!$usn) return false;
-      
-      $result = $this->user_model->getUserInfo($usn);
-      return $result[0];
-    }/*}}}*/
-    public function setUserInfo($aParam=array())/*{{{*/
-    {
-      return $this->user_model->setUserInfo($aParam) ;
     }/*}}}*/
     public function setAccountInfo($aParam=array())/*{{{*/
     {
@@ -63,6 +53,17 @@ class UserClass {
         return $aResult[0]->usn;
       } 
     }/*}}}*/
+    public function getUserInfo($usn)/*{{{*/
+    {
+      if(!$usn) return false;
+      
+      $result = $this->user_model->getUserInfo($usn);
+      return $result[0];
+    }/*}}}*/
+    public function setUserInfo($aParam=array())/*{{{*/
+    {
+      return $this->user_model->setUserInfo($aParam) ;
+    }/*}}}*/
     public function setQuestionInfo($aParam=array())/*{{{*/
     {
       return $this->user_model->setQuestionInfo($aParam) ;
@@ -70,6 +71,10 @@ class UserClass {
     public function setMemberSVCInfo($aParam=array())/*{{{*/
     {
       return $this->user_model->setMemberSVCInfo($aParam);
+    }/*}}}*/
+    public function getMemberSVCInfo($usn)/*{{{*/
+    {
+      return $this->user_model->getMemberSVCInfo($usn);
     }/*}}}*/
 } 
 ?>

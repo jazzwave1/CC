@@ -1,29 +1,49 @@
 <div class="col-md-12">
   <div class="box-header">
-    <h3 class="box-title">수강기록</h3>
+    <h3 class="box-title">My Info</h3>
   </div>
-  <!-- /.box-header -->
-  <div class="box-body no-padding">
-    <table class="table table-striped">
-      <tr>
-        <th style="width: 10px">#</th>
-        <th>수강명</th>
-        <th>기간</th>
-        <th>상태</th>
-      </tr>
-      <tr>
-        <td>1.</td>
-        <td>주니어메이커</td>
-        <td>2016 / 06 / 10 ~ 2016 / 06 / 30</td>
-        <td>수강중</td>
-      </tr>
-      <tr>
-        <td>2.</td>
-        <td>앱메이커</td>
-        <td>2016 / 05 / 10 ~ 2016 / 05 / 30</td>
-        <td>완료</td>
-      </tr>
-    </table>
+  
+  <div class="col-md-4">
+    <div class="box box-widget widget-user-2">
+      <!-- Add the bg color to the header using any of the bg-* classes -->
+      <div class="widget-user-header bg-yellow">
+        <div class="widget-user-image">
+          <!--img class="img-circle" src="../dist/img/user7-128x128.jpg" alt="User Avatar"-->
+        </div>
+        <!-- /.widget-user-image -->
+        <h3 class="widget-user-username"><?=$oUserInfo->name?></h3>
+        <h5 class="widget-user-desc"><?=$oUserInfo->school?>&nbsp;<?=$oUserInfo->grde?></h5>
+      </div>
+      <div class="box-footer no-padding">
+        <ul class="nav nav-stacked">
+          <li><a>거주지역 : <?=$oUserInfo->addrcode?></a></li>
+          <li><a>부모님이름 : <?=$oUserInfo->pname?></a></li>
+          <li><a>부모님전화번호 : <?=$oUserInfo->php?></a></li>
+          <li><a>부모님이메일 : <?=$oUserInfo->pemail?></a></li>
+          <li><a>부모님전공 : <?=$oUserInfo->pjob?></a></li>
+          <li><a>가입일 : <?=$oUserInfo->regdate?></a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <!-- /.box-body -->
+  <div class="col-md-8">
+    <div class="box-body no-padding">
+      <table class="table table-striped">
+        <tr>
+          <th style="width: 10px">#</th>
+          <th>수강명</th>
+          <th>상태</th>
+        </tr>
+<?php   foreach($aMemberSVC as $key=>$val){ 
+        echo ' 
+        <tr>
+          <td></td>
+          <td>'.$val->name.'</td>
+          <td>'.$val->state.'</td>
+        </tr>';
+        }
+?>
+      </table>
+    </div>
+  </div>
 </div>

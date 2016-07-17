@@ -4,7 +4,6 @@ class User_model extends CI_model
   public function __construct()
   {
     $this->user_dao = cc_get_instance('member/user_dao', 'model'); 
-    $this->membership_model = cc_get_instance('member/membership_model', 'model'); 
   }
  
   public function getAccountInfo($usn)/*{{{*/
@@ -25,7 +24,8 @@ class User_model extends CI_model
   }/*}}}*/
   public function setAccountInfo($aParam)/*{{{*/
   {
-    $aParam['pwd'] = $this->membership_model->getMkPWD($aParam['pwd']);  
+    $user = cc_get_instance('MemberLibClass');
+    $aParam['pwd'] = MemberLibClass::getMKPwd($aParam['pwd']);
 
     if($this->user_dao->setAccount($aParam))
       return true;
@@ -38,7 +38,15 @@ class User_model extends CI_model
     
     $aInput = array('usn' => $usn);
 
-    return $this->user_dao->getUserInfo($aInput); 
+    $aResult = $this->user_dao->getUserInfo($aInput); 
+ 
+    $aMemConfig = cc_get_config('Mem', 'code');
+    foreach($aResult as $key=>$val)
+    {
+      $val->grde= $aMemConfig[$val->grde]; 
+    }
+    return $aResult;
+  
   }/*}}}*/
   public function setUserInfo($aParam)/*{{{*/
   {
@@ -71,12 +79,19 @@ class User_model extends CI_model
     return true; 
   }/*}}}*/
 
-  public function chkID($accountID)/*{{{*/
+  public function getMemberSVCInfo($usn)
   {
-    if(!$accountID)
-      return false;
-
-    return $this->membership_model->chkID($accountID);
-  }/*}}}*/
+    if(!$usn) return false;
+    
+    $aInput = array('usn' => $usn);
+    $aMemConfig = cc_get_config('Mem', 'code');
+    $aResult = $this->user_dao->getMemberSVCInfo($aInput) ; 
+    foreach($aResult as $key=>$val)
+    {
+      $val->state = $aMemConfig[$val->state]; 
+    }
+    return $aResult;
+  }
+  
 }
 ?>

@@ -2,7 +2,7 @@
         <p class="login-box-msg">Sign in to start your session</p>
           
         <div class="form-group has-feedback">
-          <input type="email" id="account_id" class="form-control" placeholder="Email">
+          <input type="email" id="account_id" class="form-control" placeholder="ID">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
@@ -21,7 +21,8 @@
         $('#bLogin').click(function(){
         
           $.post(
-            "http://localhost/~leehojun/CC/codingclub/Login/rpcCheckLogin"
+            //"http://localhost/~leehojun/CC/codingclub/Login/rpcCheckLogin"
+            "http://member.codingclubs.org/Login/rpcCheckLogin"
             ,{
                "account_id" : $('#account_id').val()
               ,"passwd" : $('#passwd').val()
@@ -29,7 +30,8 @@
             ,function(data, status){
               if(status == 'success' && data.code == 1)
               {
-                window.location.replace("http://localhost/~leehojun/CC/codingclub/Course"); 
+                //window.location.replace("http://localhost/~leehojun/CC/codingclub/Member/mypage"); 
+                window.location.replace("http://member.codingclubs.org/Member/mypage"); 
               }
               else
               {

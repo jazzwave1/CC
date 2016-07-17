@@ -44,10 +44,6 @@ class Membership_model extends CI_model
     set_cookie($cookie); 
     return; 
   }/*}}}*/
-  public function getMkPWD($passwd)/*{{{*/
-  {
-    return $this->_getMkPwd($passwd);  
-  }/*}}}*/
   public function chkID($accountID)/*{{{*/
   {
     if(!$accountID) return false;
@@ -69,20 +65,21 @@ class Membership_model extends CI_model
       $this->_sendMail($accountID, $courseIDX);
     return;
   }/*}}}*/
-  public function setConfirm($usn)
+  public function setConfirm($usn)/*{{{*/
   {
     if(!$usn) return false;
     
     $this->user_dao->updateAccountConfirm(array('regdate'=>date('YmdHis'),'usn'=>$usn));
-  }
-  public function chkConfirm($usn, $fingerprint)
+  }/*}}}*/
+  public function chkConfirm($usn, $fingerprint)/*{{{*/
   {
     $mkFingerPrint = $this->_getFingerPrint($usn); 
     if($mkFingerPrint == $fingerprint)
       return true;
     else
       return false;
-  }
+  }/*}}}*/
+ 
   private function _sendMail($accountID, $courseIDX)/*{{{*/
   {
     if(!$accountID || !$courseIDX) return false;
@@ -127,12 +124,6 @@ class Membership_model extends CI_model
     $aResult = $this->user_dao->getID($aInput);
     return $aResult[0]->cnt; 
   } /*}}}*/
-  private function _getMkPwd($passwd)/*{{{*/
-  {
-    if(!$passwd) return false;
-
-    return md5("coding".$passwd."club");
-  } /*}}}*/
   private function _getPwdDB($accountID)/*{{{*/
   {
     if(!$accountID) return false;
@@ -148,10 +139,10 @@ class Membership_model extends CI_model
    
     if(! $oAccountInfo= $this->_getPwdDB($accountID))
       return false;
-
-    if(! $sMkPWD = $this->_getMkPwd($passwd))
-      return false;
-   
+    
+    $user = cc_get_instance('MemberLibClass');
+    $sMkPWD = MemberLibClass::getMKPwd($passwd);
+  
     if($oAccountInfo->pwd == $sMkPWD)
       return $oAccountInfo->usn;
     else
@@ -165,6 +156,7 @@ class Membership_model extends CI_model
 
     return $this->log_model->setLoginLog($usn, $accountID);
   }/*}}}*/
+
 }
 
 ?>

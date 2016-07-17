@@ -23,7 +23,7 @@ $config['query'] = array(
       ,'null' => array() 
     )
     ,'getUserInfo' => array( 
-      'query' => 'SELECT usn, name, hp, school, grde, addrcode, pusn 
+      'query' => 'SELECT usn, name, school, grde, addrcode, pname, php, pemail, pjob, regdate 
                     FROM users 
                    WHERE usn=?'
       ,'data' => array('usn')
@@ -67,6 +67,15 @@ $config['query'] = array(
       ,'data' => array( 'usn', 'course_idx', 'state', 'regdate')
       ,'btype'=> 'iiss'
       ,'null' => array()
+    )
+    ,'getMemberSVC' => array( 
+      'query' => 'SELECT m.course_idx, m.state, c.name 
+                    FROM member_svc m , course c
+                   WHERE m.course_idx = c.idx 
+                     AND m.usn = ? '
+      ,'data' => array('usn')
+      ,'btype'=> 'i'
+      ,'null' => array() 
     )
     ,'setQuestionInfo' => array( 
       'query' => 'INSERT INTO questionnaire( usn, course_idx, recommend, motive, like_tf, experience, nature, favor, jr_hope, channel, club_hope, inquiry, exprogram)
