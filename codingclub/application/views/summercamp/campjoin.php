@@ -576,7 +576,11 @@
 					</div>
 				</form>
 				
-				<div class="text-center">
+				
+        <div class="text-center">
+          <label>신청버튼 클릭 후 잠시만 기다려 주세요<br>Email ID 로 본인확인 메일이 발송됩니다.<br>Mail 내용중 본인확인링크를 눌러주세요 </label>
+				</div>
+        <div class="text-center">
 					<a class="btn btn-default btn-lg" name="bSend" id="bSend">신청</a>
 				</div>
 			</div>

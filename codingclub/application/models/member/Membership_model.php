@@ -95,20 +95,32 @@ class Membership_model extends CI_model
     // make url sting
     $sURL = "http://member.codingclubs.org/Member/chkConfirm/".$usn."/".$sFingerPrint;
     
-    $this->load->library('email');
+    $config['mailtype'] = "html"; 
+    $config['charset'] = "utf-8"; 
+    $config['protocol'] = "smtp"; 
+    $config['smtp_host'] = "ssl://smtp.googlemail.com"; 
+    $config['smtp_port'] = 465; 
+    $config['smtp_user'] = "jazzwave14@gmail.com"; 
+    $config['smtp_pass'] = "dlghwns0610()("; 
+    $config['smtp_timeout'] = 10; 
 
-    $this->email->from('contact.codingclub@gmail.com', 'CodingClub');
+    $content = "안녕하세요 코딩클럽입니다.";
+    $content .= "<br>";
+    $content .= "* 신청과목 : ".$aCourse[0]->name ;
+    $content .= "<br>";
+    $content .= "* 본인확인 인증 링크 :{unwrap} ".$sURL."{/unwrap}";
+
+    $this->load->library('email', $config); 
+    $this->email->set_newline("\r\n"); 
+    $this->email->clear(); 
+    $this->email->from("contact.codingclub@gmail.com,jazzwave14@gmail.com", "CodingClub"); 
     $this->email->to($accountID); 
-    //$this->email->cc('another@another-example.com'); 
-    //$this->email->bcc('them@their-example.com'); 
+    $this->email->subject("[코딩클럽] 가입 및 수강신청 확인"); 
+    $this->email->message($content);
 
-    $this->email->subject('[코딩클럽] 가입 및 수강신청 확인');
-    $this->email->message(
-    '안녕하세요 코딩클럽입니다.
-    * 신청과목 : '.$aCourse[0]->name.'
-    * 본인확인 인증 링크 :{unwrap} '.$sURL.'{/unwrap}');  
-
-    $this->email->send();
+    $this->email->send(); 
+     
+    $this->email->set_newline("\r\n"); 
     return;
   }/*}}}*/
   private function _getFingerPrint($usn)/*{{{*/
