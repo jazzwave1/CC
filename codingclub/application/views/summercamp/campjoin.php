@@ -836,7 +836,7 @@
           ,function(data, status){
             if(status == 'success' && data.code == 1)
             {
-              alert('신청이 완료 되었습니다.');
+              alert("신청이 완료 되었습니다. \n본인확인 메일이 발송 되었습니다.\n메일에 있는 본인확인 링크를 눌러 주세요\n감사합니다.");
               window.location.replace("http://codingclubs.org"); 
             }
             else if(data.code == 999)
