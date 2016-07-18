@@ -458,6 +458,10 @@
 							<label><input type="checkbox" id="agree" name="agree">&nbsp;개인정보 수집에 동의하십니까?</label>
 							<span>프로그램 신청자 사전조사 및 그룹편성, 운영, 프로그램 공지 및 관련 정보 공유를 목적으로 한 수집입니다. 이 외의 용도로 사용하지 않습니다.<i>*</i></span>
 						</p>
+						<p class="privacy">
+							<label><input type="checkbox" id="agree2" name="agree2">&nbsp;본 프로그램 참여 시 회원 및 신청자, 참가자의 사진, 영상 및 프로젝트 결과물 등이 코딩클럽 활동에 활용될 수 있습니다. 동의 하십니까?</label>
+							<span>회원 및 신청자, 참가자, 운영자의 활동 공유는 코딩클럽 교육활동의 중요 가치이므로 참가시 동의 필요한 점 양해 부탁드립니다.<i>*</i></span>
+						</p>
 						<ul class="form-cont">
 							<li class="form-id">
 								<label>ID <i>*</i></label>
@@ -576,7 +580,12 @@
 					</div>
 				</form>
 				
-				
+	      <div class="text-center">
+          <label><i>*</i> 항목은 필수 작성 필요 문항입니다.</label>
+				</div>
+        <div class="text-center">
+          <label></label>
+        </div>
         <div class="text-center">
           <label>신청버튼 클릭 후 잠시만 기다려 주세요<br>Email ID 로 본인확인 메일이 발송됩니다.<br>Mail 내용중 본인확인링크를 눌러주세요 </label>
 				</div>
@@ -601,7 +610,12 @@
           $('#agree').focus();
           return;
         }
-
+        if ($("input:checkbox[id='agree2']").is(":checked") == false)
+        {
+          alert('활용동의 해 주세요');
+          $('#agree2').focus();
+          return;
+        }
         var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
         var strValue = $('#account_id').val(); 
         if (!strValue.match(regExp))
