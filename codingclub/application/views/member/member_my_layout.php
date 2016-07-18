@@ -7,16 +7,16 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://member.codingclubs.org/img/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="http://member.codingclubs.org/img/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="http://member.codingclubs.org/img/dist/css/skins/_all-skins.min.css">
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -142,20 +142,20 @@
     <![endif]-->
   </head>
   <!-- jQuery 2.2.0 -->
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+  <script src="http://member.codingclubs.org/img/plugins/jQuery/jQuery-2.2.0.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/bootstrap/js/bootstrap.min.js"></script>
+  <script src="http://member.codingclubs.org/img/bootstrap/js/bootstrap.min.js"></script>
   <!-- DataTables -->
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="http://member.codingclubs.org/img/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="http://member.codingclubs.org/img/plugins/datatables/dataTables.bootstrap.min.js"></script>
   <!-- SlimScroll -->
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <script src="http://member.codingclubs.org/img/plugins/slimScroll/jquery.slimscroll.min.js"></script>
   <!-- FastClick -->
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/plugins/fastclick/fastclick.js"></script>
+  <script src="http://member.codingclubs.org/img/plugins/fastclick/fastclick.js"></script>
   <!-- AdminLTE App -->
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/dist/js/app.min.js"></script>
+  <script src="http://member.codingclubs.org/img/dist/js/app.min.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="http://localhost/~leehojun/CC/static/AdminLTE-2.3.0/dist/js/demo.js"></script>
+  <script src="http://member.codingclubs.org/img/dist/js/demo.js"></script>
   <!-- page script -->
   <script>
   
