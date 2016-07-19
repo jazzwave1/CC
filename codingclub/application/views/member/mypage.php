@@ -63,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./"><strong>CodingClub</strong>Membership</a>
+          <a class="navbar-brand" href="http://codingclubs.org"><strong>CodingClub</strong>Membership</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
