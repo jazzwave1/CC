@@ -33,7 +33,8 @@ class Member extends CI_Controller {
 
     if(!$oUserInfo->usn)
     {
-      header('Location: http://localhost/~leehojun/CC/codingclub/Login'); 
+      //header('Location: http://localhost/~leehojun/CC/codingclub/Login'); 
+      //header('Location: http://member.codingclubs.org/Login'); 
     }
     else
     {
@@ -59,27 +60,20 @@ class Member extends CI_Controller {
     }
     else
     {
-      //print_r($oUserInfo);
-      
       $user = cc_get_instance('UserClass');
       $oUser = new $user($oUserInfo->accountID);
-
-      //print_r($oUser);
-
     }
    
     $aContents = array(
        'oAccount'   => $oUser->oAccountInfo
       ,'oUserInfo'  => $oUser->oUserInfo
       ,'aMemberSVC' => $oUser->aMemberSVC
+      ,'login'      => 'display:none'
+      ,'logout'     => ''
     );
       
-    $data = array(
-       'contents' => $this->load->view('member/mypage', $aContents, true) 
-      //,'pagename' => 'Join Account Info' 
-    );
+    $this->load->view('member/mypage', $aContents); 
 
-    $this->load->view('member/member_my_layout', $data);
   }/*}}}*/
 
 // 2016 8 SummerCamp

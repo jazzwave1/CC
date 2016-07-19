@@ -20,7 +20,10 @@ class Membership_model extends CI_model
     {
       // chk cookie
       if(getCookieInfo())
+      {
+        $this->load->helper('cookie');
         delete_cookie("codingclub_MemberInfo");
+      }
 
       // set cookie
       $this->sCookie($usn, $accountID); 

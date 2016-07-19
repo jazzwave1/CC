@@ -43,6 +43,13 @@ class Login extends CI_Controller {
       else
         response_json(array("code"=>0,"msg"=>"Fail"));
     }/*}}}*/
+    public function rpcLogout()
+    {
+      $this->load->helper('cookie');
+      delete_cookie("codingclub_MemberInfo");
+      response_json(array("code"=>1,"msg"=>"OK"));
+      die; 
+    }
     private function _chkLogin($account_id, $passwd)/*{{{*/
     {
       if(!$account_id || !$passwd)
