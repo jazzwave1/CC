@@ -49,9 +49,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
-            <li><a href="" >Program</a></li>
+            <!--li><a href="" >Program</a></li-->
             <li class="active"><a href="">Apply</a></li>
-            <li><a href="">Location</a></li>
+            <!--li><a href="">Location</a></li-->
+            <li><a href="http://member.codingclubs.org/Member/privacy">개인정보취급방침</a></li>
             <li><a href="http://codingclubs.org/" style="color: white;">코딩클럽</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -457,6 +458,7 @@
 						<p class="privacy">
 							<label><input type="checkbox" id="agree" name="agree">&nbsp;개인정보 수집에 동의하십니까?</label>
 							<span>프로그램 신청자 사전조사 및 그룹편성, 운영, 프로그램 공지 및 관련 정보 공유를 목적으로 한 수집입니다. 이 외의 용도로 사용하지 않습니다.<i>*</i></span>
+              <span><a href="http://member.codingclubs.org/Member/privacy">개인정보취급방침자세히보기</a></span>
 						</p>
 						<p class="privacy">
 							<label><input type="checkbox" id="agree2" name="agree2">&nbsp;본 프로그램 참여 시 회원 및 신청자, 참가자의 사진, 영상 및 프로젝트 결과물 등이 코딩클럽 활동에 활용될 수 있습니다.</label>

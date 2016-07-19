@@ -75,6 +75,11 @@ class Member extends CI_Controller {
     $this->load->view('member/mypage', $aContents); 
 
   }/*}}}*/
+  public function privacy()
+  {
+    $data = array();
+    $this->load->view('member/privacy', $data);
+  }
 
 // 2016 8 SummerCamp
   public function summercamp()/*{{{*/
@@ -87,7 +92,7 @@ class Member extends CI_Controller {
     $this->load->view('summercamp/campjoin', $data);
   }/*}}}*/
 
-  public function chkConfirm($usn, $fingerprint)/*{{{ aws ubuntu 설정 문제인지 리얼에서 메일이 않 나감 확인후 처리하자*/
+  public function chkConfirm($usn, $fingerprint)/*{{{*/
   {
     if( $this->membership_model->chkConfirm($usn, $fingerprint) )
     {
