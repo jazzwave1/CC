@@ -46,7 +46,7 @@ class Login extends CI_Controller {
     public function rpcLogout()
     {
       $this->load->helper('cookie');
-      delete_cookie("codingclub_MemberInfo");
+      delete_cookie("MemberInfo",'.codingclubs.org', '/', 'codingclub_');      
       response_json(array("code"=>1,"msg"=>"OK"));
       die; 
     }
