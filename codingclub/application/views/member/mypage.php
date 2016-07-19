@@ -196,15 +196,7 @@
    <script>   
       $(function(){
         $('#bLogout').click(function(){
-        
-          $.post(
-            //"http://localhost/~leehojun/CC/codingclub/Login/rpcLogout"
-            "http://member.codingclubs.org/Login/rpcLogout"
-            ,{  }
-            ,function(data, status){
-              window.location.replace("http://codingclubs.org"); 
-            }
-          );
+          window.location.replace("http://member.codingclubs.org/Login/Logout"); 
         });
       });
    </script>   
