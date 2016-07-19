@@ -82,7 +82,7 @@ $config['query'] = array(
                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
       ,'data' => array( 'usn', 'course_idx', 'recommend', 'motive', 'like_tf', 'experience', 'nature', 'favor', 'jr_hope', 'channel', 'club_hope', 'inquiry', 'exprogram')
       ,'btype'=> 'iisssssssssss'
-      ,'null' => array('exprogram')
+      ,'null' => array('club_hope','inquiry','exprogram')
     )
     ,'updateAccountConfirm' => array( 
       'query' => 'update account 
@@ -122,7 +122,20 @@ $config['query'] = array(
     )
     
   )/*}}}*/
+
   
+  ,'admin' => array( /*{{{*/
+    'getUserList' => array( 
+      'query' => 'SELECT u.usn, u.name, u.school, u.grde, m.course_idx, m.state 
+                    FROM users as u 
+                    LEFT OUTER JOIN member_svc as m 
+                      ON u.usn = m.usn
+                   WHERE m.course_idx = ?'
+      ,'data' => array('course_idx')
+      ,'btype'=> 'i'
+      ,'null' => array() 
+    )
+  )/*}}}*/
   ,'log' => array( /*{{{*/
     'setLoginLog' => array( 
      'query' => 'INSERT INTO login_log ( usn, account_id , regdate)

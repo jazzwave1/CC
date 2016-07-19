@@ -459,8 +459,12 @@
 							<span>프로그램 신청자 사전조사 및 그룹편성, 운영, 프로그램 공지 및 관련 정보 공유를 목적으로 한 수집입니다. 이 외의 용도로 사용하지 않습니다.<i>*</i></span>
 						</p>
 						<p class="privacy">
-							<label><input type="checkbox" id="agree2" name="agree2">&nbsp;본 프로그램 참여 시 회원 및 신청자, 참가자의 사진, 영상 및 프로젝트 결과물 등이 코딩클럽 활동에 활용될 수 있습니다. 동의 하십니까?</label>
+							<label><input type="checkbox" id="agree2" name="agree2">&nbsp;본 프로그램 참여 시 회원 및 신청자, 참가자의 사진, 영상 및 프로젝트 결과물 등이 코딩클럽 활동에 활용될 수 있습니다.</label>
 							<span>회원 및 신청자, 참가자, 운영자의 활동 공유는 코딩클럽 교육활동의 중요 가치이므로 참가시 동의 필요한 점 양해 부탁드립니다.<i>*</i></span>
+						</p>
+            <p class="privacy">
+							<label><input type="checkbox" id="agree3" name="agree3">&nbsp;코딩클럽 회원 및 참가자에게 보내는 광고성 정보의 수신에 동의합니다.</label>
+							<span>관련 법규에 따라 교육 프로그램, 서비스, 참가비 안내 등 코딩클럽이 보내는 모든 정보가 광고성으로 분류되어 동의 필요 한 점 양해 부탁드립니다.<i>*</i></span>
 						</p>
 						<ul class="form-cont">
 							<li class="form-id">
@@ -534,10 +538,12 @@
 								<label><input type="checkbox" name="ex15" id="ex15" value="15" >16.3월 디자인으로생각하는 주니어해커</label><br>
 								<label><input type="checkbox" name="ex16" id="ex16" value="16" >16.4월 게임메이커</label><br>
 								<label><input type="checkbox" name="ex17" id="ex17" value="17" >16.4월 앱메이커</label><br>
-								<label><input type="checkbox" name="ex18" id="ex18" value="18" >16. 7월 주니어메이커</label><br>
-								<label><input type="checkbox" name="ex19" id="ex19" value="19" >16. 7월 앱메이커</label><br>
+								<label><input type="checkbox" name="ex18" id="ex18" value="18" >16.7월 주니어메이커</label><br>
+								<label><input type="checkbox" name="ex19" id="ex19" value="19" >16.7월 앱메이커</label><br>
 								</div>										
-								<label>참가자가 주니어소프트웨어클럽 프로그램 참여 경험이 있다면 피드백 및 건의사항 부탁 드립니다 <i>*</i></label>
+								<input type="text" class="form-control" name="ex_999" id="ex_999" placeholder="기타프로그램참여">
+								
+                <label>참가자가 주니어소프트웨어클럽 프로그램 참여 경험이 있다면 피드백 및 건의사항 부탁 드립니다 <i>*</i></label>
 								<textarea class="form-control" name="recommend" id="recommend" onkeyup="resize(this)" placeholder="피드백 및 건의사항"></textarea>
 								<label>주니어소프트웨어클럽 참가 동기, 목적 <i>*</i></label>
 								<textarea class="form-control" name="motive" id="motive" onkeyup="resize(this)" placeholder="참가 동기, 목적"></textarea>
@@ -571,18 +577,20 @@
 								</div>
 								<input type="text" class="form-control" name="channel_txt" id="channel_txt" placeholder="프로그램을 알게된 경로">
 
-								<label>코딩클럽에 바라는 점 <i>*</i></label>
+								<label>코딩클럽에 바라는 점 </label>
 								<textarea class="form-control" name="club_hope" id="club_hope" onkeyup="resize(this)" placeholder="코딩클럽에 바라는 점"></textarea>
-								<label>문의사항 <i>*</i></label>
+								<label>문의사항 </label>
 								<textarea class="form-control" name="inquiry" id="inquiry" onkeyup="resize(this)" placeholder="문의사항"></textarea>
 							</li>
 						</ul>
 					</div>
-				</form>
-				
-	      <div class="text-center">
-          <label><i>*</i> 항목은 필수 작성 필요 문항입니다.</label>
-				</div>
+        </form>
+			  <p class="privacy">
+			    <label><input type="checkbox" id="agree4" name="agree4">&nbsp;<font color=red> * </font>항목은 필수 작성 필요 문항입니다. 또한 본 신청서를 작성함으로써 코딩클럽의 온라인/오프라인 회원으로 가입한 것에 동의합니다. <i>*</i></label>
+					<span>코딩클럽이 제공하는 프로그램 참가를 위해 회원가입은 반드시 필요합니다. 향후 코딩클럽의 웹사이트 서비스 로그인은 신청 시 작성한 이메일로 접속 가능합니다.</span>
+				</p>
+
+			
         <div class="text-center">
           <label></label>
         </div>
@@ -614,6 +622,18 @@
         {
           alert('활용동의 해 주세요');
           $('#agree2').focus();
+          return;
+        }
+        if ($("input:checkbox[id='agree3']").is(":checked") == false)
+        {
+          alert('정보수신동의 해 주세요');
+          $('#agree3').focus();
+          return;
+        }
+        if ($("input:checkbox[id='agree4']").is(":checked") == false)
+        {
+          alert('회원가입 동의 해 주세요');
+          $('#agree4').focus();
           return;
         }
         var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
@@ -649,7 +669,8 @@
              + $("input:checkbox[name=ex16]:checked").val() + '|'
              + $("input:checkbox[name=ex17]:checked").val() + '|'
              + $("input:checkbox[name=ex18]:checked").val() + '|'
-             + $("input:checkbox[name=ex19]:checked").val() ;
+             + $("input:checkbox[name=ex19]:checked").val() + '|'
+             + $('#ex_999').val() ;
 
 
 
@@ -781,18 +802,6 @@
         if(channel_txt == '')
         {
           alert('알게된 경로를 선택해 주세요');
-          return;
-        }
-        if($.trim($('#club_hope').val()) == '')
-        {
-          alert('코딩클럽에 바라는 점을 적어 주세요');
-          $('#club_hope').focus();
-          return;
-        }
-        if($.trim($('#inquiry').val()) == '')
-        {
-          alert('문의사항을 적어 주세요');
-          $('#inquiry').focus();
           return;
         }
 
