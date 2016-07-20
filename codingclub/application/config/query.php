@@ -135,6 +135,14 @@ $config['query'] = array(
       ,'btype'=> 'i'
       ,'null' => array() 
     )
+    ,'getCourse' => array( 
+      'query' => 'SELECT idx, name 
+                    FROM course
+                   where idx >= ?  ' 
+      ,'data' => array('idx')
+      ,'btype'=> 'i'
+      ,'null' => array() 
+    )
   )/*}}}*/
   ,'log' => array( /*{{{*/
     'setLoginLog' => array( 
