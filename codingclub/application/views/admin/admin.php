@@ -92,7 +92,7 @@
             echo "  <td>".$val->grde."</td>"; 
             echo "  <td>".$val->state."</td>"; 
             //echo "  <td><button id='bSend' class='btn btn-block btn-primary'>입금확인</button></td>";
-            echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.")' class='btn btn-info'>입금확인</button>";
+            echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.",".$courseIdx.")' class='btn btn-info'>입금확인</button>";
             echo "</tr>";
           }
         }
@@ -103,7 +103,7 @@
   
   </div>
   <script>   
-  function changeState(usn)
+  function changeState(usn, course_idx)
   {
     $.post(
       //"http://localhost/~leehojun/CC/codingclub/Admin/rpcUpdateState"
@@ -111,6 +111,7 @@
       ,{
            "usn" : usn 
           ,"state" : 'CONF' 
+          ,"course_idx" : course_idx 
        }
       ,function(data, status) {
         if (status == "success" && data.code == 1)

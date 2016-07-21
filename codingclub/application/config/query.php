@@ -146,9 +146,10 @@ $config['query'] = array(
     ,'updateState' => array( 
       'query' => 'UPDATE member_svc 
                      SET state = ?  
-                   WHERE usn = ?' 
-      ,'data' => array('state','usn')
-      ,'btype'=> 'si'
+                   WHERE usn = ?
+                     AND course_idx = ?' 
+      ,'data' => array('state','usn','course_idx')
+      ,'btype'=> 'sii'
       ,'null' => array() 
     )
   )/*}}}*/

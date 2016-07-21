@@ -88,17 +88,18 @@ class admin extends CI_Controller {
   {
     $usn   = trim($this->input->post('usn')); 
     $state = trim($this->input->post('state')); 
+    $courseIDX = trim($this->input->post('course_idx')); 
   
-    if($this->_updateState($usn, $state)) 
+    if($this->_updateState($usn, $state, $courseIdx)) 
       response_json(array("code"=>1,"msg"=>"OK"));
     else
       response_json(array("code"=>0,"msg"=>"fail"));
   }/*}}}*/
-  private function _updateState($usn, $state)/*{{{*/
+  private function _updateState($usn, $state, $courseIdx)/*{{{*/
   {
     if(!$usn || !$state) return false;
     
-    return $this->admin_model->updateState($usn, $state); 
+    return $this->admin_model->updateState($usn, $state , $courseIdx); 
   }/*}}}*/
   private function _chkAdminLogin($accountID, $passwd)/*{{{*/
   {

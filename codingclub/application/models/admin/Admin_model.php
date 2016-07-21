@@ -8,11 +8,11 @@ class Admin_model extends CI_model
     $this->memberSTATEConfig = cc_get_config('member_svc_state','member_config' );  
     $this->memberGRDEConfig  = cc_get_config('member_user_grde','member_config' );  
   }
-  public function updateState($usn, $state)
+  public function updateState($usn, $state, $courseIdx)
   {
-    if(!$usn || !$state) return false;
+    if(!$usn || !$state || !$courseIdx) return false;
   
-    $aInput = array('usn' => $usn, 'state'=>$state);
+    $aInput = array('usn' => $usn, 'state'=>$state, 'course_idx'=>$courseIdx );
     return $this->admin_dao->updateState($aInput); 
   } 
   public function getUserList($courseIdx)/*{{{*/
