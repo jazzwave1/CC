@@ -19,6 +19,10 @@ class Admin_dao extends Common_dao
     $aConfig = $this->queryInfoAdmin['getCourse'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
-
+  public function updateState($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoAdmin['updateState'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
 }
 ?>

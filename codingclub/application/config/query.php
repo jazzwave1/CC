@@ -85,8 +85,8 @@ $config['query'] = array(
       ,'null' => array('club_hope','inquiry','exprogram')
     )
     ,'updateAccountConfirm' => array( 
-      'query' => 'update account 
-                    set confirm = ?  
+      'query' => 'UPDATE account 
+                     SET confirm = ?  
                    WHERE usn = ?' 
       ,'data' => array('regdate','usn')
       ,'btype'=> 'si'
@@ -141,6 +141,14 @@ $config['query'] = array(
                    where idx >= ?  ' 
       ,'data' => array('idx')
       ,'btype'=> 'i'
+      ,'null' => array() 
+    )
+    ,'updateState' => array( 
+      'query' => 'UPDATE member_svc 
+                     SET state = ?  
+                   WHERE usn = ?' 
+      ,'data' => array('state','usn')
+      ,'btype'=> 'si'
       ,'null' => array() 
     )
   )/*}}}*/

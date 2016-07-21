@@ -32,7 +32,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
-            <li><a href="" style="color: white;">Logout</a></li>
+            <li><a href="#" id="bLogout" style="color: white;">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -49,7 +49,10 @@
 <?php
             foreach($aCourse as $key=>$val)
             {
-              echo '<option value="'.$key.'">'.$val.'</option>';
+              if($key == $courseIdx)
+                echo '<option value="'.$key.'" selected>'.$val.'</option>';
+              else
+                echo '<option value="'.$key.'">'.$val.'</option>';
             }
 ?>
           </select>
@@ -61,7 +64,7 @@
     </div> 
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Data Table With Full Features</h3>
+        <h3 class="box-title"><?php echo $courseName; ?></h3>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -73,6 +76,7 @@
             <th>학교</th>
             <th>학년</th>
             <th>상태</th>
+            <th>기능</th>
           </tr>
           </thead>
           <tbody>
@@ -87,6 +91,8 @@
             echo "  <td>".$val->school."</td>"; 
             echo "  <td>".$val->grde."</td>"; 
             echo "  <td>".$val->state."</td>"; 
+            //echo "  <td><button id='bSend' class='btn btn-block btn-primary'>입금확인</button></td>";
+            echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.")' class='btn btn-info'>입금확인</button>";
             echo "</tr>";
           }
         }
@@ -96,27 +102,47 @@
     </div> 
   
   </div>
-  <script>
-    $(function () {
-      $("#example1").DataTable();
-    });
-  </script>
-  <script>
-    
-    $(function(){
-      $('#bSend').click(function(){
-        var courseIDX = $("select[name=course_idx]").val() ;
-
-        if($("select[name=course_idx]").val() == '')
+  <script>   
+  function changeState(usn)
+  {
+    $.post(
+      "http://localhost/~leehojun/CC/codingclub/Admin/rpcUpdateState"
+      ,{
+           "usn" : usn 
+          ,"state" : 'CONF' 
+       }
+      ,function(data, status) {
+        if (status == "success" && data.code == 1)
         {
-          alert('프로그램 이름을 선택해 주세요');
-          $('#course_idx').focus();
-          return;
+          alert('변경 되었습니다.'); 
+          window.location.reload(); 
         }
-        //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/userlist/" + courseIDX); 
-        window.location.replace("http://member.codingclubs.org/admin/userlist/" + courseIDX); 
-      });
+      }
+    );         
+  }     
+  
+  $(function(){
+    $('#bSend').click(function(){
+      var courseIDX = $("select[name=course_idx]").val() ;
+       
+      if($("select[name=course_idx]").val() == '')
+      {
+        alert('프로그램 이름을 선택해 주세요');
+        $('#course_idx').focus();
+        return;
+      }
+      //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/userlist/" + courseIDX); 
+      window.location.replace("http://member.codingclubs.org/admin/userlist/" + courseIDX); 
     });
+       
+    $('#bLogout').click(function(){
+        //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/logout/"); 
+        window.location.replace("http://member.codingclubs.org/admin/logout"); 
+      });
+        
+    $("#example1").DataTable();
+
+  });
   </script>
 </body>
 

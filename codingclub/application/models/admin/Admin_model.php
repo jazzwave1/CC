@@ -8,7 +8,13 @@ class Admin_model extends CI_model
     $this->memberSTATEConfig = cc_get_config('member_svc_state','member_config' );  
     $this->memberGRDEConfig  = cc_get_config('member_user_grde','member_config' );  
   }
- 
+  public function updateState($usn, $state)
+  {
+    if(!$usn || !$state) return false;
+  
+    $aInput = array('usn' => $usn, 'state'=>$state);
+    return $this->admin_dao->updateState($aInput); 
+  } 
   public function getUserList($courseIdx)/*{{{*/
   {
     if(!$courseIdx) return false;
@@ -28,7 +34,6 @@ class Admin_model extends CI_model
     }
     return $aResult;
   }/*}}}*/
-
   public function getCourse()/*{{{*/
   {
     $aInput = array('idx' => 1);
@@ -39,5 +44,38 @@ class Admin_model extends CI_model
     }
     return $aRtn;
   } /*}}}*/
+  public function chkAdminLogin($accountID, $passwd)/*{{{*/
+  {
+    if(!$accountID || !$passwd) return false;
+    
+    $aAdminInfo = $this->_getAdminInfo();
+    
+    if($aAdminInfo['accountID'] == $accountID && $aAdminInfo['passwd'] == $passwd)
+    {
+      $this->_sCookie($accountID);
+      return true;
+    }
+    else
+      return false;
+  }/*}}}*/
+  private function _sCookie($accountID)/*{{{*/
+  {
+    $this->load->helper('cookie');
+    $cookie = array(
+      'name'   => 'AdminInfo',
+      'value'  => json_encode(array('accountID' => $accountID)),
+      'expire' => '1440',
+      'domain' => '.codingclubs.org',
+      'prefix' => 'codingclub_', 
+      // test code 
+      //'domain' => 'localhost',
+    );
+    set_cookie($cookie); 
+    return; 
+  }/*}}}*/
+  private function _getAdminInfo()/*{{{*/
+  {
+    return array('accountID' => 'codingclub' , 'passwd' => 'coding2016');
+  }/*}}}*/
 }
 ?>
