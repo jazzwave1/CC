@@ -75,11 +75,11 @@ class Member extends CI_Controller {
     $this->load->view('member/mypage', $aContents); 
 
   }/*}}}*/
-  public function privacy()
+  public function privacy()/*{{{*/
   {
     $data = array();
     $this->load->view('member/privacy', $data);
-  }
+  }/*}}}*/
 
 // 2016 8 SummerCamp
   public function summercamp()/*{{{*/
