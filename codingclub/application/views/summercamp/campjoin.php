@@ -468,6 +468,10 @@
 							<label><input type="checkbox" id="agree3" name="agree3">&nbsp;코딩클럽 회원 및 참가자에게 보내는 광고성 정보의 수신에 동의합니다.</label>
 							<span>관련 법규에 따라 교육 프로그램, 서비스, 참가비 안내 등 코딩클럽이 보내는 모든 정보가 광고성으로 분류되어 동의 필요 한 점 양해 부탁드립니다.<i>*</i></span>
 						</p>
+            <p class="privacy">
+              <label><input type="checkbox" id="agree4" name="agree4">&nbsp;<font color=red> * </font>항목은 필수 작성 필요 문항입니다. 또한 본 신청서를 작성함으로써 코딩클럽의 온라인/오프라인 회원으로 가입한 것에 동의합니다. <i>*</i></label>
+              <span>코딩클럽이 제공하는 프로그램 참가를 위해 회원가입은 반드시 필요합니다. 향후 코딩클럽의 웹사이트 서비스 로그인은 신청 시 작성한 이메일로 접속 가능합니다.</span>
+            </p> 
 						<ul class="form-cont">
 							<li class="form-id">
 								<label>ID <i>*</i></label>
@@ -583,14 +587,13 @@
 								<textarea class="form-control" name="club_hope" id="club_hope" onkeyup="resize(this)" placeholder="코딩클럽에 바라는 점"></textarea>
 								<label>문의사항 </label>
 								<textarea class="form-control" name="inquiry" id="inquiry" onkeyup="resize(this)" placeholder="문의사항"></textarea>
-							</li>
+                
+              </li>
 						</ul>
+      
 					</div>
         </form>
-			  <p class="privacy">
-			    <label><input type="checkbox" id="agree4" name="agree4">&nbsp;<font color=red> * </font>항목은 필수 작성 필요 문항입니다. 또한 본 신청서를 작성함으로써 코딩클럽의 온라인/오프라인 회원으로 가입한 것에 동의합니다. <i>*</i></label>
-					<span>코딩클럽이 제공하는 프로그램 참가를 위해 회원가입은 반드시 필요합니다. 향후 코딩클럽의 웹사이트 서비스 로그인은 신청 시 작성한 이메일로 접속 가능합니다.</span>
-				</p>
+			  
 
 			
         <div class="text-center">
