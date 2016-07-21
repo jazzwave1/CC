@@ -106,7 +106,8 @@
   function changeState(usn)
   {
     $.post(
-      "http://localhost/~leehojun/CC/codingclub/Admin/rpcUpdateState"
+      //"http://localhost/~leehojun/CC/codingclub/Admin/rpcUpdateState"
+      "http://member.codingclubs.org/Admin/rpcUpdateState"
       ,{
            "usn" : usn 
           ,"state" : 'CONF' 
