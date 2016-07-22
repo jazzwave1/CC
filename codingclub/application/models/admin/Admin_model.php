@@ -75,7 +75,7 @@ class Admin_model extends CI_model
   }/*}}}*/
   private function _getAdminInfo()/*{{{*/
   {
-    return array('accountID' => 'codingclub' , 'passwd' => 'coding2016');
+    return array('accountID' => 'codingclub' , 'passwd' => 'codingclub2016');
   }/*}}}*/
 }
 ?>
