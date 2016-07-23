@@ -95,8 +95,8 @@
             echo "  <td>".$val->grde."</td>"; 
             echo "  <td>".$val->pname."</td>"; 
             echo "  <td>".$val->php."</td>"; 
-            echo "  <td>".$val->grde."</td>"; 
             echo "  <td>".$val->pemail."</td>"; 
+            echo "  <td>".$val->status."</td>"; 
             echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.",".$courseIdx.")' class='btn btn-info'>입금확인</button>";
             echo "</tr>";
           }
