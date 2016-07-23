@@ -126,7 +126,7 @@ $config['query'] = array(
   
   ,'admin' => array( /*{{{*/
     'getUserList' => array( 
-      'query' => 'SELECT u.usn, u.name, u.school, u.grde, m.course_idx, m.state 
+      'query' => 'SELECT u.usn, u.name, u.school, u.grde, u.pname, u.php, u.pemail, m.course_idx, m.state 
                     FROM users as u 
                     LEFT OUTER JOIN member_svc as m 
                       ON u.usn = m.usn

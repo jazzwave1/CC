@@ -75,6 +75,9 @@
             <th>이름</th>
             <th>학교</th>
             <th>학년</th>
+            <th>부모님이름</th>
+            <th>부모님HP</th>
+            <th>부모님메일</th>
             <th>상태</th>
             <th>기능</th>
           </tr>
@@ -90,8 +93,10 @@
             echo "  <td>".$val->name."</td>"; 
             echo "  <td>".$val->school."</td>"; 
             echo "  <td>".$val->grde."</td>"; 
-            echo "  <td>".$val->state."</td>"; 
-            //echo "  <td><button id='bSend' class='btn btn-block btn-primary'>입금확인</button></td>";
+            echo "  <td>".$val->pname."</td>"; 
+            echo "  <td>".$val->php."</td>"; 
+            echo "  <td>".$val->grde."</td>"; 
+            echo "  <td>".$val->pemail."</td>"; 
             echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.",".$courseIdx.")' class='btn btn-info'>입금확인</button>";
             echo "</tr>";
           }

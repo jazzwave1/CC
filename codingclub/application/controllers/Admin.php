@@ -101,6 +101,10 @@ class admin extends CI_Controller {
     
     return $this->admin_model->updateState($usn, $state , $courseIDX); 
   }/*}}}*/
+  private function _sendConfMail()/*{{{*/
+  {
+     
+  } /*}}}*/
   private function _chkAdminLogin($accountID, $passwd)/*{{{*/
   {
     if(!$accountID || !$passwd) return false;
