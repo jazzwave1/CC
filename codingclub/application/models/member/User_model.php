@@ -65,7 +65,6 @@ class User_model extends CI_model
     }
     return true;
   }/*}}}*/
-
   public function setMemberSVCInfo($aParam)/*{{{*/
   {
     if(!$aParam['usn']) return false;  
@@ -78,8 +77,7 @@ class User_model extends CI_model
     }
     return true; 
   }/*}}}*/
-
-  public function getMemberSVCInfo($usn)
+  public function getMemberSVCInfo($usn)/*{{{*/
   {
     if(!$usn) return false;
     
@@ -91,7 +89,7 @@ class User_model extends CI_model
       $val->state = $aMemConfig[$val->state]; 
     }
     return $aResult;
-  }
+  }/*}}}*/
   
 }
 ?>

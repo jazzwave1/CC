@@ -95,6 +95,13 @@ class admin extends CI_Controller {
     else
       response_json(array("code"=>0,"msg"=>"fail"));
   }/*}}}*/
+
+  public function excelDownSummerCampFull()/*{{{*/
+  {
+    $data = array( "aUserList" => $this->admin_model->getSummerCampFull() );
+    $this->load->view('admin/exceldown', $data);  
+  }/*}}}*/
+
   private function _updateState($usn, $state, $courseIDX)/*{{{*/
   {
     if(!$usn || !$state) return false;

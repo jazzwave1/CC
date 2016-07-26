@@ -32,6 +32,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
+            <li><a href="http://member.codingclubs.org/admin/excelDownSummerCampFull" id="bLogout" style="color: white;">썸머캠프 신청자 다운로드</a></li>
             <li><a href="#" id="bLogout" style="color: white;">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
