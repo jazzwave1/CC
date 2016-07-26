@@ -79,10 +79,14 @@ class Admin_model extends CI_model
       
       foreach($aProgram as $k=>$v)
       {
-        if(trim($v))
-        {
+        if(trim($v) && is_numeric($v))
+        {   
           $val->exprogram .= $this->courseConfig[$v].", ";
-        }
+        }   
+        else
+        {   
+          $val->exprogram .= $val->exprogram.", ";
+        } 
       }
     }
     return $aResult;
