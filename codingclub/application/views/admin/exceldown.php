@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+header( "Content-type: application/vnd.ms-excel" );
+header( "Content-type: application/vnd.ms-excel; charset=utf-8");
+header( "Content-Disposition: attachment; filename = codingclubSC.xls" );
+header( "Content-Description: PHP4 Generated Data" );
+?>
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
