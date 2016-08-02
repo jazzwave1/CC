@@ -30,12 +30,23 @@ class Login extends CI_Controller {
         response_json(array("code"=>0,"msg"=>"Fail"));
         die;
       }
-
+      
       if( $this->_chkLogin($account_id, $passwd) )
-        response_json(array("code"=>1,"msg"=>"OK"));
+      { 
+        if(!$this->_getConfirm($account_id))
+          response_json(array("code"=>998,"msg"=>"Not Confirm"));
+        else
+          response_json(array("code"=>1,"msg"=>"OK"));
+      }
       else
         response_json(array("code"=>0,"msg"=>"Fail"));
     }/*}}}*/
+    private function _getConfirm($account_id)
+    {
+      if(!$account_id) return false;
+
+      return $this->membership_model->getConfirm($account_id);
+    }
     private function _chkLogin($account_id, $passwd)/*{{{*/
     {
       if(!$account_id || !$passwd)

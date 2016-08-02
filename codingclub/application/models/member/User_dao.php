@@ -34,6 +34,11 @@ class User_dao extends Common_dao
     $aConfig = $this->queryInfoMem['getPwd'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
+  public function getConfirm($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['getConfirm'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
   public function getID($aParam='')/*{{{*/
   {
     $aConfig = $this->queryInfoMem['getIDCount'];
@@ -59,11 +64,10 @@ class User_dao extends Common_dao
     $aConfig = $this->queryInfoMem['getMemberSVC'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
-
-  public function updateAccountConfirm($aParam='')
+  public function updateAccountConfirm($aParam='')/*{{{*/
   {
     $aConfig = $this->queryInfoMem['updateAccountConfirm'];
     return $this->actModelFuc($aConfig, $aParam);
-  }
+  }/*}}}*/
 }
 ?>

@@ -82,7 +82,18 @@ class Membership_model extends CI_model
     else
       return false;
   }/*}}}*/
- 
+  public function getConfirm($accountID)/*{{{*/
+  {
+    if(!$accountID) return false; 
+  
+    $oResult = $this->_getConfirm($accountID);
+   
+    if($oResult->confirm == null || !$oResult->confirm)
+      return false;
+    
+    return true;
+  }/*}}}*/
+
   private function _sendMail($accountID, $courseIDX)/*{{{*/
   {
     if(!$accountID || !$courseIDX) return false;
@@ -146,6 +157,15 @@ class Membership_model extends CI_model
     $aInput = array('account_id' => $accountID);
     
     $aResult = $this->user_dao->getPwd($aInput);
+    return $aResult[0]; 
+  }/*}}}*/
+  private function _getConfirm($accountID)/*{{{*/
+  {
+    if(!$accountID) return false;
+    
+    $aInput = array('account_id' => $accountID);
+   
+    $aResult = $this->user_dao->getConfirm($aInput);
     return $aResult[0]; 
   }/*}}}*/
   private function _chkPWD($accountID, $passwd)/*{{{*/

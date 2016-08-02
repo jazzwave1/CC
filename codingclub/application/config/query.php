@@ -92,7 +92,14 @@ $config['query'] = array(
       ,'btype'=> 'si'
       ,'null' => array() 
     )
-
+    ,'getConfirm' => array( 
+      'query' => 'SELECT confirm 
+                    FROM account  
+                   WHERE account_id = ?' 
+      ,'data' => array('account_id')
+      ,'btype'=> 's'
+      ,'null' => array() 
+    )
   )/*}}}*/
   ,'course' => array( /*{{{*/
     'getCourseInfo' => array( 

@@ -86,6 +86,10 @@
                 //window.location.replace("http://localhost/~leehojun/CC/codingclub/Member/mypage"); 
                 window.location.replace("http://member.codingclubs.org/Member/mypage"); 
               }
+              else if(status == 'success' && data.code == 998)
+              {
+                alert('회원가입시 발송된 이메일의 본인인증 링크를 클릭 부탁 드립니다.\n본인확인후 로그인이 가능합니다.');
+              }
               else
               {
                 alert('아이디 / 비밀번호를 다시 확인 부탁 드립니다');
