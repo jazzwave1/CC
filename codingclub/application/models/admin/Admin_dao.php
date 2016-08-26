@@ -11,7 +11,28 @@ class Admin_dao extends Common_dao
   
   public function getUserList($aParam='')/*{{{*/
   {
-    $aConfig = $this->queryInfoAdmin['getUserList'];
+    $sTemp = $aParam['course_idx'];
+    $aParam = explode('_', $sTemp);
+    
+    $aConfig['btype'] = '';
+    $aConfig['data']  = array();
+    $aConfig['query'] = 
+      ' SELECT u.usn, u.name, u.school, u.grde, u.pname, u.php, u.pemail, m.course_idx, m.state 
+                    FROM users as u 
+                    LEFT OUTER JOIN member_svc as m 
+                      ON u.usn = m.usn
+                   WHERE m.course_idx in (';
+    foreach($aParam as $key=>$val)
+    {
+      $aConfig['query'] .= '?,' ;
+      $aConfig['btype'] .= "i";
+      $aConfig['data'][] = $key;
+    }
+    $aConfig['query'] = substr($aConfig['query'], 0, -1) ;
+    $aConfig['query'] .= ')';
+    
+    $aConfig['null']  = "";
+
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
   public function getExcelList($aParam='')/*{{{*/

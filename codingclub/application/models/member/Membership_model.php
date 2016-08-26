@@ -41,6 +41,7 @@ class Membership_model extends CI_model
       'value'  => json_encode(array('accountID' => $accountID, 'usn' => $usn)),
       'expire' => '86500',
       'domain' => '.codingclubs.org',
+      // test code 
       //'domain' => 'localhost',
       'prefix' => 'codingclub_', 
     );

@@ -55,10 +55,20 @@ class admin extends CI_Controller {
     
     if($courseIdx)
     {
+      $courseIdx = substr($courseIdx , 0, -1);
       $aResult = $this->admin_model->getUserList($courseIdx) ; 
-      $data['courseName'] = $data['aCourse'][$courseIdx];
-      $data['courseIdx']  = $courseIdx;
-       
+   
+      $aCourseIdx = explode("_", $courseIdx);
+      
+      $sCourseName = '';
+      foreach($aCourseIdx as $key=>$val)
+      {
+        $sCourseName .= $data['aCourse'][$val]." , ";
+      }
+      
+      $data['courseName'] = $sCourseName;
+      $data['courseIdx']  = $aCourseIdx;
+     
       if(!$aResult)
       {
         $data['aRowData'] = false;
@@ -68,7 +78,6 @@ class admin extends CI_Controller {
         $data['aRowData']   = $aResult;
       }
     }
- 
     $this->load->view('admin/admin', $data);  
   }/*}}}*/
   public function rpcAdminLogin()/*{{{*/
@@ -101,6 +110,13 @@ class admin extends CI_Controller {
     $data = array( "aUserList" => $this->admin_model->getSummerCampFull() );
     $this->load->view('admin/exceldown', $data);  
   }/*}}}*/
+
+  public function adminsendmail($sMailList="")
+  {
+    $this->admin_model->adminsendmail($sMailList); 
+    die; 
+  }
+
 
   private function _updateState($usn, $state, $courseIDX)/*{{{*/
   {

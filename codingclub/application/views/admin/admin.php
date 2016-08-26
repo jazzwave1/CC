@@ -45,12 +45,13 @@
       </div>
       <div class="col-xs-4">
         <div class="form-group">
-          <select id="course_idx" name="course_idx" class="form-control">
+          <select multiple id="course_idx" name="course_idx" class="form-control">
             <option value="" >프로그램 이름 선택</option>
 <?php
             foreach($aCourse as $key=>$val)
             {
-              if($key == $courseIdx)
+              //if($key == $courseIdx)
+              if(in_array($key ,$courseIdx))
                 echo '<option value="'.$key.'" selected>'.$val.'</option>';
               else
                 echo '<option value="'.$key.'">'.$val.'</option>';
@@ -98,7 +99,7 @@
             echo "  <td>".$val->php."</td>"; 
             echo "  <td>".$val->pemail."</td>"; 
             echo "  <td>".$val->state."</td>"; 
-            echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.",".$courseIdx.")' class='btn btn-info'>입금확인</button>";
+            echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.",".$val->courseIDX.")' class='btn btn-info'>입금확인</button>";
             echo "</tr>";
           }
         }
@@ -112,6 +113,7 @@
   function changeState(usn, course_idx)
   {
     $.post(
+      // test code
       //"http://localhost/~leehojun/CC/codingclub/Admin/rpcUpdateState"
       "http://member.codingclubs.org/Admin/rpcUpdateState"
       ,{
@@ -131,19 +133,27 @@
   
   $(function(){
     $('#bSend').click(function(){
-      var courseIDX = $("select[name=course_idx]").val() ;
-       
+      var courseIDX = '' + $("select[name=course_idx]").val() ;
+      var sCourseIDX = ''; 
+      var aCourseIDX = courseIDX.split(',');
+      for(var i in aCourseIDX)
+      {
+        sCourseIDX = sCourseIDX + aCourseIDX[i] + '_'; 
+      }
+      
       if($("select[name=course_idx]").val() == '')
       {
         alert('프로그램 이름을 선택해 주세요');
         $('#course_idx').focus();
         return;
       }
-      //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/userlist/" + courseIDX); 
-      window.location.replace("http://member.codingclubs.org/admin/userlist/" + courseIDX); 
+      // test code 
+      //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/userlist/" + sCourseIDX); 
+      window.location.replace("http://member.codingclubs.org/admin/userlist/" + sCourseIDX); 
     });
        
     $('#bLogout').click(function(){
+        // test code 
         //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/logout/"); 
         window.location.replace("http://member.codingclubs.org/admin/logout"); 
       });
