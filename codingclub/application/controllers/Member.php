@@ -84,7 +84,15 @@ class Member extends CI_Controller {
 // 2016 8 SummerCamp
   public function summercamp()/*{{{*/
   {
-       
+    echo "<pre>";
+    print_r($_SERVER);
+    if($_SERVER["SERVER_NAME"] == 'localhost')
+      $sHostURL = 'http://localhost/~leehojun/CC/codingclub/';
+    else
+      $sHostURL= 'http://member.codingclubs.org/';
+    
+    echo $sHostURL;
+    die;    
   }/*}}}*/
   public function summercampJoin()/*{{{*/
   {
