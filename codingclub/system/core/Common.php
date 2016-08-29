@@ -41,15 +41,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if($_SERVER["SERVER_NAME"] == 'localhost')
 {
   $sHostURL = 'http://localhost/~leehojun/CC/codingclub';
-  $sDomain = "localhost";
+  $sCookieDomain = "localhost";
 }
 else
 {
   $sHostURL= 'http://member.codingclubs.org';
-  $sDomain = "codingclubs.org";
+  $sCookieDomain= ".codingclubs.org";
 }
 define("HOSTURL", $sHostURL);
-define("DOMAINNAME", $sDomain);
+define("CKDOMAIN", $sCookieDomain);
 // -------------------------------------------------------// 
 /**
  * Common Functions

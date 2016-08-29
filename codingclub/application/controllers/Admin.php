@@ -34,10 +34,7 @@ class admin extends CI_Controller {
     if(!$oAdminInfo)
     {
       echo "로그인이 필요한 서비스 입니다.<br>"; 
-      echo '<a href="http://member.codingclubs.org/admin/login" >Admin Login</a>'; 
-      
-      // test code
-      //echo '<a href="http://localhost/~leehojun/CC/codingclub/admin/login" >Admin Login</a>'; 
+      echo '<a href="'.HOSTURL.'/admin/login" >Admin Login</a>'; 
       die;
     }
   }/*}}}*/

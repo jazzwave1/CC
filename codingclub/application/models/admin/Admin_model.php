@@ -506,9 +506,7 @@ class Admin_model extends CI_model
       'value'  => json_encode(array('accountID' => $accountID)),
       'expire' => '1440',
       'prefix' => 'codingclub_', 
-      'domain' => '.codingclubs.org',
-      // test code 
-      //'domain' => 'localhost',
+      'domain' => CKDOMAIN,
     );
     set_cookie($cookie); 
     return; 
