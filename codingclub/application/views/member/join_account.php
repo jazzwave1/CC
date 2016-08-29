@@ -25,7 +25,7 @@
         $('#bLogin').click(function(){
         
           $.post(
-            "http://localhost/~leehojun/CC/codingclub/Member/rpcJoinAccount"
+            "<?=HOSTURL?>/Member/rpcJoinAccount"
             ,{
                "account_id" : $('#account_id').val()
               ,"passwd1" : $('#passwd1').val()
@@ -34,7 +34,7 @@
             ,function(data, status){
               if(status == 'success' && data.code == 1)
               {
-                window.location.replace("http://localhost/~leehojun/CC/codingclub/Login"); 
+                window.location.replace("<?=HOSTURL?>/Login"); 
               }
               else if(data.code == 999)
               {

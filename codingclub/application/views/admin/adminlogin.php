@@ -7,15 +7,15 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="http://member.codingclubs.org/img/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=HOSTURL?>/img/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="http://member.codingclubs.org/img/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?=HOSTURL?>/img/dist/css/AdminLTE.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="http://member.codingclubs.org/img/plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="<?=HOSTURL?>/img/plugins/iCheck/square/blue.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,11 +25,11 @@
     <![endif]-->
   </head>
     <!-- jQuery 2.1.4 -->
-    <script src="http://member.codingclubs.org/img/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="<?=HOSTURL?>/img/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="http://member.codingclubs.org/img/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?=HOSTURL?>/img/bootstrap/js/bootstrap.min.js"></script>
     <!-- iCheck -->
-    <script src="http://member.codingclubs.org/img/plugins/iCheck/icheck.min.js"></script>
+    <script src="<?=HOSTURL?>/img/plugins/iCheck/icheck.min.js"></script>
     <script>
       $(function () {
         $('input').iCheck({
@@ -41,7 +41,7 @@
     </script>
 
     <!-- 커스텀 스타일 -->
-    <link rel="stylesheet" href="http://member.codingclubs.org/static/css/summercamp.css">
+    <link rel="stylesheet" href="<?=HOSTURL?>/static/css/summercamp.css">
 
   <body class="hold-transition login-page">
     <div class="login-box">
@@ -77,8 +77,7 @@
         $('#bLogin').click(function(){
         
           $.post(
-            //"http://localhost/~leehojun/CC/codingclub/Admin/rpcAdminLogin"
-            "http://member.codingclubs.org/Admin/rpcAdminLogin"
+            "<?=HOSTURL?>/Admin/rpcAdminLogin"
             ,{
                "account_id" : $('#account_id').val()
               ,"passwd" : $('#passwd').val()
@@ -86,8 +85,7 @@
             ,function(data, status){
               if(status == 'success' && data.code == 1)
               {
-                //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/userlist"); 
-                window.location.replace("http://member.codingclubs.org/admin/userlist"); 
+                window.location.replace("<?=HOSTURL?>/admin/userlist"); 
               }
               else
               {

@@ -196,7 +196,7 @@
    <script>   
       $(function(){
         $('#bLogout').click(function(){
-          window.location.replace("http://member.codingclubs.org/Login/Logout"); 
+          window.location.replace("<?=HOSTURL?>/Login/Logout"); 
         });
       });
    </script>   

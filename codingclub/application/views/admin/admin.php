@@ -10,11 +10,11 @@
 	<!-- Custom styles for this template -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="http://member.codingclubs.org/static/AdminLTE-2.3.0/plugins/datatables/dataTables.bootstrap.css">
-  <link rel="stylesheet" href="http://member.codingclubs.org/static/AdminLTE-2.3.0/dist/css/AdminLTE.min.css"> 
+  <link rel="stylesheet" href="<?=HOSTURL?>/static/AdminLTE-2.3.0/plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="<?=HOSTURL?>/static/AdminLTE-2.3.0/dist/css/AdminLTE.min.css"> 
   
-  <script src="http://member.codingclubs.org/static/AdminLTE-2.3.0/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="http://member.codingclubs.org/static/AdminLTE-2.3.0/plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="<?=HOSTURL?>/static/AdminLTE-2.3.0/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?=HOSTURL?>/static/AdminLTE-2.3.0/plugins/datatables/dataTables.bootstrap.min.js"></script>
 </head>
 <!--form name="fo" action="submit.php" method="post"-->
 <body id="wrapper">
@@ -32,7 +32,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
-            <li><a href="http://member.codingclubs.org/admin/excelDownSummerCampFull" id="bLogout" style="color: white;">썸머캠프 신청자 다운로드</a></li>
+            <li><a href="<?=HOSTURL?>/admin/excelDownSummerCampFull" id="bLogout" style="color: white;">썸머캠프 신청자 다운로드</a></li>
             <li><a href="#" id="bLogout" style="color: white;">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -114,8 +114,7 @@
   {
     $.post(
       // test code
-      //"http://localhost/~leehojun/CC/codingclub/Admin/rpcUpdateState"
-      "http://member.codingclubs.org/Admin/rpcUpdateState"
+      "<?=HOSTURL?>/Admin/rpcUpdateState"
       ,{
            "usn" : usn 
           ,"state" : 'CONF' 
@@ -148,14 +147,12 @@
         return;
       }
       // test code 
-      //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/userlist/" + sCourseIDX); 
-      window.location.replace("http://member.codingclubs.org/admin/userlist/" + sCourseIDX); 
+      window.location.replace("<?=HOSTURL?>/admin/userlist/" + sCourseIDX); 
     });
        
     $('#bLogout').click(function(){
         // test code 
-        //window.location.replace("http://localhost/~leehojun/CC/codingclub/admin/logout/"); 
-        window.location.replace("http://member.codingclubs.org/admin/logout"); 
+        window.location.replace("<?=HOSTURL?>/admin/logout"); 
       });
         
     $("#example1").DataTable();

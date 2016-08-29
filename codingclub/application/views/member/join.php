@@ -47,7 +47,7 @@
         $('#bLogin').click(function(){
         
           $.post(
-            "http://localhost/~leehojun/CC/codingclub/Member/rpcJoinMember"
+            "<?=HOSTURL?>/Member/rpcJoinMember"
             ,{
                "usn" : $('#usn').val()
               ,"user_name" : $('#user_name').val()
@@ -60,7 +60,7 @@
               if(status == 'success' && data.code == 1)
               {
                 alert("기본정보 입력이 완료 되었습니다. \n 신청버튼을 다시 한번 눌러 주세요"); 
-                window.location.replace("http://localhost/~leehojun/CC/codingclub/Course"); 
+                window.location.replace("<?=HOSTURL?>/Course"); 
               }
               else
               {

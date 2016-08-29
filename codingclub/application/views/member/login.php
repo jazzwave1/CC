@@ -74,8 +74,7 @@
         $('#bLogin').click(function(){
         
           $.post(
-            //"http://localhost/~leehojun/CC/codingclub/Login/rpcCheckLogin"
-            "http://member.codingclubs.org/Login/rpcCheckLogin"
+            "<?=HOSTURL?>/Login/rpcCheckLogin"
             ,{
                "account_id" : $('#account_id').val()
               ,"passwd" : $('#passwd').val()
@@ -83,8 +82,7 @@
             ,function(data, status){
               if(status == 'success' && data.code == 1)
               {
-                //window.location.replace("http://localhost/~leehojun/CC/codingclub/Member/mypage"); 
-                window.location.replace("http://member.codingclubs.org/Member/mypage"); 
+                window.location.replace("<?=HOSTURL?>/Member/mypage"); 
               }
               else if(status == 'success' && data.code == 998)
               {
