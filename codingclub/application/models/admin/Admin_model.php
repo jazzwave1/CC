@@ -239,71 +239,146 @@ class Admin_model extends CI_model
       
       )/*}}}*/
       ,"INT" => array(/*{{{*/
-//         array("name"=>"이호준", "email"=>"jazzwave14@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-// 1조
-//        array("name"=>"김지현", "email"=>"jihyun6221@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"권다은", "email"=>"eyor@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"서가람", "email"=>"skekrkfka@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"김미진", "email"=>"ae878@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"김하영", "email"=>"kimmayoung@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
 
-//        array("name"=>"이효정", "email"=>"hyon2224@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"장혜린", "email"=>"hinayuyulol@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"맹지은", "email"=>"jieun0652@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"방누리", "email"=>"nury7230@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-//       ,array("name"=>"구소희", "email"=>"kidater89@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
-// 2조
-//       array("name"=>"김혜영", "email"=>"artikhy@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//       면접 미 참가자.
+//       ,array("name"=>"서가람", "email"=>"skekrkfka@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
 //       ,array("name"=>"빈장은", "email"=>"binjang94@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
 //       ,array("name"=>"김창균", "email"=>"changgyun96@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
-//       ,array("name"=>"박예람", "email"=>"rhdwn8885@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
-//       ,array("name"=>"안예슬", "email"=>"iays11@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
-         
-//       array("name"=>"박지언", "email"=>"ccomzi950922@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
 //       ,array("name"=>"함나연", "email"=>"hamny88@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
 //       ,array("name"=>"최지은", "email"=>"lielieing@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
-//       ,array("name"=>"김태희", "email"=>"asaswwj@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
-//       ,array("name"=>"김정한", "email"=>"wjdgks7178@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
-
-// 3조
-//       array("name"=>"고경석", "email"=>"bestvov@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
 //       ,array("name"=>"문현구", "email"=>"moonhyunkoo@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-//       ,array("name"=>"이다혜", "email"=>"alsk0050@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-//       ,array("name"=>"김지은", "email"=>"xjpassion@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
 //       ,array("name"=>"이성원", "email"=>"jusk2@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-
-//       array("name"=>"공병국", "email"=>"qudrnr1479@gmail.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-//       ,array("name"=>"강은주", "email"=>"eunju_pro@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-//       ,array("name"=>"김민호", "email"=>"minmin0416@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-//       ,array("name"=>"이보빈", "email"=>"cultist_tp@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-//       ,array("name"=>"이원상", "email"=>"harryandws@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
-
-// 4조
 //       array("name"=>"김태용", "email"=>"designlab@taykim.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-//       ,array("name"=>"전소영", "email"=>"thdud1282@daum.net", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-//       ,array("name"=>"조미경", "email"=>"mikyung4088@gmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
 //       ,array("name"=>"이지원", "email"=>"ccc5770@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-//       ,array("name"=>"한혜선", "email"=>"hhs19962002@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-
-//       array("name"=>"전재범", "email"=>"jeon423@empas.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-//       ,array("name"=>"김현재", "email"=>"dk1004hj@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-//       ,array("name"=>"계성혁", "email"=>"lkay9495@hotmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-//       ,array("name"=>"백지원", "email"=>"baikjo2@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-//       ,array("name"=>"박보라", "email"=>"inshyk@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
-
-// 5조      
-//       array("name"=>"오승연", "email"=>"seuonn@hanmail.net", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
-//       ,array("name"=>"양진수", "email"=>"sinich99@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
-//       ,array("name"=>"한예성", "email"=>"930805hys@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
-//       ,array("name"=>"이정훈", "email"=>"ysw0732s@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 //       ,array("name"=>"하조은", "email"=>"imjoeunha@gmail.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
-
-//       array("name"=>"김성규", "email"=>"foxion@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
-//       ,array("name"=>"박연진", "email"=>"h_tea@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 //       ,array("name"=>"양지현", "email"=>"jhnyang@nate.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
-//       ,array("name"=>"추진주", "email"=>"jinju2424@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 //       ,array("name"=>"이호준", "email"=>"jazzwave14@gmail.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 
+
+
+// 1조
+//      array("name"=>"김지현", "email"=>"jihyun6221@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"권다은", "email"=>"eyor@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"김미진", "email"=>"ae878@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"김하영", "email"=>"kimmayoung@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+
+//      array("name"=>"이효정", "email"=>"hyon2224@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"맹지은", "email"=>"jieun0652@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"방누리", "email"=>"nury7230@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"구소희", "email"=>"kidater89@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"이원상", "email"=>"harryandws@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+// 2조
+//     array("name"=>"김혜영", "email"=>"artikhy@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"박예람", "email"=>"rhdwn8885@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"안예슬", "email"=>"iays11@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//       
+//      array("name"=>"박지언", "email"=>"ccomzi950922@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"김태희", "email"=>"asaswwj@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"김정한", "email"=>"wjdgks7178@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+
+// 3조
+//      array("name"=>"고경석", "email"=>"bestvov@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"이다혜", "email"=>"alsk0050@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"전재범", "email"=>"jeon423@empas.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     
+//      array("name"=>"공병국", "email"=>"qudrnr1479@gmail.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"강은주", "email"=>"eunju_pro@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"김민호", "email"=>"minmin0416@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"이보빈", "email"=>"cultist_tp@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+
+// 4조
+//     array("name"=>"전소영", "email"=>"thdud1282@daum.net", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"조미경", "email"=>"mikyung4088@gmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"한혜선", "email"=>"hhs19962002@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"김지은", "email"=>"xjpassion@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     
+//     array("name"=>"김현재", "email"=>"dk1004hj@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"계성혁", "email"=>"lkay9495@hotmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"백지원", "email"=>"baikjo2@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"박보라", "email"=>"inshyk@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+
+// 5조      
+//      array("name"=>"장혜린", "email"=>"hinayuyulol@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"오승연", "email"=>"seuonn@hanmail.net", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"양진수", "email"=>"sinich99@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"한예성", "email"=>"930805hys@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     
+//      array("name"=>"이정훈", "email"=>"ysw0732s@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"박연진", "email"=>"h_tea@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"추진주", "email"=>"jinju2424@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"김성규", "email"=>"foxion@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+
+
+      ) /*}}}*/
+      ,"INT2" => array(/*{{{*/
+
+//       면접 미 참가자.
+//       ,array("name"=>"서가람", "email"=>"skekrkfka@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//       ,array("name"=>"빈장은", "email"=>"binjang94@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//       ,array("name"=>"김창균", "email"=>"changgyun96@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//       ,array("name"=>"함나연", "email"=>"hamny88@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//       ,array("name"=>"최지은", "email"=>"lielieing@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//       ,array("name"=>"문현구", "email"=>"moonhyunkoo@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//       ,array("name"=>"이성원", "email"=>"jusk2@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//       array("name"=>"김태용", "email"=>"designlab@taykim.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//       ,array("name"=>"이지원", "email"=>"ccc5770@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//       ,array("name"=>"하조은", "email"=>"imjoeunha@gmail.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//       ,array("name"=>"양지현", "email"=>"jhnyang@nate.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//        array("name"=>"이호준", "email"=>"jazzwave14@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+
+
+
+// 1조
+//      array("name"=>"김지현", "email"=>"jihyun6221@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"권다은", "email"=>"eyor@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"김미진", "email"=>"ae878@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"김하영", "email"=>"kimmayoung@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+
+//      array("name"=>"이효정", "email"=>"hyon2224@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"맹지은", "email"=>"jieun0652@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"방누리", "email"=>"nury7230@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"구소희", "email"=>"kidater89@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"이원상", "email"=>"harryandws@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+// 2조
+//     array("name"=>"김혜영", "email"=>"artikhy@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"박예람", "email"=>"rhdwn8885@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"안예슬", "email"=>"iays11@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//       
+//      array("name"=>"박지언", "email"=>"ccomzi950922@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"김태희", "email"=>"asaswwj@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"김정한", "email"=>"wjdgks7178@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+
+// 3조
+//      array("name"=>"고경석", "email"=>"bestvov@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"이다혜", "email"=>"alsk0050@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"전재범", "email"=>"jeon423@empas.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     
+//      array("name"=>"공병국", "email"=>"qudrnr1479@gmail.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"강은주", "email"=>"eunju_pro@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"김민호", "email"=>"minmin0416@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"이보빈", "email"=>"cultist_tp@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+
+// 4조
+//     array("name"=>"전소영", "email"=>"thdud1282@daum.net", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"조미경", "email"=>"mikyung4088@gmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"한혜선", "email"=>"hhs19962002@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"김지은", "email"=>"xjpassion@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     
+//     array("name"=>"김현재", "email"=>"dk1004hj@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"계성혁", "email"=>"lkay9495@hotmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"백지원", "email"=>"baikjo2@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"박보라", "email"=>"inshyk@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+
+// 5조      
+//      array("name"=>"장혜린", "email"=>"hinayuyulol@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"오승연", "email"=>"seuonn@hanmail.net", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"양진수", "email"=>"sinich99@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"한예성", "email"=>"930805hys@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     
+//      array("name"=>"이정훈", "email"=>"ysw0732s@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"박연진", "email"=>"h_tea@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"추진주", "email"=>"jinju2424@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//     ,array("name"=>"김성규", "email"=>"foxion@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 
 
       ) /*}}}*/
@@ -357,6 +432,17 @@ class Admin_model extends CI_model
         &nbsp;&nbsp;&nbsp; 6층 다목적룸 으로 오셔서 대기 해 주시면 됩니다.<br><br>
         급한 연락은 010-5348-7688(청년샘1기 지상범)으로 부탁 드립니다.<br><br>
         감사합니다.
+        "
+      )/*}}}*/
+      ,"INT2" => array(/*{{{*/
+         "subject" => "[코딩클럽] 청년샘 3기 면접결과 공지 드립니다."
+        ,"content" => "안녕하세요 ".$sName." 님 청년샘 3기에 지원해주셔서 정말 감사합니다.<br><br>
+        청년샘 3기의 면접결과는 9월 1일(목) 에 메일로 발송 해 드리겠습니다.<br>
+        혹시 못다한 이야기가 있으신 분은 꼭 저희에게 알려 주시기 바랍니다<br><br>
+        문의 메일은 : contact.codingclub@gmail.com <br>
+        코딩클럽 페이스북과 메신저를 이용해 주셔도 됩니다.<br>
+        다시 한번 지원해 주셔서 감사합니다.<br><br>
+        급한 연락은 010-5348-7688(청년샘1기 지상범)으로 부탁 드립니다.<br><br>
         "
       )/*}}}*/
     );

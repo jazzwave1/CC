@@ -86,12 +86,8 @@ class Member extends CI_Controller {
   {
     echo "<pre>";
     print_r($_SERVER);
-    if($_SERVER["SERVER_NAME"] == 'localhost')
-      $sHostURL = 'http://localhost/~leehojun/CC/codingclub/';
-    else
-      $sHostURL= 'http://member.codingclubs.org/';
-    
-    echo $sHostURL;
+   
+    echo HOSTURL;
     die;    
   }/*}}}*/
   public function summercampJoin()/*{{{*/

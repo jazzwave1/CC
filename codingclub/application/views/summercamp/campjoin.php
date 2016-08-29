@@ -811,8 +811,7 @@
         }
 
         $.post(
-          //"http://localhost/~leehojun/CC/codingclub/Member/rpcJoin"
-          "http://member.codingclubs.org/Member/rpcJoin"
+          "<?=HOSTURL?>/Member/rpcJoin"'
           ,{
             // account
              "account_id" : $('#account_id').val()
@@ -872,8 +871,7 @@
           return;
         }     
         $.post(
-          //"http://localhost/~leehojun/CC/codingclub/Member/rpcIdCheck"
-          "http://member.codingclubs.org/Member/rpcIdCheck"
+          "<?=HOSTURL?>/Member/rpcIdCheck"
           ,{
              "account_id" : $('#account_id').val()
             ,"idCheck" : $('#idCheck').val()
