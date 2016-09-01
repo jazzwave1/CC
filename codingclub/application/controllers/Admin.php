@@ -117,7 +117,7 @@ class admin extends CI_Controller {
     $aMenu = array('aMenu'=>$this->aMenu);
     $aContentHeader= array( 
        'bTitle' => '강좌별검색 '
-      ,'sTitle' => '[ Tip : 중복검색시 shift key를 누르고 선택하세요]' 
+      ,'sTitle' => '[ Tip : 중복검색시 shift key를 누르고 선택하세요 ]' 
       ,'navi'   => array('검색', '강좌별검색')
     );
     $temp = "";
@@ -191,7 +191,7 @@ class admin extends CI_Controller {
     $aMenu = array('aMenu'=>$this->aMenu);
     $aContentHeader= array( 
        'bTitle' => '유저검색 '
-      ,'sTitle' => '[ Tip : ]' 
+      ,'sTitle' => '[ Tip : Email ID 또는 학색이름을 입력하세요 ]' 
       ,'navi'   => array('검색', '유저검색')
     );
     $temp = "";

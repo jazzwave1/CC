@@ -35,9 +35,9 @@ if( count($userinfo) >= 1)
   <div class="row invoice-info">
     <div class="col-sm-4 invoice-col">
       <b>Account Info</b><br>
-      <b>Account ID : </b><?php echo $userinfo[$i]->account_id ; ?> <br>
-      <b>생성일 :</b> <?php echo $userinfo[$i]->regdate ; ?><br>
-      <b>본인확인일 :</b> <?php echo $userinfo[$i]->confirm; ?><br>
+      Account ID : <?php echo $userinfo[$i]->account_id ; ?> <br>
+      생성일 : <?php echo $userinfo[$i]->regdate ; ?><br>
+      본인확인일 : <?php echo $userinfo[$i]->confirm; ?><br>
     </div>
     <div class="col-sm-4 invoice-col">
       <b>학생정보</b> 
@@ -92,6 +92,7 @@ if( count($userinfo) >= 1)
     </div>
     <!-- /.col -->
   </div>
+  <HR width="95%" align="center" >
 <?php
   }
 }
