@@ -63,19 +63,46 @@ class Admin_model extends CI_model
   {
     if(!$sEmailID) return false; 
     $aInput = array('account_id' => $sEmailID);
-    return $this->_getUserInfoFromEmailID($aInput);
+    $aResult = $this->_getUserInfoFromEmailID($aInput);
+   
+    if($aResult)
+    {
+      foreach($aResult as $key=>$val)
+      {
+        $val->grde        = $this->memberGRDEConfig[$val->grde];
+      }
+    }
+    return $aResult;
   }/*}}}*/
   public function getUserInfoFromName($sName)/*{{{*/
   {
     if(!$sName) return false; 
     $aInput = array('name' => $sName);
-    return $this->_getUserInfoFromName($aInput);
+    $aResult = $this->_getUserInfoFromName($aInput);
+    
+    if($aResult)
+    {
+      foreach($aResult as $key=>$val)
+      {
+        $val->grde        = $this->memberGRDEConfig[$val->grde];
+      }
+    }
+    return $aResult;
   }/*}}}*/
   public function getMemberSVC($usn)/*{{{*/
   {
     if(!$usn) return false; 
     $aInput = array('usn' => $usn);
-    return $this->_getMemberSVC($aInput);
+    $aResult = $this->_getMemberSVC($aInput);
+   
+    if($aResult)
+    {
+      foreach($aResult as $key=>$val)
+      {
+        $val->state = $this->memberSTATEConfig[$val->state];
+      }
+    }
+    return $aResult;
   }/*}}}*/
 
   public function getSummerCampFull()/*{{{ 2016 07 SummerCampList*/
