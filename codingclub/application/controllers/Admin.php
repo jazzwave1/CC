@@ -164,10 +164,30 @@ class admin extends CI_Controller {
       else
       {
         // 이름
-        $aUserInfo= $this->_getUserInfoFromName($sParam) ;
+        if( $aResult = $this->_getUserInfoFromName($sParam) )
+        { 
+          $aUserInfo = $aResult; 
+          foreach($aUserInfo as $key=>$val)
+          {
+            $result = $this->_getMemberSVC($val->usn); 
+            array_push($aMemberSVC, $result);
+          }
+          foreach($aMemberSVC as $key=>$val)
+          {
+            foreach($val as $k=>$v)
+            {
+              $tmp[] = $v;
+            }
+          }
+          $aMemberSVC = $tmp;
+        }
+        else
+        {
+          $notice = '없는 정보 입니다.';
+        }
       }
     }
-    
+
     $aMenu = array('aMenu'=>$this->aMenu);
     $aContentHeader= array( 
        'bTitle' => '유저검색 '

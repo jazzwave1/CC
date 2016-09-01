@@ -1,7 +1,7 @@
 <form name='fo' method='post' action='<?=HOSTURL?>/admin/usersearch'>
 <section class="invoice">
   <div class="col-md-6">
-      Email ID or UserName (이름검색은 준비중입니다) 
+      Email ID or UserName  
       <div class="input-group input-group-sm">
         <input id='sAccountIDorName' name='sAccountIDorName' type="text" class="form-control">
             <span class="input-group-btn">
