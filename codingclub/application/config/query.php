@@ -69,7 +69,7 @@ $config['query'] = array(
       ,'null' => array()
     )
     ,'getMemberSVC' => array( 
-      'query' => 'SELECT m.course_idx, m.state, c.name 
+      'query' => 'SELECT m.usn, m.course_idx, m.state, c.name, m.regdate 
                     FROM member_svc m , course c
                    WHERE m.course_idx = c.idx 
                      AND m.usn = ? '
@@ -159,6 +159,25 @@ $config['query'] = array(
       ,'btype'=> 'sii'
       ,'null' => array() 
     )
+    ,'getUserInfoFromEmailID' => array( 
+      'query' => 'SELECT a.account_id, a.regdate, a.confirm, u.usn, u.name, u.school, u.grde, u.pname, u.php, u.pemail 
+                    FROM users as u, account a  
+                   WHERE u.usn = a.usn
+                     and a.account_id = ?'
+      ,'data' => array('account_id')
+      ,'btype'=> 's'
+      ,'null' => array() 
+    )
+    ,'getUserInfoFromName' => array( 
+      'query' => 'SELECT a.account_id, a.regdate, a.confirm, u.usn, u.name, u.school, u.grde, u.pname, u.php, u.pemail 
+                    FROM users as u, account a  
+                   WHERE u.usn = a.usn
+                     and u.name = ?'
+      ,'data' => array('name')
+      ,'btype'=> 's'
+      ,'null' => array() 
+    )
+
   )/*}}}*/
   ,'log' => array( /*{{{*/
     'setLoginLog' => array( 

@@ -59,6 +59,24 @@ class Admin_model extends CI_model
     else
       return false;
   }/*}}}*/
+  public function getUserInfoFromEmailID($sEmailID)/*{{{*/
+  {
+    if(!$sEmailID) return false; 
+    $aInput = array('account_id' => $sEmailID);
+    return $this->_getUserInfoFromEmailID($aInput);
+  }/*}}}*/
+  public function getUserInfoFromName($sName)/*{{{*/
+  {
+    if(!$sName) return false; 
+    $aInput = array('name' => $sName);
+    return $this->_getUserInfoFromName($aInput);
+  }/*}}}*/
+  public function getMemberSVC($usn)/*{{{*/
+  {
+    if(!$usn) return false; 
+    $aInput = array('usn' => $usn);
+    return $this->_getMemberSVC($aInput);
+  }/*}}}*/
 
   public function getSummerCampFull()/*{{{ 2016 07 SummerCampList*/
   {
@@ -92,7 +110,6 @@ class Admin_model extends CI_model
     }
     return $aResult;
   }/*}}}*/
-
   public function adminsendmail($sMailList="")/*{{{*/
   {
     if(!$sMailList)
@@ -111,8 +128,22 @@ class Admin_model extends CI_model
     {
       echo $sMailList." | ".$val["name"]. " | " .$val["email"]. "<br>";
       $this->_sendMail($val["name"], $val["email"], $sMailList, $val["aInterterviewInfo"]);
+      sleep(1);
     }
     return;
+  }/*}}}*/
+
+  private function _getMemberSVC($aParam)/*{{{*/
+  {
+    return $this->admin_dao->getMemberSVC($aParam); 
+  }/*}}}*/
+  private function _getUserInfoFromEmailID($aParam)/*{{{*/
+  {
+    return $this->admin_dao->getUserInfoFromEmailID($aParam); 
+  }/*}}}*/
+  private function _getUserInfoFromName($aParam)/*{{{*/
+  {
+    return $this->admin_dao->getUserInfoFromName($aParam); 
   }/*}}}*/
   private function _getMailList($type)/*{{{*/
   {
@@ -245,7 +276,6 @@ class Admin_model extends CI_model
 //       ,array("name"=>"빈장은", "email"=>"binjang94@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
 //       ,array("name"=>"김창균", "email"=>"changgyun96@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
 //       ,array("name"=>"함나연", "email"=>"hamny88@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
-//       ,array("name"=>"최지은", "email"=>"lielieing@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
 //       ,array("name"=>"문현구", "email"=>"moonhyunkoo@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
 //       ,array("name"=>"이성원", "email"=>"jusk2@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
 //       array("name"=>"김태용", "email"=>"designlab@taykim.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
@@ -382,6 +412,56 @@ class Admin_model extends CI_model
 
 
       ) /*}}}*/
+      ,"FIL" => array(/*{{{*/
+//      array("name"=>"김지현", "email"=>"jihyun6221@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"권다은", "email"=>"eyor@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"김미진", "email"=>"ae878@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"김하영", "email"=>"kimmayoung@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//     ,array("name"=>"이효정", "email"=>"hyon2224@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+
+//    array("name"=>"맹지은", "email"=>"jieun0652@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"방누리", "email"=>"nury7230@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"구소희", "email"=>"kidater89@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"이원상", "email"=>"harryandws@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"최지은", "email"=>"lielieing@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   
+//      array("name"=>"김혜영", "email"=>"artikhy@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"박예람", "email"=>"rhdwn8885@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"안예슬", "email"=>"iays11@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"박지언", "email"=>"ccomzi950922@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//     ,array("name"=>"김태희", "email"=>"asaswwj@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   
+//    array("name"=>"김정한", "email"=>"wjdgks7178@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   ,array("name"=>"강은주", "email"=>"eunju_pro@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"고경석", "email"=>"bestvov@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"이다혜", "email"=>"alsk0050@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"공병국", "email"=>"qudrnr1479@gmail.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   
+//      array("name"=>"김민호", "email"=>"minmin0416@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"전소영", "email"=>"thdud1282@daum.net", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"조미경", "email"=>"mikyung4088@gmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"한혜선", "email"=>"hhs19962002@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"김지은", "email"=>"xjpassion@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     
+//     ,array("name"=>"김현재", "email"=>"dk1004hj@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"계성혁", "email"=>"lkay9495@hotmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"백지원", "email"=>"baikjo2@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"박보라", "email"=>"inshyk@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"장혜린", "email"=>"hinayuyulol@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   
+//    array("name"=>"오승연", "email"=>"seuonn@hanmail.net", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"양진수", "email"=>"sinich99@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"한예성", "email"=>"930805hys@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"이정훈", "email"=>"ysw0732s@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"추진주", "email"=>"jinju2424@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"김성규", "email"=>"foxion@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+      
+// 탈락자3명
+//     ,array("name"=>"전재범", "email"=>"jeon423@empas.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//     ,array("name"=>"이보빈", "email"=>"cultist_tp@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"박연진", "email"=>"h_tea@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+
+      ) /*}}}*/
     ); 
     return $aList[$type]; 
   }/*}}}*/
@@ -445,6 +525,24 @@ class Admin_model extends CI_model
         급한 연락은 010-5348-7688(청년샘1기 지상범)으로 부탁 드립니다.<br><br>
         "
       )/*}}}*/
+      ,"FIL" => array(/*{{{*/
+         "subject" => "[코딩클럽] 청년샘 3기 최종 면접결과 안내드립니다."
+        ,"content" => "안녕하세요 ".$sName." 님 청년샘 3기에 지원해주셔서 정말 감사합니다.<br><br>
+        축하드립니다. <br>
+        ".$sName."님 께서는 청년샘3기에 최종 합격하셨습니다. <br><br>
+        첫만남 공지<br>
+        시간 : 9월 3일 토요일 오전 10시 (2시간)<br>
+        장소 : 디 캠프 ( 서울특별시 강남구 선릉로 551 (지번 : 서울특별시 강남구 역삼동 683-34 새롬빌딩 6층) )<br>
+        &nbsp;&nbsp;&nbsp; 6층 다목적룸 으로 오시면 됩니다..<br><br>
+        
+        9월 3일 오리엔테이션에서 서로간의 인사와 앞으로 코딩클럽 일정 및 공유 사항들을 전달할 예정입니다.<br>
+        꼭 참석 부탁 드립니다.<br><br>
+
+        문의 메일은 : contact.codingclub@gmail.com <br>
+        코딩클럽 페이스북과 메신저를 이용해 주셔도 됩니다.<br>
+        급한 연락은 010-5348-7688(청년샘1기 지상범)으로 부탁 드립니다.<br><br>
+        "
+      )/*}}}*/
     );
     return $aMailConfig[$type]; 
   }/*}}}*/
@@ -491,7 +589,6 @@ class Admin_model extends CI_model
     $this->email->set_newline("\r\n"); 
     return;
   }/*}}}*/
- 
   private function _getExcelList($aCourseIDX)/*{{{*/
   {
     if(!is_array($aCourseIDX) || count($aCourseIDX) < 1) return false;

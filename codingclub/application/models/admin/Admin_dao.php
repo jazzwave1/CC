@@ -6,7 +6,8 @@ class Admin_dao extends Common_dao
   {
     $this->load->database('codingclub');
     $aQueryInfo = cc_get_config('query', 'query');  
-    $this->queryInfoAdmin = $aQueryInfo['admin'];  
+    $this->queryInfoAdmin  = $aQueryInfo['admin'];  
+    $this->queryInfoMember = $aQueryInfo['membership'];  
   }
   
   public function getUserList($aParam='')/*{{{*/
@@ -64,7 +65,7 @@ class Admin_dao extends Common_dao
 
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
-  public function getCourse($aParam='')/*{{{*/
+   public function getCourse($aParam='')/*{{{*/
   {
     $aConfig = $this->queryInfoAdmin['getCourse'];
     return $this->actModelFuc($aConfig, $aParam);
@@ -72,6 +73,21 @@ class Admin_dao extends Common_dao
   public function updateState($aParam='')/*{{{*/
   {
     $aConfig = $this->queryInfoAdmin['updateState'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function getUserInfoFromEmailID($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoAdmin['getUserInfoFromEmailID'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function getUserInfoFromName($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoAdmin['getUserInfoFromName'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function getMemberSVC($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMember['getMemberSVC'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
 }
