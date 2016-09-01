@@ -135,7 +135,7 @@ class admin extends CI_Controller {
   {
     $this->chkCookie() ;
     
-    $sParam = $this->input->post('sAccountIDorName'); 
+    $sParam = trim($this->input->post('sAccountIDorName')); 
     // test code --------------------- //
     //$sParam = "jazzwave14@naver.com";
     //$sParam = urlencode($sParam); 
