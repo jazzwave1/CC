@@ -13,17 +13,17 @@ class admin extends CI_Controller {
         ,'title_class'=> 'fa fa-search' 
         ,'active'=> true
         ,'child' => array( 
-           array('link' => HOSTURL.'/admin/usersearch', 'title' => '유저검색')
-          ,array('link' => HOSTURL.'/admin/userlist', 'title' => '과목별검색')
+           array('link' => HOSTURL.'/admin/usersearch', 'title' => '유저 검색')
+          ,array('link' => HOSTURL.'/admin/userlist', 'title' => '프로그램별 검색')
         )
       )
       ,array( 
-         'title' => 'title2'
-        ,'title_class'=> 'fa fa-files-o' 
+         'title' => '프로그램관리'
+        ,'title_class'=> 'fa fa-list' 
         ,'active'=> false
         ,'child' => array( 
-           array('link' => '/ci/index.php/Test/getList', 'title' => 'Menu2-1')
-          ,array('link' => '/ci/index.php/Test/getList', 'title' => 'Menu2-2')
+           array('link' => HOSTURL.'/admin/courselist', 'title' => '프로그램 리스트')
+          //,array('link' => HOSTURL.'/admin/courselist', 'title' => '신규 프로그램 등록')
         )
       )
     );  /*}}}*/
@@ -118,7 +118,7 @@ class admin extends CI_Controller {
     $aContentHeader= array( 
        'bTitle' => '강좌별검색 '
       ,'sTitle' => '[ Tip : 중복검색시 shift key를 누르고 선택하세요 ]' 
-      ,'navi'   => array('검색', '강좌별검색')
+      ,'navi'   => array('검색', '프로그램별 검색')
     );
     $temp = "";
  
@@ -209,6 +209,30 @@ class admin extends CI_Controller {
     $this->load->view('admin/layout', $data);  
 
   }/*}}}*/
+  public function courselist()/*{{{*/
+  {
+    //$this->chkCookie() ;
+    $aMainData = array();
+    $aMainData['aRowData'] = $this->admin_model->getCourseList(); 
+    
+    $aMenu = array('aMenu'=>$this->aMenu);
+    $aContentHeader= array( 
+       'bTitle' => '프로그램 리스트'
+      ,'sTitle' => '' 
+      ,'navi'   => array('프로그램관리', '프로그램 리스트')
+    );
+    $temp = "";
+ 
+    $data = array(
+       'menu'   => $this->load->view('admin/menu', $aMenu , true)
+      ,'content_header' => $this->load->view('admin/content_header', $aContentHeader , true)
+      ,'main_content' => $this->load->view('admin/courselist', $aMainData, true) 
+      ,'footer' => $this->load->view('admin/footer', $temp, true)
+    );
+    
+    $this->load->view('admin/layout', $data);  
+  }/*}}}*/
+
 
   public function rpcAdminLogin()/*{{{*/
   {
@@ -246,7 +270,7 @@ class admin extends CI_Controller {
     die; 
   }/*}}}*/
 
-  private function _getMemberSVC($usn)/*{{{*/
+    private function _getMemberSVC($usn)/*{{{*/
   {
     if(!$usn) return false; 
     return $this->admin_model->getMemberSVC($usn); 

@@ -110,6 +110,14 @@ $config['query'] = array(
       ,'btype'=> 'i'
       ,'null' => array() 
     )
+    ,'getCourseALL' => array( 
+      'query' => 'SELECT idx as course_idx , name, content, target, schedule, need, recruit, sdate, edate 
+                    FROM course 
+                   WHERE idx >= ?'
+      ,'data' => array('idx')
+      ,'btype'=> 'i'
+      ,'null' => array() 
+    )
     ,'getCourseInfoToday' => array( 
       'query' => 'SELECT course_name, contents, student_count, sdate, edate, type, regdate 
                     FROM course 

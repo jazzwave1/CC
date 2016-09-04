@@ -52,4 +52,16 @@ function getCookieInfo()/*{{{*/
   $CI->load->helper('cookie');
   return  get_cookie('codingclub_MemberInfo');
 }/*}}}*/
+function setDateFormat($sDate, $type)/*{{{*/
+{
+  if(!$sDate) return '-';
+  
+  switch($type)
+  {
+    case 'YMD':
+      $result = substr($sDate, 0, 4). "년 ". substr($sDate, 5, 2). "월 ". substr($sDate, 8, 2). "일 ";
+      break;
+  }
+  return $result;
+}/*}}}*/
 ?>

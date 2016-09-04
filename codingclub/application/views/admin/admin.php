@@ -26,7 +26,7 @@
       </div>     
         
       <div class="box-header">
-        <i class="fa fa-fw fa-list"></i>선택강좌 : <?=$courseName?> 
+        <i class="fa fa-fw fa-list"></i>선택프로그램 : <?=$courseName?> 
       </div>
       
       <div class="box-body">

@@ -64,8 +64,8 @@ if( count($userinfo) >= 1)
       <table class="table table-striped">
         <thead>
         <tr>
-          <th>과목번호</th>
-          <th>과목명</th>
+          <th>프로그램번호</th>
+          <th>프로그램명</th>
           <th>상태</th>
           <th>신청일</th>
         </tr>

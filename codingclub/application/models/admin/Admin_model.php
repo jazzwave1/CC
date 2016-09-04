@@ -104,7 +104,23 @@ class Admin_model extends CI_model
     }
     return $aResult;
   }/*}}}*/
+  public function getCourseList()/*{{{*/
+  {
+    $aInput = array('idx' => 1);
+    $aResult = $this->_getCourseList($aInput);
+    
+    if(count($aResult) < 1 || !$aResult)return false;
+    if(!$aResult[0]->name) return false;
+   
+    foreach($aResult as $key=>$val)
+    {
+      $val->sdate = setDateFormat($val->sdate,'YMD');
+      $val->edate = setDateFormat($val->edate,'YMD');
+    }
 
+    return $aResult;
+  }/*}}}*/
+  
   public function getSummerCampFull()/*{{{ 2016 07 SummerCampList*/
   {
     $aCourseIDX = array(
@@ -160,6 +176,10 @@ class Admin_model extends CI_model
     return;
   }/*}}}*/
 
+  private function _getCourseList($aParam)/*{{{*/
+  {
+    return $this->admin_dao->getCourseList($aParam); 
+  }/*}}}*/
   private function _getMemberSVC($aParam)/*{{{*/
   {
     return $this->admin_dao->getMemberSVC($aParam); 
@@ -482,13 +502,65 @@ class Admin_model extends CI_model
 //   ,array("name"=>"이정훈", "email"=>"ysw0732s@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 //   ,array("name"=>"추진주", "email"=>"jinju2424@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 //   ,array("name"=>"김성규", "email"=>"foxion@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"전재범", "email"=>"jeon423@empas.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
       
-// 탈락자3명
-//     ,array("name"=>"전재범", "email"=>"jeon423@empas.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+// 탈락자2명
 //     ,array("name"=>"이보빈", "email"=>"cultist_tp@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
 //     ,array("name"=>"박연진", "email"=>"h_tea@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
 
       ) /*}}}*/
+      ,"g1" => array(/*{{{*/
+
+//    array("name"=>"김지현", "email"=>"jihyun6221@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"권다은", "email"=>"eyor@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"김미진", "email"=>"ae878@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"김하영", "email"=>"kimmayoung@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"이효정", "email"=>"hyon2224@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//
+//   , array("name"=>"맹지은", "email"=>"jieun0652@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"방누리", "email"=>"nury7230@naver.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"구소희", "email"=>"kidater89@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   ,array("name"=>"이원상", "email"=>"harryandws@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"최지은", "email"=>"lielieing@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   
+//    array("name"=>"김혜영", "email"=>"artikhy@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   ,array("name"=>"박예람", "email"=>"rhdwn8885@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   ,array("name"=>"안예슬", "email"=>"iays11@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   ,array("name"=>"박지언", "email"=>"ccomzi950922@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   ,array("name"=>"김태희", "email"=>"asaswwj@naver.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+// 
+//   ,array("name"=>"김정한", "email"=>"wjdgks7178@gmail.com", "aInterterviewInfo"=>array("num"=>2, "time"=>"13시", "sbtime"=>"12시40분"))
+//   ,array("name"=>"강은주", "email"=>"eunju_pro@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"고경석", "email"=>"bestvov@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"이다혜", "email"=>"alsk0050@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"공병국", "email"=>"qudrnr1479@gmail.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   
+//   ,array("name"=>"김민호", "email"=>"minmin0416@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//   ,array("name"=>"전소영", "email"=>"thdud1282@daum.net", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//   ,array("name"=>"조미경", "email"=>"mikyung4088@gmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//   ,array("name"=>"한혜선", "email"=>"hhs19962002@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//   ,array("name"=>"김지은", "email"=>"xjpassion@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     
+//   ,array("name"=>"김현재", "email"=>"dk1004hj@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//   ,array("name"=>"계성혁", "email"=>"lkay9495@hotmail.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//   ,array("name"=>"백지원", "email"=>"baikjo2@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//   ,array("name"=>"박보라", "email"=>"inshyk@naver.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+//   ,array("name"=>"장혜린", "email"=>"hinayuyulol@gmail.com", "aInterterviewInfo"=>array("num"=>1, "time"=>"12시", "sbtime"=>"11시40분"))
+//   
+//   ,array("name"=>"오승연", "email"=>"seuonn@hanmail.net", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"양진수", "email"=>"sinich99@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"한예성", "email"=>"930805hys@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"이정훈", "email"=>"ysw0732s@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"추진주", "email"=>"jinju2424@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"김성규", "email"=>"foxion@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+//   ,array("name"=>"전재범", "email"=>"jeon423@empas.com", "aInterterviewInfo"=>array("num"=>4, "time"=>"15시", "sbtime"=>"14시40분"))
+      
+// 탈락자2명
+//     ,array("name"=>"이보빈", "email"=>"cultist_tp@naver.com", "aInterterviewInfo"=>array("num"=>3, "time"=>"14시", "sbtime"=>"13시40분"))
+//     ,array("name"=>"박연진", "email"=>"h_tea@naver.com", "aInterterviewInfo"=>array("num"=>5, "time"=>"16시", "sbtime"=>"15시40분"))
+
+      ) /*}}}*/
+    
     ); 
     return $aList[$type]; 
   }/*}}}*/
@@ -569,6 +641,65 @@ class Admin_model extends CI_model
         코딩클럽 페이스북과 메신저를 이용해 주셔도 됩니다.<br>
         급한 연락은 010-5348-7688(청년샘1기 지상범)으로 부탁 드립니다.<br><br>
         "
+      )/*}}}*/
+      ,"g1" => array(/*{{{*/
+         "subject" => "[코딩클럽] 청년샘 3기 공지 입니다."
+        ,"content" => '
+안녕하세요? 청년샘 3기 여러분.<br>
+여러분의 오리엔테이션 및 연수 기획을 맡은 <br>
+청년샘 2기 "전이슬"입니다.<br>
+다들 주말을 잘보내고 계신가요?<br>
+아님 스크래치 "about me" 만드느라 정신이 없으신가요?<br>
+다음 주에 스크래치와 앱인벤터를 배울 생각에 <br>
+혹시 설레지는 않으신가요?! :-)<br>
+코딩클럽의 많은 소프트웨어 교육 활동은 "스크래치"를 통해 이루어지니, 이번 "about me" 를 통해, 스크래치의 기본적인 부분을 각자 익혀보아요.<br>
+아마 스크래치의 매력에 푸욱 빠지게 될꺼에요!<br><br>
+　
+[스크래치 가입 및 공유 가이드 안내]<br>
+1) 스크래치 가입하기 <br>
+https://scratch.mit.edu<br><br>
+　
+　
+2) 동영상 강의 시청<br>
+스크래치의 기본 동작법 및 기능에 대한 내용을 아래 영상과 함께 익숙해지시기 바랍니다.<br>
+필수 : http://codingclubs.org/scratch-basic<br>
+심화 : http://codingclubs.org/scratch-making<br><br>
+　
+3) About Me 만들기<br>
+코딩클럽에 처음 오는 아이들이 제일 처음으로 하는 프로젝트입니다. 스크래치로 자기를 소개하는 프로그램을 만드는 것이죠.<br>
+여러분들도 한번 같이 해보아요! 멋진 자기소개를 기대할께요!<br>
+(단, 너무 완벽하지 않아도 좋아요. 아이들이 처음 스크래치를 만나,자기소개를 만들 때 느낄 수 있는 어려움을 같이 공유해보려는 목적도 있으니, 최고의 작품보다 여러분의 최선의 작품을 보여주세요.)<br><br>
+　
+　
+4) 코딩클럽 스크래치 스튜디오에 공유하기<br>
+코딩클럽 스튜디오 : https://scratch.mit.edu/studios/689048/<br>
+스크래치에서는 하나의 작품을 "프로젝트"라고 부르며, <br>
+이들을 비슷한 주제로 모아놓은 것을 "스튜디오"라고 합니다. <br>
+코딩클럽에 참여한 아이들이 만든 스크래치를 모으는 "코딩클럽 스튜디오"가 있습니다.여러분이 만든 About Me를 코딩클럽 스튜디오에 공유해주세요.<br>
+서로 알아 볼 수 있도록 프로젝트 제목을 <br>
+"청년샘3기_이름_자기소개"로 맞춰주세요. <br>
+(이름 자리에는 여러분의 이름이 들어가야겠죠?)<br><br>
+　
+　
+5) 페이스북 - 코딩클럽 그룹에 공유하기<br>
+코딩클럽 페이스북 그룹 : https://www.facebook.com/groups/CodingClubKorea/<br>
+이제는 코딩클럽의 모든 구성원 및 모든 사람들에게 자신의 작품을 자랑해봅시다! 자신의 작품 url과 함께 간단한 자기소개 멘트도 좋습니다. 스크래치를 처음 접한 느낌, 스스로 만들면서 느꼈던 감정들 <br>
+재미있었던 점, 어려웠었던 점, 오리엔테이션 후기도 좋구요.<br>
+청년샘 3기분들이 느낀 그 감정을 함께 공유하고 싶어요! <br><br>
+　
+　
+**Due Date는 9/6(화요일) 오후 11:59까지 입니다!<br>
+**앞으로의 모든 안내 및 공지사항은 <br>
+코딩클럽 페이스북 그룹을 통해서 공지됩니다. <br>
+두 눈 크게 뜨고 확인부탁드려요.<br><br>
+　
+그리고 예정대로 9월 10일(토) 13:30부터 <br>
+청년샘 3기 스크래치 및 앱인벤터 연수가 진행됩니다.<br>
+개인 노트북, 안드로이드 스마트폰(미개통 폰도 가능) 및 <br>
+필기구 지참하셔서, 늦지 않게 참석해주세요.<br>
+청년샘 3기 여러분 화이팅: -)<br>
+
+        '
       )/*}}}*/
     );
     return $aMailConfig[$type]; 

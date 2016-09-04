@@ -7,6 +7,7 @@ class Admin_dao extends Common_dao
     $this->load->database('codingclub');
     $aQueryInfo = cc_get_config('query', 'query');  
     $this->queryInfoAdmin  = $aQueryInfo['admin'];  
+    $this->queryInfoCourse = $aQueryInfo['course'];  
     $this->queryInfoMember = $aQueryInfo['membership'];  
   }
   
@@ -88,6 +89,11 @@ class Admin_dao extends Common_dao
   public function getMemberSVC($aParam='')/*{{{*/
   {
     $aConfig = $this->queryInfoMember['getMemberSVC'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+  public function getCourseList($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoCourse['getCourseALL'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
 }
