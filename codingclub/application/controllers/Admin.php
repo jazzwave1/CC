@@ -279,6 +279,8 @@ class admin extends CI_Controller {
         ,'schedule' => $oCourseInfo->schedule
         ,'need' => $oCourseInfo->need
         ,'recruit' => $oCourseInfo->recruit
+        ,'location' => $oCourseInfo->location
+        ,'sponsor' => $oCourseInfo->sponsor
         ,'sdate' => $oCourseInfo->sdate
         ,'edate' => $oCourseInfo->edate
         ,'sdateF' => $oCourseInfo->sdateF
@@ -297,6 +299,8 @@ class admin extends CI_Controller {
     $aParam['schedule'] = trim($this->input->post('schedule')); 
     $aParam['need']     = trim($this->input->post('need')); 
     $aParam['recruit']  = trim($this->input->post('recruit')); 
+    $aParam['location'] = trim($this->input->post('location')); 
+    $aParam['sponsor']  = trim($this->input->post('sponsor')); 
     $aParam['sdate']    = trim($this->input->post('sdate')); 
     $aParam['edate']    = trim($this->input->post('edate')); 
    

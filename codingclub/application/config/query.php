@@ -119,7 +119,7 @@ $config['query'] = array(
   )/*}}}*/
   ,'course' => array( /*{{{*/
     'getCourseInfo' => array( 
-      'query' => 'SELECT idx, name, content, target, schedule, need, recruit, sdate, edate 
+      'query' => 'SELECT idx, name, content, target, schedule, need, recruit, location, sponsor, sdate, edate 
                     FROM course 
                    WHERE idx = ?'
       ,'data' => array('idx')
@@ -208,12 +208,14 @@ $config['query'] = array(
                        , schedule = ?
                        , need = ?
                        , recruit = ?
+                       , location = ?
+                       , sponsor = ?
                        , sdate = ?
                        , edate = ?
                    WHERE idx = ?'
-      ,'data' => array('content','target','schedule','need','recruit','sdate','edate','idx')
-      ,'btype'=> 'sssssssi'
-      ,'null' => array('content','target','schedule','need','recruit','sdate','edate') 
+      ,'data' => array('content','target','schedule','need','recruit','location','sponsor','sdate','edate','idx')
+      ,'btype'=> 'sssssssssi'
+      ,'null' => array('content','target','schedule','need','recruit','location','sponsor','sdate','edate') 
     )
 
   )/*}}}*/
