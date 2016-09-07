@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+
+
+/* board */
+
+/* board list 게시판 목록 */
+
+.board_list {width:100%}
+.tab_box + .board_list {margin-top:56px} /*탭박스 아래 게시판목록 간격*/
+
+/* btnbox_admin 관리자 버튼*/
+.btnbox_admin {background-color:#e1e1e1;padding:5px 7px;height:28px;margin-bottom:23px}
+.btnbox_admin a {float:left;color:#464646;border:1px solid #78787a;padding:0 11px 0 25px;background:#fff url("../img/layout/btn_admin.gif") no-repeat 0 0;height:26px;line-height:22px;margin-right:3px}
+.btnbox_admin a:hover {color:#464646}
+.btnbox_admin a span {font-weight:bold;font-size:0.875em}
+a.btn_check {background-position:10px 50%}
+a.btn_db {background-position:-126px 50%}
+a.btn_xls {border:1px solid #4f9e7a;background-position:-262px 50%}
+a.btn_xls:hover, .btn_xls span {color:#2b8c60}
+a.btn_dust {background-position:-398px 50%}
+
+/* board_top 게시판 상단 :: total, 검색, 게시물번호 */
+.board_top {width:100%;margin:8px 0 9px 0}
+.board_top:after {content:'';display:block;height:0;clear:both}
+.board_top_left {float:left;height:28px}
+.total {font-weight:bold;font-size:1em;color:#445d7d;line-height:38px}
+.board_top_right {float:right}
+.bsch_box select {float:left;border:1px solid #c3c6d0;height:28px;width:78px;border-right:none}
+.bsch_box input[type="text"] {float:left;border:1px solid #c3c6d0;height:26px;width:193px;border-right:none}
+.btn_bsch {float:left;padding:0 11px;background-color:#595959;color:#fff;border:none;height:28px;font-size:0.875em;vertical-align:middle;cursor:pointer}
+.post_num strong {font-weight:normal;color:#445d7d}
+
+/* tbl_list 게시판 표목록 */
+.tbl_list {width:100%;margin-top:10px;text-align:center}
+.tbl_list th {background-color:#f8f8f8;border-top:1px solid #e1e1e1;border-bottom:2px solid #355a86;height:48px;line-height:48px;color:#445d7d}
+.tbl_list td {border-bottom:1px solid #e1e1e1;height:48px;line-height:48px;color:#878787}
+.b_subject {text-align:left}
+.ico_lock {background:url("../img/layout/icon_lock.gif") no-repeat 0 50%;padding-left:20px}
+.recept {display:inline-block;width:44px;height:22px;line-height:21px;font-size:0.750em;color:#fff;background:#ef4410}
+.handle {display:inline-block;width:44px;height:22px;line-height:21px;font-size:0.750em;color:#fff;background:#5d5c5c}
+
+
+
+/* btnbox_basic 일반 버튼*/
+.btnbox_basic {margin-top:15px}
+.btnbox_basic:after {content:'';display:block;height:0;clear:both}
+.btnbox_basic_left {float:left;width:50%}
+.btnbox_basic_right {float:right;width:50%;text-align:right}
+
+.btnbox_basic a {display:inline-block;padding:0 24px;height:36px;line-height:36px}
+.btnbox_basic a span {font-weight:bold;font-size:1em}
+.btn_bgblue {color:#fff;background-color:#5b8eec;border:1px solid #5b8eec}
+.btn_bgblue:hover {color:#fff}
+.btn_lineblue {color:#587191;background-color:#fff;border:1px solid #587191}
+.btn_lineblue:hover {color:#587191}
+.btn_bgdkgrey {color:#fff;background-color:#878787;border:1px solid #878787}
+.btn_bgdkgrey:hover {color:#fff}
+.btn_bgltgrey {color:#595959;background-color:#e8e8e8;border:1px solid #e8e8e8}
+.btn_bgltgrey:hover {color:#595959}
+
+
+
+/* paging 페이징 */
+.paging {text-align:center;margin-top:34px}
+.paging a {display:inline-block;width:30px;height:30px;line-height:30px;background-color:#f1f1f1;color:#666}
+.paging a span {font-size:0.750em}
+.paging a strong {font-weight:normal;font-size:0.750em}
+.paging a:hover, .paging a.active {background-color:#4176c2;color:#fff}
+
+
+a.btn_fst, a.btn_pre, a.btn_fst, a.btn_next, a.btn_last {background:url("../img/layout/btn_page.gif") no-repeat;width:28px;height:28px;line-height:28px;border:1px solid #bfbfbf}
+a.btn_fst:hover, a.btn_pre:hover, a.btn_next:hover, a.btn_last:hover {border:1px solid #383d40}
+a.btn_fst span, a.btn_pre span, a.btn_next span, a.btn_last span {visibility:hidden}
+a.btn_fst {background-position:0 0}
+a.btn_pre {background-position:0 -38px}
+a.btn_next {background-position:0 -76px}
+a.btn_last {background-position:0 -114px}
+
+
+
+/* board view 게시판 보기, 글쓰기 (민원형) */
+.tbl_view {width:100%;border-top:2px solid #355a86}
+.tbl_view + .tbl_view {margin-top:15px}  /*게시판보기 표끼리 간격*/
+.btnbox_basic + .tbl_view {margin-top:43px} /*게시판보기 버튼과 표 사이 간격*/
+
+.tbl_view th, .tbl_view td {height:28px;line-height:28px;padding:10px 18px;border-bottom:1px solid #e1e1e1}
+.tbl_view th {width:15%;background-color:#f8f8f8;color:#445d7d/*;word-break:keep-all*/}
+.tbl_view td {width:30%;background-color:#fff}
+.tbl_view td.fst {width:75%}
+.tbl_view td.txt_area {padding:32px 30px}
+.txt_area_box {line-height:1.25em;font-size:1em;margin-bottom:-8px}
+.tbl_view td.txt_editor {padding:10px 0}
+.editor_box {margin:0;padding:0;line-height:1.25em;font-size:1em}
+
+.ess {margin-left:5px;color:#ef4410;vertical-align:middle}
+.tbl_view input[type="text"] {height:26px;line-height:26px;border:1px solid #c3c6d0}
+.tbl_view textarea {border:1px solid #c3c6d0;width:97%;height:122px;padding:12px 10px;resize:none;overflow:auto}
+
+.tbl_view .input_tit {width:85%;margin-right:29px}
+.private_box {display:inline-block}
+.input_contact, .input_cellphone {width:50%;min-width:223px}
+.input_email {width:50%;min-width:346px}
+.input_adrs {display:block}
+.input_adrs + .input_adrs {margin-top:7px} /*주소입력단 줄간격*/
+.input_zipcode {width:150px}
+.btn_zipcode {font-weight:bold;font-size:0.875em;width:67px;height:28px;line-height:26px;border:1px solid #918f8f;color:#595959;background-color:#fff;cursor:pointer}
+.input_address {width:60%;min-width:426px}
+
+
+/* board view 게시판 보기 (일반형) */
+th.tbl_view_tit {text-align:left;font-size:1.25em;background:#fff;border-bottom:none}
+td.tbl_view_tititem {margin-top:-4px;padding:0 18px 11px 18px;text-align:left;font-size:1em;line-height:22px;height:22px}
+td.tbl_view_tititem span {display:inline-block;color:#878787}
+td.tbl_view_tititem span.bar {margin:0 10px;font-size:0.75em;vertical-align:top;color:#bababa}
+td.tbl_view_file {background-color:#fafafa;border-bottom:none}
+.flie_link {background:url("../img/layout/ico_file.png") no-repeat 0 50%;padding-left:24px}
+
+
+/*첨부파일*/
+.inputfile + .inputfile {margin-top:4px}
+.inputfile:after {content:'';display:block;height:0;clear:both}
+input.file_input_textbox {float:left;width:50%;margin-right:4px}
+.file_input_div {float:left;position:relative;width:67px;height:28px;margin-right:4px}
+.file_input_div:after {content:'';display:block;height:0;clear:both}
+.file_input_button {width:67px;height:28px;position:absolute;top:0px;font-weight:bold;font-size:0.875em;background-color:#fff;color:#595959;border:1px solid #918f8f}
+.file_input_hidden {position:absolute;right:0px;top:0px;opacity:0;filter:alpha(opacity=0);-ms-filter:"alpha(opacity=0)";-khtml-opacity:0;-moz-opacity:0;cursor:pointer}
+.inputfile a {float:left;background:url("../img/layout/btn_file.gif") no-repeat;height:26px;border:1px solid #918f8f;margin-right:4px}
+.inputfile a:hover {border:1px solid #494949}
+.inputfile a span {display:block;position:relative;z-index:-1;text-align:center}
+a.btn_addfile {background-position:0 0}
+a.btn_delfile {background-position:0 -36px}
+
+
+/* help 도움말 */
+.help{display:inline-block;position:relative;vertical-align:middle}
+.help .hover{display:none}
+.help:hover .hover{display:block}
+.help .hover.file{position:absolute;top:42px;left:-6px;border:1px solid #b8e0ce;background:#f3fef6;padding:10px 15px;line-height:20px;font-weight:normal;font-size:0.875em;text-align:left;width:41em;z-index:10;color:#634d13}
+.help .hover.file .arrow{background:url("../img/layout/help_hover.png") no-repeat 6px 0;position:absolute;top:-6px;left:0;width:20px;height:6px;z-index:999}
+
+
+
+

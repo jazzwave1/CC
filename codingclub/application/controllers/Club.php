@@ -6,7 +6,7 @@ class Club extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->admin_model = cc_get_instance('admin/admin_model', 'model'); 
+    $this->course_model = cc_get_instance('course/course_model', 'model'); 
     $this->load->helper('url');
   }
 
@@ -31,7 +31,7 @@ class Club extends CI_Controller {
 //  
 //  $this->load->view('admin/layout', $data);  
   }/*}}}*/
-  public function junior()/*{{{*/
+  public function junior($courseIDX='')/*{{{*/
   { 
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
@@ -57,9 +57,38 @@ class Club extends CI_Controller {
 //    ,'logout'     => ''
 //  );
 //    
+    if(!$courseIDX)
+    {
+      $data = array();
+      $this->load->view('club/junior', $data); 
+    }
+    else
+    {
+      $this->program($courseIDX);
+    }
+  }/*}}}*/
+  public function program($courseIDX)/*{{{*/
+  {
+    if(!$courseIDX) $this->junior();
+ 
+    $oCourseInfo = $this->_getCourseInfo($courseIDX);
     
-    $data = array();
-    $this->load->view('club/junior', $data); 
+    //test code 
+//  echo "<pre>";
+//  print_r($oCourseInfo);
+//  die;
+
+    $data = array(
+       'oCourseInfo' => $oCourseInfo
+    );
+    $this->load->view('club/junior_program', $data); 
+  }/*}}}*/
+
+  private function _getCourseInfo($courseIDX)/*{{{*/
+  {
+    if(!$courseIDX) return false;
+  
+    return $this->course_model->getCourseInfo($courseIDX);
   }/*}}}*/
 }
 ?>

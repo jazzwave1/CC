@@ -42,16 +42,19 @@ if($_SERVER["SERVER_NAME"] == 'localhost')
 {
   $sHostURL = 'http://localhost/~leehojun/CC/codingclub';
   $sStaticURL = 'http://localhost/~leehojun/CC/static/AdminLTE-2.3.0';
+  $sStatic  = 'http://localhost/~leehojun/CC/static';
   $sCookieDomain = "localhost";
 }
 else
 {
   $sHostURL= 'http://member.codingclubs.org';
   $sStaticURL = 'http://member.codingclubs.org/img';
+  $sStatic = 'http://member.codingclubs.org/static';
   $sCookieDomain= ".codingclubs.org";
 }
 define("HOSTURL", $sHostURL);
 define("IMGURL", $sStaticURL);
+define("SURL", $sStatic);
 define("CKDOMAIN", $sCookieDomain);
 // -------------------------------------------------------// 
 /**

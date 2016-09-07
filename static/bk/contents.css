@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+
+/* contents */
+
+
+/*tit_box 페이지 타이틀 */
+.tit_box {margin-bottom:68px}
+.tit_box:after {content:'';display:block;height:0;clear:both}
+.cont_tit {float:left;font-weight:bold;font-size:2.75em;line-height:1em;color:#262626;margin-top:16px}
+
+
+/*tab_box 탭 */
+.tab_box {display:block;margin-bottom:9px}
+.tab_box:after {content:'';display:block;height:0;clear:both}
+.tab_box ul li {float:left;width:25%;height:50px;background-color:#f2f2f2}
+.tab_box ul li:hover, .tab_box ul li.active {background-color:#4176c2}
+.tab_box ul li a {display:block}
+.tab_box ul li a span {display:inherit;text-align:center;line-height:50px;height:50px;font-weight:bold;font-size:1em;color:#555}
+.tab_box ul li a:hover, .tab_box ul li a span:hover, .tab_box ul li.active a span{color:#fff}
+
+
+/*cont_txt 일반리스트 */
+.txt_list01 {width:100%;display:inline-block;font-weight:bold;font-size:1.375em;line-height:1.625em;color:#3763a8;background:url("../img/layout/bullet_sprite.gif") no-repeat 0 80%;padding-left:34px;margin:46px 0 36px 0}
+.txt_list02 {width:100%;display:inline-block;font-weight:bold;font-size:1em;line-height:1.25em;color:#4f9e7a;margin:0 0 11px 0}
+.txt_list03 {width:100%;display:inline-block;font-size:1em;line-height:1.25em;margin:0 0 23px 0}
+
+
+/*btn_box 버튼스타일 :: 다운로드, 바로가기 버튼 등 */
+/*화면 중앙 위치*/
+.btn_box {width:100%;margin-bottom:28px}
+.btn_line {display:inline-block;border:1px solid #8d8d8d;padding:10px 13px 11px 14px;font-weight:bold;color:#555}
+.btn_line:hover {border:1px solid #5d5d5d;color:#494949}
+/*페이지타이틀 오른쪽 위치*/
+.tit_rbtn {float:right;margin-top:20px}
+/*버튼종류*/
+.ico_window {background:url("../img/layout/ico_win.gif") no-repeat 100% 50%;padding-right:24px}
+.ico_download {background:url("../img/layout/ico_down.gif") no-repeat 100% 50%;padding-right:24px}
+
+
+
+/*side_info 부가정보 :: 책임자정보 등*/
+.side_info {padding:10px 24px 11px 21px;background-color:#f6f7f7;border-left:3px solid #a8a7a7;margin-bottom:28px}
+.single_list {color:#767676;font-size:1em;line-height:1.5em}
+.single_list strong {margin-right:20px}
+@media all and (max-width:480px) {
+	.single_list span {display:block}
+}
+
+
+
+/* table_box 표 */
+.table_box {width:100%}
+.tab_box + .table_box {margin-top:56px} /*탭박스 아래 표 간격*/
+.tbl_table {width:100%;margin-top:10px;text-align:center;border-left:1px solid #e1e1e1}
+.tbl_table th {background-color:#f8f8f8;border-top:1px solid #e1e1e1;border-right:1px solid #e1e1e1;border-bottom:2px solid #355a86;padding:17px 4px 19px 4px;line-height:1.25em;color:#445d7d}
+.tbl_table td {;border-right:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;padding:18px 4px 19px 4px;line-height:1.25em;color:#878787}
+
+
+
+
+
+
+
+
+
+/*공용 - 마지막에 적용되어야 하므로 위치 옯기지 마세요*/
+.center {text-align:center}
+.left {text-align:left}
+.right {text-align:right}
