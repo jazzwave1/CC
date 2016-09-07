@@ -211,11 +211,14 @@ class admin extends CI_Controller {
   }/*}}}*/
   public function courselist()/*{{{*/
   {
-    //$this->chkCookie() ;
+    $this->chkCookie() ;
     $aMainData = array();
     $aMainData['aRowData'] = $this->admin_model->getCourseList(); 
     
     $aMenu = array('aMenu'=>$this->aMenu);
+    $aMenu['aMenu'][0]['active'] = false;
+    $aMenu['aMenu'][1]['active'] = true;
+
     $aContentHeader= array( 
        'bTitle' => '프로그램 리스트'
       ,'sTitle' => '' 
