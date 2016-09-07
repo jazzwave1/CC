@@ -294,6 +294,7 @@ class admin extends CI_Controller {
   {
     $aParam = array();
     $aParam['idx']      = trim($this->input->post('idx')); 
+    $aParam['name']     = trim($this->input->post('name')); 
     $aParam['content']  = trim($this->input->post('content')); 
     $aParam['target']   = trim($this->input->post('target')); 
     $aParam['schedule'] = trim($this->input->post('schedule')); 

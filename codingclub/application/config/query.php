@@ -203,7 +203,8 @@ $config['query'] = array(
     )
     ,'updateCourseInfo' => array( 
       'query' => 'UPDATE course 
-                     SET content = ?
+                     SET name = ? 
+                       , content = ?
                        , target = ?
                        , schedule = ?
                        , need = ?
@@ -213,9 +214,9 @@ $config['query'] = array(
                        , sdate = ?
                        , edate = ?
                    WHERE idx = ?'
-      ,'data' => array('content','target','schedule','need','recruit','location','sponsor','sdate','edate','idx')
-      ,'btype'=> 'sssssssssi'
-      ,'null' => array('content','target','schedule','need','recruit','location','sponsor','sdate','edate') 
+      ,'data' => array('name','content','target','schedule','need','recruit','location','sponsor','sdate','edate','idx')
+      ,'btype'=> 'ssssssssssi'
+      ,'null' => array('name','content','target','schedule','need','recruit','location','sponsor','sdate','edate') 
     )
 
   )/*}}}*/

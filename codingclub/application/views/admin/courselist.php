@@ -85,6 +85,10 @@
           <form>
           <input type="hidden" id="modify_idx" value="">
           <div class="form-group">
+            <label for="recipient-name" class="control-label">프로그램명</label>
+            <input type="text" id="modify_name" class="form-control">
+          </div>
+          <div class="form-group">
             <label for="recipient-name" class="control-label">내용</label>
             <textarea id="modify_content" class="form-control" rows="2"></textarea>           
           </div>
