@@ -1,5 +1,83 @@
+<!-- Button trigger modal -->
+<div class="box-body">
+  <button type="button" id="bAddPorgram" class="btn btn-info btn-block" data-toggle='modal' data-target='#myModal3'>프로그램 등록하기</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">프로그램등록</h4>
+      </div>
+      <div class="modal-body">
+        <form name="fo_add">
+          <input type="hidden" id="add_idx" value="">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">프로그램명[ 예) 16.8월, 프로그램명 ] 형식을 지켜 주세요</label>
+            <input type="text" id="add_name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">내용</label>
+            <textarea id="add_content" class="form-control" rows="2"></textarea>           
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">일정</label>
+            <input type="text" id="add_schedule" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">대상</label>
+            <textarea id="add_target" class="form-control" rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">장소</label>
+            <input type="text" id="add_location" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">준비물</label>
+            <input type="text" id="add_need" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">후원</label>
+            <input type="text" id="add_sponsor" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">참가비</label>
+            <input type="text" id="add_recurit" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">소개(긴글) [줄바꿈은 | 를 입력해 주세요]</label>
+            <textarea id="add_content_long" class="form-control" rows="3"></textarea>           
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">대상(긴글) [줄바꿈은 | 를 입력해 주세요]</label>
+            <textarea id="add_target_long" class="form-control" rows="3"></textarea>           
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">학습안내(긴글) [줄바꿈은 | 를 입력해 주세요]</label>
+            <textarea id="add_guide_long" class="form-control" rows="3"></textarea>           
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">시작일</label>
+            <input type="text" id="add_sdate" class="form-control" placeholder="2016-10-10 12:34:56">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">종료일</label>
+            <input type="text" id="add_edate" class="form-control" placeholder="2016-10-10 12:34:56">
+          </div>
+        </form> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="bSetCourseInfo" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <div class="box">
-    
       <div class="box-body">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
@@ -33,6 +111,8 @@
         </table>  
       </div> 
     </div>
+
+
 <!-- Modal sangse view-->
 <div class="modal fade modal-primary" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -77,7 +157,9 @@
     </div>
   </div>
 </div>
- 
+
+
+
 <!-- Modal modify view-->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -88,10 +170,10 @@
       </div>
       <div class="modal-body">
         <div class="box-body">
-          <form>
+          <form name="fo_modify">
           <input type="hidden" id="modify_idx" value="">
           <div class="form-group">
-            <label for="recipient-name" class="control-label">프로그램명</label>
+            <label for="recipient-name" class="control-label">프로그램명[ 예) 16.8월, 프로그램명 ] 형식을 지켜 주세요</label>
             <input type="text" id="modify_name" class="form-control">
           </div>
           <div class="form-group">
@@ -152,10 +234,44 @@
   </div>
 </div>
 
+
   <script>   
   $(function(){
     $("#example1").DataTable();
-  
+     
+    $('#bSetCourseInfo').click(function(){
+      $.post(
+        "<?=HOSTURL?>/Admin/rpcInsertCourseInfo"
+        ,{
+          "idx" : $("#add_idx").val() 
+          ,"content" : $("#add_content").val() 
+          ,"name" : $("#add_name").val() 
+          ,"target" : $("#add_target").val() 
+          ,"schedule" : $("#add_schedule").val() 
+          ,"need" : $("#add_need").val() 
+          ,"recruit" : $("#add_recurit").val() 
+          ,"location" : $("#add_location").val() 
+          ,"sponsor" : $("#add_sponsor").val() 
+          ,"content_long" : $("#add_content_long").val() 
+          ,"target_long" : $("#add_target_long").val() 
+          ,"guide_long" : $("#add_guide_long").val() 
+          ,"sdate" : $("#add_sdate").val() 
+          ,"edate" : $("#add_edate").val() 
+        }
+        ,function(data, status) {
+          if (status == "success" && data.code == 1)
+          {
+            alert('등록되었습니다');
+            location.reload();
+          }
+          else
+          {
+            alert('오류가 발생하였습니다');
+          }
+        }
+      ); 
+    }); 
+    
     $('#bUpdateCourseInfo').click(function(){
       $.post(
         "<?=HOSTURL?>/Admin/rpcUpdateCourseInfo"

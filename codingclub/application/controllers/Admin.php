@@ -317,6 +317,29 @@ class admin extends CI_Controller {
       response_json(array("code"=>0,"msg"=>"fail")); 
     die;
   }/*}}}*/
+  public function rpcInsertCourseInfo()/*{{{*/
+  {
+    $aParam = array();
+    $aParam['name']     = trim($this->input->post('name')); 
+    $aParam['content']  = trim($this->input->post('content')); 
+    $aParam['target']   = trim($this->input->post('target')); 
+    $aParam['schedule'] = trim($this->input->post('schedule')); 
+    $aParam['need']     = trim($this->input->post('need')); 
+    $aParam['recruit']  = trim($this->input->post('recruit')); 
+    $aParam['location'] = trim($this->input->post('location')); 
+    $aParam['sponsor']  = trim($this->input->post('sponsor')); 
+    $aParam['content_long']  = trim($this->input->post('content_long')); 
+    $aParam['target_long']   = trim($this->input->post('target_long')); 
+    $aParam['guide_long']    = trim($this->input->post('guide_long')); 
+    $aParam['sdate']    = trim($this->input->post('sdate')); 
+    $aParam['edate']    = trim($this->input->post('edate')); 
+  
+    if($this->_InsertCourseInfo($aParam)) 
+      response_json(array("code"=>1,"msg"=>"OK"));
+    else
+      response_json(array("code"=>0,"msg"=>"fail")); 
+    die;
+  }/*}}}*/
 
 
   public function excelDownSummerCampFull()/*{{{*/
@@ -335,6 +358,10 @@ class admin extends CI_Controller {
   {
     if(!$idx) return false;
     return $this->admin_model->getCourseInfo($idx); 
+  }/*}}}*/
+  private function _InsertCourseInfo($aParam)/*{{{*/
+  {
+    return $this->admin_model->insertCourseInfo($aParam); 
   }/*}}}*/
   private function _updateCourseInfo($aParam)/*{{{*/
   {

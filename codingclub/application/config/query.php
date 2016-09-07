@@ -145,11 +145,11 @@ $config['query'] = array(
       ,'null' => array() 
     )
     ,'setCouresInfo' => array( 
-     'query' => 'INSERT INTO coures ( course_name, contents, student_count, sdate, edate, img_url, regdate)
-                 VALUES (?,?,?,?,?,?,?)'
-     ,'data' => array( 'course_name', 'contents', 'student_count', 'sdate', 'edate', 'img_url', 'regdate')
-     ,'btype'=> 'ssissss'
-     ,'null' => array()
+      'query' => 'INSERT INTO course ( name, content, target, schedule, need, recruit, location, sponsor, content_long, target_long, guide_long, sdate, edate)
+                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
+     ,'data' => array( 'name', 'content', 'target', 'schedule', 'need', 'recruit', 'location', 'sponsor', 'content_long', 'target_long', 'guide_long', 'sdate', 'edate')
+     ,'btype'=> 'sssssssssssss'
+     ,'null' => array('name', 'content', 'target', 'schedule', 'need', 'recruit', 'location', 'sponsor', 'content_long', 'target_long', 'guide_long', 'sdate', 'edate')
     )
     
   )/*}}}*/

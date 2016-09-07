@@ -141,7 +141,13 @@ class Admin_model extends CI_model
     else
       return false;
   }/*}}}*/
-
+  public function insertCourseInfo($aParam=array())/*{{{*/
+  {
+    if($this->_insertCourseInfo($aParam))
+      return true;
+    else
+      return false;
+  }/*}}}*/
 
   public function getSummerCampFull()/*{{{ 2016 07 SummerCampList*/
   {
@@ -198,6 +204,11 @@ class Admin_model extends CI_model
     return;
   }/*}}}*/
 
+  private function _insertCourseInfo($aParam)/*{{{*/
+  {
+    $aResult= $this->admin_dao->insertCourseInfo($aParam); 
+    return $aResult;
+  }/*}}}*/
   private function _updateCourseInfo($aParam)/*{{{*/
   {
     $aResult= $this->admin_dao->updateCourseInfo($aParam); 
