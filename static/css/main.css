@@ -1,0 +1,331 @@
+/* ------------------------------------------------------------
+
+  코딩클럽 리뉴얼 메인화면 스타일
+
+  파일명 : main.css
+  작성자 : Mihee Moon
+  작성일 : 2016-07-10(최종수정)
+
+  메인화면 콘텐츠 스타일입니다.
+
+------------------------------------------------------------- */
+
+@charset "utf-8";
+
+
+
+/* ------------------------------------------
+  상단 배너
+--------------------------------------------- */
+.home {position:relative;width:100%;z-index:1;background:#f8f8fa;height:856px}
+.news_box {position:absolute;width:100%;z-index:2;color:#fff;top:316px}
+.news_box_inner {width:930px;margin:0 auto}
+.news_box_inner:after {display:block;height:0;content:'';clear:both}
+.bg_banner {width:100%;height:697px}
+
+.line_topic {width:650px;float:left;height:67px;padding-top:13px}
+.open-event {float:left;height:54px;position:relative;overflow:hidden;width:88%}
+.open-event ul{position:absolute; top:0}
+.open-event ul li {height:54px;line-height:54px}
+.open-event ul li a {display:inline-block;font-size:24px}
+.open-event ul li a:hover {color:#ff5f5f}
+.open-event ul li span.date {display:inline-block;font-weight:200;font-size:18px;margin-left:10px}
+.open-event .prev{position:absolute; top:10px;right:0;width:11px;height:8px;line-height:0;font-size:0}
+.open-event .next{position:absolute; bottom:10px;right:0;width:11px;height:8px;line-height:0;font-size:0}
+.line_m_btn {display:none;float:right}
+.control {float:right;margin:0px 0 0 10px; width:8%;height:54px}
+.control a {display:inline-block;line-height:54px;font-size:12px}
+.control a.play {margin:0 10px} 
+
+
+
+.box_join {float:left;background:rgba(255, 95, 95, .95);width:660px;height:406px;padding:60px 0 0 75px}
+.box_join span {font-size:42px;text-align:left;line-height:52px;margin-bottom:50px;display:inline-block;font-weight:200}
+.box_join strong {font-weight:400}
+.box_join a {border:2px solid #fff;width:510px;height:78px;text-align:center;line-height:78px;color:#fff;font-size:24px}
+
+.box_program {float:left;margin-top:-67px}
+.box_program li {padding-top:50px}
+.box_program li a {display:inline-block;width:106px;height:40px;line-height:40px;text-align:center;color:#fff;font-size:16px}
+.box_now {display:block;background:rgba(62, 185, 152, .95);width:270px;height:270px;text-align:center}
+.box_soon {display:block;background:rgba(71, 150, 214, .95);width:270px;height:270px;text-align:center}
+.bprogram_time {display:block;font-size:20px;margin-bottom:34px}
+.bprogram_cate {display:block;font-size:20px;margin-bottom:18px}
+.bprogram_tit {display:block;font-size:30px;margin-bottom:34px}
+.btn_detail {border:1px solid rgba(255, 255, 255, .5);vertical-align:top}
+.btn_apply {border:2px solid #fff;vertical-align:top}
+
+
+/* ------------------------------------------
+  섹션 및 공통프레임
+--------------------------------------------- */
+.junior_software, .codingclub_story, .codingclub_member, .codingclub_about {width:100%}
+.junior_software, .codingclub_roadmap {background:#f8f8fa}
+.codingclub_story {color:#fff;background:#fff url('../img/layout/bg_story.png') no-repeat;background-attachment:fixed;background-size:cover}
+.codingclub_story:after {display:block;height:0;content:'';clear:both}
+.codingclub_member {background:#f8f8fa url('../img/layout/bg_pattern.png') repeat}
+.codingclub_about {background:#fff}
+.codingclub_facebook {background:#3672e3}
+
+.cont_inner {max-width:1340px;margin:0 auto;padding:73px 30px 125px 30px}
+.cont_inner:after {display:block;height:0;content:'';clear:both}
+
+
+/* ------------------------------------------
+  섹션 제목 스타일
+--------------------------------------------- */
+.cont_tit {display:block;font-size:40px;width:auto;margin:0 auto 73px auto;text-align:center}
+.cont_tit:before {display:block;content:'';width:112px;height:2px;margin:0 auto 42px auto;background:#282828}
+.cont_subtit {display:block;font-size:24px;width:auto;margin:0 auto 37px auto;text-align:center}
+.cont_subtit2 {display:block;font-size:18px;width:auto;margin:0 auto 37px auto;text-align:center;color:#fff;font-weight:200}
+.cont_subtit3 {display:block;font-size:24px;width:auto;margin:0 auto 37px auto;text-align:center;font-weight:700}
+
+.codingclub_story .cont_tit {color:#fff}
+.codingclub_story .cont_tit:before {background:#fff}
+.codingclub_facebook .cont_tit {color:#fff}
+.codingclub_facebook .cont_tit:before {background:#fff}
+
+
+/* ------------------------------------------
+  섹션 본문 스타일 :: 기본 텍스트
+--------------------------------------------- */
+.cont_txt, .cont_txt span {text-align:center;font-size:18px;line-height:24px;word-break:keep-all}
+.cont_txt .w1080, .cont_txt .w640 {display:none}
+
+
+/* ------------------------------------------
+  커리큘럼 스타일 :: 주니어소프트웨어클럽
+--------------------------------------------- */
+.program {display:block;margin-bottom:73px}
+div.program:last-child {margin-bottom:0}
+.program ul:after {display:block;height:0;content:'';clear:both}
+.program li {float:left;vertical-align:top;background:#fff;/*width:398px;*/width:calc((100% - 86px)/3);box-shadow:0 0 14px rgba(0, 0, 0, .06);padding:0;margin:0 43px 0 0;text-align:center}
+.program li:last-child {margin-right:0}
+.program_img {display:block;width:100%}
+.program_img img {width:100%;height:100%}
+.program_tit {display:block;font-size:24px;margin:27px 20px 34px 20px}
+.program_desc {display:block;font-size:18px;line-height:24px;margin:0 20px 53px 20px}
+.program_date {display:inline-block;font-size:18px;margin:0 20px 34px 20px;color:#ff5f5f;border-bottom:2px dotted #ff5f5f;padding-bottom:4px}
+.program_btn {display:block; width:100%}
+.program_btn:after {display:block;height:0;content:'';clear:both}
+.program_btn a {float:left;height:52px;line-height:52px;font-size:16px}
+.btn_bg {background:#ff5f5f;color:#fff}
+.btn_txt {background:#fff;color:#ff5f5f;border-top:1px solid #ffbaba}
+.w100 {width:100%}
+.w50 {width:50%}
+
+
+
+/* ------------------------------------------
+  코딩클럽 스토리
+--------------------------------------------- */
+.stats {display:block;text-align:center;margin-bottom:35px}
+.stats li {display:inline-block;margin:0 48px}
+.stats_item {display:block;margin-bottom:12px;font-size:20px}
+.stats_score {display:block;font-size:36px;font-weight:200;color:#ff5f5f}
+
+
+.story ul {margin:0;padding:0}
+.story ul:after {display:block;height:0;content:'';clear:both}
+.story li {float:left;width:25%;position:relative;overflow:hidden;list-style:none}
+.story li:hover .story_caption {opacity: 1}
+
+.story_caption{cursor:pointer;position:absolute;width:100%;height:100%;opacity:0;-webkit-transition:all 0.45s ease-in-out;-moz-transition:all 0.45s ease-in-out;-o-transition:all 0.45s ease-in-out;-ms-transition:all 0.45s ease-in-out;transition:all 0.45s ease-in-out;}
+.blur{background-color:rgba(255, 95, 95, .8);height:100%;width:100%;z-index:5;position:absolute}
+.caption_text{z-index:5;position:absolute;text-align:center;width:100%;height:100%;padding:65px 15px 0 15px}
+.story_cate {display:block;font-size:18px;margin-bottom:44px;color:#fff}
+.story_cate:before {display:block;content:'';width:20px;height:1px;margin:0 auto 8px auto;background:#fff}
+.story_tit {display:block;font-size:24px;margin-bottom:13px !important;color:#fff;line-height:130%}
+.story_desc {display:block;font-size:18px;color:#fff}
+.story_img {width:100%;height:100%;float:left;z-index:4}
+.story_img img {width:100%;margin:0;padding:0}
+
+
+
+/* ------------------------------------------
+  코딩클럽 멤버
+--------------------------------------------- */
+.member_list {max-width:1290px;margin-bottom:20px}
+.member_list ul:after {display:block;height:0;content:'';clear:both}
+.member_list li {float:left;width:25%;text-align:center}
+
+.member_img {display:inline-block;width:245px;height:245px;margin-bottom:30px;position:relative;z-index:3;overflow:hidden;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;-ms-border-radius:50%;-khtml-border-radius:50%;-o-border-radius:50%}
+.member_comment {display:block;width:100%;line-height:24px;position:absolute;color:#fff;z-index:5;left:0;bottom:10px;opacity:0;-webkit-transition:all 0.45s ease-in-out;-moz-transition:all 0.45s ease-in-out;-o-transition:all 0.45s ease-in-out;-ms-transition:all 0.45s ease-in-out;transition:all 0.45s ease-in-out;}
+.member_img:hover .member_comment {opacity: 1}
+.member_comment i {display:block;font-size:40px;padding-top:20px}
+.member_img img {width:100%;overflow:hidden;position:absolute;z-index:4;-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:gray;-webkit-filter:grayscale(1);-webkit-transition:all .3s;-moz-transition:all .3s;-ms-transition:all .3s;-o-transition:all .3s;transition:all .3s;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;ms-backface-visibility:hidden}
+.member_img:hover img {-moz-filter:grayscale(0);-ms-filter:grayscale(0);-o-filter:grayscale(0);filter:normal;-webkit-filter:grayscale(0)}
+
+.member_name {display:block;font-size:24px;margin-bottom:30px}
+.member_team {display:inline-block;font-size:18px;color:#ff5f5f;border-bottom:2px dotted #ff5f5f;padding-bottom:4px;margin-bottom:13px}
+.member_desc {display:block;font-size:18px;line-height:24px;margin-bottom:23px;word-break:keep-all}
+
+
+
+/* ------------------------------------------
+  코딩클럽 일정
+--------------------------------------------- */
+.schedule_box iframe{border:0;width:100%;height:600px}
+
+
+/* ------------------------------------------
+  코딩클럽 페이스북
+--------------------------------------------- */
+.facebook_cummunity, .facebook_page {display:inline-block;width:calc((100% - 22px)/2)}
+.facebook_cummunity {float:left}
+.facebook_page {float:right}
+.facebook_tit {display:block;background:#2f64c9 url('../img/layout/logo_facebook.png') no-repeat 0 50%;height:44px;line-height:44px;color:#fff;padding:0 26px 0 134px}
+.facebook_cont {display:block;height:680px;background:#fff;overflow-y:scroll;overflow-x:hidden;padding:5px 25px 5px 25px}
+.facebook_cont li {width:100%;border-bottom:1px dashed #e1e1e1;padding:20px 0;overflow:hidden}
+.facebook_cont li:last-child {border-bottom:0}
+
+
+
+@media all and (max-width:1280px) {
+	.program li {width:calc((100% - 42px)/3);margin:0 21px 0 0}
+
+	.stats:after {display:block;content:'';height:0;clear:both}
+	.stats li {float:left;width:33.3%;margin:0 0 24px 0}
+	.stats li:nth-child(3):after {display:block}
+}
+
+@media all and (max-width:1200px) { 
+	.caption_text {padding-top:40px}
+	.story_cate {margin-bottom:30px}
+
+	.member_list li {width:33.3%;width:calc(100% / 3)}
+	.member_list li:nth-child(3n+1) {clear:left}
+}
+
+@media all and (max-width:1080px) { 
+	.home {height:656px}	
+	.bg_banner {height:585px}
+	.news_box {top:210px}
+
+	.cont_inner {padding:37px 15px 63px 15px}
+
+	.news_box_inner {width:660px}
+
+	.line_topic {height:36px;padding-top:0}
+	.open-event {height:36px}
+	.open-event ul li {height:36px;line-height:36px}
+	.open-event ul li a {font-size:18px}
+	.open-event ul li span.date {font-size:14px}
+	.open-event .prev{top:4px}
+	.open-event .next{bottom:4px}
+	.control {height:36px}
+	.control a {line-height:36px;font-size:12px}
+	.control a.play {margin:0 10px} 
+
+	.box_join {height:193px;padding:30px 38px}
+	.box_join span {float:left;width:60%;font-size:36px;line-height:46px}
+	.box_join a {float:left;width:40%;margin-top:76px;height:52px;line-height:52px;font-size:18px}
+	.box_program {clear:left;margin-top:0;width:100%;text-align:center;font-size:0}
+	.box_program li {padding-top:25px;display:inline-block;width:42%;height:184px;vertical-align:top}
+	.bprogram_time {margin-bottom:17px;font-size:16px}
+	.bprogram_cate {margin-bottom:9px;font-size:16px}
+	.bprogram_tit {margin-bottom:17px;font-size:24px} 
+	.box_program li a {height:34px;line-height:34px;font-size:14px;margin:0 1px}
+
+	.cont_tit {font-size:30px;margin:0 auto 37px auto}
+	.cont_tit:before {width:56px;height:2px;margin:0 auto 21px auto}
+	.cont_subtit {font-size:18px;margin:0 auto 19px auto}
+	.cont_subtit2 {font-size:16px;margin:0 auto 19px auto}
+	.cont_subtit3 {font-size:18px;margin:0 auto 19px auto}
+
+	.cont_txt, .cont_txt span {font-size:14px;line-height:20px}
+	.cont_txt .pc {display:none}
+	.cont_txt .w1080 {display:block}
+
+	.program li {width:calc((100% - 20px)/3);margin:0 10px 0 0}
+	.program_tit {font-size:18px;margin:14px 10px 17px 10px}
+	.program_desc {font-size:14px;line-height:20px;margin:0 10px 26px 10px}
+	.program_date {font-size:14px;margin:0 10px 17px 10px;padding-bottom:2px}
+	.program_btn a {height:32px;line-height:32px;font-size:14px}
+
+	.member_name {font-size:18px;margin-bottom:15px}
+	.member_team {font-size:14px;padding-bottom:2px;margin-bottom:7px}
+	.member_desc {font-size:14px;line-height:20px;margin-bottom:17px}
+
+	.facebook_cummunity, .facebook_page {display:inline-block;width:calc((100% - 10px)/2)}
+	.facebook_cont {padding:5px 13px 5px 13px}
+	.facebook_cont li {padding:10px 0}
+}
+
+@media all and (max-width:960px) { 
+	.caption_text {padding-top:20px}
+	.story_cate, .story_desc {font-size:14px;margin-bottom:10px}
+	.story_tit {font-size:18px}
+
+	.member_img {width:162px;height:162px}
+}
+
+@media all and (max-width:720px) {
+	.home {height:733px}
+	.news_box_inner {width:calc(100% - 30px)}
+	.line_topic {width:100%}
+	.open-event {width:100%}
+	.line_m_btn {display:block;padding-top:9px}
+	.line_btn, .control {display:none}
+	.box_join {width:100%;height:276px;padding:30px 38px}
+	.box_join span {clear:left;width:100%;font-size:36px;line-height:46px;margin-bottom:25px}
+	.box_join a {clear:left;width:100%;margin-top:0px;height:52px;line-height:52px;font-size:18px}
+	.box_program li {height:180px}
+	.box_program li a {width:40%}
+	.bg_banner {height:460px}
+
+	.program {text-align:center}
+	.program li {float:none;clear:left;width:84%;margin:0 auto 10px auto}
+	.program li:last-child {margin:0 auto 10px auto}
+
+	.stats {margin-bottom:0}
+	.stats_item {margin-bottom:12px;font-size:16px}
+	.stats_score {font-size:24px}
+
+	.facebook_cummunity, .facebook_page {display:block;width:100%}
+	.facebook_cummunity, .facebook_page {clear:both}
+	.facebook_cummunity {margin-bottom:20px}
+	.facebook_cont {height:340px}
+}
+
+@media all and (max-width:640px) {
+
+	.story li {width:50%;width:calc(100% / 2)}
+	.caption_text {padding-top:60px}
+	.story_cate {margin-bottom:30px}
+
+	.member_list li {width:50%;padding:0 10px}
+	.member_list li:nth-child(3n+1) {clear:none;float:left}
+	.member_list li:nth-child(2n+1) {clear:left}
+
+	.cont_txt .w1080 {display:none}
+	.cont_txt .w640 {display:block}	
+}
+
+@media all and (max-width:480px) {
+	.home {height:541px}
+	.news_box {top:110px}
+	.open-event ul li span.date {display:none}
+	.box_join {height:188px;padding:15px 19px}
+	.box_join span {font-size:24px;line-height:34px;margin-bottom:13px}
+	.box_join a {height:42px;line-height:42px;font-size:16px}
+	.box_program li {width:50%;height:176px;padding:20px 5px}
+	.box_program li a {width:80%;height:28px;line-height:28px;margin-bottom:2px}
+	.bprogram_time {margin-bottom:14px;font-size:14px}
+	.bprogram_cate {margin-bottom:8px;font-size:14px}
+	.bprogram_tit {margin-bottom:14px;font-size:18px}
+	.bg_banner {height:280px}
+
+	.program li {width:100%}
+
+	.caption_text {padding-top:40px}
+	.story_cate {margin-bottom:20px}
+
+	.member_img {width:120px;height:120px}
+	.member_comment i {font-size:20px;padding-top:0}
+}
+
+@media all and (max-width:414px) {
+	.caption_text {padding-top:20px}
+	.story_cate {margin-bottom:10px}
+}

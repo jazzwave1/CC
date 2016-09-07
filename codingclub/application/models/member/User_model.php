@@ -39,21 +39,37 @@ class User_model extends CI_model
     $aInput = array('usn' => $usn);
 
     $aResult = $this->user_dao->getUserInfo($aInput); 
- 
-    $aMemConfig = cc_get_config('Mem', 'code');
-    foreach($aResult as $key=>$val)
+    
+    if($aResult)
     {
-      $val->grde= $aMemConfig[$val->grde]; 
+      $aMemConfig = cc_get_config('Mem', 'code');
+      foreach($aResult as $key=>$val)
+      {
+        $val->grde= $aMemConfig[$val->grde]; 
+      }
     }
+        
     return $aResult;
   
   }/*}}}*/
   public function setUserInfo($aParam)/*{{{*/
   {
-    if($this->user_dao->setUser($aParam))
-      return true;
+    $aResult = $this->getUserInfo($aParam['usn']);
+   
+    if(!$aResult)
+    {
+      if($this->user_dao->setUser($aParam))
+        return true;
+      else
+        return false;
+    }
     else
-      return false;
+    {
+      if($this->user_dao->updateUserInfo($aParam))
+        return true;
+      else
+        return false;
+    }
   }/*}}}*/
   public function setQuestionInfo($aParam)/*{{{*/
   {
@@ -84,10 +100,14 @@ class User_model extends CI_model
     $aInput = array('usn' => $usn);
     $aMemConfig = cc_get_config('Mem', 'code');
     $aResult = $this->user_dao->getMemberSVCInfo($aInput) ; 
-    foreach($aResult as $key=>$val)
+    if($aResult)
     {
-      $val->state = $aMemConfig[$val->state]; 
+      foreach($aResult as $key=>$val)
+      {
+        $val->state = $aMemConfig[$val->state]; 
+      }
     }
+    
     return $aResult;
   }/*}}}*/
   

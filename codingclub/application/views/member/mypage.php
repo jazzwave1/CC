@@ -108,28 +108,26 @@
                 <h4 class="blind">기본정보</h4>
                 <div class="profile">
                   <div class="profile_txt">
-                    <span class="p_name"><?=$oUserInfo->name?></span>
-                    <span class="p_grade"><?=$oUserInfo->school?>&nbsp;<?=$oUserInfo->grde?></span>
+                    <span class="p_name"><?=$oUserInfo?$oUserInfo->name:"&nbsp;"?></span>
+                    <span class="p_grade"><?=$oUserInfo?$oUserInfo->school:"&nbsp;"?>&nbsp;<?=$oUserInfo?$oUserInfo->grde:"&nbsp;"?></span>
                   </div>
                 </div>
                 <ul class="mp_form_cont">
                   <li>
                     <label>거주지역</label>
-                    <span><?=$oUserInfo->addrcode?></span>
+                    <span><?=$oUserInfo?$oUserInfo->addrcode:"&nbsp;"?></span>
                   </li>
                   <li>
                     <label>부모님 이름</label>
-                    <span><?=$oUserInfo->pname?></span>
+                    <span><?=$oUserInfo?$oUserInfo->pname:"&nbsp;"?></span>
                     <label>부모님 전화번호</label>
-                    <span><?=$oUserInfo->php?></span>
+                    <span><?=$oUserInfo?$oUserInfo->php:"&nbsp;"?></span>
                     <label>부모님 이메일</label>
-                    <span><?=$oUserInfo->pemail?></span>
-                    <label>부모님전공</label>
-                    <span><?=$oUserInfo->pjob?></span>
+                    <span><?=$oUserInfo?$oUserInfo->pemail:"&nbsp;"?></span>
                   </li>
                   <li>
                     <label>가입일</label>
-                    <span><?=$oUserInfo->regdate?></span>
+                    <span><?=$oUserInfo?$oUserInfo->regdate:"&nbsp;"?></span>
                   </li>
                 </ul>
               </div>
@@ -152,7 +150,9 @@
                     </tr>
                   </thead>
                   <tbody>
-<?php  
+<?php 
+      if($aMemberSVC && count($aMemberSVC) >=1 )
+      {
         $cnt=0; 
         foreach($aMemberSVC as $key=>$val){
         $cnt++; 
@@ -164,6 +164,18 @@
                     </tr>
                     ';
         }
+      }
+      else
+      {
+                    echo ' 
+                    <tr>
+                      <td scope="col" class="bd_num"></td>                       
+                      <td scope="col" class="bd_title"></td>
+                      <td scope="col" class="bd_status"></td>
+                    </tr>
+                    ';
+      
+      }
 ?>
                   </tbody>
                 </table>

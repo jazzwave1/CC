@@ -120,7 +120,29 @@ class Admin_model extends CI_model
 
     return $aResult;
   }/*}}}*/
-  
+  public function getCourseInfo($idx)/*{{{*/
+  {
+    if(!$idx) return false;
+    
+    $aInput = array('idx' => $idx);
+    $oCourseInfo= $this->_getCourseInfo($aInput);
+    
+    $oCourseInfo->sdateF = setDateFormat($oCourseInfo->sdate,'YMD');
+    $oCourseInfo->edateF = setDateFormat($oCourseInfo->edate,'YMD');
+
+    return $oCourseInfo;
+  }/*}}}*/
+  public function updateCourseInfo($aParam=array())
+  {
+    if(!$aParam['idx']) return false; 
+    
+    if($this->_updateCourseInfo($aParam))
+      return true;
+    else
+      return false;
+  }
+
+
   public function getSummerCampFull()/*{{{ 2016 07 SummerCampList*/
   {
     $aCourseIDX = array(
@@ -176,6 +198,16 @@ class Admin_model extends CI_model
     return;
   }/*}}}*/
 
+  private function _updateCourseInfo($aParam)/*{{{*/
+  {
+    $aResult= $this->admin_dao->updateCourseInfo($aParam); 
+    return $aResult;
+  }/*}}}*/
+  private function _getCourseInfo($aParam)/*{{{*/
+  {
+    $aResult= $this->admin_dao->getCourseInfo($aParam); 
+    return $aResult[0];
+  }/*}}}*/
   private function _getCourseList($aParam)/*{{{*/
   {
     return $this->admin_dao->getCourseList($aParam); 

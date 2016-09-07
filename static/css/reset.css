@@ -1,0 +1,171 @@
+/* ------------------------------------------------------------
+
+  코딩클럽 리뉴얼 리셋 스타일
+
+  파일명 : reset.css
+  작성자 : Mihee Moon
+  작성일 : 2016-07-10(최종수정)
+
+  크로스 브라우징을 위한 기본값 리셋 스타일로 수정시 작성자의 검토가 필요합니다.
+
+------------------------------------------------------------- */
+
+@charset "utf-8";
+
+/*웹폰트*/
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 700;
+    src: local('SpoqaHanSans-Bold'), local('SpoqaHanSans-Bold'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.eot) format('eot'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.svg) format('svg'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.ttf) format('truetype'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Bold/SpoqaHanSans-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('SpoqaHanSans-Regular'), local('SpoqaHanSans-Regular'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.eot) format('eot'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.svg) format('svg'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.ttf) format('truetype'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Regular/SpoqaHanSans-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 200;
+    src: local('SpoqaHanSans-Thin'), local('SpoqaHanSans-Thin'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.eot) format('eot'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.svg) format('svg'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.ttf) format('truetype'),
+    url(https://cdn.rawgit.com/spoqa/spoqa-han-sans/master/Subset/SpoqaHanSans/Spoqa%20Han%20sans_subset%28webfont%20inclued%29/SpoqaHanSans-Thin/SpoqaHanSans-Thin.woff) format('woff');
+}
+
+
+/* 여백 초기화 */
+* {margin:0;padding:0}
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, hr, 
+article, aside, figure, footer, header, hgroup, menu, nav, section,
+summary, hgroup {
+	margin:0; 
+	border:0; 
+	padding:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;}
+
+
+/* 시멘틱 요소 블록화 */
+header, aside, article, footer, hgroup, menu, nav, section, details, figure, figcaption {display:block}
+
+/* 폰트 초기화 */
+* {font-family:'Spoqa Han Sans', 'Sans-serif' !important}
+html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6 {color:#282828;font-style:normal;font-size:18px;line-height:100%;font-weight:400;font-family:'Spoqa Han Sans', 'Sans-serif' !important;letter-spacing:0}
+@media all and (max-width:700px) {
+	html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6 {font-size:18px}
+}
+@media all and (max-width:620px) {
+	html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6 {font-size:16px}
+}
+@media all and (max-width:460px) {
+	html, body, input, textarea, select, button, table, h1, h2, h3, h4, h5, h6 {font-size:14px}
+}
+strong {font-weight:700}
+
+/* 링크 초기화 */
+a {display:block;text-decoration:none;color:inherit;outline:0}
+a:hover {text-decoration:none;outline:0}
+
+/* 블릿 기호 초기화 */
+ul, li, ol {list-style:none}
+
+/* 테두리 초기화 */
+img, fieldset {border:none}
+
+/* 이미지 공백 없앰 */
+img, fieldset {display:block}
+
+/* 블라인드 효과 */
+.blind {width:1px;height:1px;left:0;top:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden;position:absolute}
+
+/* 디자인 외 요소 날림 */
+legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-10000000px; line-height:0}
+
+/* 텍스트 숨김 */
+.screen_out{display:block;overflow:hidden;position:absolute;left:-9999px;width:1px;height:1px;font-size:0;line-height:0;text-indent:-9999px;}
+.screen_hide{position:absolute;top:0;left:-100000000000000px;}
+.screen_down {display:block;position:relative;z-index:-1}
+
+/* 텍스트 한 글자식 줄바꿈 */
+* {word-break:break-all}
+
+/* 테이블 초기화 */
+table {padding:0; border-spacing:0px; border:0;}
+
+/* 아이폰 input textarea 디자인 초기화 */
+input, textarea {-webkit-appearance:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;-webkit-border-radius:0}
+
+
+/* viewport */
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+
+/* ------------------------------------------
+  FONT ICON
+--------------------------------------------- */
+@font-face {
+      font-family: 'fontello';
+      src: url('../icon-font/font/fontello.eot?24734157');
+      src: url('../icon-font/font/fontello.eot?24734157#iefix') format('embedded-opentype'),
+           url('../icon-font/font/fontello.woff?24734157') format('woff'),
+           url('../icon-font/font/fontello.ttf?24734157') format('truetype'),
+           url('../icon-font/font/fontello.svg?24734157#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .demo-icon
+    {
+      font-family: "fontello" !important;
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+     
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+     
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+     
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+     
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }

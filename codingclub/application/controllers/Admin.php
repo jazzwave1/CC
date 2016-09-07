@@ -257,7 +257,53 @@ class admin extends CI_Controller {
       response_json(array("code"=>1,"msg"=>"OK"));
     else
       response_json(array("code"=>0,"msg"=>"fail"));
+    die; 
   }/*}}}*/
+  public function rpcGetCourseInfo()/*{{{*/
+  {
+    $idx = trim($this->input->post('idx')); 
+    
+    if(!$idx) response_json(array('code'=>999,''=>'not input')); 
+   
+    $oCourseInfo = $this->_getCourseInfo($idx);
+    response_json(array(
+         'code'  => 1
+        ,'msg'  => 'OK'
+        ,'idx'  => $oCourseInfo->idx
+        ,'name' => $oCourseInfo->name 
+        ,'content'  => $oCourseInfo->content 
+        ,'target'   => $oCourseInfo->target
+        ,'schedule' => $oCourseInfo->schedule
+        ,'need' => $oCourseInfo->need
+        ,'recruit' => $oCourseInfo->recruit
+        ,'sdate' => $oCourseInfo->sdate
+        ,'edate' => $oCourseInfo->edate
+        ,'sdateF' => $oCourseInfo->sdateF
+        ,'edateF' => $oCourseInfo->edateF
+      )
+    );
+    
+    die;
+  }/*}}}*/
+  public function rpcUpdateCourseInfo()/*{{{*/
+  {
+    $aParam = array();
+    $aParam['idx']      = trim($this->input->post('idx')); 
+    $aParam['content']  = trim($this->input->post('content')); 
+    $aParam['target']   = trim($this->input->post('target')); 
+    $aParam['schedule'] = trim($this->input->post('schedule')); 
+    $aParam['need']     = trim($this->input->post('need')); 
+    $aParam['recruit']  = trim($this->input->post('recruit')); 
+    $aParam['sdate']    = trim($this->input->post('sdate')); 
+    $aParam['edate']    = trim($this->input->post('edate')); 
+   
+    if($this->_updateCourseInfo($aParam)) 
+      response_json(array("code"=>1,"msg"=>"OK"));
+    else
+      response_json(array("code"=>0,"msg"=>"fail")); 
+    die;
+  }/*}}}*/
+
 
   public function excelDownSummerCampFull()/*{{{*/
   {
@@ -270,6 +316,13 @@ class admin extends CI_Controller {
     die; 
   }/*}}}*/
 
+  
+  private function _updateCourseInfo($aParam)/*{{{*/
+  {
+    if(!$aParam['idx']) return false;
+    
+    return $this->admin_model->updateCourseInfo($aParam); 
+  }/*}}}*/
     private function _getMemberSVC($usn)/*{{{*/
   {
     if(!$usn) return false; 
@@ -311,6 +364,12 @@ class admin extends CI_Controller {
     if(!$accountID || !$passwd) return false;
     
     return $this->admin_model->chkAdminLogin($accountID, $passwd);
+  }/*}}}*/
+
+  private function _getCourseInfo($idx)/*{{{*/
+  {
+    if(!$idx) return false;
+    return $this->admin_model->getCourseInfo($idx); 
   }/*}}}*/
 }
 ?>

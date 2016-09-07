@@ -55,6 +55,8 @@ class Membership_model extends CI_model
     else
       return false;
   }/*}}}*/
+ 
+// 리팩토링 필요한 부분 --// 
   public function sendJoinMail($accountID, $courseIDX)/*{{{*/
   {
     if(!$accountID || !$courseIDX) return false;
@@ -67,6 +69,23 @@ class Membership_model extends CI_model
       $this->_sendMail($accountID, $courseIDX);
     return;
   }/*}}}*/
+  public function sendJoinEmail($accountID, $type)/*{{{*/
+  {
+    if(!$accountID || !$type) return false;
+
+    $this->load->helper('email');
+    
+    if (! valid_email($accountID))
+      return false;
+    else
+    {
+      $aEmailInfo['type'] = $type;
+      $this->_sendEmail($accountID, $aEmailInfo);
+    }
+    return; 
+  }/*}}}*/
+// -----------------------//
+
   public function setConfirm($usn)/*{{{*/
   {
     if(!$usn) return false;
@@ -93,49 +112,6 @@ class Membership_model extends CI_model
     return true;
   }/*}}}*/
 
-  private function _sendMail($accountID, $courseIDX)/*{{{*/
-  {
-    if(!$accountID || !$courseIDX) return false;
-    
-    // get usn
-    $aAccount = $this->user_dao->getUSN(array("account_id"=>$accountID));
-    $usn = $aAccount[0]->usn; 
-    // get course Info
-    $aCourse = $this->course_dao->getCourseInfo(array("idx"=>$courseIDX));
-
-    // make fingerprint
-    $sFingerPrint = $this->_getFingerPrint($usn); 
-    // make url sting
-    $sURL = "http://member.codingclubs.org/Member/chkConfirm/".$usn."/".$sFingerPrint;
-    
-    $config['mailtype'] = "html"; 
-    $config['charset'] = "utf-8"; 
-    $config['protocol'] = "smtp"; 
-    $config['smtp_host'] = "ssl://smtp.googlemail.com"; 
-    $config['smtp_port'] = 465; 
-    $config['smtp_user'] = "jazzwave14@gmail.com"; 
-    $config['smtp_pass'] = "dlghwns0610()("; 
-    $config['smtp_timeout'] = 10; 
-
-    $content = "안녕하세요 코딩클럽입니다.";
-    $content .= "<br>";
-    $content .= "* 신청과목 : ".$aCourse[0]->name ;
-    $content .= "<br>";
-    $content .= "* 본인확인 인증 링크 :{unwrap} ".$sURL."{/unwrap}";
-
-    $this->load->library('email', $config); 
-    $this->email->set_newline("\r\n"); 
-    $this->email->clear(); 
-    $this->email->from("contact.codingclub@gmail.com,jazzwave14@gmail.com", "CodingClub"); 
-    $this->email->to($accountID); 
-    $this->email->subject("[코딩클럽] 가입 및 수강신청 확인"); 
-    $this->email->message($content);
-
-    $this->email->send(); 
-     
-    $this->email->set_newline("\r\n"); 
-    return;
-  }/*}}}*/
   private function _getFingerPrint($usn)/*{{{*/
   {
     return md5("codingclub".$usn); 
@@ -191,6 +167,102 @@ class Membership_model extends CI_model
     return $this->log_model->setLoginLog($usn, $accountID);
   }/*}}}*/
 
+// 리팩토링 필요한 부분 --// 
+  private function _sendMail($accountID, $courseIDX)/*{{{*/
+  {
+    if(!$accountID || !$courseIDX) return false;
+    
+    // get usn
+    $aAccount = $this->user_dao->getUSN(array("account_id"=>$accountID));
+    $usn = $aAccount[0]->usn; 
+    // get course Info
+    $aCourse = $this->course_dao->getCourseInfo(array("idx"=>$courseIDX));
+
+    // make fingerprint
+    $sFingerPrint = $this->_getFingerPrint($usn); 
+    // make url sting
+    $sURL = "http://member.codingclubs.org/Member/chkConfirm/".$usn."/".$sFingerPrint;
+    
+    $config['mailtype'] = "html"; 
+    $config['charset'] = "utf-8"; 
+    $config['protocol'] = "smtp"; 
+    $config['smtp_host'] = "ssl://smtp.googlemail.com"; 
+    $config['smtp_port'] = 465; 
+    $config['smtp_user'] = "jazzwave14@gmail.com"; 
+    $config['smtp_pass'] = "dlghwns0610()("; 
+    $config['smtp_timeout'] = 10; 
+
+    $content = "안녕하세요 코딩클럽입니다.";
+    $content .= "<br>";
+    $content .= "* 신청과목 : ".$aCourse[0]->name ;
+    $content .= "<br>";
+    $content .= "* 본인확인 인증 링크 :{unwrap} ".$sURL."{/unwrap}";
+
+    $this->load->library('email', $config); 
+    $this->email->set_newline("\r\n"); 
+    $this->email->clear(); 
+    $this->email->from("contact.codingclub@gmail.com,jazzwave14@gmail.com", "CodingClub"); 
+    $this->email->to($accountID); 
+    $this->email->subject("[코딩클럽] 가입 및 수강신청 확인"); 
+    $this->email->message($content);
+
+    $this->email->send(); 
+     
+    $this->email->set_newline("\r\n"); 
+    return;
+  }/*}}}*/
+  private function _sendEmail($accountID, $aMailInfo=array())/*{{{*/
+  {
+    if(!$accountID || !$aMailInfo) return false;
+    
+    // get usn
+    $aAccount = $this->user_dao->getUSN(array("account_id"=>$accountID));
+    $usn = $aAccount[0]->usn; 
+    $aMailInfo['usn'] = $usn;
+    
+    $aResult = $this->_getMailContent($aMailInfo['type'], $aMailInfo);
+
+    $config['mailtype'] = "html"; 
+    $config['charset'] = "utf-8"; 
+    $config['protocol'] = "smtp"; 
+    $config['smtp_host'] = "ssl://smtp.googlemail.com"; 
+    $config['smtp_port'] = 465; 
+    $config['smtp_user'] = "jazzwave14@gmail.com"; 
+    $config['smtp_pass'] = "dlghwns0610()("; 
+    $config['smtp_timeout'] = 10; 
+
+    $this->load->library('email', $config); 
+    $this->email->set_newline("\r\n"); 
+    $this->email->clear(); 
+    $this->email->from("contact.codingclub@gmail.com,jazzwave14@gmail.com", "CodingClub"); 
+    $this->email->to($accountID); 
+    $this->email->subject($aResult['subject']); 
+    $this->email->message($aResult['sContent']);
+
+    $this->email->send(); 
+     
+    $this->email->set_newline("\r\n"); 
+    return;
+  }/*}}}*/
+  private function _getMailContent($type='', $aContentInfo)/*{{{*/
+  {
+    switch($type)
+    {
+      case 'AccountJoin': /*{{{*/
+        $sFingerPrint = $this->_getFingerPrint($aContentInfo['usn']); 
+        $sURL = HOSTURL."/Member/chkConfirm/".$aContentInfo['usn']."/".$sFingerPrint;
+        
+        $aRtn['subject'] = "[코딩클럽] 이메일 아이디 본인확인 메일입니다."; 
+        $aRtn['sContent'] = "안녕하세요 코딩클럽입니다.<br><br>
+          * 본인확인 인증 링크 :{unwrap} ".$sURL."{/unwrap}<br><br> 
+          브라우저에서 위의 링크를 열어 주시기 바랍니다.<br>
+          감사합니다.";
+          break;/*}}}*/
+    }  
+    
+    return $aRtn;
+  }/*}}}*/
+// -----------------------//
 }
 
 ?>

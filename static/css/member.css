@@ -1,12 +1,12 @@
 /* ------------------------------------------------------------
 
-  코딩클럽 리뉴얼 썸머캠프 스타일
+  코딩클럽 리뉴얼 멤버십 스타일
 
   파일명 : summercamp.css
   작성자 : Mihee Moon
-  작성일 : 2016-07-13(최종수정)
+  작성일 : 2016-09-04(최종수정)
 
-  썸머캠프 스타일입니다.
+  멤버십 스타일입니다.
 
 ------------------------------------------------------------- */
 
@@ -180,7 +180,7 @@ li.sign_up, li.sign_out {margin-left:1px}
 .form-cont li label i {color:#ff5f5f}
 
 
-input[type=text], textarea, .form-control {background:none;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-ms-border-radius:0;-khtml-border-radius:0;-o-border-radius:0}
+input[type=text], textarea, .form-control {background:none;background-color:#fff !important;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-ms-border-radius:0;-khtml-border-radius:0;-o-border-radius:0}
 input[type=text], textarea, .form-control, .form-control:focus {-webkit-appearance:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}/*¾ÆÀÌÆù*/
 
 .form-control {display:block;margin-bottom:37px;color:#999;border:0;border-bottom:1px solid #ececec;font-size:18px}
@@ -444,7 +444,9 @@ table {padding:0; border-spacing:0px; border:0;}
 --------------------------------------------- */
 .login-page, .register-page {background:#f8f8fa}
 .login-box-body, .register-box-body {-webkit-box-shadow:0 0 4px rgba(0, 0, 0, .2);-moz-box-shadow:0 0 4px rgba(0, 0, 0, .2);box-shadow:0 0 4px rgba(0, 0, 0, .2)}
-.login-box-msg {font-size:14px}
+.login-box-msg {font-size:14px;margin-bottom:30px !important}
+.login-box-msg.f18 {margin-top:30px !important;line-height:120%}
+.login-box-msg.f18 strong {font-size:18px;margin-bottom:10px !important;display:block}
 
 .login-page .btn_area {width:100%;text-align:center;margin:0 0 10px 0}
 .login-page .w50 {width:50%;display:inline-block}
@@ -472,10 +474,26 @@ button.btn-primary:hover, button.btn-primary:active, button.btn-primary:focus, b
 button.btn-primary-line {border-bottom:1px solid #ff5f5f !important;background:none;color:#ff5f5f;margin-top:20px;border:0;outline:0;padding-bottom:4px !important}
 button.btn-primary-line:hover, button.btn-primary-line:active, button.btn-primary-line:focus, button.btn-primary-line.hover, button.btn-primary-line:active:hover, button.btn-primary-line:active:active, button.btn-primary-line:focus, button.btn-primary-line:active.hover {border-bottom:1px solid #f15454;color:#f15454;outline:0}
 
-.login-page .form-control {display:block;margin-bottom:37px;color:#999;border:0;border-bottom:1px solid #ececec;font-size:18px}
+.login-page .form-control {display:block;margin-bottom:17px;color:#999;border:0;border-bottom:1px solid #ececec;font-size:18px}
 .login-page .form-control:focus {color:#282828;border:0;border-bottom:1px solid #282828}
 
 .glyphicon {font-family:'Glyphicons Halflings' !important}
+
+.login_util {width:100%;margin-bottom:40px;margin-top:30px}
+.login_util:after {display:block;height:0;content:'';clear:both}
+.remem_id {float:left;font-size:14px}
+.remem_id label {margin-left:4px;font-weight:normal !important;color:#282828}
+.reset_pw {float:right;font-size:14px;font-weight:normal}
+.reset_pw a {color:#282828;border-bottom:1px dashed #282828}
+/*.remem_id .icheckbox_square-blue {width:18px;height:18px;background-position:-1px -1px;border:2px solid #d3cfc8}
+.remem_id .icheckbox_square-blue.hover {background:#fff;border:2px solid #2489c5}
+.remem_id .icheckbox_square-blue.checked, .remem_id .icheckbox_square-blue.hover.checked {backgroundbackground-position:-50px -2px;border:2px solid #2489c5}*/
+
+.login-page .validation, .register-page .validation {margin-top:-10px;margin-bottom:20px;display:none}
+.login-page .validation span, .register-page .validation span {display:none;font-size:14px;}
+.login-page .validation .danger, .register-page .validation .danger {color:#ff5f5f}
+.login-page .validation .confirm, .register-page .validation .confirm {color:#56dc95}
+
 
 
 @media all and (max-width:1200px) { 

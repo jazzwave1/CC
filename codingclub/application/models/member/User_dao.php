@@ -69,5 +69,11 @@ class User_dao extends Common_dao
     $aConfig = $this->queryInfoMem['updateAccountConfirm'];
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
+  public function updateUserInfo($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['updateUserInfo'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
+
 }
 ?>

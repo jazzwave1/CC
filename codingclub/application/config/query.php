@@ -100,10 +100,26 @@ $config['query'] = array(
       ,'btype'=> 's'
       ,'null' => array() 
     )
+    ,'updateUserInfo' => array( 
+      'query' => 'UPDATE users 
+                     SET name = ? 
+                        ,school = ?
+                        ,grde = ?
+                        ,addrcode = ?
+                        ,pname = ?
+                        ,php= ?
+                        ,pemail= ?
+                        ,pjob= ?
+                        ,pschool= ?
+                   WHERE usn = ?' 
+      ,'data' => array('name','school','grde','addrcode','pname','php','pemail','pjob','pschool', 'usn')
+      ,'btype'=> 'sssssssssi'
+      ,'null' => array('pschool') 
+    )
   )/*}}}*/
   ,'course' => array( /*{{{*/
     'getCourseInfo' => array( 
-      'query' => 'SELECT name, content, target, schedule, need, recruit, sdate, edate 
+      'query' => 'SELECT idx, name, content, target, schedule, need, recruit, sdate, edate 
                     FROM course 
                    WHERE idx = ?'
       ,'data' => array('idx')
@@ -184,6 +200,20 @@ $config['query'] = array(
       ,'data' => array('name')
       ,'btype'=> 's'
       ,'null' => array() 
+    )
+    ,'updateCourseInfo' => array( 
+      'query' => 'UPDATE course 
+                     SET content = ?
+                       , target = ?
+                       , schedule = ?
+                       , need = ?
+                       , recruit = ?
+                       , sdate = ?
+                       , edate = ?
+                   WHERE idx = ?'
+      ,'data' => array('content','target','schedule','need','recruit','sdate','edate','idx')
+      ,'btype'=> 'sssssssi'
+      ,'null' => array('content','target','schedule','need','recruit','sdate','edate') 
     )
 
   )/*}}}*/

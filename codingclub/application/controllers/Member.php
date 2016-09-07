@@ -17,7 +17,10 @@ class Member extends CI_Controller {
  
   public function memberJoinAccount()/*{{{*/
   {
-    $aContents = array();
+    $sBackURL = $this->input->get('burl');
+    $aContents = array(
+      'sBackURL' => $sBackURL 
+    );
     $data = array(
        'contents' => $this->load->view('member/join_account', $aContents, true) 
       ,'pagename' => 'Join Account Info' 
@@ -55,8 +58,7 @@ class Member extends CI_Controller {
    
     if(!$oUserInfo->usn)
     {
-      //header('Location: http://localhost/~leehojun/CC/codingclub/Login'); 
-      header('Location: http://member.codingclubs.org/Login'); 
+      header('Location: '.HOSTURL.'/Login?burl=member/mypage'); 
     }
     else
     {
@@ -71,7 +73,11 @@ class Member extends CI_Controller {
       ,'login'      => 'display:none'
       ,'logout'     => ''
     );
-      
+
+//echo "<pre>";
+//print_r($aContents);
+//die;
+
     $this->load->view('member/mypage', $aContents); 
 
   }/*}}}*/
@@ -79,6 +85,25 @@ class Member extends CI_Controller {
   {
     $data = array();
     $this->load->view('member/privacy', $data);
+  }/*}}}*/
+  public function chkConfirm($usn, $fingerprint)/*{{{*/
+  {
+    if( $this->membership_model->chkConfirm($usn, $fingerprint) )
+    {
+      $this->membership_model->setConfirm($usn);  
+      $sResult = "<strong>이메일 인증이 완료되었습니다.</strong><br>로그인하시면 코딩클럽을 이용하실 수 있습니다.";
+    }
+    else
+    {
+      $sResult = "<strong>이메일 인증이 실패하였습니다.</strong><br>관리자에게 문의 주시기 바랍니다.<br>(jazzwave14@gmail.com)";
+    }
+    
+    $aContents = array( 'sResult' => $sResult );
+    $data = array(
+       'contents' => $this->load->view('member/confirm', $aContents, true) 
+    );
+
+    $this->load->view('member/member_layout', $data);
   }/*}}}*/
 
 // 2016 8 SummerCamp
@@ -96,19 +121,54 @@ class Member extends CI_Controller {
     $this->load->view('summercamp/campjoin', $data);
   }/*}}}*/
 
-  public function chkConfirm($usn, $fingerprint)/*{{{*/
+// 정규학기 프로그램 신청
+  public function reqprogram($courseIDX='')/*{{{*/
   {
-    if( $this->membership_model->chkConfirm($usn, $fingerprint) )
+    if(!$courseIDX)
     {
-      echo "코딩클럽 본인확인이 완료 되었습니다. <br> 감사합니다.";
-      $this->membership_model->setConfirm($usn);  
+      header('Location: '.HOSTURL.'/club/junior'); 
+    }
+    $sUserInfo = getCookieInfo();
+    $oUserInfo = json_decode($sUserInfo);      
+    
+    $aMemberGRDEConfig  = cc_get_config('member_user_grde','member_config' );
+
+    if(!$oUserInfo->usn)
+    {
+      header('Location: '.HOSTURL.'/Login?burl=member/reqprogram/'.$courseIDX); 
     }
     else
     {
-      echo "코딩클럽 본인확인이 실패하였습니다";
+      $user = cc_get_instance('UserClass');
+      $oUser = new $user($oUserInfo->accountID);
     }
-  }/*}}}*/
-
+   
+    // 추후에 디비 정보를 가지로 와서 적용하는걸로 변경 해야함 -------- //
+    $aCourse = array(
+       'course_idx1' => array('value' => '20', 'name' => '주니어메이커')
+      ,'course_idx2' => array('value' => '21', 'name' => 'IoT메이커')
+      ,'course_idx3' => array('value' => '22', 'name' => '앱메이커')
+    );
+    // ---------------------------------------------------------------- //
+    
+    $data = array(
+       'oAccount'    => $oUser->oAccountInfo
+      ,'oUserInfo'   => $oUser->oUserInfo
+      ,'aMemberSVC'  => $oUser->aMemberSVC
+      ,'aGrdeConfig' => $aMemberGRDEConfig
+      ,'aCourse'     => $aCourse
+      ,'courseIDX'   => $courseIDX
+    );
+    
+    $this->load->view('member/req_program', $data);
+  } /*}}}*/
+/**
+* rpcJoin 
+* 썸머 캠프용으로 Account, user, questionnaire 테이블 정보를 
+* 한번에 다 가입 하도록 되어 있는 함수 입니다.
+* 특별한 이벤트가 아닌 일반적인 경우는 사용하지 않는것으로 ^^
+* jazzwave14@gmail.com( Lee Ho Jun );
+**/
   public function rpcJoin()/*{{{*/
   {
     $aAccount['account_id'] = trim($this->input->post('account_id')); 
@@ -225,7 +285,7 @@ class Member extends CI_Controller {
     $accountID = trim($this->input->post('account_id')); 
     $pwd1      = trim($this->input->post('passwd1')); 
     $pwd2      = trim($this->input->post('passwd2')); 
-
+    
     if(!$accountID || !$pwd1|| !$pwd2)
     {
       response_json(array("code"=>0,"msg"=>"Fail"));
@@ -244,9 +304,15 @@ class Member extends CI_Controller {
     );
 
     if( $this->_setAccountInfo($aInput) )
+    {
       response_json(array("code"=>1,"msg"=>"OK"));
+      $this->membership_model->sendJoinEmail($accountID, 'AccountJoin');
+    }
     else
+    {
       response_json(array("code"=>0,"msg"=>"Fail"));
+    }
+    die;
   }/*}}}*/
   public function rpcJoinMember()/*{{{*/
   {
@@ -302,7 +368,98 @@ class Member extends CI_Controller {
     else
       response_json(array("code"=>0,"msg"=>"Fail"));
   }/*}}}*/
+  public function rpcReqProgram()
+  {
+    // is user check 
+    $accountID = trim($this->input->post('account_id')); 
+
+    if( $this->membership_model->chkID($accountID) ) 
+    {
+      // 아이디가 없습니다.
+      response_json(array("code"=>999,"msg"=>"Fail"));
+      die;
+    } 
+
+    // set user info
+    $usn = trim($this->input->post('usn')); 
+   
+    $aUser['usn']       = $usn;
+    $aUser['name']      = trim($this->input->post('name')); 
+    $aUser['school']    = trim($this->input->post('school')); 
+    $aUser['grde']      = trim($this->input->post('grde')); 
+    $aUser['addrcode']  = trim($this->input->post('addrcode')); 
+    $aUser['pname']     = trim($this->input->post('pname')); 
+    $aUser['php']       = trim($this->input->post('php')); 
+    $aUser['pemail']    = trim($this->input->post('pemail')); 
+    $aUser['pjob']      = trim($this->input->post('pjob')); 
+    $aUser['pschool']   = trim($this->input->post('pschool')); 
+    $aUser['regdate']   = date('YmdHis'); 
+    
+    if(! $this->_setUserInfo($aUser) )
+    {  
+      response_json(array("code"=>0,"msg"=>"Fail"));
+      die;
+    }
+ 
+    // set member_svc
+    $course_idx  = trim($this->input->post('course_idx')); 
+    $aCurse = explode("|", $course_idx);
+    $course_idx = ''; 
+    foreach($aCurse as $key=>$val)
+    {
+      if($val != 'undefined')
+        $course_idx .= $val."|"; 
+      
+    }
+    $course_idx = substr($course_idx,0,-1); 
+    
+    $aMemberSVC['usn']         = $usn;
+    $aMemberSVC['course_idx']  = $course_idx; 
+    $aMemberSVC['state']       = "REQ";
+    $aMemberSVC['regdate']     = date('YmdHis');
+   
+    if(! $this->_setMemberSVC($aMemberSVC) )
+    {  
+      response_json(array("code"=>0,"msg"=>"Fail"));
+      die;
+    }
+    
+    $exprogram  = trim($this->input->post('exprogram')); 
+    $aExprogram = explode("|", $exprogram);
+    $exprogram = ''; 
+    foreach($aExprogram as $key=>$val)
+    {
+      if($val != 'undefined')
+        $exprogram .= $val."|"; 
+      
+    }
+    $exprogram  = substr($exprogram,0,-1); 
+
+    $aQuestion['usn']        = $usn;
+    $aQuestion['course_idx'] = $course_idx; 
+    $aQuestion['recommend']  = trim($this->input->post('recommend')); 
+    $aQuestion['motive']     = trim($this->input->post('motive')); 
+    $aQuestion['like_tf']    = trim($this->input->post('like_tf')); 
+    $aQuestion['experience'] = trim($this->input->post('experience')); 
+    $aQuestion['nature']     = trim($this->input->post('nature')); 
+    $aQuestion['favor']      = trim($this->input->post('favor')); 
+    $aQuestion['jr_hope']    = trim($this->input->post('jr_hope')); 
+    $aQuestion['channel']    = trim($this->input->post('channel')); 
+    $aQuestion['club_hope']  = trim($this->input->post('club_hope')); 
+    $aQuestion['inquiry']    = trim($this->input->post('inquiry')); 
+    $aQuestion['exprogram']  = $exprogram; 
+   
+    if(! $this->_setQuestionInfo($aQuestion) )
+    {  
+      response_json(array("code"=>0,"msg"=>"Fail"));
+      die;
+    }
+   
+    response_json(array("code"=>1,"msg"=>"OK"));
+    die;
+  }
   
+
   private function _setAccountInfo($aInput)/*{{{*/
   {
     $user = cc_get_instance('UserClass');

@@ -30,6 +30,7 @@
     <script src="<?=HOSTURL?>/img/bootstrap/js/bootstrap.min.js"></script>
     <!-- iCheck -->
     <script src="<?=HOSTURL?>/img/plugins/iCheck/icheck.min.js"></script>
+    
     <script>
       $(function () {
         $('input').iCheck({
@@ -41,9 +42,35 @@
     </script>
 
     <!-- 커스텀 스타일 -->
-    <link rel="stylesheet" href="<?=HOSTURL?>/static/css/summercamp.css">
+    <link rel="stylesheet" href="<?=HOSTURL?>/static/css/reset.css">
+    <link rel="stylesheet" href="<?=HOSTURL?>/static/css/common.css">
+    <link rel="stylesheet" href="<?=HOSTURL?>/static/css/member.css">
+ 
+  <body class="hold-transition login-page basic_pg">
+    <nav class="navbar  navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./"><strong>CodingClub</strong>Membership</a>
+        </div>
+        <!--div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" >
+            <li><a href="jusocl.html">주니어소프트웨어클럽</a></li>
+            <li><a href="main.html">코딩클럽</a></li>
+            <li class="sign_in"><a href="signup.html">회원가입</a></li>
+            <li class="my_page" style="display:none"><a href="mypage.html">마이페이지</a></li>
+            <li class="sign_up"><a href="login.html">로그인</a></li>
+            <li class="sign_out" style="display:none"><a href="main.html">로그아웃</a></li>
+          </ul>
+        </div--><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-  <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo"><b>CodingClub</b> Login
       </div><!-- /.login-logo -->
@@ -52,50 +79,109 @@
         <p class="login-box-msg">Sign in to start your session</p>
           
         <div class="form-group has-feedback">
-          <input type="email" id="account_id" class="form-control" placeholder="ID">
+          <input type="email" name="account_id" id="account_id" class="form-control" placeholder="이메일 아이디">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" id="passwd" class="form-control" placeholder="Password">
+          <input type="password" id="passwd" class="form-control" placeholder="비밀번호">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="login_util">
+          <div class="remem_id"><input type="checkbox" id="idSaveCheck" <?=$isIdSave?> ><label>기억하기</label></div>
+          <div id='bReSet' class="reset_pw"><a href="#">비밀번호 재설정</a></div>
         </div>
         <div class="btn_area">
           <div class="w50">
             <button id="bLogin" class="btn btn-primary btn-block btn-flat">로그인</button>
           </div>
-          <!--div class="w50">
-            <button class="btn btn-primary-line">회원가입</button>
-          </div--><!-- /.col -->
+          <div class="w50">
+            <button id="bJoin" class="btn btn-primary-line">회원가입</button>
+          </div><!-- /.col -->
         </div>
       </div><!-- /.login-box-body -->
 
     <script>
-      $(function(){
-        $('#bLogin').click(function(){
-        
-          $.post(
-            "<?=HOSTURL?>/Login/rpcCheckLogin"
-            ,{
-               "account_id" : $('#account_id').val()
-              ,"passwd" : $('#passwd').val()
-            }
-            ,function(data, status){
-              if(status == 'success' && data.code == 1)
-              {
-                window.location.replace("<?=HOSTURL?>/Member/mypage"); 
+      function setIdsave()
+      {
+        if($("#idSaveCheck").is(":checked")){ 
+            var userInputId = $("input[name='account_id']").val();
+            setCookie("userInputId", userInputId, 7); 
+        }else{ 
+            deleteCookie("userInputId");
+        }
+      }
+      $(document).ready(function(){
+          var userInputId = getCookie("userInputId");
+          $("input[name='account_id']").val(userInputId); 
+           
+          $("input[name='account_id']").keyup(function(){ 
+              if($("#idSaveCheck").is(":checked")){ 
+                  var userInputId = $("input[name='account_id']").val();
+                  setCookie("userInputId", userInputId, 7); 
               }
-              else if(status == 'success' && data.code == 998)
-              {
-                alert('회원가입시 발송된 이메일의 본인인증 링크를 클릭 부탁 드립니다.\n본인확인후 로그인이 가능합니다.');
+          });
+          
+          $('#bReSet').click(function(){
+            alert('준비중에 있습니다. \njazzwave14@gmail.com 으로 메일 요청 부탁 드립니다'); 
+          });
+          $('#bJoin').click(function(){
+            window.location.replace("<?=HOSTURL?>/member/memberJoinAccount?burl=<?=$sBackURL?>"); 
+          }); 
+          $('#bLogin').click(function(){
+            
+            setIdsave();  
+            
+            $.post(
+              "<?=HOSTURL?>/Login/rpcCheckLogin"
+              ,{
+                 "account_id" : $('#account_id').val()
+                ,"passwd" : $('#passwd').val()
               }
-              else
-              {
-                alert('아이디 / 비밀번호를 다시 확인 부탁 드립니다');
+              ,function(data, status){
+                if(status == 'success' && data.code == 1)
+                {
+                  window.location.replace("<?=HOSTURL?>/<?=$sBackURL?>"); 
+                }
+                else if(status == 'success' && data.code == 998)
+                {
+                  alert('회원가입시 발송된 이메일의 본인인증 링크를 클릭 부탁 드립니다.\n본인확인후 로그인이 가능합니다.');
+                }
+                else
+                {
+                  alert('아이디 / 비밀번호를 다시 확인 부탁 드립니다');
+                }
               }
-            }
-          );
-        });
+            );
+          });
+          
       });
+       
+      function setCookie(cookieName, value, exdays){
+          var exdate = new Date();
+          exdate.setDate(exdate.getDate() + exdays);
+          var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+          document.cookie = cookieName + "=" + cookieValue;
+      }
+       
+      function deleteCookie(cookieName){
+          var expireDate = new Date();
+          expireDate.setDate(expireDate.getDate() - 1);
+          document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+      }
+       
+      function getCookie(cookieName) {
+          cookieName = cookieName + '=';
+          var cookieData = document.cookie;
+          var start = cookieData.indexOf(cookieName);
+          var cookieValue = '';
+          if(start != -1){
+              start += cookieName.length;
+              var end = cookieData.indexOf(';', start);
+              if(end == -1)end = cookieData.length;
+              cookieValue = cookieData.substring(start, end);
+          }
+          return unescape(cookieValue);
+      }
     </script>
 
     </div><!-- /.login-box -->
