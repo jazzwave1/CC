@@ -132,7 +132,7 @@ class Admin_model extends CI_model
 
     return $oCourseInfo;
   }/*}}}*/
-  public function updateCourseInfo($aParam=array())
+  public function updateCourseInfo($aParam=array())/*{{{*/
   {
     if(!$aParam['idx']) return false; 
     
@@ -140,7 +140,7 @@ class Admin_model extends CI_model
       return true;
     else
       return false;
-  }
+  }/*}}}*/
 
 
   public function getSummerCampFull()/*{{{ 2016 07 SummerCampList*/

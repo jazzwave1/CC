@@ -58,6 +58,12 @@
             <dd><div id="course_sponsor"></div></dd>
             <dt>참가비</dt>
             <dd><div id="course_recurit"></div></dd>
+            <dt>소개(긴글)</dt>
+            <dd><div id="course_content_long"></div></dd>
+            <dt>대상(긴글)</dt>
+            <dd><div id="course_target_long"></div></dd>
+            <dt>학습안내(긴글)</dt>
+            <dd><div id="course_guide_long"></div></dd>
             <dt>시작일</dt>
             <dd><div id="course_sdate"></div></dd>
             <dt>종료일</dt>
@@ -117,6 +123,18 @@
             <input type="text" id="modify_recurit" class="form-control">
           </div>
           <div class="form-group">
+            <label for="recipient-name" class="control-label">소개(긴글) [줄바꿈은 | 를 입력해 주세요]</label>
+            <textarea id="modify_content_long" class="form-control" rows="3"></textarea>           
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">대상(긴글) [줄바꿈은 | 를 입력해 주세요]</label>
+            <textarea id="modify_target_long" class="form-control" rows="3"></textarea>           
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">학습안내(긴글) [줄바꿈은 | 를 입력해 주세요]</label>
+            <textarea id="modify_guide_long" class="form-control" rows="3"></textarea>           
+          </div>
+          <div class="form-group">
             <label for="message-text" class="control-label">시작일</label>
             <input type="text" id="modify_sdate" class="form-control">
           </div>
@@ -151,6 +169,9 @@
           ,"recruit" : $("#modify_recurit").val() 
           ,"location" : $("#modify_location").val() 
           ,"sponsor" : $("#modify_sponsor").val() 
+          ,"content_long" : $("#modify_content_long").val() 
+          ,"target_long" : $("#modify_target_long").val() 
+          ,"guide_long" : $("#modify_guide_long").val() 
           ,"sdate" : $("#modify_sdate").val() 
           ,"edate" : $("#modify_edate").val() 
         }
@@ -188,6 +209,9 @@
           $("#modify_recurit").val(data.recruit); 
           $("#modify_location").val(data.location); 
           $("#modify_sponsor").val(data.sponsor); 
+          $("#modify_content_long").val(data.content_long); 
+          $("#modify_target_long").val(data.target_long); 
+          $("#modify_guide_long").val(data.guide_long); 
           $("#modify_sdate").val(data.sdate); 
           $("#modify_edate").val(data.edate); 
         }
@@ -212,6 +236,9 @@
           document.getElementById('course_recurit').innerHTML = data.recruit; 
           document.getElementById('course_location').innerHTML = data.location; 
           document.getElementById('course_sponsor').innerHTML = data.sponsor; 
+          document.getElementById('course_content_long').innerHTML = data.content_long; 
+          document.getElementById('course_target_long').innerHTML = data.target_long; 
+          document.getElementById('course_guide_long').innerHTML = data.guide_long; 
           document.getElementById('course_sdate').innerHTML = data.sdateF; 
           document.getElementById('course_edate').innerHTML = data.edateF; 
         }

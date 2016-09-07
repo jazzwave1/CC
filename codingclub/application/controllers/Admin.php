@@ -281,6 +281,9 @@ class admin extends CI_Controller {
         ,'recruit' => $oCourseInfo->recruit
         ,'location' => $oCourseInfo->location
         ,'sponsor' => $oCourseInfo->sponsor
+        ,'content_long' => $oCourseInfo->content_long
+        ,'target_long' => $oCourseInfo->target_long
+        ,'guide_long' => $oCourseInfo->guide_long
         ,'sdate' => $oCourseInfo->sdate
         ,'edate' => $oCourseInfo->edate
         ,'sdateF' => $oCourseInfo->sdateF
@@ -302,6 +305,9 @@ class admin extends CI_Controller {
     $aParam['recruit']  = trim($this->input->post('recruit')); 
     $aParam['location'] = trim($this->input->post('location')); 
     $aParam['sponsor']  = trim($this->input->post('sponsor')); 
+    $aParam['content_long']  = trim($this->input->post('content_long')); 
+    $aParam['target_long']   = trim($this->input->post('target_long')); 
+    $aParam['guide_long']    = trim($this->input->post('guide_long')); 
     $aParam['sdate']    = trim($this->input->post('sdate')); 
     $aParam['edate']    = trim($this->input->post('edate')); 
    
@@ -325,6 +331,11 @@ class admin extends CI_Controller {
   }/*}}}*/
 
   
+  private function _getCourseInfo($idx)/*{{{*/
+  {
+    if(!$idx) return false;
+    return $this->admin_model->getCourseInfo($idx); 
+  }/*}}}*/
   private function _updateCourseInfo($aParam)/*{{{*/
   {
     if(!$aParam['idx']) return false;
@@ -374,10 +385,5 @@ class admin extends CI_Controller {
     return $this->admin_model->chkAdminLogin($accountID, $passwd);
   }/*}}}*/
 
-  private function _getCourseInfo($idx)/*{{{*/
-  {
-    if(!$idx) return false;
-    return $this->admin_model->getCourseInfo($idx); 
-  }/*}}}*/
 }
 ?>

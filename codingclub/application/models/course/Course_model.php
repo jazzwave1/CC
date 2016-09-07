@@ -13,9 +13,12 @@ class Course_model extends CI_model
     $aInput = array('idx' => $courseIDX); 
     
     $aResult = $this->_getCourseInfo($aInput);
-    
     $oRtn = $this->_setViewInfo($aResult[0]); 
-    
+   
+    $oRtn->content_long = explode('|', $oRtn->content_long);
+    $oRtn->target_long  = explode('|', $oRtn->target_long);
+    $oRtn->guide_long   = explode('|', $oRtn->guide_long);
+ 
     return $oRtn;
   }
 

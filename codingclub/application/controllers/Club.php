@@ -73,11 +73,6 @@ class Club extends CI_Controller {
  
     $oCourseInfo = $this->_getCourseInfo($courseIDX);
     
-    //test code 
-//  echo "<pre>";
-//  print_r($oCourseInfo);
-//  die;
-
     $data = array(
        'oCourseInfo' => $oCourseInfo
     );

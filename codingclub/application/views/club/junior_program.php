@@ -133,9 +133,12 @@
               <div class="pd_head">소개</div>
               <div class="pd_body">
                 <ul>
-                  <li>쉽고 재밌게 간단한 애니메이션과 게임을 만드는 방법을 배우는 디지털놀이터</li>
-                  <li>기초적 컴퓨터적사고를 바탕으로, 나의 생각을 기본적 알고리즘으로 표현하기 (반복, 조건, 변수)</li>
-                  <li>관심있는 주제에 대해 친구들과 토론하고, 나만의 방식의 이야기로 만들고, 소통하는 시간</li>
+                <?php
+                  foreach($oCourseInfo->content_long as $key=>$val)
+                  {
+                    echo "<li>".$val."</li>\n"; 
+                  }
+                ?>
                 </ul>
               </div>
             </div>
@@ -143,14 +146,25 @@
               <div class="pd_head">대상</div>
               <div class="pd_body">
                 <ul>
-                  <li>처음부터 체계적으로 소프트웨어만들기를 배우고 디지털컨텐츠를 스스로 만들고 싶은 초중생</li>
-                  <li>처음 소프트웨어교육을 접하는 친구들</li>
+                <?php
+                  foreach($oCourseInfo->target_long as $key=>$val)
+                  {
+                    echo "<li>".$val."</li>\n"; 
+                  }
+                ?>
                 </ul>
               </div>
             </div>
             <div class="p_detail">
               <div class="pd_head">학습안내</div>
-              <div class="pd_body">오프라인 모임은 프로젝트 창작 활동, 집에서는 Code.org 및 Codly.co.kr의 온라인 소프트웨어 교육 강의를 통해 컴퓨터과학을 배우는 활동을 병행합니다</div>
+              <div class="pd_body">
+              <?php
+                  foreach($oCourseInfo->guide_long as $key=>$val)
+                  {
+                    echo $val."\n"; 
+                  }
+                ?>
+              </div>
             </div>
             <div class="p_detail">
               <div class="pd_head">위치</div>
