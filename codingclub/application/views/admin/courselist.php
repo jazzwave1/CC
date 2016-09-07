@@ -46,13 +46,17 @@
           <dl class="dl-horizontal">
             <dt>내용</dt>
             <dd><div id="course_content"</div></dd>
-            <dt>대상</dt>
-            <dd><div id="course_target"</div></dd>
             <dt>일정</dt>
             <dd><div id="course_schedule"></div></dd>
+            <dt>대상</dt>
+            <dd><div id="course_target"</div></dd>
+            <dt>장소</dt>
+            <dd><div id="course_location"</div></dd>
             <dt>준비물</dt>
             <dd><div id="course_need"></div></dd>
-            <dt>모집인원</dt>
+            <dt>후원</dt>
+            <dd><div id="course_sponsor"></div></dd>
+            <dt>참가비</dt>
             <dd><div id="course_recurit"></div></dd>
             <dt>시작일</dt>
             <dd><div id="course_sdate"></div></dd>
@@ -63,7 +67,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <!--button type="button" class="btn btn-primary">Save changes</button-->
       </div>
     </div>
   </div>
@@ -86,19 +89,27 @@
             <textarea id="modify_content" class="form-control" rows="2"></textarea>           
           </div>
           <div class="form-group">
+            <label for="message-text" class="control-label">일정</label>
+            <input type="text" id="modify_schedule" class="form-control">
+          </div>
+          <div class="form-group">
             <label for="message-text" class="control-label">대상</label>
             <textarea id="modify_target" class="form-control" rows="2"></textarea>
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">일정</label>
-            <input type="text" id="modify_schedule" class="form-control">
+            <label for="message-text" class="control-label">장소</label>
+            <input type="text" id="modify_location" class="form-control">
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">준비물</label>
             <input type="text" id="modify_need" class="form-control">
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">모집인원</label>
+            <label for="message-text" class="control-label">후원</label>
+            <input type="text" id="modify_sponsor" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">참가비</label>
             <input type="text" id="modify_recurit" class="form-control">
           </div>
           <div class="form-group">
@@ -134,6 +145,8 @@
           ,"schedule" : $("#modify_schedule").val() 
           ,"need" : $("#modify_need").val() 
           ,"recruit" : $("#modify_recurit").val() 
+          ,"location" : $("#modify_location").val() 
+          ,"sponsor" : $("#modify_sponsor").val() 
           ,"sdate" : $("#modify_sdate").val() 
           ,"edate" : $("#modify_edate").val() 
         }
@@ -169,6 +182,8 @@
           $("#modify_schedule").val(data.schedule); 
           $("#modify_need").val(data.need); 
           $("#modify_recurit").val(data.recruit); 
+          $("#modify_location").val(data.location); 
+          $("#modify_sponsor").val(data.sponsor); 
           $("#modify_sdate").val(data.sdate); 
           $("#modify_edate").val(data.edate); 
         }
@@ -191,6 +206,8 @@
           document.getElementById('course_schedule').innerHTML = data.schedule; 
           document.getElementById('course_need').innerHTML = data.need; 
           document.getElementById('course_recurit').innerHTML = data.recruit; 
+          document.getElementById('course_location').innerHTML = data.location; 
+          document.getElementById('course_sponsor').innerHTML = data.sponsor; 
           document.getElementById('course_sdate').innerHTML = data.sdateF; 
           document.getElementById('course_edate').innerHTML = data.edateF; 
         }
@@ -200,20 +217,6 @@
   function changeState(course_idx)
   {
     alert('준비중입니다');
-//  $.post(
-//    "<?=HOSTURL?>/Admin/rpcUpdateState"
-//    ,{
-//         "usn" : usn 
-//        ,"state" : 'CONF' 
-//        ,"course_idx" : course_idx 
-//     }
-//    ,function(data, status) {
-//      if (status == "success" && data.code == 1)
-//      {
-//        alert('변경 되었습니다.'); 
-//        window.location.reload(); 
-//      }
-//    }
-//  );         
+        
   }     
   </script>
