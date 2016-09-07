@@ -802,7 +802,7 @@ https://scratch.mit.edu<br><br>
     $cookie = array(
       'name'   => 'AdminInfo',
       'value'  => json_encode(array('accountID' => $accountID)),
-      'expire' => '1440',
+      'expire' => '0',
       'prefix' => 'codingclub_', 
       'domain' => CKDOMAIN,
     );
