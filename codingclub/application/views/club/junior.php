@@ -8,3 +8,6 @@
 <br>
 <br>
 <a href="<?=HOSTURL."/club/junior/22"?>">썸머캠프-IoT메이커 신청하기 </a>
+<br>
+<br>
+<a href="<?=HOSTURL."/club/junior/23"?>">9월 주니어메이커 신청하기 </a>
