@@ -214,7 +214,7 @@ class admin extends CI_Controller {
     $this->chkCookie() ;
     $aMainData = array();
     $aMainData['aRowData'] = $this->admin_model->getCourseList(); 
-    
+   
     $aMenu = array('aMenu'=>$this->aMenu);
     $aMenu['aMenu'][0]['active'] = false;
     $aMenu['aMenu'][1]['active'] = true;
@@ -284,6 +284,8 @@ class admin extends CI_Controller {
         ,'content_long' => $oCourseInfo->content_long
         ,'target_long' => $oCourseInfo->target_long
         ,'guide_long' => $oCourseInfo->guide_long
+        ,'pgroup' => $oCourseInfo->pgroup
+        ,'active' => $oCourseInfo->active
         ,'sdate' => $oCourseInfo->sdate
         ,'edate' => $oCourseInfo->edate
         ,'sdateF' => $oCourseInfo->sdateF
@@ -308,9 +310,11 @@ class admin extends CI_Controller {
     $aParam['content_long']  = trim($this->input->post('content_long')); 
     $aParam['target_long']   = trim($this->input->post('target_long')); 
     $aParam['guide_long']    = trim($this->input->post('guide_long')); 
+    $aParam['pgroup']    = trim($this->input->post('pgroup')); 
+    $aParam['active']    = trim($this->input->post('active')); 
     $aParam['sdate']    = trim($this->input->post('sdate')); 
     $aParam['edate']    = trim($this->input->post('edate')); 
-   
+  
     if($this->_updateCourseInfo($aParam)) 
       response_json(array("code"=>1,"msg"=>"OK"));
     else
@@ -331,9 +335,11 @@ class admin extends CI_Controller {
     $aParam['content_long']  = trim($this->input->post('content_long')); 
     $aParam['target_long']   = trim($this->input->post('target_long')); 
     $aParam['guide_long']    = trim($this->input->post('guide_long')); 
+    $aParam['pgroup']   = trim($this->input->post('pgroup')); 
+    $aParam['active']   = trim($this->input->post('active')); 
     $aParam['sdate']    = trim($this->input->post('sdate')); 
     $aParam['edate']    = trim($this->input->post('edate')); 
-  
+ 
     if($this->_InsertCourseInfo($aParam)) 
       response_json(array("code"=>1,"msg"=>"OK"));
     else

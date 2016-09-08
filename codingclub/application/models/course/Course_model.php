@@ -25,7 +25,11 @@ class Course_model extends CI_model
   private function _setViewInfo($oResult)
   {
     $aTmp = explode( ',' , $oResult->name );
-    $oResult->name = $aTmp[1];
+    
+    if(count($aTmp) > 1)
+      $oResult->name = $aTmp[1];
+    else 
+      $oResult->name = $oResult->name;
     return $oResult;
   }
   private function _getCourseInfo($aParam)

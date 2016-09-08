@@ -119,7 +119,7 @@ $config['query'] = array(
   )/*}}}*/
   ,'course' => array( /*{{{*/
     'getCourseInfo' => array( 
-      'query' => 'SELECT idx, name, content, target, schedule, need, recruit, location, sponsor, content_long, target_long, guide_long, sdate, edate 
+      'query' => 'SELECT idx, name, content, target, schedule, need, recruit, location, sponsor, content_long, target_long, guide_long, pgroup, active, sdate, edate 
                     FROM course 
                    WHERE idx = ?'
       ,'data' => array('idx')
@@ -127,7 +127,7 @@ $config['query'] = array(
       ,'null' => array() 
     )
     ,'getCourseALL' => array( 
-      'query' => 'SELECT idx as course_idx , name, content, target, schedule, need, recruit, sdate, edate 
+      'query' => 'SELECT idx as course_idx , name, content, target, schedule, need, recruit, pgroup, active, sdate, edate 
                     FROM course 
                    WHERE idx >= ?'
       ,'data' => array('idx')
@@ -145,11 +145,11 @@ $config['query'] = array(
       ,'null' => array() 
     )
     ,'setCouresInfo' => array( 
-      'query' => 'INSERT INTO course ( name, content, target, schedule, need, recruit, location, sponsor, content_long, target_long, guide_long, sdate, edate)
-                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
-     ,'data' => array( 'name', 'content', 'target', 'schedule', 'need', 'recruit', 'location', 'sponsor', 'content_long', 'target_long', 'guide_long', 'sdate', 'edate')
-     ,'btype'=> 'sssssssssssss'
-     ,'null' => array('name', 'content', 'target', 'schedule', 'need', 'recruit', 'location', 'sponsor', 'content_long', 'target_long', 'guide_long', 'sdate', 'edate')
+      'query' => 'INSERT INTO course ( name, content, target, schedule, need, recruit, location, sponsor, content_long, target_long, guide_long, pgroup, active, sdate, edate)
+                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+     ,'data' => array( 'name', 'content', 'target', 'schedule', 'need', 'recruit', 'location', 'sponsor', 'content_long', 'target_long', 'guide_long','pgroup','active', 'sdate', 'edate')
+     ,'btype'=> 'sssssssssssssss'
+     ,'null' => array('name', 'content', 'target', 'schedule', 'need', 'recruit', 'location', 'sponsor', 'content_long', 'target_long', 'guide_long', 'pgroup','active','sdate', 'edate')
     )
     
   )/*}}}*/
@@ -214,12 +214,14 @@ $config['query'] = array(
                        , content_long = ?
                        , target_long = ?
                        , guide_long = ?
+                       , pgroup = ?
+                       , active = ?
                        , sdate = ?
                        , edate = ?
                    WHERE idx = ?'
-      ,'data' => array('name','content','target','schedule','need','recruit','location','sponsor','content_long','target_long','guide_long','sdate','edate','idx')
-      ,'btype'=> 'ssssssssssi'
-      ,'null' => array('name','content','target','schedule','need','recruit','location','sponsor','content_long','target_long','guide_long','sdate','edate') 
+      ,'data' => array('name','content','target','schedule','need','recruit','location','sponsor','content_long','target_long','guide_long','pgroup','active','sdate','edate','idx')
+      ,'btype'=> 'ssssssssssssi'
+      ,'null' => array('name','content','target','schedule','need','recruit','location','sponsor','content_long','target_long','guide_long','pgroup','active','sdate','edate') 
     )
 
   )/*}}}*/

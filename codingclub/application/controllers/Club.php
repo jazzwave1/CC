@@ -46,20 +46,35 @@ class Club extends CI_Controller {
       $oUser = new $user($oUserInfo->accountID);
     }
  
-//  echo "<pre>";
-//  print_r($oUser);
-//  die;
-//   $aContents = array(
-//     'oAccount'   => $oUser->oAccountInfo
-//    ,'oUserInfo'  => $oUser->oUserInfo
-//    ,'aMemberSVC' => $oUser->aMemberSVC
-//    ,'login'      => 'display:none'
-//    ,'logout'     => ''
-//  );
-//    
     if(!$courseIDX)
     {
-      $data = array();
+      // active 한 프로그램 리스트를 가지고 온다
+      // 3개 메이커, 디자이너, 해커
+      $aCourseIDX = $this->_getActiveCourse();
+      
+      foreach($aCourseIDX as $key=>$val)
+      {
+        $aCourseInfo[$val] = $this->_getCourseInfo($val);
+      }
+      $data = array(
+        'aJunior' => array(
+            'maker' => array(
+              'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> HOSTURL.'/club/program/'.$aCourseIDX['maker'])
+              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
+              ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['maker']]
+            )
+            ,'designer' => array(
+               'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> HOSTURL.'/club/program/'.$aCourseIDX['designer'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
+              ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['designer']]
+            )
+            ,'hacker' => array(
+               'bSangse' => array('bTitle'=>'준비중입니다', 'bViewState'=>'disabled', 'sTargetURL'=> HOSTURL.'/club/program/'.$aCourseIDX['hacker'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'disabled', 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
+              ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
+            )
+          )
+      );
       $this->load->view('club/junior', $data); 
     }
     else
@@ -79,11 +94,16 @@ class Club extends CI_Controller {
     $this->load->view('club/junior_program', $data); 
   }/*}}}*/
 
+  private function _getActiveCourse()
+  {
+    return array('maker'=>23,'designer'=>24,'hacker'=>25);
+  }
   private function _getCourseInfo($courseIDX)/*{{{*/
   {
     if(!$courseIDX) return false;
   
     return $this->course_model->getCourseInfo($courseIDX);
   }/*}}}*/
+
 }
 ?>

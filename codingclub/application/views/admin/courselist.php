@@ -59,6 +59,42 @@
             <textarea id="add_guide_long" class="form-control" rows="3"></textarea>           
           </div>
           <div class="form-group">
+            <label for="message-text" class="control-label">프로그램구룹</label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="add_pgroup" id="add_pgroup1" value="JUN">
+                주니어시리즈 
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="add_pgroup" id="add_pgroup2" value="APP">
+                앱인벤터시리즈 
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="add_pgroup" id="add_pgroup3" value="IOT">
+                IOT시리즈 
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">프로그램활성화</label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="add_active" id="modify_active1" value="ACT">
+                활성화 
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="add_active" id="modify_active2" value="HID">
+                숨김( 홈페이지 ) 
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
             <label for="message-text" class="control-label">시작일</label>
             <input type="text" id="add_sdate" class="form-control" placeholder="2016-10-10 12:34:56">
           </div>
@@ -84,6 +120,8 @@
           <tr>
             <th>프로그램번호</th>
             <th>프로그램명</th>
+            <th>구룹</th>
+            <th>활성화</th>
             <th>시작일자</th>
             <th>종료일자</th>
             <th>기능</th>
@@ -98,6 +136,8 @@
                 echo "<tr>";
                 echo "  <td>".$val->course_idx."</td>"; 
                 echo "  <td>".$val->name."</td>"; 
+                echo "  <td>".$val->pgroup."</td>"; 
+                echo "  <td>".$val->active."</td>"; 
                 echo "  <td>".$val->sdate."</td>"; 
                 echo "  <td>".$val->edate."</td>"; 
                 echo "  <td><button id='showsangse' onclick='javascript:showSangse(".$val->course_idx.")' class='btn btn-primary btn-xs' data-toggle='modal' data-target='#myModal' >상세보기</button>";
@@ -144,6 +184,10 @@
             <dd><div id="course_target_long"></div></dd>
             <dt>학습안내(긴글)</dt>
             <dd><div id="course_guide_long"></div></dd>
+            <dt>프로그램구룹</dt>
+            <dd><div id="course_pgroup"></div></dd>
+            <dt>프로그램활성화</dt>
+            <dd><div id="course_active"></div></dd>
             <dt>시작일</dt>
             <dd><div id="course_sdate"></div></dd>
             <dt>종료일</dt>
@@ -217,6 +261,42 @@
             <textarea id="modify_guide_long" class="form-control" rows="3"></textarea>           
           </div>
           <div class="form-group">
+            <label for="message-text" class="control-label">프로그램구룹</label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="modify_pgroup" id="modify_pgroup1" value="JUN">
+                주니어시리즈 
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="modify_pgroup" id="modify_pgroup2" value="APP">
+                앱인벤터시리즈 
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="modify_pgroup" id="modify_pgroup3" value="IOT">
+                IOT시리즈 
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">프로그램활성화</label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="modify_active" id="modify_active1" value="ACT">
+                활성화 
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="modify_active" id="modify_active2" value="HID">
+                숨김( 홈페이지 ) 
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
             <label for="message-text" class="control-label">시작일</label>
             <input type="text" id="modify_sdate" class="form-control">
           </div>
@@ -255,6 +335,8 @@
           ,"content_long" : $("#add_content_long").val() 
           ,"target_long" : $("#add_target_long").val() 
           ,"guide_long" : $("#add_guide_long").val() 
+          ,"pgroup" : $(":input:radio[name='add_pgroup']:checked").val()  
+          ,"active" : $(":input:radio[name='add_active']:checked").val()  
           ,"sdate" : $("#add_sdate").val() 
           ,"edate" : $("#add_edate").val() 
         }
@@ -288,6 +370,8 @@
           ,"content_long" : $("#modify_content_long").val() 
           ,"target_long" : $("#modify_target_long").val() 
           ,"guide_long" : $("#modify_guide_long").val() 
+          ,"pgroup" : $(":input:radio[name='modify_pgroup']:checked").val()  
+          ,"active" : $("input:radio[name='modify_active']:checked").val() 
           ,"sdate" : $("#modify_sdate").val() 
           ,"edate" : $("#modify_edate").val() 
         }
@@ -316,6 +400,20 @@
       ,function(data, status) {
         if (status == "success" && data.code == 1)
         {
+
+          //$("input:checkbox[id='modify_pgroup1']").prop("checked", true);
+          if(data.pgroup == 'JUN') 
+            document.getElementById("modify_pgroup1").checked = true;
+          if(data.pgroup == 'APP')
+            document.getElementById("modify_pgroup2").checked = true;
+          if(data.pgroup == 'IOT')
+            document.getElementById("modify_pgroup3").checked = true;
+  
+          if(data.active == 'ACT')
+            document.getElementById("modify_active1").checked = true;
+          else
+            document.getElementById("modify_active2").checked = true;
+
           $("#modify_idx").val(data.idx); 
           $("#modify_content").val(data.content); 
           $("#modify_name").val(data.name); 
@@ -328,6 +426,8 @@
           $("#modify_content_long").val(data.content_long); 
           $("#modify_target_long").val(data.target_long); 
           $("#modify_guide_long").val(data.guide_long); 
+          $("#modify_pgroup").val(data.pgroup); 
+          $("#modify_active").val(data.active); 
           $("#modify_sdate").val(data.sdate); 
           $("#modify_edate").val(data.edate); 
         }
@@ -355,6 +455,8 @@
           document.getElementById('course_content_long').innerHTML = data.content_long; 
           document.getElementById('course_target_long').innerHTML = data.target_long; 
           document.getElementById('course_guide_long').innerHTML = data.guide_long; 
+          document.getElementById('course_pgroup').innerHTML = data.pgroup; 
+          document.getElementById('course_active').innerHTML = data.active; 
           document.getElementById('course_sdate').innerHTML = data.sdateF; 
           document.getElementById('course_edate').innerHTML = data.edateF; 
         }

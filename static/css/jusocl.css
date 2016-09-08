@@ -4,7 +4,7 @@
 
   파일명 : jusocl.css
   작성자 : Mihee Moon
-  작성일 : 2016-09-06(최종수정)
+  작성일 : 2016-09-08(최종수정)
 
   주니어소프트웨어클럽 스타일입니다.
 
@@ -669,12 +669,20 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .pg_jusocl .navbar-inverse .navbar-nav>li.sign_in>a, .pg_jusocl .navbar-inverse .navbar-nav>li.my_page>a {width:94px;color:#005dbc;border:1px solid #005dbc}
 
 .jusocl_detail {position:relative;background:#f8f8fa;margin-top:62px;padding-bottom:109px}
+.jusocl_program {position:relative;background:#f8f8fa;margin-top:62px;padding-bottom:109px}
 
 .program_intro {position:relative;z-index:0;top:0;height:513px}
+
 .media {position:absolute;z-index:1;width:100%}
+
 .p_intro {position:absolute;width:100%;height:513px;top:0;z-index:2;background:rgba(0, 93, 188, .86);padding:18px}
 .p_intro_box {border:1px solid rgba(255, 255, 255, .36);height:477px;box-sizing:border-box;padding:80px 10px 0 10px;color:#fff}
 .p_intro_box span, .p_intro_box p {color:#fff;text-align:center}
+
+.p_intro_wh {position:absolute;width:100%;height:513px;top:0;z-index:2;background:#fff;padding:18px}
+.p_intro_box_wh {border:1px solid #005dbc;height:477px;box-sizing:border-box;padding:80px 10px 0 10px;color:#005dbc}
+.p_intro_box_wh span, .p_intro_box_wh p {color:#005dbc;text-align:center}
+
 .p_category {display:block;font-size:30px;font-weight:100;margin-bottom:18px}
 .p_name {display:block;font-size:64px;font-weight:100;margin-bottom:58px}
 .p_desc1 {display:block;font-size:16px;font-weight:400;margin:0 auto 50px auto !important;width:620px;line-height:24px}
@@ -691,7 +699,8 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .p_detail:after {display:block;height:0;clear:both;content:''}
 .pd_head {float:left;width:19%;font-size:24px;color:#282828}
 .pd_body {float:left;width:81%;color:#666;line-height:28px}
-.pd_body ul {margin:0;padding:0}
+.pd_body p {display:block;color:#666;line-height:28px;margin-bottom:18px !important}
+.pd_body ul {display:block;margin:0;padding:0;margin-bottom:18px}
 .pd_body ul li {list-style:none;background:url("../img/layout/pd_list.png") no-repeat 0 7px;padding-left:13px}
 .tbl_summary {width:100%}
 .sum_title {width:142px}
@@ -699,6 +708,42 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .tbl_summary th, .tbl_summary td {padding:17px 22px;vertical-align:top;line-height:24px;border:1px solid #d5deef}
 .tbl_summary th {color:#005dbc;font-weight:400}
 .tbl_summary td {color:#666}
+
+
+.program_desc {position:relative;z-index:3;margin-top:-49px;width:100%}
+.program_desc .container {background:#fff;padding:0}
+
+.p_character01 {display:block;background:url("../img/layout/img_p_character01.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
+
+.p_tool {background:#005dbc;color:#fff;width:100%;padding:40px 55px 50px 55px}
+.p_tool:after {display:block;height:0;clear:both;content:''}
+.p_tool span, .p_tool p{color:#fff}
+.p_toollist {float:left;width:49%}
+.p_toollist:first-child {margin-right:2%}
+.p_tool_title {display:block;font-size:24px;margin-bottom:16px}
+.p_tool_img {display:block;overflow:hidden;margin-bottom:18px}
+.p_tool_img img {width:100%}
+.p_tool_desc {display:block;font-size:16px}
+.p_tool_desc p {display:block;color:#666;line-height:28px;margin-bottom:18px !important}
+.p_tool_desc ul {display:block;margin:0;padding:0;margin-bottom:18px}
+.p_tool_desc li {list-style:none;background:url("../img/layout/pd_list.png") no-repeat 0 7px;padding-left:13px;line-height:22px;margin-bottom:6px}
+
+.p_roadmap {background:#fff;color:#666;width:100%;padding:40px 55px 50px 55px}
+.p_roadmap_detail {width:100%;margin-bottom:57px}
+.p_roadmap_detail:after {display:block;height:0;clear:both;content:''}
+.pd_head .sub_en{display:block;font-size:16px;color:#005dbc;margin-bottom:14px}
+.pd_head .main_kr{display:block;font-size:24px;color:#282828}
+ 
+.pd_boty_btn {display:block;text-align:left}
+.pd_boty_btn button {width:199px;height:53px;font-size:16px;box-sizing:border-box}
+.btn_lineblue {border:1px solid #005dbc;color:#005dbc}
+.btn_bgblue {background:#005dbc;color:#fff;font-weight:700}
+.btn_lineblue:hover {border:1px solid #ff5f5f;color:#ff5f5f}
+.btn_bgblue:hover {background:#ff5f5f;color:#fff}
+.btn_lineblue.disabled, .btn_lineblue.disabled:hover, .btn_lineblue:disabled, .btn_lineblue:disabled:hover {border:1px solid #aaa;color:#aaa}
+.btn_bgblue.disabled, .btn_bgblue.disabled:hover, .btn_bgblue:disabled, .btn_bgblue:disabled:hover {display:none;background:#aaa;color:#fff}
+
+
 
 .footer_fixed {position:fixed;left:0px;bottom:0px;height:89px;background:#2f5bad;z-index:4;width:100%;padding-top:18px}
 .btn_fixed {display:block;margin:0 auto;text-align:center}

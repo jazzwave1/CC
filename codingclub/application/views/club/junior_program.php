@@ -56,7 +56,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
             <li class="my_page"><a href="<?=HOSTURL?>/member/mypage">마이페이지</a></li>
-            <li class="sign_out" id="bLogout"><a href="main.html">로그아웃</a></li>
+            <li class="sign_out" id="bLogout"><a href="#">로그아웃</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
