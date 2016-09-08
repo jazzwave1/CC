@@ -83,13 +83,13 @@
             <label for="message-text" class="control-label">프로그램활성화</label>
             <div class="radio">
               <label>
-                <input type="radio" name="add_active" id="modify_active1" value="ACT">
+                <input type="radio" name="add_active" id="add_active1" value="ACT">
                 활성화 
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="add_active" id="modify_active2" value="HID">
+                <input type="radio" name="add_active" id="add_active2" value="HID">
                 숨김( 홈페이지 ) 
               </label>
             </div>
