@@ -152,19 +152,19 @@
                 </a>
               </li>
               <li class="p_app">
-                <a href="juniorsoftwareclub_program.html">
+                <a href="#" onclick="javascript:alert('준비중입니다');">
                   <span><i>앱인벤터로</i><br>앱만들기</span>
                   <p>MIT 앱인벤터로 <br>안드로이드앱을 만드는 <br>프로그램</p>
                 </a>
               </li>
               <li class="p_iot">
-                <a href="juniorsoftwareclub_program.html">
+                <a href="#" onclick="javascript:alert('준비중입니다');">
                   <span>IOT<br>만들기</span>
                   <p>친구들과 함께 내 손안의 <br>컴퓨터로 세상과 소통하는 <br>사물인터넷 제품을 직접 만드는 프로그램</p>
                 </a>
               </li>
               <li class="p_web">
-                <a href="juniorsoftwareclub_program.html">
+                <a href="#" onclick="javascript:alert('준비중입니다');">
                   <span>웹<br>만들기</span>
                   <p>Codecademy <br>코드카데미와 함께 <br>웹서비스를 만드는 프로그램!</p>
                 </a>
