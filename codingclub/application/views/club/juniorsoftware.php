@@ -55,9 +55,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
-            <!--li><a href="jusocl.html#jusocl_about">주니어소프트웨어클럽이란?</a></li>
-            <li><a href="jusocl.html#jusocl_ongoing">모집중</a></li>
-            <li><a href="jusocl.html#jusocl_contents">프로그램</a></li-->
+            <li><a href="#jusocl_about">주니어소프트웨어클럽이란?</a></li>
+            <li><a href="#jusocl_ongoing">모집중</a></li>
+            <li><a href="#jusocl_contents">프로그램</a></li>
             <li><a href="http://codingclubs.org">코딩클럽</a></li>
             <li class="sign_in" style="display:none"><a href="signup.html">회원가입</a></li>
             <li class="my_page"><a href="<?=HOSTURL?>/Member/mypage">마이페이지</a></li>
