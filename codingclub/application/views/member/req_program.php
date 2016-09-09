@@ -62,7 +62,6 @@
 		<div class="container">
 			<div class="absolute_box">
 				<div class="camp_info">
-					<h2><i><span class="jusocle">주니어소프트웨어클럽</span><span class="x">x</span><span class="sejong">세종대</span></i><span class="term">여름학기 8월 프로그램 참가신청서</span></h2>
 					<div class="camp_txt">
 						<h3>재밌는 컴퓨팅,<br>신나는 메이킹,<br>즐거운 소프트웨어!<i>코딩클럽</i></h3>
 						
@@ -180,6 +179,9 @@
 								<label><input type="checkbox" name="ex17" id="ex17" value="17" >16.4월 앱메이커</label><br>
 								<label><input type="checkbox" name="ex18" id="ex18" value="18" >16.7월 주니어메이커</label><br>
 								<label><input type="checkbox" name="ex19" id="ex19" value="19" >16.7월 앱메이커</label><br>
+								<label><input type="checkbox" name="ex19" id="ex20" value="20" >16.8월 썸머캠프 - 주니어메이커</label><br>
+								<label><input type="checkbox" name="ex19" id="ex21" value="21" >16.8월 썸머캠프 - Iot메이커</label><br>
+								<label><input type="checkbox" name="ex19" id="ex22" value="22" >16.8월 썸머캠프 - 앱메이커</label><br>
 								</div>										
 								<input type="text" class="form-control" name="ex_999" id="ex_999" placeholder="기타프로그램참여">
 								

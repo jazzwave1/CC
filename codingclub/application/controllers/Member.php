@@ -145,9 +145,11 @@ class Member extends CI_Controller {
    
     // 추후에 디비 정보를 가지로 와서 적용하는걸로 변경 해야함 -------- //
     $aCourse = array(
-       'course_idx1' => array('value' => '20', 'name' => '주니어메이커')
-      ,'course_idx2' => array('value' => '21', 'name' => 'IoT메이커')
-      ,'course_idx3' => array('value' => '22', 'name' => '앱메이커')
+       'course_idx1' => array('value' => '23', 'name' => '주니어메이커')
+      ,'course_idx2' => array('value' => '24', 'name' => '주니어디자이터')
+      ,'course_idx3' => array('value' => '25', 'name' => '앱메이커')
+      ,'course_idx4' => array('value' => '26', 'name' => '앱디자이너')
+      ,'course_idx5' => array('value' => '27', 'name' => 'IoT메이커')
     );
     // ---------------------------------------------------------------- //
     
@@ -162,6 +164,7 @@ class Member extends CI_Controller {
     
     $this->load->view('member/req_program', $data);
   } /*}}}*/
+
 /**
 * rpcJoin 
 * 썸머 캠프용으로 Account, user, questionnaire 테이블 정보를 

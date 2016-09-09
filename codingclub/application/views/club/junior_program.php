@@ -12,7 +12,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta property="og:url" content="http://codingclubs.org" />
 <meta property="og:title" content="코딩 클럽" />
-<meta property="og:image" content="img/layout/ms-icon-310x310.png" />
+<meta property="og:image" content="<?=SURL?>img/layout/ms-icon-310x310.png" />
 <meta property="og:description" content="코딩클럽은 프로그래밍, 컴퓨터과학, 정보과학, 소프트웨어 교육, 창작에 관심있는 모든 분들을 위한 열린 커뮤니티입니다. 프로그래밍 교육에 관심있는 학부모, 선생님들이 서로 정보, 의견을 공유하는 공간입니다. 아울러 코딩클럽에서는 어린이, 청소년을 위한 각 지역 코딩클럽을 설립, 운영하고, 함께 교육하고 배울 수 있는 프로그램을 제공합니다." />
 
 <link rel="shortcut icon" href="<?=SURL?>/img/layout/android-icon-36x36.png"  />
@@ -74,7 +74,7 @@
         <!-- 프로그램 인트로 :: s -->
         <div class="program_intro">
           <div class="media">
-            <img src="img/temp/img_jusocl_intro.jpg">
+            <img src="<?=SURL?>/img/temp/img_jusocl_intro.jpg">
           </div>
           <div class="p_intro">
             <div class="p_intro_box">
@@ -179,7 +179,7 @@
         <!-- fixed 버튼 :: s -->
         <div class="footer_fixed">
           <div class="btn_fixed">
-            <button id="bReqProgram" class="btn_bg_bgblue">신청하기</button>
+            <button id="bReqProgram2" class="btn_bg_bgblue">신청하기</button>
           </div>
         </div>
 
@@ -198,6 +198,10 @@
         $('#bReqProgram').click(function(){
           window.location.replace("<?=HOSTURL?>/member/reqprogram/<?=$oCourseInfo->idx?>"); 
         });
+        $('#bReqProgram2').click(function(){
+          window.location.replace("<?=HOSTURL?>/member/reqprogram/<?=$oCourseInfo->idx?>"); 
+        });
+
 
       });
    </script>   

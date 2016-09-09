@@ -50,7 +50,7 @@ class Club extends CI_Controller {
     {
       // active 한 프로그램 리스트를 가지고 온다
       // 3개 메이커, 디자이너, 해커
-      $aCourseIDX = $this->_getActiveCourse();
+      $aCourseIDX = $this->_getActiveCourse('junior');
       
       foreach($aCourseIDX as $key=>$val)
       {
@@ -93,10 +93,32 @@ class Club extends CI_Controller {
     );
     $this->load->view('club/junior_program', $data); 
   }/*}}}*/
-
-  private function _getActiveCourse()
+  public function juniorsoftware()/*{{{*/
   {
-    return array('maker'=>23,'designer'=>24,'hacker'=>25);
+    $aCourse = $this->_getActiveCourse();
+    $data = array(
+      'aProgramURL' => array(
+         'juniormaker'    => HOSTURL.'/club/junior/'.$aCourse['junior']['maker']
+        ,'juniordesigner' => HOSTURL.'/club/junior/'.$aCourse['junior']['designer']
+        ,'appmaker'       => HOSTURL.'/club/junior/'.$aCourse['app']['maker']
+        ,'appdesigner'    => HOSTURL.'/club/junior/'.$aCourse['app']['designer']
+        ,'iotmaker'       => HOSTURL.'/club/junior/'.$aCourse['iot']['maker']
+      )
+    );
+    $this->load->view('club/juniorsoftware', $data); 
+  }/*}}}*/
+
+  private function _getActiveCourse($program='')
+  {
+    $aActiveProgram = array(
+       'junior' => array('maker'=>23,'designer'=>24,'hacker'=>25)
+      ,'app'    => array('maker'=>26,'designer'=>27,'hacker'=>'')
+      ,'iot'    => array('maker'=>28,'designer'=>'','hacker'=>'')
+    );
+    if(!$program)
+      return $aActiveProgram;
+    else
+      return $aActiveProgram[$program];
   }
   private function _getCourseInfo($courseIDX)/*{{{*/
   {

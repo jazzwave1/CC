@@ -117,7 +117,7 @@ li.sign_up, li.sign_out {margin-left:1px}
 /* ------------------------------------------
   HEADER :: 일반 페이지
 --------------------------------------------- */
-.basic_pg .navbar-inverse {background:#fff}
+.basic_pg .navbar-inverse {background:#fff;border-bottom:1px solid #ddd;margin-top:-1px}
 .basic_pg .navbar-inverse .navbar-nav>li>a, .basic_pg .navbar-inverse .navbar-brand {color:#282828}
 .basic_pg .navbar-inverse .navbar-nav>.active>a, .basic_pg .navbar-inverse .navbar-nav>.active>a:focus, .basic_pg .navbar-inverse .navbar-nav>.active>a:hover {color:#ff5f5f;background:none;border-bottom:1px solid #ff5f5f}
 
@@ -668,6 +668,76 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .pg_jusocl .navbar .container {border-bottom:1px solid #ddd}
 .pg_jusocl .navbar-inverse .navbar-nav>li.sign_in>a, .pg_jusocl .navbar-inverse .navbar-nav>li.my_page>a {width:94px;color:#005dbc;border:1px solid #005dbc}
 
+.jusocl {margin-top:62px}
+
+.features {width:100%}
+.features .container {padding:54px 0}
+.f_tit {text-align:center;margin-bottom:50px}
+.f_tit_head {display:block;font-size:64px;color:#0070bc;font-weight:100;margin-bottom:10px}
+.f_tit_sub {display:block;font-size:18px;color:#0070bc;margin-bottom:10px}
+
+.f_jusocl {position:relative;z-index:2;background:#fff;float:left;width:476px;border:8px solid #0070bc;padding:56px 47px}
+.f_jusocl_sub {float:left;font-size:24px;color:#0070bc;margin-bottom:44px;width:70%}
+.f_jusocl_title {float:left;font-size:64px;font-weight:100;color:#0070bc;line-height:120%;width:70%}
+.f_jusocl_title strong {font-weight:400;color:#0070bc}
+.f_jusocl_program {float:left;width:30%}
+.f_jusocl_program ul {margin:0;padding:0;margin-top:45px}
+.f_jusocl_program li {display:block;margin-bottom:20px}
+.f_jusocl_program li a {display:block;color:#0070bc;font-size:16px;text-decoration:underline}
+
+.f_event {position:relative;z-index:1;float:right;width:800px;margin-left:-13%;background:#0070bc;margin-top:90px;color:#fff;text-align:center;padding:74px 20px 34px 20px}
+.hackerthon_2 {background:#0070bc url("../img/temp/img_hackerthon_ban2016.png") no-repeat 50% 0}
+.f_event_sub {display:block;font-size:24px;margin-bottom:27px;line-height:100%}
+.f_event_title {display:block;font-size:88px;margin-bottom:140px;line-height:100%}
+.f_event_catchphrase {display:block;font-size:24px;margin-bottom:12px;line-height:100%}
+.f_event_date {display:block;font-size:16px;line-height:100%}
+
+
+.jusocl_about {background:url("../img/layout/bg_jusocle.png") no-repeat;background-attachment:cover}
+.jusocl_about .container {padding:142px 0}
+
+.j_about_media {width:100%}
+.j_about_cont {background:rgba(0, 93, 188, .86);width:100%;}
+
+.j_about {border:8px solid #2cde88;color:#2cde88;margin-bottom:150px}
+.j_about:after {display:block;height:0;clear:both;content:''}
+.j_txt_head {float:left;padding:46px 34px 0 34px;width:35%;min-width:370px}
+.j_txt_head .h_kr {display:block;font-size:64px;font-weight:100;line-height:120%;color:#2cde88;margin-bottom:40px}
+.j_txt_head .h_kr strong {font-weight:400}
+.j_txt_head .h_en {display:block;font-size:32px;font-weight:400;color:#2cde88;line-height:120%}
+
+.j_txt_body {float:left;width:65%}
+.j_desc {float:left;padding:46px 34px 24px 20px;line-height:150%}
+.j_desc .pc, .j_desc .mobile {color:#2cde88}
+.j_desc .mobile {display:none}
+.jusocl_img {float:left;margin:30px 48px -144px -120px}
+.jusocl_img img {width:100%}
+
+.jusocl_vision {}
+.jusocl_vision dt {float:left;width:35%;min-width:370px;font-size:30px;font-weight:100;line-height:120%;color:#fff;background:#2cde88;padding:30px 92px 20px 30px}
+.jusocl_vision dd {float:left;width:65%;color:#fff;background:#52eaa1;padding:30px 20px 20px 20px}
+.jusocl_vision dd span {color:#fff;line-height:140%;display:block;margin-bottom:10px}
+
+.jusocl_contents {width:100%;background:#fff}
+.jusocl_contents .container {padding:60px 0 60px 0}
+.j_contents_head {font-size:30px;color:#2b519b;text-align:center;margin-bottom:28px}
+.j_contents_list {width:inherit;overflow:hidden}
+.j_contents_list li {width:24%;margin-left:1%;float:left;border:1px solid #2b519b;list-style:none}
+.j_contents_list li a {display:block;padding:36px 23px;height:275px}
+.j_contents_list li span {display:block;padding:8px;background:#fff;color:#2b519b;font-size:24px;line-height:120%}
+.j_contents_list li span i{color:#2b519b;font-size:24px;line-height:120%;font-weight:100}
+.j_contents_list li p {display:none;padding:18px 8px 8px 8px;font-size:16px;line-height:150%}
+.j_contents_list li:hover {background:#2b519b}
+.j_contents_list li:hover span {background:none;color:#fff}
+.j_contents_list li:hover span i, .j_contents_list li:hover p {color:#fff}
+.j_contents_list li:hover p {display:block}
+
+.p_digital {background:url("../img/layout/bg_jclist_1.gif") no-repeat}
+.p_app {background:url("../img/layout/bg_jclist_2.gif") no-repeat}
+.p_iot {background:url("../img/layout/bg_jclist_3.gif") no-repeat}
+.p_web {background:url("../img/layout/bg_jclist_4.gif") no-repeat}
+
+
 .jusocl_detail {position:relative;background:#f8f8fa;margin-top:62px;padding-bottom:109px}
 .jusocl_program {position:relative;background:#f8f8fa;margin-top:62px;padding-bottom:109px}
 
@@ -748,3 +818,12 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .footer_fixed {position:fixed;left:0px;bottom:0px;height:89px;background:#2f5bad;z-index:4;width:100%;padding-top:18px}
 .btn_fixed {display:block;margin:0 auto;text-align:center}
 .btn_fixed button {width:289px;height:53px;font-size:16px;box-sizing:border-box}
+
+
+@media all and (max-width:1200px) { 
+	.f_event {margin-top:-40px}
+}
+
+@media all and (max-width:767px) { 
+	.f_event {margin-top:-40px;width:100%}
+}
