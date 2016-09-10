@@ -2,7 +2,7 @@
 $config['member_svc_state'] = array(
    'REQ' => '신청완료[입금확인대기중]'
   ,'CONF' => '입금확인'
-  ,'ING' => '수강진행중'
+  ,'ING' => '진행중'
 );
 $config['member_user_grde'] = array(
    'E1' => '초등1'

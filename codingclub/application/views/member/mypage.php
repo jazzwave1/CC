@@ -95,7 +95,7 @@
             <!-- tabs-menu :: s -->
             <ul class="tabs-menu">
               <li class="current"><a href="#tab-1">기본정보</a></li>
-              <li><a href="#tab-2">수강목록</a></li>
+              <li><a href="#tab-2">프로그램목록</a></li>
               <li><a href="#tab-3">포트폴리오</a></li>
               <li><a href="#tab-4">스토리</a></li>
             </ul>
@@ -145,7 +145,7 @@
                   <thead>
                     <tr>
                       <th scope="col" class="bd_num">#</th>                      
-                      <th scope="col" class="bd_title">수강명</th>
+                      <th scope="col" class="bd_title">프로그램명</th>
                       <th scope="col" class="bd_status">상태</th>
                     </tr>
                   </thead>
