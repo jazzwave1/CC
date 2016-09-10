@@ -19,11 +19,15 @@ class Login extends CI_Controller {
 
     $sBackURL = $this->input->get('burl');
     
-    if(!$sBackURL) $sBackURL = 0; 
-    
+    if($bBackURL) 
+      $bBackURL = 1; 
+    else
+      $bBackURL = 0; 
+   
     $aContents = array(
        'sBackURL' => $sBackURL 
       ,'isIdSave' => $sChecked
+      ,'bBackURL' => $bBackURL
     );
 
     $this->load->view('member/login', $aContents);    

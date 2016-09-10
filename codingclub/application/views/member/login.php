@@ -140,7 +140,7 @@
               ,function(data, status){
                 if(status == 'success' && data.code == 1)
                 {
-                  if(<?=$sBackURL?>) 
+                  if(<?=$bBackURL?>) 
                     window.location.replace("<?=HOSTURL?>/<?=$sBackURL?>"); 
                   else
                     window.location.replace("http://codingclubs.org"); 

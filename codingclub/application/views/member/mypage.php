@@ -108,7 +108,7 @@
                 <h4 class="blind">기본정보</h4>
                 <div class="profile">
                   <div class="profile_txt">
-                    <span class="p_name"><?=$oUserInfo?$oUserInfo->name:"코딩클럽은 이메일, 비밀번호를 제외한 부가 개인정보는 코디을럽 프로그램 참여시에만 받습니다.`"?></span>
+                    <span class="p_name msg"><?=$oUserInfo?$oUserInfo->name:"코딩클럽은 이메일, 비밀번호를 제외한 부가 개인정보는 코디을럽 프로그램 참여시에만 받습니다."?></span>
                     <span class="p_grade"><?=$oUserInfo?$oUserInfo->school:"&nbsp;"?>&nbsp;<?=$oUserInfo?$oUserInfo->grde:"&nbsp;"?></span>
                   </div>
                 </div>
