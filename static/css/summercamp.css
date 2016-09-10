@@ -481,10 +481,10 @@ button.btn-primary-line:hover, button.btn-primary-line:active, button.btn-primar
 @media all and (max-width:1200px) { 
 	.caption_text {padding-top:40px}
 	.news_cate {margin-bottom:30px}
+	.navbar-inverse .navbar-nav>li>a {margin:0 10px}
 }
 @media all and (max-width:1080px) {
 	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left:-15px;padding-left:46px}
-	.navbar-inverse .navbar-nav>li>a {margin:0 10px}
 	.basic_pg .navbar-inverse .navbar-nav>li.sign_in>a, 
 	.basic_pg .navbar-inverse .navbar-nav>li.my_page>a, 
 	.basic_pg .navbar-inverse .navbar-nav>li.sign_up>a, 
@@ -497,6 +497,9 @@ button.btn-primary-line:hover, button.btn-primary-line:active, button.btn-primar
 	.jusocle {margin-bottom:0}
 	.x {margin-bottom:20px}
 	.sejong {margin-bottom:30px}
+}
+@media all and (max-width:992px) {
+	.navbar-inverse .container {width:100%;padding-left:15px;padding-right:15px}
 }
 @media all and (max-width:919px) {
 	.tbl_info h3 {display:block;width:100%;padding:10px 20px}
@@ -629,6 +632,8 @@ button.btn-primary-line:hover, button.btn-primary-line:active, button.btn-primar
 	.not_ready {text-align:center;font-size:24px}
 }
 @media all and (max-width:480px) {
+	.navbar-inverse .navbar-brand {font-size:16px;padding-right:0}
+
 	.hackathon h3 {width:50%}
 	.hackathon p {width:50%}
 
