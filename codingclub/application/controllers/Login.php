@@ -19,7 +19,7 @@ class Login extends CI_Controller {
 
     $sBackURL = $this->input->get('burl');
     
-    if($bBackURL) 
+    if($sBackURL) 
       $bBackURL = 1; 
     else
       $bBackURL = 0; 
