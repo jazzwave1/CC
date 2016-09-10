@@ -58,16 +58,16 @@
           </button>
           <a class="navbar-brand" href="http://codingclubs.org"><strong>CodingClub</strong>Membership</a>
         </div>
-        <!--div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
-            <li><a href="jusocl.html">주니어소프트웨어클럽</a></li>
-            <li><a href="main.html">코딩클럽</a></li>
-            <li class="sign_in"><a href="signup.html">회원가입</a></li>
+            <!--li><a href="jusocl.html">주니어소프트웨어클럽</a></li-->
+            <li><a href="http://codingclubs.org">코딩클럽</a></li>
+            <!--li class="sign_in"><a href="signup.html">회원가입</a></li>
             <li class="my_page" style="display:none"><a href="mypage.html">마이페이지</a></li>
             <li class="sign_up"><a href="login.html">로그인</a></li>
-            <li class="sign_out" style="display:none"><a href="main.html">로그아웃</a></li>
+            <li class="sign_out" style="display:none"><a href="main.html">로그아웃</a></li-->
           </ul>
-        </div--><!--/.nav-collapse -->
+        </div><!--/.nav-collapse -->
       </div>
     </nav>
 
@@ -140,7 +140,10 @@
               ,function(data, status){
                 if(status == 'success' && data.code == 1)
                 {
-                  window.location.replace("<?=HOSTURL?>/<?=$sBackURL?>"); 
+                  if(<?=$sBackURL?>) 
+                    window.location.replace("<?=HOSTURL?>/<?=$sBackURL?>"); 
+                  else
+                    window.location.replace("http://codingclubs.org"); 
                 }
                 else if(status == 'success' && data.code == 998)
                 {

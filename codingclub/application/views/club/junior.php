@@ -212,6 +212,9 @@
 </body>
 <script>
     $(function(){
+      $('#bLogout').click(function(){
+          window.location.replace("<?=HOSTURL?>/Login/Logout"); 
+        });
       $('#bSangseView_M').click(function(){
         window.location.href = $('#bSangseView_M').val(); 
       });

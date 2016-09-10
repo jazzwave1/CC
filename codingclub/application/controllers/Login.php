@@ -18,6 +18,9 @@ class Login extends CI_Controller {
       $sChecked = '';
 
     $sBackURL = $this->input->get('burl');
+    
+    if(!$sBackURL) $sBackURL = 0; 
+    
     $aContents = array(
        'sBackURL' => $sBackURL 
       ,'isIdSave' => $sChecked
