@@ -30,6 +30,7 @@
           <div class="reset_pw"><a href="http://member.codingclubs.org/Member/privacy">약관보기</a></div>
         </div>
         <div class="btn_area">
+            <label>클릭 후 잠시만 기다려 주세요<br>본인확인 이메일 발송에 1~2초 필요합니다</label>
           <div class="w50">
             <button id="bJoin" class="btn btn-primary btn-block btn-flat">회원가입</button>
           </div>
