@@ -103,7 +103,7 @@ class Club extends CI_Controller {
     
     if(!$oUserInfo->usn)
     {
-      header('Location: '.HOSTURL.'/Login?burl=club/junior'); 
+      header('Location: '.HOSTURL.'/Login?burl=club/app'); 
     }
     else
     {
@@ -154,7 +154,7 @@ class Club extends CI_Controller {
     
     if(!$oUserInfo->usn)
     {
-      header('Location: '.HOSTURL.'/Login?burl=club/junior'); 
+      header('Location: '.HOSTURL.'/Login?burl=club/iot'); 
     }
     else
     {
