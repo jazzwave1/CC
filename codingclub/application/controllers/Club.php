@@ -35,8 +35,6 @@ class Club extends CI_Controller {
   {
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
-   
-    print_r($oUserInfo);
 
     if($oUserInfo)
     {  
