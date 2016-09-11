@@ -100,7 +100,7 @@
             <div class="f_event hackerthon_2">
               <div class="f_event_sub">2016 제2회 코딩클럽 해커톤</div>
               <div class="f_event_title"><strong>CODE</strong>PLAY</div>
-              <div class="f_event_catchphrase">상상해海서 아이디魚를 건지다</div>
+              <div class="f_event_catchphrase">상상海서 아이디魚를 건지다</div>
               <div class="f_event_date">2016.10.22</div>
             </div>
           </div>
