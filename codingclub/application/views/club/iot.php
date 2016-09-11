@@ -27,6 +27,10 @@
 
   <!-- 주니어소프트웨어클럽 CSS -->
   <link href="<?=SURL?>/css/jusocl.css" rel="stylesheet">
+  <!-- 커스텀 스타일 -->
+  <link rel="stylesheet" href="<?=SURL?>/css/reset.css">
+  <link rel="stylesheet" href="<?=SURL?>/css/common.css">
+  <link rel="stylesheet" href="<?=SURL?>/css/member.css">
   
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -94,7 +98,7 @@
             <div class="p_tool">
               <div class="p_toollist">
                 <span class="p_tool_title">아두이노란?</span>
-                <span class="p_tool_img"><img src="<?=SURL?>/img/layout/scratch.jpg" alt="스크래치"></span>
+                <span class="p_tool_img"><img src="<?=SURL?>/img/layout/arduino.jpg" alt="스크래치"></span>
                 <div class="p_tool_desc">
                   <ul>
                     <li>오픈 소스를 기반으로 한 단일 보드 마이크로컨트롤러로 완성 된 보드(상품)와 관련 개발 도구 및 환경을 말한다</li>
@@ -105,7 +109,7 @@
               </div>
               <div class="p_toollist">
                 <span class="p_tool_title">비트브릭이란?</span>
-                <span class="p_tool_img"><img src="<?=SURL?>/img/layout/entry.jpg" alt="엔트리"></span>
+                <span class="p_tool_img"><img src="<?=SURL?>/img/layout/bitbrick.jpg" alt="엔트리"></span>
                 <div class="p_tool_desc">
                   <ul>
                     <li>비트브릭은 아이들이 만지고, 협동하고, 새로운 세상을 만들어낼 수 있게 해주는 최고의 친구입니다.</li>
@@ -206,6 +210,16 @@
     <!-- contents :: e -->
   </section>
   <!-- container :: e -->
+  
+  <footer class="footer_service">
+  <div class="footer_inner">
+    <div class="s_copyright">© 2016 CODING CLUB. ALL RIGHTS RESERVED.</div>
+    <div class="footer_util">
+      <a href="http://member.codingclubs.org/Member/privacy" class="go_privacy">개인정보처리방침</a>
+    </div>
+  </div>
+  </footer>
+
 
 </body>
 <script>

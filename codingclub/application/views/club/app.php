@@ -27,6 +27,10 @@
 
   <!-- 주니어소프트웨어클럽 CSS -->
   <link href="<?=SURL?>/css/jusocl.css" rel="stylesheet">
+  <!-- 커스텀 스타일 -->
+  <link rel="stylesheet" href="<?=SURL?>/css/reset.css">
+  <link rel="stylesheet" href="<?=SURL?>/css/common.css">
+  <link rel="stylesheet" href="<?=SURL?>/css/member.css">
   
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -94,7 +98,7 @@
             <div class="p_tool">
               <div class="p_toollist">
                 <span class="p_tool_title">앱인벤터란?</span>
-                <span class="p_tool_img"><img src="<?=SURL?>/img/layout/scratch.jpg" alt="스크래치"></span>
+                <span class="p_tool_img"><img src="<?=SURL?>/img/layout/appinventer.jpg" alt="스크래치"></span>
               </div>
               <div class="p_toollist">
                 <span class="p_tool_title"></span>
@@ -199,6 +203,15 @@
     <!-- contents :: e -->
   </section>
   <!-- container :: e -->
+  
+  <footer class="footer_service">
+  <div class="footer_inner">
+    <div class="s_copyright">© 2016 CODING CLUB. ALL RIGHTS RESERVED.</div>
+    <div class="footer_util">
+      <a href="http://member.codingclubs.org/Member/privacy" class="go_privacy">개인정보처리방침</a>
+    </div>
+  </div>
+  </footer>
 
 </body>
 <script>

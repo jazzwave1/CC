@@ -378,6 +378,7 @@ table {padding:0; border-spacing:0px; border:0;}
 .profile_txt span {display:block;text-align:center;color:#fff}
 .profile_txt .p_name{font-size:34px;font-weight:200;margin-bottom:14px}
 .profile_txt .p_grade{font-size:18px}
+.profile_txt .p_name.msg {font-size:18px;padding-left:20px;padding-right:20px;line-height:130%}
 
 .mp_form_cont {margin:0;padding:0}
 .mp_form_cont li {list-style:none;display:block;background:#fbfbfb;padding:43px 53px 16px 53px}
@@ -442,13 +443,14 @@ table {padding:0; border-spacing:0px; border:0;}
 /* ------------------------------------------
   로그인
 --------------------------------------------- */
-.login-page, .register-page {background:#f8f8fa}
-.login-box-body, .register-box-body {-webkit-box-shadow:0 0 4px rgba(0, 0, 0, .2);-moz-box-shadow:0 0 4px rgba(0, 0, 0, .2);box-shadow:0 0 4px rgba(0, 0, 0, .2)}
+.login-page, .register-page {background:#f8f8fa;margin:70px auto 0 auto !important}
+.login-box-body, .register-box-body {-webkit-box-shadow:0 0 4px rgba(0, 0, 0, .2);-moz-box-shadow:0 0 4px rgba(0, 0, 0, .2);box-shadow:0 0 4px rgba(0, 0, 0, .2);padding:30px 20px 20px 20px}
 .login-box-msg {font-size:14px;margin-bottom:30px !important}
 .login-box-msg.f18 {margin-top:30px !important;line-height:120%}
 .login-box-msg.f18 strong {font-size:18px;margin-bottom:10px !important;display:block}
 
 .login-page .btn_area {width:100%;text-align:center;margin:0 0 10px 0}
+.login-page .btn_area label {color:#ff5f5f;font-weight:700;margin-bottom:20px;font-size:16px;line-height:120%}
 .login-page .w50 {width:50%;display:inline-block}
 .login-page .btn {padding:12px 12px}
 button {border:0 none;background-color:transparent;cursor:pointer}
@@ -490,9 +492,25 @@ button.btn-primary-line:hover, button.btn-primary-line:active, button.btn-primar
 .remem_id .icheckbox_square-blue.checked, .remem_id .icheckbox_square-blue.hover.checked {backgroundbackground-position:-50px -2px;border:2px solid #2489c5}*/
 
 .login-page .validation, .register-page .validation {margin-top:-10px;margin-bottom:20px;display:none}
-.login-page .validation span, .register-page .validation span {display:none;font-size:14px;}
+.login-page .validation:after, .register-page .validation:after {display:block;height:0;content:'';clear:both}
+.login-page .validation span, .register-page .validation span {display:none;font-size:14px;float:right;margin-top:10px}
 .login-page .validation .danger, .register-page .validation .danger {color:#ff5f5f}
 .login-page .validation .confirm, .register-page .validation .confirm {color:#56dc95}
+
+.login-page .validation button {font-size:14px;float:left;padding:5px 10px}
+
+
+/* ------------------------------------------
+  FOOTER SERVICE :: 임시 공통 푸터
+--------------------------------------------- */
+
+.footer_service {width:100%;background:none;border-top:1px solid #5d5d5d}
+.footer_inner {max-width:1170px;margin:0 auto;padding:20px 15px 20px 15px;color:#444;font-size:14px}
+.footer_inner:after {display:block;height:0;content:'';clear:both}
+.footer_service .s_copyright {float:left;width:65%}
+.footer_service .footer_util {float:right;width:35%;text-align:right}
+.footer_service .footer_util a.go_privacy {font-weight:700;color:#444}
+.footer_service .footer_util a:hover {font-weight:700;color:#444;text-decoration:underline}
 
 
 
@@ -647,6 +665,8 @@ button.btn-primary-line:hover, button.btn-primary-line:active, button.btn-primar
 	.not_ready {text-align:center;font-size:24px}
 }
 @media all and (max-width:480px) {
+	.navbar-inverse .navbar-brand {font-size:16px;padding-right:0}
+
 	.hackathon h3 {width:50%}
 	.hackathon p {width:50%}
 
@@ -655,6 +675,8 @@ button.btn-primary-line:hover, button.btn-primary-line:active, button.btn-primar
 	.camp_td, .summary_box_inner td {width:100%;display:block;padding-top:10px;border-bottom:1px solid #ececec}
 
 	.summer_camp {height:1670px}
+
+	.login-logo {font-size:24px}
 }
 @media all and (max-width:414px) {
 	.camp_info h2 {line-height:30px;margin:0 0 21px 0}
