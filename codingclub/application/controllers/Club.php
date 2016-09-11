@@ -33,6 +33,22 @@ class Club extends CI_Controller {
   }/*}}}*/
   public function juniorsoftware()/*{{{*/
   {
+    $sUserInfo = getCookieInfo();
+    $oUserInfo = json_decode($sUserInfo);      
+   
+    print_r($oUserInfo);
+
+    if($oUserInfo)
+    {  
+      $aLogin['login']  = 'display:none'; 
+      $aLogin['logout'] = ''; 
+    }
+    else
+    {
+      $aLogin['login']  = '';
+      $aLogin['logout'] = 'display:none'; 
+    }
+
     $aCourse = $this->_getActiveCourse();
     $data = array(
       'aProgramURL' => array(
@@ -42,6 +58,7 @@ class Club extends CI_Controller {
         ,'appdesigner'    => HOSTURL.'/club/junior/'.$aCourse['app']['designer']
         ,'iotmaker'       => HOSTURL.'/club/junior/'.$aCourse['iot']['maker']
       )
+      ,'aLoginStyle' => $aLogin
     );
     $this->load->view('club/juniorsoftware', $data); 
   }/*}}}*/

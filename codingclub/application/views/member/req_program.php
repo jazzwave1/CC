@@ -77,7 +77,7 @@
 		</div>
 	</div>
 
-<br>
+  <div class="page_cont">
 
 		<div class="container">
 			<h3>캠프 신청서</h3>
