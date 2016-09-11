@@ -12,7 +12,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- 주니어 썸머 캠프 CSS -->
-  <link href="../static/css/mypage.css" rel="stylesheet">
+  <link href="<?=SURL?>/css/mypage.css" rel="stylesheet">
+  <!-- 멤버십 CSS -->
+  <link href="<?=SURL?>/css/member.css" rel="stylesheet">
+
 
   <!-- textarea height 자동 늘림 -->
   <script>
