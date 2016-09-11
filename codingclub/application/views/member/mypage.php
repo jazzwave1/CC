@@ -215,6 +215,16 @@
         });
       });
    </script>   
+  
+  <footer class="footer_service">
+  <div class="footer_inner">
+    <div class="s_copyright">© 2016 CODING CLUB. ALL RIGHTS RESERVED.</div>
+    <div class="footer_util">
+      <a href="http://member.codingclubs.org/Member/privacy" class="go_privacy">개인정보처리방침</a>
+    </div>
+  </div>
+  </footer>
+
 
 </body>
 <!--/form-->
