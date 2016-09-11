@@ -124,7 +124,7 @@
             ?> 
               <div class="p_roadmap_detail">
                 <div class="pd_head">
-                  <span class="sub_en">Junior Macker</span>
+                  <span class="sub_en">Junior Maker</span>
                   <span class="main_kr">주니어메이커</span>
                 </div>
                 <div class="pd_body">

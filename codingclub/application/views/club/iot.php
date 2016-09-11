@@ -81,7 +81,7 @@
           <div class="p_intro_wh">
             <div class="p_intro_box_wh">
               <span class="p_category">아두이노/비트브릭/메이키메이키 로</span>
-              <span class="p_name">디지털콘텐츠 만들기</span>
+              <span class="p_name">피지컬콘텐츠 만들기</span>
               <p class="p_desc1">친구들과 함께 내 손안의 컴퓨터로 세상과 소통하는 사물인터넷 제품을 직접 만드는 IoT 메이커, IoT디자이너, IoT해커 3개과정 프로그램</p>
               <span class="p_character01"></span>
             </div>
@@ -122,7 +122,7 @@
             ?> 
               <div class="p_roadmap_detail">
                 <div class="pd_head">
-                  <span class="sub_en">IoT Macker</span>
+                  <span class="sub_en">IoT Maker</span>
                   <span class="main_kr">IoT메이커</span>
                 </div>
                 <div class="pd_body">

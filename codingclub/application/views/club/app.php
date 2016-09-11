@@ -81,7 +81,7 @@
           <div class="p_intro_wh">
             <div class="p_intro_box_wh">
               <span class="p_category">앱인벤터로</span>
-              <span class="p_name">디지털콘텐츠 만들기</span>
+              <span class="p_name">앱 만들기</span>
               <p class="p_desc1">MIT 앱인벤터로 친구들과 함께 직접 다양한 안드로이드앱을 디자인하고 만드는 앱메이커, 앱디자이너, 앱해커 3개 과정 프로그램</p>
               <span class="p_character01"></span>
             </div>
@@ -115,7 +115,7 @@
             ?> 
               <div class="p_roadmap_detail">
                 <div class="pd_head">
-                  <span class="sub_en">App Macker</span>
+                  <span class="sub_en">App Maker</span>
                   <span class="main_kr">앱메이커</span>
                 </div>
                 <div class="pd_body">
