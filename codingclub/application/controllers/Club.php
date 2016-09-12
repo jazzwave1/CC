@@ -31,10 +31,58 @@ class Club extends CI_Controller {
 //  
 //  $this->load->view('admin/layout', $data);  
   }/*}}}*/
+  public function juniorsoftwareall()/*{{{*/
+  {
+    $sUserInfo = getCookieInfo();
+    $oUserInfo = json_decode($sUserInfo);      
+
+    if($oUserInfo)
+    {  
+      $aLogin['login']  = 'display:none'; 
+      $aLogin['logout'] = ''; 
+      $aJoinStyle['join'] = 'display:none'; 
+      $aJoinStyle['mypage'] = ''; 
+    }
+    else
+    {
+      $aLogin['login']  = '';
+      $aLogin['logout'] = 'display:none'; 
+      $aJoinStyle['join'] = ''; 
+      $aJoinStyle['mypage'] = 'display:none'; 
+
+    }
+      
+    $aCourseIDX  = $this->_getActiveCourse('junior');
+    $aCourseInfo = $this->_setCourseInfo($aCourseIDX); 
+    $aJunior     = $this->_getSangseInfo($aCourseInfo, $aCourseIDX);   
+
+    $aCourseIDX  = $this->_getActiveCourse('app');
+    $aCourseInfo = $this->_setCourseInfo($aCourseIDX); 
+    $aApp        = $this->_getSangseInfo($aCourseInfo, $aCourseIDX);   
+    
+    $aCourseIDX  = $this->_getActiveCourse('iot');
+    $aCourseInfo = $this->_setCourseInfo($aCourseIDX); 
+    $aIot        = $this->_getSangseInfo($aCourseInfo, $aCourseIDX);   
+
+    $data = array(
+       'aLoginStyle' => $aLogin
+      ,'aJoinStyle'  => $aJoinStyle
+      ,'aJunior'     => $aJunior
+      ,'aApp'        => $aApp
+      ,'aIot'        => $aIot
+    );
+
+    $this->load->view('club/juniorsoftwareclub_all', $data); 
+  }/*}}}*/
   public function juniorsoftware()/*{{{*/
   {
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
+    
+    if(!$oUserInfo->usn)
+    {
+      header('Location: '.HOSTURL.'/Login?burl=club/juniorsoftware'); 
+    }
 
     if($oUserInfo)
     {  
@@ -75,12 +123,7 @@ class Club extends CI_Controller {
     {
       header('Location: '.HOSTURL.'/Login?burl=club/junior'); 
     }
-    else
-    {
-      $user = cc_get_instance('UserClass');
-      $oUser = new $user($oUserInfo->accountID);
-    }
- 
+    
     if(!$courseIDX)
     {
       // active 한 프로그램 리스트를 가지고 온다
@@ -140,11 +183,6 @@ class Club extends CI_Controller {
     if(!$oUserInfo->usn)
     {
       header('Location: '.HOSTURL.'/Login?burl=club/app'); 
-    }
-    else
-    {
-      $user = cc_get_instance('UserClass');
-      $oUser = new $user($oUserInfo->accountID);
     }
  
     if(!$courseIDX)
@@ -207,11 +245,6 @@ class Club extends CI_Controller {
     if(!$oUserInfo->usn)
     {
       header('Location: '.HOSTURL.'/Login?burl=club/iot'); 
-    }
-    else
-    {
-      $user = cc_get_instance('UserClass');
-      $oUser = new $user($oUserInfo->accountID);
     }
  
     if(!$courseIDX)
@@ -277,6 +310,50 @@ class Club extends CI_Controller {
     $this->load->view('club/junior_program', $data); 
   }/*}}}*/
 
+  private function _setCourseInfo($aCourseIDX)/*{{{*/
+  {
+    foreach($aCourseIDX as $key=>$val)
+    {
+      $aCourseInfo[$val] = $this->_getCourseInfo($val);
+    }
+    
+    foreach($aCourseInfo as $key=>$val)
+    {
+      if($val->active == 'HID')
+      {
+        $aCourseInfo[$key]->bTitle = '준비중입니다';
+        $aCourseInfo[$key]->bViewState = 'disabled';
+      }
+      else
+      {
+        $aCourseInfo[$key]->bTitle = '2016 가을학기 자세히 보기';
+        $aCourseInfo[$key]->bViewState = '';
+      }
+    }
+    
+    return $aCourseInfo;
+  }/*}}}*/
+  private function _getSangseInfo($aCourseInfo, $aCourseIDX)/*{{{*/
+  {
+    $aRtn = array(
+      'maker' => array(
+        'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['maker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
+        ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
+        ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['maker']]
+      )
+      ,'designer' => array(
+         'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['designer']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
+        ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
+        ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['designer']]
+      )
+      ,'hacker' => array(
+         'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['hacker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
+        ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
+        ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
+      )
+    );
+    return $aRtn;
+  }/*}}}*/
   private function _getActiveCourse($program='')
   {
     $aActiveProgram = array(

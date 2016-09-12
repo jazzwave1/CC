@@ -124,10 +124,10 @@ class Member extends CI_Controller {
 // 정규학기 프로그램 신청
   public function reqprogram($courseIDX='')/*{{{*/
   {
-    if(!$courseIDX)
-    {
-      header('Location: '.HOSTURL.'/club/junior'); 
-    }
+//  if(!$courseIDX)
+//  {
+//    header('Location: '.HOSTURL.'/club/junior'); 
+//  }
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
     
