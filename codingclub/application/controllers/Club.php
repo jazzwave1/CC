@@ -85,25 +85,40 @@ class Club extends CI_Controller {
       {
         $aCourseInfo[$val] = $this->_getCourseInfo($val);
       }
+      foreach($aCourseInfo as $key=>$val)
+      {
+        if($val->active == 'HID')
+        {
+          $aCourseInfo[$key]->bTitle = '준비중입니다';
+          $aCourseInfo[$key]->bViewState = 'disabled';
+        }
+        else
+        {
+          $aCourseInfo[$key]->bTitle = '2016 가을학기 자세히 보기';
+          $aCourseInfo[$key]->bViewState = '';
+        }
+      }
+      
       $data = array(
         'aJunior' => array(
             'maker' => array(
-              'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
-              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
+              'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['maker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
+              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['maker']]
             )
             ,'designer' => array(
-               'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
+               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['designer']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['designer']]
             )
             ,'hacker' => array(
-               'bSangse' => array('bTitle'=>'준비중입니다', 'bViewState'=>'disabled', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'disabled', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
+               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['hacker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
           )
       );
+
       $this->load->view('club/junior', $data); 
     }
     else
@@ -136,25 +151,41 @@ class Club extends CI_Controller {
       {
         $aCourseInfo[$val] = $this->_getCourseInfo($val);
       }
+
+      foreach($aCourseInfo as $key=>$val)
+      {
+        if($val->active == 'HID')
+        {
+          $aCourseInfo[$key]->bTitle = '준비중입니다';
+          $aCourseInfo[$key]->bViewState = 'disabled';
+        }
+        else
+        {
+          $aCourseInfo[$key]->bTitle = '2016 가을학기 자세히 보기';
+          $aCourseInfo[$key]->bViewState = '';
+        }
+      }
+      
       $data = array(
         'aJunior' => array(
             'maker' => array(
-              'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
-              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
+              'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['maker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
+              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['maker']]
             )
             ,'designer' => array(
-               'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
+               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['designer']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['designer']]
             )
             ,'hacker' => array(
-               'bSangse' => array('bTitle'=>'준비중입니다', 'bViewState'=>'disabled', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'disabled', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
+               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['hacker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
           )
       );
+
       $this->load->view('club/app', $data); 
     }
     else
@@ -182,26 +213,41 @@ class Club extends CI_Controller {
       // active 한 프로그램 리스트를 가지고 온다
       // 3개 메이커, 디자이너, 해커
       $aCourseIDX = $this->_getActiveCourse('iot');
-      
+     
       foreach($aCourseIDX as $key=>$val)
       {
         $aCourseInfo[$val] = $this->_getCourseInfo($val);
       }
+  
+      foreach($aCourseInfo as $key=>$val)
+      {
+        if($val->active == 'HID')
+        {
+          $aCourseInfo[$key]->bTitle = '준비중입니다';
+          $aCourseInfo[$key]->bViewState = 'disabled';
+        }
+        else
+        {
+          $aCourseInfo[$key]->bTitle = '2016 가을학기 자세히 보기';
+          $aCourseInfo[$key]->bViewState = '';
+        }
+      }
+      
       $data = array(
         'aJunior' => array(
             'maker' => array(
-              'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
-              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
+              'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['maker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
+              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['maker']]
             )
             ,'designer' => array(
-               'bSangse' => array('bTitle'=>'2016 가을학기 자세히 보기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
+               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['designer']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['designer']]
             )
             ,'hacker' => array(
-               'bSangse' => array('bTitle'=>'준비중입니다', 'bViewState'=>'disabled', 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>'disabled', 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
+               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['hacker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
+              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
           )
@@ -229,8 +275,8 @@ class Club extends CI_Controller {
   {
     $aActiveProgram = array(
        'junior' => array('maker'=>23,'designer'=>24,'hacker'=>25)
-      ,'app'    => array('maker'=>26,'designer'=>27,'hacker'=>'')
-      ,'iot'    => array('maker'=>28,'designer'=>'','hacker'=>'')
+      ,'app'    => array('maker'=>26,'designer'=>27,'hacker'=>29)
+      ,'iot'    => array('maker'=>28,'designer'=>30,'hacker'=>31)
     );
     if(!$program)
       return $aActiveProgram;
