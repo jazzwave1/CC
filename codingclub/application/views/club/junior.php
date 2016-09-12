@@ -55,13 +55,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=HOSTURL?>/club/juniorsoftware"><strong>주니어</strong>소프트웨어클럽</a>
+          <a class="navbar-brand" href="<?=JHOSTURL?>/club/juniorsoftware"><strong>주니어</strong>소프트웨어클럽</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
-            <li><a href="<?=HOSTURL?>/club/juniorsoftware#jusocl_about">주니어소프트웨어클럽이란?</a></li>
-            <li><a href="<?=HOSTURL?>/club/juniorsoftware#jusocl_ongoing">모집중</a></li>
-            <li><a href="<?=HOSTURL?>/club/juniorsoftware#jusocl_contents">프로그램</a></li>
+            <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_about">주니어소프트웨어클럽이란?</a></li>
+            <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_ongoing">모집중</a></li>
+            <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_contents">프로그램</a></li>
             <li><a href="<?=HOSTURL?>">코딩클럽</a></li>
             <li class="my_page"><a href="<?=HOSTURL?>/member/mypage">마이페이지</a></li>
             <li class="sign_out" id="bLogout"><a href="#">로그아웃</a></li>

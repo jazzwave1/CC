@@ -41,6 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if($_SERVER["SERVER_NAME"] == 'localhost')
 {
   $sHostURL = 'http://localhost/~leehojun/CC/codingclub';
+  $sJHstURL= 'http://localhost/~leehojun/CC/codingclub';
   $sStaticURL = 'http://localhost/~leehojun/CC/static/AdminLTE-2.3.0';
   $sStatic  = 'http://localhost/~leehojun/CC/static';
   $sCookieDomain = "localhost";
@@ -48,11 +49,13 @@ if($_SERVER["SERVER_NAME"] == 'localhost')
 else
 {
   $sHostURL= 'http://member.codingclubs.org';
+  $sJHstURL= 'http://junior.codingclubs.org';
   $sStaticURL = 'http://member.codingclubs.org/img';
   $sStatic = 'http://member.codingclubs.org/static';
   $sCookieDomain= ".codingclubs.org";
 }
 define("HOSTURL", $sHostURL);
+define("JHOSTURL", $sJHostURL);
 define("IMGURL", $sStaticURL);
 define("SURL", $sStatic);
 define("CKDOMAIN", $sCookieDomain);

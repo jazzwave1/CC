@@ -55,7 +55,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=HOSTURL?>/club/juniorsoftware"><strong>주니어</strong>소프트웨어클럽</a>
+          <a class="navbar-brand" href="<?=JHOSTURL?>/club/juniorsoftware"><strong>주니어</strong>소프트웨어클럽</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" >
@@ -150,19 +150,19 @@
             <div class="j_contents_head">프로그램</div>
             <ul class="j_contents_list">
               <li class="p_digital">
-                <a href="<?=HOSTURL?>/club/junior">
+                <a href="<?=JHOSTURL?>/club/junior">
                   <span><i>스크래치/엔트리로</i><br>디지털콘텐츠<br>만들기</span>
                   <p>MIT 스크래치, 네이버 엔트리로 나만의 디지털 컨텐츠를 만드는 프로그램</p>
                 </a>
               </li>
               <li class="p_app">
-                <a href="<?=HOSTURL?>/club/app">
+                <a href="<?=JHOSTURL?>/club/app">
                   <span><i>앱인벤터로</i><br>앱만들기</span>
                   <p>MIT 앱인벤터로 <br>안드로이드앱을 만드는 <br>프로그램</p>
                 </a>
               </li>
               <li class="p_iot">
-                <a href="<?=HOSTURL?>/club/iot">
+                <a href="<?=JHOSTURL?>/club/iot">
                   <span>IOT<br>만들기</span>
                   <p>친구들과 함께 내 손안의 <br>컴퓨터로 세상과 소통하는 <br>사물인터넷 제품을 직접 만드는 프로그램</p>
                 </a>
