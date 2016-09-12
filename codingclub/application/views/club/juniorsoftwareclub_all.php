@@ -591,7 +591,7 @@
         });
         
         $('#bReqProgram').click(function(){
-          window.location.href("<?=HOSTURL?>/member/reqprogram"); 
+          window.location.href = "<?=HOSTURL?>/member/reqprogram"; 
         });
      
         // junior 
