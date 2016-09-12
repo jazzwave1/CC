@@ -63,8 +63,8 @@
             <li><a href="#jusocl_ongoing">모집중</a></li>
             <li><a href="#jusocl_contents">프로그램</a></li>
             <li><a href="http://codingclubs.org">코딩클럽</a></li>
-            <li class="sign_in" style="display:none"><a href="signup.html">회원가입</a></li>
-            <li class="my_page"><a href="<?=HOSTURL?>/Member/mypage">마이페이지</a></li>
+            <li class="sign_in" style="<?=$aJoinStyle['join']?>"><a href="<?=HOSTURL?>/member/memberJoinAccount?burl=club/juniorsoftware">회원가입</a></li>
+            <li class="my_page" style="<?=$aJoinStyle['mypage']?>"><a href="<?=HOSTURL?>/Member/mypage">마이페이지</a></li>
             <li class="sign_up" style="<?=$aLoginStyle['login']?>"><a href="<?=HOSTURL?>/Login?burl=club/juniorsoftware">로그인</a></li>
             <li class="sign_out" id="bLogout" style="<?=$aLoginStyle['logout']?>" ><a href="#">로그아웃</a></li>
           </ul>

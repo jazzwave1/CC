@@ -40,11 +40,16 @@ class Club extends CI_Controller {
     {  
       $aLogin['login']  = 'display:none'; 
       $aLogin['logout'] = ''; 
+      $aJoinStyle['join'] = 'display:none'; 
+      $aJoinStyle['mypage'] = ''; 
     }
     else
     {
       $aLogin['login']  = '';
       $aLogin['logout'] = 'display:none'; 
+      $aJoinStyle['join'] = ''; 
+      $aJoinStyle['mypage'] = 'display:none'; 
+
     }
 
     $aCourse = $this->_getActiveCourse();
@@ -57,6 +62,7 @@ class Club extends CI_Controller {
         ,'iotmaker'       => JHOSTURL.'/club/junior/'.$aCourse['iot']['maker']
       )
       ,'aLoginStyle' => $aLogin
+      ,'aJoinStyle' => $aJoinStyle
     );
     $this->load->view('club/juniorsoftware', $data); 
   }/*}}}*/
