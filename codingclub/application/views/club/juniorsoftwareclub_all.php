@@ -63,7 +63,7 @@
             <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_about">주니어소프트웨어클럽이란?</a></li>
             <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_ongoing">모집중</a></li>
             <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_contents">프로그램</a></li>
-            <li><a href="http://codingclubs.org">코딩클럽</a></li>
+            <li><a href="http://codingclubs.org" target='_blank'>코딩클럽</a></li>
             <li class="sign_in" style="<?=$aJoinStyle['join']?>"><a href="<?=HOSTURL?>/member/memberJoinAccount?burl=club/juniorsoftware">회원가입</a></li>
             <li class="my_page" style="<?=$aJoinStyle['mypage']?>"><a href="<?=HOSTURL?>/Member/mypage">마이페이지</a></li>
             <li class="sign_up" style="<?=$aLoginStyle['login']?>"><a href="<?=HOSTURL?>/Login?burl=club/juniorsoftware">로그인</a></li>
