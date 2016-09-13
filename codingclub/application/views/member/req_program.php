@@ -144,7 +144,7 @@
 								<input type="text" class="form-control" name="school" id="school" value=<?=$oUserInfo?$oUserInfo->school:'""'?> placeholder="학교이름 예) 코딩초등학교">
 							</li>
 							<li>
-								<label>8월 주니어소프트웨어클럽 썸머캠프 참가신청 프로그램<br>(2개반 신청 시 복수 선택해 주세요)<i>*</i></label>
+								<label>10월 주니어소프트웨어클럽 가을학기 참가신청 프로그램<br>(2개반 신청 시 복수 선택해 주세요)<i>*</i></label>
 								<div class="checkbox">
                 <?php
                   foreach($aCourse as $key=>$val)
