@@ -81,6 +81,7 @@
       <!-- 주니어소프트웨어클럽 :: s -->
       <div class="jusocl">
 
+
         <!-- 모집중인 프로그램 :: s -->
         <div class="features" id="jusocl_ongoing">
           <div class="container">
@@ -91,24 +92,47 @@
             <div class="f_jusocl">
               <div class="f_jusocl_sub">주니어소프트웨어클럽</div>
               <div class="f_jusocl_title"><strong>2016</strong><br>가을학기<br>프로그램</div>
-              <div class="f_jusocl_program">
-                <ul>
-                  <li><a href="<?=$aProgramURL['juniormaker']?>">주니어메이커</a></li>
-                  <li><a href="<?=$aProgramURL['juniordesigner']?>">주니어디자이너</a></li>
-                  <li><a href="<?=$aProgramURL['appmaker']?>">앱메이커</a></li>
-                  <li><a href="<?=$aProgramURL['appdesigner']?>">앱디자이너</a></li>
-                  <li><a href="<?=$aProgramURL['iotmaker']?>">IoT메이커</a></li>
-                </ul>
-              </div>
+              <div class="f_jusocl_btn"><a href="<?=HOSTURL?>/club/juniorsoftwareall">자세히보기</a></div>
             </div>
-            <div class="f_event hackerthon_2">
+            <div class="f_jusocl_box b1">
+              <div class="f_jusocl_box_tit"><strong>주니어</strong>메이커</div>
+              <div class="f_jusocl_box_sub">MIT 스크래치, 네이버 엔트리로<br>디지털콘텐츠를 만드는<br>첫 번째 입문 프로그램</div>
+              <div class="f_jusocl_box_date">10/1 ~ 10/22 매주 (토) + 12/3(토) 데모데이</div>
+              <div class="f_jusocl_box_btn"><a href="<?=$aProgramURL['juniormaker']?>">신청하기</a></div>
+            </div>
+            <div class="f_jusocl_box b2">
+              <div class="f_jusocl_box_tit"><strong>주니어</strong>디자이너</div>
+              <div class="f_jusocl_box_sub">MIT 스크래치, 네이버 엔트리로<br>디지털콘텐츠를 만드는<br>두 번째 중급 프로그램</div>
+              <div class="f_jusocl_box_date">10/1 ~ 10/22 매주 (토) + 12/3(토) 데모데이</div>
+              <div class="f_jusocl_box_btn"><a href="<?=$aProgramURL['juniordesigner']?>">신청하기</a></div>
+            </div>
+            <div class="f_jusocl_box b3">
+              <div class="f_jusocl_box_tit"><strong>앱</strong>메이커</div>
+              <div class="f_jusocl_box_sub">MIT 앱인벤터로 친구들과 함께 직접 <br>다양한 안드로이드앱을 디자인하고 <br>만드는 앱메이커, 앱디자이너, 앱해커 3개 과정 중 첫번째 입문 프로그램</div>
+              <div class="f_jusocl_box_date">11/5 ~ 11/26  매주 (토) + 12/3(토) 데모데이</div>
+              <div class="f_jusocl_box_btn"><a href="<?=$aProgramURL['appmaker']?>">신청하기</a></div>
+            </div>
+            <div class="f_jusocl_box b4">
+              <div class="f_jusocl_box_tit"><strong>앱</strong>디자이너</div>
+              <div class="f_jusocl_box_sub">MIT 앱인벤터로 친구들과 함께 직접 <br>다양한 안드로이드앱을 디자인하고 <br>만드는 앱메이커, 앱디자이너, 앱해커 3개 과정 중 두번째 중급 프로그램</div>
+              <div class="f_jusocl_box_date">10/1 ~ 10/22 매주 (토) + 12/3(토) 데모데이</div>
+              <div class="f_jusocl_box_btn"><a href="<?=$aProgramURL['appdesigner']?>">신청하기</a></div>
+            </div>
+            <div class="f_jusocl_box b5">
+              <div class="f_jusocl_box_tit"><strong>IoT</strong>메이커</div>
+              <div class="f_jusocl_box_sub">내 손안의 컴퓨터로 세상과 소통하는<br>사물인터넷 제품을 직접만드는<br>IoT 메이커, IoT디자이너, IoT해커<br> 3개과정 중 첫 번째 입문 프로그램</div>
+              <div class="f_jusocl_box_date">11/5 ~ 11/26  매주 (토) + 12/3(토) 데모데이</div>
+              <div class="f_jusocl_box_btn"><a href="<?=$aProgramURL['iotmaker']?>">신청하기</a></div>
+            </div>
+            <div class="f_event_grey hackerthon_soon">
               <div class="f_event_sub">2016 제2회 코딩클럽 해커톤</div>
               <div class="f_event_title"><strong>CODE</strong>PLAY</div>
-              <div class="f_event_catchphrase">상상海서 아이디魚를 건지다</div>
+              <div class="f_event_catchphrase">상상해海서 아이디魚를 건지다</div>
               <div class="f_event_date">2016.10.22</div>
             </div>
           </div>
         </div>
+
 
         <!-- 주니어소프트웨어클럽이란? :: s -->
         <div class="jusocl_about" id="jusocl_about">

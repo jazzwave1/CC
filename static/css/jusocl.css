@@ -496,19 +496,22 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .jusocl {margin-top:62px}
 
 .features {width:100%}
-.features .container {padding:54px 0}
+.features .container {padding:54px 0;position:relative}
 .f_tit {text-align:center;margin-bottom:50px}
 .f_tit_head {display:block;font-size:64px;color:#0070bc;font-weight:100;margin-bottom:10px}
 .f_tit_sub {display:block;font-size:18px;color:#0070bc;margin-bottom:10px}
 
-.f_jusocl {position:relative;z-index:2;background:#fff;float:left;width:476px;border:8px solid #0070bc;padding:56px 47px}
-.f_jusocl_sub {float:left;font-size:24px;color:#0070bc;margin-bottom:44px;width:70%}
-.f_jusocl_title {float:left;font-size:64px;font-weight:100;color:#0070bc;line-height:120%;width:70%}
+.f_jusocl {float:left;position:relative;z-index:2;background:#fff;width:465px;height:386px;border:8px solid #0070bc;padding:48px 40px;margin-right:51px}
+.f_jusocl_sub {float:left;font-size:24px;color:#0070bc;margin-bottom:30px}
+.f_jusocl_title {float:left;font-size:64px;font-weight:100;color:#0070bc;line-height:120%}
 .f_jusocl_title strong {font-weight:400;color:#0070bc}
 .f_jusocl_program {float:left;width:30%}
 .f_jusocl_program ul {margin:0;padding:0;margin-top:45px}
 .f_jusocl_program li {display:block;margin-bottom:20px}
 .f_jusocl_program li a {display:block;color:#0070bc;font-size:16px;text-decoration:underline}
+.f_jusocl_btn {float:left;margin-top:173px}
+.f_jusocl_btn a {display:block;font-size:16px;border:1px dashed #0070bc;width:106px;padding:10px 0;color:#0070bc;text-align:center}
+.f_jusocl_btn a:hover {text-decoration:none;border:1px solid #0070bc}
 
 .f_event {position:relative;z-index:1;float:right;width:800px;margin-left:-13%;background:#0070bc;margin-top:90px;color:#fff;text-align:center;padding:74px 20px 34px 20px}
 .hackerthon_2 {background:#0070bc url("../img/temp/img_hackerthon_ban2016.png") no-repeat 50% 0}
@@ -516,6 +519,32 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .f_event_title {display:block;font-size:88px;margin-bottom:140px;line-height:100%}
 .f_event_catchphrase {display:block;font-size:24px;margin-bottom:12px;line-height:100%}
 .f_event_date {display:block;font-size:16px;line-height:100%}
+
+
+.f_jusocl_box {float:left;position:relative;z-index:1;width:327px;height:327px;color:#fff;padding:58px 20px 0 20px;text-align:center;line-height:130%;font-weight:400}
+.f_jusocl_box_tit {font-size:30px;margin-bottom:32px;font-weight:100}
+.f_jusocl_box_tit strong {font-weight:400}
+.f_jusocl_box_sub {font-size:18px;margin-bottom:10px}
+.f_jusocl_box_date {font-size:14px;margin-bottom:26px}
+.f_jusocl_box_btn {text-align:center;margin:0 auto;width:120px} 
+.f_jusocl_box_btn a {display:block;font-size:16px;border:1px solid #fff;width:120px;padding:10px 0;color:#fff}
+.f_jusocl_box_btn a:hover {text-decoration:none;background:rgba(0, 0, 0, .1);border:1px solid rgba(255, 255, 255, .3)}
+.b1, .b3, .b5 {background:#0070bc}
+.b2, .b4 {background:#2cde88}
+.b1 {margin-top:32px}
+.b2 {margin-top:32px}
+.b3 {clear:both;float:left;margin-left:189px;margin-top:-29px}
+.b4 {margin-top:-29px}
+.b5 {margin-top:-29px}
+
+.f_event_grey {position:relative;z-index:0;float:left;width:327px;height:327px;background:#eee;color:#999;text-align:center;padding:58px 20px 0 20px;border:4px dashed #ddd}
+.hackerthon_soon {padding:58px 20px 0 20px;background:#eee url("../img/temp/img_hackerthon_grey.png") repeat-x 50% 0;margin-top:-50px;margin-left:82px}
+.f_event_grey .f_event_sub {display:block;font-size:16px;margin-bottom:14px;line-height:100%}
+.f_event_grey .f_event_title {display:block;font-size:48px;margin-bottom:118px;line-height:100%}
+.f_event_grey .f_event_catchphrase {display:block;font-size:18px;margin-bottom:10px;line-height:100%}
+.f_event_grey .f_event_date {display:block;font-size:14px;line-height:100%}
+
+
 
 
 .jusocl_about {background:url("../img/layout/bg_jusocle.png") no-repeat;background-attachment:cover}
@@ -611,6 +640,9 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .program_desc .container {background:#fff;padding:0}
 
 .p_character01 {display:block;background:url("../img/layout/img_p_character01.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
+.p_character-2 {display:block;background:url("../img/layout/img_p_character02.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
+.p_character03 {display:block;background:url("../img/layout/img_p_character03.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
+.p_character04 {display:block;background:url("../img/layout/img_p_character04.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
 
 .p_tool {background:#005dbc;color:#fff;width:100%;padding:40px 55px 50px 55px}
 .p_tool:after {display:block;height:0;clear:both;content:''}
@@ -959,6 +991,44 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 	.f_tit {margin-bottom:25px}
 	.j_txt_head .h_en {font-size:18px}
 	.j_desc .pc, .j_desc .mobile, .jusocl_vision dd span {font-size:16px}
+}
+
+
+@media all and (max-width:1199px) {
+	.f_jusocl {height:436px;width:334px;margin-right:-18px}
+	.f_jusocl_btn {margin-top:10px}
+	.b1, .b2 {margin-top:80px}
+	.b3 {margin-left:-11px}
+	.f_event_grey {width:806px;margin-top:40px;padding:20px 20px 0 20px;height:220px;background-size:28%}
+	.f_event_grey .f_event_title {font-size:42px;margin-bottom:70px}
+}
+
+
+@media all and (max-width:991px) {
+	.f_jusocl {width:434px}
+	.f_jusocl_title {margin-right:20px}
+	.f_jusocl_box {width:55%}
+	.b1, .b2 {margin-top:-30px}
+	.b1, .b3, .b5 {margin-left:-5%}
+	.b2, .b4 {margin-right:-5%}
+	.b3, .b4, .b5 {margin-top:0}
+	.b1, .b4, .b5 {background:#0070bc}
+	.b2, .b3 {background:#2cde88}
+	.hackerthon_soon {margin-top:-280px;margin-left:362px}
+	.f_event_grey {width:60%}
+}
+
+
+
+@media all and (max-width:919px) {
+	.features .container {max-width:750px}
+	.f_jusocl_box, .f_event_grey {width:50%}
+	.b1, .b3, .b5 {margin-left:0}
+	.b2, .b4 {margin-right:0}
+}
+
+@media all and (max-width:800px) {
+	.features .container {margin-left:15px;margin-right:15px;width:calc(100% - 30px)}
 }
 
 

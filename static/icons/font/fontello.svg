@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="search" unicode="&#xe800;" d="M645 404c0 116-94 209-209 209-116 0-209-94-209-209 0-116 94-209 209-209 115-1 209 93 209 209z m155-347l-18-18-190 190c-42-37-96-60-157-60-130 0-235 105-235 235 0 130 105 235 235 235 130 0 235-105 235-235 0-60-23-115-60-157l190-190z" horiz-adv-x="1000" />
+
+<glyph glyph-name="email" unicode="&#xe801;" d="M930 719h-860c-27 0-50-22-50-49 0 0 0 0 0 0 0-1 0-1 0-1v-625c0-15 7-29 17-38 0 0 0 0 1 0 8-8 20-13 32-13h860c28 0 51 23 51 51v625c0 27-23 50-51 50z m-887-76l389-324-386-289c-2 4-3 8-3 13v600z m887-627h-860c-1 0-2 0-3 0l383 287 17-14c10-8 21-12 33-12 12 0 23 4 33 12l18 16 394-284c-4-4-9-5-15-5z m27 27c0-1 0-1 0-2l-387 279 326 272c5 4 6 12 2 17-4 4-12 5-17 1l-364-303c-10-9-25-9-35 0l-438 366c2 13 13 22 26 22h860c15 0 27-12 27-27v-625z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

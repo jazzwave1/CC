@@ -214,10 +214,10 @@
         });
         
         $('#bReqProgram').click(function(){
-          window.location.replace("<?=HOSTURL?>/member/reqprogram/<?=$oCourseInfo->idx?>"); 
+          window.location.href = "<?=HOSTURL?>/member/reqprogram/<?=$oCourseInfo->idx?>"; 
         });
         $('#bReqProgram2').click(function(){
-          window.location.replace("<?=HOSTURL?>/member/reqprogram/<?=$oCourseInfo->idx?>"); 
+          window.location.href = "<?=HOSTURL?>/member/reqprogram/<?=$oCourseInfo->idx?>"; 
         });
 
 
