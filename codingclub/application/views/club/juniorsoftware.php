@@ -25,13 +25,14 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-  <!-- 주니어소프트웨어클럽 CSS -->
-  <link href="<?=SURL?>/css/jusocl.css" rel="stylesheet">
   <!-- 커스텀 스타일 -->
   <link rel="stylesheet" href="<?=SURL?>/css/reset.css">
   <link rel="stylesheet" href="<?=SURL?>/css/common.css">
   <link rel="stylesheet" href="<?=SURL?>/css/member.css">
   
+  <!-- 주니어소프트웨어클럽 CSS -->
+  <link href="<?=SURL?>/css/jusocl.css" rel="stylesheet">
+ 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
