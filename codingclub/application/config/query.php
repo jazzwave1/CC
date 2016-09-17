@@ -62,10 +62,13 @@ $config['query'] = array(
       ,'null' => array() 
     )
     ,'setMemberSVC' => array( 
+     //'query' => 'INSERT INTO member_svc( usn, course_idx, state, regdate)
+     //            VALUES (?,?,?,?)'
       'query' => 'INSERT INTO member_svc( usn, course_idx, state, regdate)
-                  VALUES (?,?,?,?)'
-      ,'data' => array( 'usn', 'course_idx', 'state', 'regdate')
-      ,'btype'=> 'iiss'
+                  VALUES (?,?,?,?)
+                  ON DUPLICATE KEY UPDATE usn=?, course_idx=?, state=?, regdate=?'
+      ,'data' => array( 'usn', 'course_idx', 'state', 'regdate', 'usn_up', 'course_idx_up', 'state_up', 'regdate')
+      ,'btype'=> 'iissiiss'
       ,'null' => array()
     )
     ,'getMemberSVC' => array( 
@@ -79,9 +82,10 @@ $config['query'] = array(
     )
     ,'setQuestionInfo' => array( 
       'query' => 'INSERT INTO questionnaire( usn, course_idx, recommend, motive, like_tf, experience, nature, favor, jr_hope, channel, club_hope, inquiry, exprogram)
-                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
-      ,'data' => array( 'usn', 'course_idx', 'recommend', 'motive', 'like_tf', 'experience', 'nature', 'favor', 'jr_hope', 'channel', 'club_hope', 'inquiry', 'exprogram')
-      ,'btype'=> 'iisssssssssss'
+                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+                  ON DUPLICATE KEY UPDATE usn=?, course_idx=?,recommend=?, motive=?, like_tf=?, experience=?, nature=?, favor=?, jr_hope=?, channel=?, club_hope=?, inquiry=?, exprogram=?'
+      ,'data' => array( 'usn', 'course_idx', 'recommend', 'motive', 'like_tf', 'experience', 'nature', 'favor', 'jr_hope', 'channel', 'club_hope', 'inquiry', 'exprogram','usn_up', 'course_idx_up', 'recommend_up', 'motive_up', 'like_tf_up', 'experience_up', 'nature_up', 'favor_up', 'jr_hope_up', 'channel_up', 'club_hope_up', 'inquiry_up', 'exprogram_up')
+      ,'btype'=> 'iisssssssssssiisssssssssss'
       ,'null' => array('club_hope','inquiry','exprogram')
     )
     ,'updateAccountConfirm' => array( 

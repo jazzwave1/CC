@@ -74,6 +74,21 @@ class User_model extends CI_model
   public function setQuestionInfo($aParam)/*{{{*/
   {
     $aCourse = explode('|', $aParam['course_idx']);
+    
+    $aParam['usn_up'] = $aParam['usn']; 
+    $aParam['course_idx_up'] = $aParam['course_idx'];
+    $aParam['recommend_up'] = $aParam['recommend'];
+    $aParam['motive_up'] = $aParam['motive']; 
+    $aParam['like_tf_up'] = $aParam['like_tf'];
+    $aParam['experience_up'] = $aParam['experience'];
+    $aParam['nature_up'] = $aParam['nature'];
+    $aParam['favor_up'] = $aParam['favor'];
+    $aParam['jr_hope_up'] = $aParam['jr_hope'];
+    $aParam['channel_up'] = $aParam['channel'];
+    $aParam['club_hope_up'] = $aParam['club_hope'];
+    $aParam['inquiry_up'] = $aParam['inquiry'];
+    $aParam['exprogram_up'] = $aParam['exprogram'];
+
     foreach($aCourse as $key=>$val)
     {
       $aParam['course_idx'] = $val;
@@ -86,6 +101,12 @@ class User_model extends CI_model
     if(!$aParam['usn']) return false;  
 
     $aCourse = explode('|', $aParam['course_idx']);
+   
+    $aParam['usn_up'] = $aParam['usn'];
+    $aParam['course_idx_up'] = $aParam['course_idx'];
+    $aParam['state_up'] = $aParam['state'];
+    $aParam['regdate_up'] = $aParam['regdate'];
+    
     foreach($aCourse as $key=>$val)
     {
       $aParam['course_idx'] = $val;

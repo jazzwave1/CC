@@ -463,41 +463,13 @@
               alert("신청이 완료 되었습니다. \n감사합니다.");
               window.location.replace("http://codingclubs.org"); 
             }
-            else
-            {
-              alert('시스템오류입니다');
-            }
-          }
-        );
-      });
-      $('#bIdCheck').click(function(){
-        if($.trim($('#account_id').val()) == '')
-        {
-          alert('ID를 입력해 주세요');
-          $('#account_id').focus();
-          return;
-        }     
-        $.post(
-          "<?=HOSTURL?>/Member/rpcIdCheck"
-          ,{
-             "account_id" : $('#account_id').val()
-            ,"idCheck" : $('#idCheck').val()
-          }
-          ,function(data, status){
-            if(status == 'success' && data.code == 1)
-            {
-              alert('사용가능한 아이디 입니다');
-              $('#idCheck').val('1');
-            }
             else if(data.code == 999)
             {
-              alert('중복된 아이디 입니다');
-              return ;
+              alert("등록되어 있지 않은 아이디 입니다.\n로그인을 다시 해 주시기 바랍니다");
             }
             else
             {
               alert('시스템오류입니다');
-              return;
             }
           }
         );
