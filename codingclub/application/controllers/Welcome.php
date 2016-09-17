@@ -21,15 +21,15 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{   
-    if($_SERVER['SERVER_NAME'] == 'member.codingclubs.org') 
-    {
-      header('Location: http://member.codingclubs.org/Login'); 
-    }
-    if($_SERVER['SERVER_NAME'] == 'junior.codingclubs.org') 
-    {
-      header('Location: http://junior.codingclubs.org/club'); 
-    }
-
+//   if($_SERVER['SERVER_NAME'] == 'member.codingclubs.org') 
+//   {
+//     header('Location: http://member.codingclubs.org/Login'); 
+//   }
+//   if($_SERVER['SERVER_NAME'] == 'junior.codingclubs.org') 
+//   {
+//     header('Location: http://junior.codingclubs.org/club'); 
+//   }
+//
     header('Location: http://codingclubs.org'); 
   }
 }
