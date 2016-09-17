@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller 
+{
 
 	/**
 	 * Index Page for this controller.
@@ -20,7 +21,15 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{   
-    //$this->load->view('welcome_message');
-    $this->load->view('main.php');
-	}
+    if($_SERVER['SERVER_NAME'] == 'member.codingclubs.org') 
+    {
+      header('Location: http://member.codingclubs.org/Login'); 
+    }
+    if($_SERVER['SERVER_NAME'] == 'junior.codingclubs.org') 
+    {
+      header('Location: http://junior.codingclubs.org/club'); 
+    }
+
+    header('Location: http://codingclubs.org'); 
+  }
 }
