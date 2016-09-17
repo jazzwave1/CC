@@ -146,7 +146,7 @@ class Member extends CI_Controller {
     // 추후에 디비 정보를 가지로 와서 적용하는걸로 변경 해야함 -------- //
     $aCourse = array(
        'course_idx1' => array('value' => '23', 'name' => '주니어메이커')
-      ,'course_idx2' => array('value' => '24', 'name' => '주니어디자이터')
+      ,'course_idx2' => array('value' => '24', 'name' => '주니어디자이너')
       ,'course_idx3' => array('value' => '26', 'name' => '앱메이커')
       ,'course_idx4' => array('value' => '27', 'name' => '앱디자이너')
       ,'course_idx5' => array('value' => '28', 'name' => 'IoT메이커')
