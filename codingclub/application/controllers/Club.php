@@ -12,24 +12,7 @@ class Club extends CI_Controller {
 
   public function index()/*{{{*/
   {
-    $this->userlist();
-//  빈공간 
-//  $aMenu = array('aMenu'=>$this->aMenu);
-//  $aContentHeader= array( 
-//     'bTitle' => 'Dashboard'
-//    ,'sTitle' => 'Control panel'
-//    ,'navi'   => array('Home', 'Dashboard')
-//  );
-//  $temp = "";
-//
-//  $data = array(
-//     'menu'   => $this->load->view('admin/menu', $aMenu , true)
-//    ,'content_header' => $this->load->view('admin/content_header', $aContentHeader , true)
-//    , 'main_content' => ''  
-//    ,'footer' => $this->load->view('admin/footer', $temp, true)
-//  );
-//  
-//  $this->load->view('admin/layout', $data);  
+    $this->juniorsoftware();    
   }/*}}}*/
   public function juniorsoftwareall()/*{{{*/
   {
