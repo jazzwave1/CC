@@ -427,6 +427,7 @@ class Member extends CI_Controller {
       die;
     }
     
+    // set question info
     $exprogram  = trim($this->input->post('exprogram')); 
     $aExprogram = explode("|", $exprogram);
     $exprogram = ''; 

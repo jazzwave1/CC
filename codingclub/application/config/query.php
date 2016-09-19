@@ -86,7 +86,7 @@ $config['query'] = array(
                   ON DUPLICATE KEY UPDATE usn=?, course_idx=?,recommend=?, motive=?, like_tf=?, experience=?, nature=?, favor=?, jr_hope=?, channel=?, club_hope=?, inquiry=?, exprogram=?'
       ,'data' => array( 'usn', 'course_idx', 'recommend', 'motive', 'like_tf', 'experience', 'nature', 'favor', 'jr_hope', 'channel', 'club_hope', 'inquiry', 'exprogram','usn_up', 'course_idx_up', 'recommend_up', 'motive_up', 'like_tf_up', 'experience_up', 'nature_up', 'favor_up', 'jr_hope_up', 'channel_up', 'club_hope_up', 'inquiry_up', 'exprogram_up')
       ,'btype'=> 'iisssssssssssiisssssssssss'
-      ,'null' => array('club_hope','inquiry','exprogram')
+      ,'null' => array('club_hope','inquiry','exprogram','club_hope_up','inquiry_up','exprogram_up')
     )
     ,'updateAccountConfirm' => array( 
       'query' => 'UPDATE account 
