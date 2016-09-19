@@ -92,6 +92,7 @@ class User_model extends CI_model
     foreach($aCourse as $key=>$val)
     {
       $aParam['course_idx'] = $val;
+      $aParam['course_idx_up'] = $val;
       $this->user_dao->setQuestionInfo($aParam);
     }
     return true;
@@ -110,6 +111,7 @@ class User_model extends CI_model
     foreach($aCourse as $key=>$val)
     {
       $aParam['course_idx'] = $val;
+      $aParam['course_idx_up'] = $val;
       $this->user_dao->setMemberSVCInfo($aParam); 
     }
     return true; 

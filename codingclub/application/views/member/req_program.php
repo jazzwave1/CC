@@ -285,7 +285,9 @@
 
         var course_idx = $("input:checkbox[name=course_idx1]:checked").val() + '|' 
              + $("input:checkbox[name=course_idx2]:checked").val() + '|' 
-             + $("input:checkbox[name=course_idx3]:checked").val();
+             + $("input:checkbox[name=course_idx3]:checked").val() + '|' 
+             + $("input:checkbox[name=course_idx4]:checked").val() + '|' 
+             + $("input:checkbox[name=course_idx5]:checked").val();
 
         var like_tf = $('#like_tf1').val() + '|' + $('#like_tf2').val(); 
         var exprogram = 
@@ -361,7 +363,7 @@
           $('#grde').focus();
           return;
         }
-        if(course_idx == '||')
+        if(course_idx == '||||')
         {
           alert('참가신청프로그램을 선택해 주세요');
           $('#course_idx').focus();
