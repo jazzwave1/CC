@@ -23,7 +23,14 @@ class admin extends CI_Controller {
         ,'active'=> false
         ,'child' => array( 
            array('link' => HOSTURL.'/admin/courselist', 'title' => '프로그램 리스트')
-          //,array('link' => HOSTURL.'/admin/courselist', 'title' => '신규 프로그램 등록')
+        )
+      )
+      ,array( 
+         'title' => '다운로드'
+        ,'title_class'=> 'fa fa-download' 
+        ,'active'=> false
+        ,'child' => array( 
+           array('link' => HOSTURL.'/admin/filedown', 'title' => '16년 가을학기')
         )
       )
     );  /*}}}*/
@@ -114,7 +121,8 @@ class admin extends CI_Controller {
       }
     }/*}}}*/
     
-    $aMenu = array('aMenu'=>$this->aMenu);
+    $aMenu = $this->_setMenuActive(0);
+    
     $aContentHeader= array( 
        'bTitle' => '강좌별검색 '
       ,'sTitle' => '[ Tip : 중복검색시 shift key를 누르고 선택하세요 ]' 
@@ -188,7 +196,8 @@ class admin extends CI_Controller {
       }
     }
 
-    $aMenu = array('aMenu'=>$this->aMenu);
+    $aMenu = $this->_setMenuActive(0);
+
     $aContentHeader= array( 
        'bTitle' => '유저검색 '
       ,'sTitle' => '[ Tip : Email ID 또는 학색이름을 입력하세요 ]' 
@@ -215,9 +224,7 @@ class admin extends CI_Controller {
     $aMainData = array();
     $aMainData['aRowData'] = $this->admin_model->getCourseList(); 
    
-    $aMenu = array('aMenu'=>$this->aMenu);
-    $aMenu['aMenu'][0]['active'] = false;
-    $aMenu['aMenu'][1]['active'] = true;
+    $aMenu = $this->_setMenuActive(1);
 
     $aContentHeader= array( 
        'bTitle' => '프로그램 리스트'
@@ -234,6 +241,35 @@ class admin extends CI_Controller {
     );
     
     $this->load->view('admin/layout', $data);  
+  }/*}}}*/
+  public function filedown()/*{{{*/
+  {
+    // check login
+    $this->chkCookie() ;
+   
+    // get main data
+    $aMainData = array();
+    $aMainData['aRowData'] = $this->admin_model->getAutumnCampFull(); 
+
+    // view setting
+    $aMenu = $this->_setMenuActive(2);
+    
+    $aContentHeader= array( 
+       'bTitle' => '16년 가을학기 신청자 다운로드'
+      ,'sTitle' => '전체 내용은 다운로드 하셔서 보시기 바랍니다.' 
+      ,'navi'   => array('다운로드', '16년 가을학기')
+    );
+    $temp = "";
+ 
+    $data = array(
+       'menu'   => $this->load->view('admin/menu', $aMenu , true)
+      ,'content_header' => $this->load->view('admin/content_header', $aContentHeader , true)
+      ,'main_content' => $this->load->view('admin/filedownlist', $aMainData, true) 
+      ,'footer' => $this->load->view('admin/footer', $temp, true)
+    );
+    
+    $this->load->view('admin/layout', $data);  
+
   }/*}}}*/
 
 
@@ -348,9 +384,21 @@ class admin extends CI_Controller {
   }/*}}}*/
 
 
+// Full User Excel file Down
+/*
+* 추후에 변경을 해야 되는 부분
+* 너무 어거지로 만들어 둔 부분 리팩토링 필요
+* 전체 명단 다운로드 부분 CI 플랫폼을 이용해서 처리 할 수 있도록 
+* 추후 변경해야 합니다
+*/
   public function excelDownSummerCampFull()/*{{{*/
   {
     $data = array( "aUserList" => $this->admin_model->getSummerCampFull() );
+    $this->load->view('admin/exceldown', $data);  
+  }/*}}}*/
+  public function excelDownAutumnCampFull()/*{{{*/
+  {
+    $data = array( "aUserList" => $this->admin_model->getAutumnCampFull() );
     $this->load->view('admin/exceldown', $data);  
   }/*}}}*/
   public function adminsendmail($sMailList="")/*{{{*/
@@ -417,6 +465,19 @@ class admin extends CI_Controller {
     
     return $this->admin_model->chkAdminLogin($accountID, $passwd);
   }/*}}}*/
-
+  private function _setMenuActive($num)/*{{{*/
+  {
+    $aMenu = array('aMenu'=>$this->aMenu);
+    
+    foreach($this->aMenu as $key=>$val)
+    {
+      if($key == $num)
+        $aMenu['aMenu'][$key]['active'] = true;
+      else
+        $aMenu['aMenu'][$key]['active'] = false;
+    }
+    
+    return $aMenu;
+  }/*}}}*/
 }
 ?>

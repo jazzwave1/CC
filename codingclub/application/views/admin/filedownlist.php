@@ -1,22 +1,10 @@
-<?php
-header( "Content-type: application/vnd.ms-excel" );
-header( "Content-type: application/vnd.ms-excel; charset=utf-8");
-header( "Content-Disposition: attachment; filename = CodingClubUserList.xls" );
-header( "Content-Description: PHP4 Generated Data" );
-?>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body>
+<!-- Button trigger modal -->
+<div class="box-body">
+  <button type="button" id="bFileDown" class="btn btn-info btn-block" >파일 다운로드 하기</button>
+</div>
 
 <div class="container">
-  <h2>참여자명단</h2>
+  <h4>썸머캠프참여자명단[간단뷰]</h4>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -29,7 +17,7 @@ header( "Content-Description: PHP4 Generated Data" );
         <th>학생학년</th>
         <th>학생학교</th>
         <th>신청프로그램</th>
-        <th>참가했던 프로그램</th>
+        <!--th>참가했던 프로그램</th>
         <th>참가경험이 있다면 피드백 및 건의 사항</th>
         <th>참가동기, 목적</th>
         <th>교육경험</th>
@@ -38,12 +26,12 @@ header( "Content-Description: PHP4 Generated Data" );
         <th>프로그램에바라는점</th>
         <th>알게된경로</th>
         <th>코딩클럽에바라는점</th>
-        <th>문의사항</th>
+        <th>문의사항</th-->
       </tr>
     </thead>
     <tbody>
 <?php 
-    foreach($aUserList as $key=>$val)
+    foreach($aRowData as $key=>$val)
     { 
       echo '<tr>
         <td>'.$val->pname.'</td>
@@ -55,7 +43,7 @@ header( "Content-Description: PHP4 Generated Data" );
         <td>'.$val->grde.'</td>
         <td>'.$val->school.'</td>
         <td>'.$val->course_idx.'</td>
-        <td>'.$val->exprogram.'</td>
+        <!--td>'.$val->exprogram.'</td>
         <td>'.$val->recommend.'</td>
         <td>'.$val->motive.'</td>
         <td>'.$val->experience.'</td>
@@ -64,14 +52,19 @@ header( "Content-Description: PHP4 Generated Data" );
         <td>'.$val->jr_hope.'</td>
         <td>'.$val->channel.'</td>
         <td>'.$val->club_hope.'</td>
-        <td>'.$val->inquiry.'</td>
+        <td>'.$val->inquiry.'</td-->
       </tr>';
       }
 ?>
     </tbody>
   </table>
 </div>
+<script>   
+$(function(){
+   
+  $('#bFileDown').click(function(){
+    window.location.href = "<?=HOSTURL?>/admin/excelDownAutumnCampFull";  
+  });
 
-</body>
-</html>
-
+});
+</script>

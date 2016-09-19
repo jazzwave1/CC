@@ -181,6 +181,40 @@ class Admin_model extends CI_model
     }
     return $aResult;
   }/*}}}*/
+  public function getAutumnCampFull()/*{{{ 2016 10 AutumnCampList*/
+  {
+    $aCourseIDX = array(
+       'course_idx1'=>23
+      ,'course_idx2'=>24
+      ,'course_idx3'=>26
+      ,'course_idx4'=>27
+      ,'course_idx5'=>28);
+    
+    $aMemConfig = cc_get_config('Mem', 'code');
+    $aResult = $this->_getExcelList($aCourseIDX) ;
+    $temp = '';
+    foreach($aResult as $key=>$val)
+    {
+      $val->course_idx  = $this->courseConfig[$val->course_idx];
+      $val->state       = $this->memberSTATEConfig[$val->state];
+      $val->grde        = $this->memberGRDEConfig[$val->grde];
+      $aProgram = explode("|", $val->exprogram);
+      $val->exprogram = ''; 
+      
+      foreach($aProgram as $k=>$v)
+      {
+        if(trim($v) && is_numeric($v))
+        {   
+          $val->exprogram .= $this->courseConfig[$v].", ";
+        }   
+        else
+        {   
+          $val->exprogram .= $val->exprogram.", ";
+        } 
+      }
+    }
+    return $aResult;
+  }/*}}}*/
   public function adminsendmail($sMailList="")/*{{{*/
   {
     if(!$sMailList)
