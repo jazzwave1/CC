@@ -41,14 +41,31 @@ class Admin_dao extends Common_dao
   {
     $aConfig['btype'] = '';
     $aConfig['data']  = array();
+/*
+버그로 인해 설문작성이 누락된 유저가 발생 
+쿼리를 outer join 으로 변경 하여서 처리함
+*/
+//  $aConfig['query'] = 
+//    'SELECT u.usn, u.name, u.school, u.grde, u.addrcode, u.pname, u.php, u.pemail, u.pjob, u.pschool, a.*
+//       FROM users u 
+//       LEFT OUTER JOIN 
+//       (
+//        SELECT m.usn,m. course_idx, m.state, q.recommend, q.motive, q.like_tf, q.experience, q.nature, q.favor, q.jr_hope, q.channel, q.club_hope, q.inquiry, q.exprogram
+//          FROM member_svc m, questionnaire q
+//         WHERE m.usn = q.usn 
+//           AND m.course_idx = q.course_idx
+//       ) a
+//         ON a.usn = u.usn
+//      WHERE a.course_idx in (';
     $aConfig['query'] = 
       'SELECT u.usn, u.name, u.school, u.grde, u.addrcode, u.pname, u.php, u.pemail, u.pjob, u.pschool, a.*
          FROM users u 
          LEFT OUTER JOIN 
          (
           SELECT m.usn,m. course_idx, m.state, q.recommend, q.motive, q.like_tf, q.experience, q.nature, q.favor, q.jr_hope, q.channel, q.club_hope, q.inquiry, q.exprogram
-            FROM member_svc m, questionnaire q
-           WHERE m.usn = q.usn 
+            FROM member_svc m
+            LEFT OUTER JOIN questionnaire q
+              ON m.usn = q.usn 
              AND m.course_idx = q.course_idx
          ) a
            ON a.usn = u.usn
