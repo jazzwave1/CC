@@ -382,7 +382,31 @@ class admin extends CI_Controller {
       response_json(array("code"=>0,"msg"=>"fail")); 
     die;
   }/*}}}*/
-
+  public function rpcGetQuestionInfo()/*{{{*/
+  {
+    $usn = trim($this->input->post('usn')); 
+    $courseIDX = trim($this->input->post('course_idx')); 
+    
+    if(!$usn || !$courseIDX) response_json(array('code'=>999,''=>'not input')); 
+   
+    $oQuestionInfo = $this->_getQuestionInfo($usn, $courseIDX);
+     
+    response_json(array(
+         'code'  => 1
+        ,'msg'  => 'OK'
+        ,'recommend'  => $oQuestionInfo->recommend
+        ,'motive'     => $oQuestionInfo->motive
+        ,'experience' => $oQuestionInfo->experience
+        ,'nature'     => $oQuestionInfo->nature
+        ,'favor'      => $oQuestionInfo->favor
+        ,'jr_hope'    => $oQuestionInfo->jr_hope
+        ,'channel'    => $oQuestionInfo->channel
+        ,'club_hope'  => $oQuestionInfo->club_hope
+        ,'inquiry'    => $oQuestionInfo->inquiry
+      )
+    );
+    die;  
+  }/*}}}*/
 
 // Full User Excel file Down
 /*
@@ -408,6 +432,12 @@ class admin extends CI_Controller {
   }/*}}}*/
 
   
+  private function _getQuestionInfo($usn, $courseIDX)/*{{{*/
+  {
+    if(!$usn || !$courseIDX) return false;
+    $aResult = $this->admin_model->getQuestionInfo($usn, $courseIDX); 
+    return $aResult[0];
+  }/*}}}*/
   private function _getCourseInfo($idx)/*{{{*/
   {
     if(!$idx) return false;

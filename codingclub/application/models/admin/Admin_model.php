@@ -148,6 +148,19 @@ class Admin_model extends CI_model
     else
       return false;
   }/*}}}*/
+  public function getQuestionInfo($usn, $courseIDX)/*{{{*/
+  {
+    if(!$usn || !$courseIDX) return false;
+    
+    $aInput = array(
+       'usn' => $usn
+      ,'course_idx'=>$courseIDX
+    );
+    
+    $oCourseInfo= $this->_getQuestionInfo($aInput);
+
+    return $oCourseInfo;
+  }/*}}}*/
 
   public function getSummerCampFull()/*{{{ 2016 07 SummerCampList*/
   {
@@ -238,6 +251,12 @@ class Admin_model extends CI_model
     return;
   }/*}}}*/
 
+
+  private function _getQuestionInfo($aParam)/*{{{*/
+  {
+    $aResult= $this->admin_dao->getQuestionInfo($aParam); 
+    return $aResult;
+  }/*}}}*/
   private function _insertCourseInfo($aParam)/*{{{*/
   {
     $aResult= $this->admin_dao->insertCourseInfo($aParam); 

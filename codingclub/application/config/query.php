@@ -227,7 +227,15 @@ $config['query'] = array(
       ,'btype'=> 'ssssssssssssi'
       ,'null' => array('name','content','target','schedule','need','recruit','location','sponsor','content_long','target_long','guide_long','pgroup','active','sdate','edate') 
     )
-
+    ,'getQuestionInfo' => array( 
+      'query' => 'SELECT usn, course_idx, recommend, motive, like_tf, experience, nature, favor, jr_hope, channel, club_hope, inquiry, exprogram 
+                    FROM questionnaire  
+                   WHERE usn = ?
+                     and course_idx = ?'
+      ,'data' => array('usn','course_idx')
+      ,'btype'=> 'ii'
+      ,'null' => array() 
+    )
   )/*}}}*/
   ,'log' => array( /*{{{*/
     'setLoginLog' => array( 
