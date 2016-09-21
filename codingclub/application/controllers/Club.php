@@ -86,7 +86,6 @@ class Club extends CI_Controller {
       $aLogin['logout'] = 'display:none'; 
       $aJoinStyle['join'] = ''; 
       $aJoinStyle['mypage'] = 'display:none'; 
-
     }
 
     $aCourse = $this->_getActiveCourse();
@@ -107,12 +106,29 @@ class Club extends CI_Controller {
   { 
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
-    
-    if(!$oUserInfo->usn)
-    {
-      header('Location: '.HOSTURL.'/Login?burl=club/junior'); 
+/**
+* 비 로그인 접근으로 변경 합니다.
+**/     
+//  if(!$oUserInfo->usn)
+//  {
+//    header('Location: '.HOSTURL.'/Login?burl=club/junior'); 
+//  }
+    if($oUserInfo)
+    {  
+      $aLogin['login']  = 'display:none'; 
+      $aLogin['logout'] = ''; 
+      $aJoinStyle['join'] = 'display:none'; 
+      $aJoinStyle['mypage'] = ''; 
     }
-    
+    else
+    {
+      $aLogin['login']  = '';
+      $aLogin['logout'] = 'display:none'; 
+      $aJoinStyle['join'] = ''; 
+      $aJoinStyle['mypage'] = 'display:none'; 
+    }
+
+   
     if(!$courseIDX)
     {
       // active 한 프로그램 리스트를 가지고 온다
@@ -154,7 +170,9 @@ class Club extends CI_Controller {
               ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
-          )
+        )
+        ,'aLoginStyle' => $aLogin
+        ,'aJoinStyle' => $aJoinStyle
       );
 
       $this->load->view('club/junior', $data); 
@@ -168,12 +186,28 @@ class Club extends CI_Controller {
   { 
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
-    
-    if(!$oUserInfo->usn)
-    {
-      header('Location: '.HOSTURL.'/Login?burl=club/app'); 
+/**
+* 비 로그인 접근으로 변경 합니다.
+**/    
+//  if(!$oUserInfo->usn)
+//  {
+//    header('Location: '.HOSTURL.'/Login?burl=club/app'); 
+//  }
+    if($oUserInfo)
+    {  
+      $aLogin['login']  = 'display:none'; 
+      $aLogin['logout'] = ''; 
+      $aJoinStyle['join'] = 'display:none'; 
+      $aJoinStyle['mypage'] = ''; 
     }
- 
+    else
+    {
+      $aLogin['login']  = '';
+      $aLogin['logout'] = 'display:none'; 
+      $aJoinStyle['join'] = ''; 
+      $aJoinStyle['mypage'] = 'display:none'; 
+    }
+    
     if(!$courseIDX)
     {
       // active 한 프로그램 리스트를 가지고 온다
@@ -216,7 +250,9 @@ class Club extends CI_Controller {
               ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
-          )
+        )
+        ,'aLoginStyle' => $aLogin
+        ,'aJoinStyle' => $aJoinStyle
       );
 
       $this->load->view('club/app', $data); 
@@ -230,12 +266,29 @@ class Club extends CI_Controller {
   { 
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
-    
-    if(!$oUserInfo->usn)
-    {
-      header('Location: '.HOSTURL.'/Login?burl=club/iot'); 
+
+/**
+* 비 로그인 접근으로 변경 합니다.
+**/    
+//  if(!$oUserInfo->usn)
+//  {
+//    header('Location: '.HOSTURL.'/Login?burl=club/iot'); 
+//  }
+    if($oUserInfo)
+    {  
+      $aLogin['login']  = 'display:none'; 
+      $aLogin['logout'] = ''; 
+      $aJoinStyle['join'] = 'display:none'; 
+      $aJoinStyle['mypage'] = ''; 
     }
- 
+    else
+    {
+      $aLogin['login']  = '';
+      $aLogin['logout'] = 'display:none'; 
+      $aJoinStyle['join'] = ''; 
+      $aJoinStyle['mypage'] = 'display:none'; 
+    }
+    
     if(!$courseIDX)
     {
       // active 한 프로그램 리스트를 가지고 온다
@@ -279,6 +332,8 @@ class Club extends CI_Controller {
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
           )
+        ,'aLoginStyle' => $aLogin
+        ,'aJoinStyle' => $aJoinStyle
       );
       $this->load->view('club/iot', $data); 
     }

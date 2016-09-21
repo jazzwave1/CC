@@ -63,8 +63,10 @@
             <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_ongoing">모집중</a></li>
             <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_contents">프로그램</a></li>
             <li><a href="http://codingclubs.org" target='_blank'>코딩클럽</a></li>
-            <li class="my_page"><a href="<?=HOSTURL?>/member/mypage">마이페이지</a></li>
-            <li class="sign_out" id="bLogout"><a href="#">로그아웃</a></li>
+            <li class="sign_in" style="<?=$aJoinStyle['join']?>"><a href="<?=HOSTURL?>/member/memberJoinAccount?burl=club/juniorsoftware">회원가입</a></li>
+            <li class="my_page" style="<?=$aJoinStyle['mypage']?>"><a href="<?=HOSTURL?>/Member/mypage">마이페이지</a></li>
+            <li class="sign_up" style="<?=$aLoginStyle['login']?>"><a href="<?=HOSTURL?>/Login?burl=club/iot">로그인</a></li>
+            <li class="sign_out" id="bLogout" style="<?=$aLoginStyle['logout']?>" ><a href="#">로그아웃</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -85,7 +87,7 @@
           <div class="p_intro_wh">
             <div class="p_intro_box_wh">
               <span class="p_category">아두이노/비트브릭/메이키메이키 로</span>
-              <span class="p_name">피지컬콘텐츠 만들기</span>
+              <span class="p_name">IoT 만들기</span>
               <p class="p_desc1">친구들과 함께 내 손안의 컴퓨터로 세상과 소통하는 사물인터넷 제품을 직접 만드는 IoT 메이커, IoT디자이너, IoT해커 3개과정 프로그램</p>
               <span class="p_character01"></span>
             </div>
