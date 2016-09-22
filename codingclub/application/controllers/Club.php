@@ -344,12 +344,39 @@ class Club extends CI_Controller {
   }/*}}}*/
   public function program($courseIDX)/*{{{*/
   {
+    $sUserInfo = getCookieInfo();
+    $oUserInfo = json_decode($sUserInfo);      
+
+/**
+* 비 로그인 접근으로 변경 합니다.
+**/    
+//  if(!$oUserInfo->usn)
+//  {
+//    header('Location: '.HOSTURL.'/Login?burl=club/iot'); 
+//  }
+    if($oUserInfo)
+    {  
+      $aLogin['login']  = 'display:none'; 
+      $aLogin['logout'] = ''; 
+      $aJoinStyle['join'] = 'display:none'; 
+      $aJoinStyle['mypage'] = ''; 
+    }
+    else
+    {
+      $aLogin['login']  = '';
+      $aLogin['logout'] = 'display:none'; 
+      $aJoinStyle['join'] = ''; 
+      $aJoinStyle['mypage'] = 'display:none'; 
+    }
+ 
     if(!$courseIDX) $this->junior();
  
     $oCourseInfo = $this->_getCourseInfo($courseIDX);
     
     $data = array(
-       'oCourseInfo' => $oCourseInfo
+      'oCourseInfo' => $oCourseInfo
+     ,'aLoginStyle' => $aLogin
+     ,'aJoinStyle' => $aJoinStyle
     );
     $this->load->view('club/junior_program', $data); 
   }/*}}}*/
