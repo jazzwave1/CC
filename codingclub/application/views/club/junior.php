@@ -16,7 +16,6 @@
 <meta property="og:description" content="코딩클럽은 프로그래밍, 컴퓨터과학, 정보과학, 소프트웨어 교육, 창작에 관심있는 모든 분들을 위한 열린 커뮤니티입니다. 프로그래밍 교육에 관심있는 학부모, 선생님들이 서로 정보, 의견을 공유하는 공간입니다. 아울러 코딩클럽에서는 어린이, 청소년을 위한 각 지역 코딩클럽을 설립, 운영하고, 함께 교육하고 배울 수 있는 프로그램을 제공합니다." />
 
 <link rel="shortcut icon" href="<?=SURL?>/img/layout/android-icon-36x36.png"  />
-
 <title itemprop="name">주니어소프트웨어클럽 | 코딩클럽</title>
 
   <!-- Bootstrap core CSS -->
