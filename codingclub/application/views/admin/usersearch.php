@@ -54,7 +54,7 @@
   <div class="col-md-6">
       Email ID or UserName  
       <div class="input-group input-group-sm">
-        <input id='sAccountIDorName' name='sAccountIDorName' type="text" class="form-control">
+        <input id='sAccountIDorName' name='sAccountIDorName' type="text" class="form-control" value="<?=$sAccountIDorName?>">
             <span class="input-group-btn">
               <button id="bSend" name='bSend' type="button" class="btn btn-info btn-flat">Go!</button>
             </span>
@@ -134,7 +134,13 @@ if( count($userinfo) >= 1)
           <td><?php echo $membersvc[$j]->name; ?></td>
           <td><?php echo $membersvc[$j]->state; ?></td>
           <td><?php echo $membersvc[$j]->regdate; ?></td>
-          <?php echo '<td><button type="button" onclick="javascript:showSangse('.$membersvc[$j]->usn.','.$membersvc[$j]->course_idx.')" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">설문지보기</button></td>';?>
+          <?php echo '<td><button type="button" onclick="javascript:showSangse('.$membersvc[$j]->usn.','.$membersvc[$j]->course_idx.')" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">설문지보기</button>';?>
+          <?php
+            if($membersvc[$j]->stateCode == 'REQ') 
+              echo "<button id='bChangeState' onclick='javascript:changeState(".$membersvc[$j]->usn.",".$membersvc[$j]->course_idx.",\"CONF\")' class='btn btn-info btn-xs'><b>입금확인</b></button></td>"; 
+            else
+              echo "<button id='bChangeState' onclick='javascript:changeState(".$membersvc[$j]->usn.",".$membersvc[$j]->course_idx.",\"REQ\")' class='btn btn-danger btn-xs'><b>입급취소</b></button></td>"; 
+          ?>
         </tr>
 <?php
       }
@@ -159,6 +165,24 @@ if( count($userinfo) >= 1)
     }); 
   });
   
+  function changeState(usn, course_idx, state)
+  {
+    $.post(
+      "<?=HOSTURL?>/Admin/rpcUpdateState"
+      ,{
+           "usn" : usn 
+          ,"state" : state 
+          ,"course_idx" : course_idx 
+       }
+      ,function(data, status) {
+        if (status == "success" && data.code == 1)
+        {
+          alert('변경 되었습니다.'); 
+          window.location.reload(true);
+        }
+      }
+    );         
+  } 
   function showSangse(usn,course_idx)
   {
     $.post(

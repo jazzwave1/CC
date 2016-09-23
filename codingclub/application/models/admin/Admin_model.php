@@ -99,7 +99,8 @@ class Admin_model extends CI_model
     {
       foreach($aResult as $key=>$val)
       {
-        $val->state = $this->memberSTATEConfig[$val->state];
+        $val->stateCode = $val->state;
+        $val->state     = $this->memberSTATEConfig[$val->state];
       }
     }
     return $aResult;

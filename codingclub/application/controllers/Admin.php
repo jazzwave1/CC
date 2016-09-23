@@ -203,10 +203,12 @@ class admin extends CI_Controller {
       ,'sTitle' => '[ Tip : Email ID 또는 학색이름을 입력하세요 ]' 
       ,'navi'   => array('검색', '유저검색')
     );
+
     $temp = "";
     $aMainData['userinfo']  = $aUserInfo;
     $aMainData['membersvc'] = $aMemberSVC;
-    $aMainData['notice'] = $notice;
+    $aMainData['notice']    = $notice;
+    $aMainData['sAccountIDorName'] = $sParam;
 
     $data = array(
        'menu'   => $this->load->view('admin/menu', $aMenu , true)

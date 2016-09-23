@@ -59,7 +59,7 @@
                 echo "  <td>".$val->php."</td>"; 
                 echo "  <td>".$val->pemail."</td>"; 
                 echo "  <td>".$val->state."</td>"; 
-                echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.",".$val->courseIDX.")' class='btn btn-info'>입금확인</button>";
+                echo "  <td><button id='bChangeState' onclick='javascript:changeState(".$val->usn.",".$val->courseIDX.")' class='btn btn-info btn-xs'><b>입금확인</b></button>";
                 echo "</tr>";
               }
             }
