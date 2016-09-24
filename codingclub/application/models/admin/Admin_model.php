@@ -29,6 +29,7 @@ class Admin_model extends CI_model
       {
         $val->courseIDX   = $val->course_idx;
         $val->course_idx  = $this->courseConfig[$val->course_idx];
+        $val->stateCode   = $val->state;
         $val->state       = $this->memberSTATEConfig[$val->state];
         $val->grde        = $this->memberGRDEConfig[$val->grde];
       }

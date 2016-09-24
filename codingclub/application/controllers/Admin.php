@@ -99,7 +99,7 @@ class admin extends CI_Controller {
     {
       $courseIdx = substr($courseIdx , 0, -1);
       $aResult = $this->admin_model->getUserList($courseIdx) ; 
- 
+      
       $aCourseIdx = explode("_", $courseIdx);
       
       $sCourseName = '';
