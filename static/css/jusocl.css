@@ -596,6 +596,9 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .jusocl_detail {position:relative;background:#f8f8fa;margin-top:62px;padding-bottom:109px}
 .jusocl_program {position:relative;background:#f8f8fa;margin-top:62px;padding-bottom:109px}
 
+.jusocl_detail + .jusocl_program {margin-top:-90px;padding-bottom:20px}
+.jusocl_program + .jusocl_program {margin-top:0;padding-bottom:20px}
+
 .program_intro {position:relative;z-index:0;top:0;height:513px}
 
 .media {position:absolute;z-index:1;width:100%}
@@ -622,13 +625,13 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .program_detail .container {background:#fff;padding:40px 55px 0 55px}
 .p_detail {width:100%;margin-bottom:57px}
 .p_detail:after {display:block;height:0;clear:both;content:''}
-.pd_head {float:left;width:19%;font-size:24px;color:#282828;margin-bottom:20px}
-.pd_body {float:left;width:81%;color:#666;line-height:28px;font-size:18px}
+.pd_head {float:left;width:20%;font-size:24px;color:#282828;margin-bottom:20px;line-height:120%;margin-right:2%}
+.pd_body {float:left;width:78%;color:#666;line-height:28px;font-size:18px;margin-top:-3px}
 .pd_body p {display:block;font-size:18px;color:#666;line-height:28px;margin-bottom:18px !important;text-align:justify}
 .pd_body ul {display:block;margin:0;padding:0;margin-bottom:18px}
 .pd_body ul li {list-style:none;font-size:18px;background:url("../img/layout/pd_list.png") no-repeat 0 7px;padding-left:13px;text-align:justify}
 .tbl_summary {width:100%}
-.sum_title {width:142px}
+.sum_title {width:152px}
 .sum_cont {}
 .tbl_summary th, .tbl_summary td {padding:17px 22px;vertical-align:top;line-height:24px;border:1px solid #d5deef;font-size:18px
 }
@@ -640,8 +643,8 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 .program_desc .container {background:#fff;padding:0}
 
 .p_character01 {display:block;background:url("../img/layout/img_p_character01.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
-.p_character-2 {display:block;background:url("../img/layout/img_p_character02.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
-.p_character03 {display:block;background:url("../img/layout/img_p_character03.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
+.p_character02 {display:block;background:url("../img/layout/img_p_character02.png") no-repeat;height:62px;width:128px;margin:0 auto;text-align:center;margin-top:85px}
+.p_character03 {display:block;background:url("../img/layout/img_p_character03.png") no-repeat;height:103px;width:128px;margin:0 auto;text-align:center;margin-top:-6px}
 .p_character04 {display:block;background:url("../img/layout/img_p_character04.png") no-repeat;height:128px;width:128px;margin:0 auto;text-align:center;margin-top:-30px}
 
 .p_tool {background:#005dbc;color:#fff;width:100%;padding:40px 55px 50px 55px}
@@ -1016,6 +1019,7 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 	.b2, .b3 {background:#2cde88}
 	.hackerthon_soon {margin-top:-280px;margin-left:362px}
 	.f_event_grey {width:60%}
+	.f_event_grey .f_event_title {margin-top:60px;margin-bottom:10px}
 }
 
 
@@ -1031,5 +1035,13 @@ legend, hr, caption {position:absolute; top:0; left:-10000000000px;text-indent:-
 	.features .container {margin-left:15px;margin-right:15px;width:calc(100% - 30px)}
 }
 
-
-
+/*Add 2016-09-24*/
+@media all and (max-width:740px){
+	
+	.f_jusocl{width: 100%;height: auto;}
+	.f_jusocl_box {width:100% ;height: 370px;}
+	.b1{height: 400px;margin-top: 0px;}
+	.b1,.b3,.b5{background: #0070bc}
+	.b2,.b4,.b6{background: #2cde88}
+	.f_event_grey{width: 100%;margin: 0px;} 
+}
