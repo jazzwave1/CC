@@ -68,27 +68,30 @@ class Member extends CI_Controller {
     
     // 입금 확인 체크
     // 추가적으로 이부분도 리팩토링 해야 합니다
-    foreach($oUser->aMemberSVC as $key=>$val)
+    if($oUser->aMemberSVC)
     {
-      // 가을학기 체크해서 입금상태이면 참가 확정
-      if(in_array( $val->course_idx, array(23,24,25,26,27,28,29,30,31)))
+      foreach($oUser->aMemberSVC as $key=>$val)
       {
-        $today = date("Ymd");
-        if( $val->state == "입금확인" && $today < "20161001")
+        // 가을학기 체크해서 입금상태이면 참가 확정
+        if(in_array( $val->course_idx, array(23,24,25,26,27,28,29,30,31)))
         {
-          $val->state = "참가확정";
-        }
-        else if( $val->state == "입금확인" && ($today >= "20161001" || $today < "20161023"))
-        {
-          $val->state = "수강중";
-        }
-        else if( $val->state == "입금확인" && $today >= "20161023")
-        {
-          $val->state = "수강완료";
+          $today = date("Ymd");
+          if( $val->state == "입금확인" && $today < "20161001")
+          {
+            $val->state = "참가확정";
+          }
+          else if( $val->state == "입금확인" && ($today >= "20161001" || $today < "20161023"))
+          {
+            $val->state = "수강중";
+          }
+          else if( $val->state == "입금확인" && $today >= "20161023")
+          {
+            $val->state = "수강완료";
+          }
         }
       }
-    }
-
+    } 
+    
     $aContents = array(
        'oAccount'   => $oUser->oAccountInfo
       ,'oUserInfo'  => $oUser->oUserInfo
