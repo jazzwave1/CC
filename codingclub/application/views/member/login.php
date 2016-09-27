@@ -124,7 +124,22 @@
           });
           
           $('#bReSet').click(function(){
-            alert('준비중에 있습니다. \njazzwave14@gmail.com 으로 메일 요청 부탁 드립니다'); 
+            
+            alert('Email-ID로 등록된 Email로 변경된 비밀번호가 발송 되었습니다.'); 
+            
+            $.post(
+              "<?=HOSTURL?>/Login/rpcResetPWD"
+              ,{
+                 "account_id" : $('#account_id').val()
+              }
+              ,function(data, status){
+                if(status == 'success' && data.code != 1)
+                {
+                  alert('메일발송에 실패하였습니다.\n관리자에게 문의 부탁 드립니다. jazzwave14@gmail.com');
+                }
+              }
+            );
+
           });
           $('#bJoin').click(function(){
             window.location.replace("<?=HOSTURL?>/member/memberJoinAccount?burl=<?=$sBackURL?>"); 

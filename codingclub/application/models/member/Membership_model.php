@@ -55,7 +55,14 @@ class Membership_model extends CI_model
     else
       return false;
   }/*}}}*/
- 
+  public function setRePWD($accountID)
+  {
+    if(!$accountID) return false;
+
+    return $this->_resetPWD($accountID);
+  }
+
+
 // 리팩토링 필요한 부분 --// 
   public function sendJoinMail($accountID, $courseIDX)/*{{{*/
   {
@@ -86,6 +93,7 @@ class Membership_model extends CI_model
   }/*}}}*/
 // -----------------------//
 
+  
   public function setConfirm($usn)/*{{{*/
   {
     if(!$usn) return false;
@@ -112,6 +120,22 @@ class Membership_model extends CI_model
     return true;
   }/*}}}*/
 
+  private function _resetPWD($accountID)/*{{{*/
+  {
+    if(!$accountID) return false; 
+    $aAccountID = explode('@', $accountID);
+    
+    $user = cc_get_instance('MemberLibClass');
+    $sMkPWD = MemberLibClass::getMKPwd($aAccountID[0]);
+
+    return $this->_setDBPwd($accountID, $sMkPWD);
+  }/*}}}*/
+  private function _setDBPwd($accountID,$pwd)/*{{{*/
+  {
+    if(!$pwd || !$accountID) return false;
+    
+    return $this->user_dao->resetPWD(array('pwd'=>$pwd, 'account_id'=>$accountID));
+  }/*}}}*/
   private function _getFingerPrint($usn)/*{{{*/
   {
     return md5("codingclub".$usn); 
@@ -182,15 +206,8 @@ class Membership_model extends CI_model
     $sFingerPrint = $this->_getFingerPrint($usn); 
     // make url sting
     $sURL = "http://member.codingclubs.org/Member/chkConfirm/".$usn."/".$sFingerPrint;
-    
-    $config['mailtype'] = "html"; 
-    $config['charset'] = "utf-8"; 
-    $config['protocol'] = "smtp"; 
-    $config['smtp_host'] = "ssl://smtp.googlemail.com"; 
-    $config['smtp_port'] = 465; 
-    $config['smtp_user'] = "jazzwave14@gmail.com"; 
-    $config['smtp_pass'] = "dlghwns0610()("; 
-    $config['smtp_timeout'] = 10; 
+   
+    $config = $this->_getMailConfig();
 
     $content = "안녕하세요 코딩클럽입니다.";
     $content .= "<br>";
@@ -222,14 +239,7 @@ class Membership_model extends CI_model
     
     $aResult = $this->_getMailContent($aMailInfo['type'], $aMailInfo);
 
-    $config['mailtype'] = "html"; 
-    $config['charset'] = "utf-8"; 
-    $config['protocol'] = "smtp"; 
-    $config['smtp_host'] = "ssl://smtp.googlemail.com"; 
-    $config['smtp_port'] = 465; 
-    $config['smtp_user'] = "jazzwave14@gmail.com"; 
-    $config['smtp_pass'] = "dlghwns0610()("; 
-    $config['smtp_timeout'] = 10; 
+    $config = $this->_getMailConfig();
 
     $this->load->library('email', $config); 
     $this->email->set_newline("\r\n"); 
@@ -258,11 +268,76 @@ class Membership_model extends CI_model
           브라우저에서 위의 링크를 열어 주시기 바랍니다.<br>
           감사합니다.";
           break;/*}}}*/
+       case 'resetPWD': /*{{{*/
+        $aRtn['subject'] = "[코딩클럽] 비밀번호 변경되었습니다."; 
+        $aRtn['sContent'] = "안녕하세요 코딩클럽입니다.<br><br>
+          * 변경된 비빌번호 :{unwrap} ".$aContentInfo['changePWD']."{/unwrap}<br><br> 
+          비밀번호 변경 페이지는 개발중입니다.<br>
+          다른 비밀번호를 등록을 원하시면 jazzwave14@gmail.com으로 메일 부탁 드립니다
+          감사합니다.";
+          break;/*}}}*/
+
     }  
     
     return $aRtn;
   }/*}}}*/
+
+  public function sendPWDeMail($accountID)/*{{{*/
+  {
+    if(!$accountID) return false;
+
+    $this->load->helper('email');
+    
+    if (!valid_email($accountID))
+    {
+      return false;
+    } 
+    else
+    {
+      $aAccountID = explode('@', $accountID);
+      
+      $aEmailInfo['type'] = "resetPWD";
+      $aEmailInfo['changePWD'] = $aAccountID[0];
+      
+      $this->_sendEmail($accountID, $aEmailInfo);
+    }
+    return; 
+  }/*}}}*/
+  private function _eMailSend($aMailInfo=array())/*{{{*/
+  {
+    if(!$aMailInfo) return false;
+    
+    $aResult = $this->_getMailContent($aMailInfo['type'], $aMailInfo);
+    $config  = $this->_getMailConfig();
+
+    $this->load->library('email', $config); 
+    $this->email->set_newline("\r\n"); 
+    $this->email->clear(); 
+    $this->email->from("contact.codingclub@gmail.com,jazzwave14@gmail.com", "CodingClub"); 
+    $this->email->to($accountID); 
+    $this->email->subject($aResult['subject']); 
+    $this->email->message($aResult['sContent']);
+
+    $this->email->send(); 
+     
+    $this->email->set_newline("\r\n"); 
+    return;
+  }/*}}}*/ 
 // -----------------------//
+
+  private function _getMailConfig()/*{{{*/
+  {
+    $config['mailtype'] = "html"; 
+    $config['charset'] = "utf-8"; 
+    $config['protocol'] = "smtp"; 
+    $config['smtp_host'] = "ssl://smtp.googlemail.com"; 
+    $config['smtp_port'] = 465; 
+    $config['smtp_user'] = "jazzwave14@gmail.com"; 
+    $config['smtp_pass'] = "dlghwns0610()("; 
+    $config['smtp_timeout'] = 10; 
+
+    return $config; 
+  }/*}}}*/
 }
 
 ?>

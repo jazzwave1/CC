@@ -394,7 +394,7 @@ class Member extends CI_Controller {
     else
       response_json(array("code"=>0,"msg"=>"Fail"));
   }/*}}}*/
-  public function rpcReqProgram()
+  public function rpcReqProgram()/*{{{*/
   {
     // is user check 
     $accountID = trim($this->input->post('account_id')); 
@@ -484,7 +484,7 @@ class Member extends CI_Controller {
    
     response_json(array("code"=>1,"msg"=>"OK"));
     die;
-  }
+  }/*}}}*/
   
 
   private function _setAccountInfo($aInput)/*{{{*/

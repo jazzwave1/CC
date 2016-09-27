@@ -120,6 +120,14 @@ $config['query'] = array(
       ,'btype'=> 'sssssssssi'
       ,'null' => array('pschool') 
     )
+    ,'updatePWD' => array( 
+      'query' => 'UPDATE account 
+                     SET pwd = ? 
+                   WHERE account_id = ?' 
+      ,'data' => array('pwd','account_id')
+      ,'btype'=> 'ss'
+      ,'null' => array() 
+    )
   )/*}}}*/
   ,'course' => array( /*{{{*/
     'getCourseInfo' => array( 

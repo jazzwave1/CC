@@ -59,8 +59,39 @@ class Login extends CI_Controller {
     else
       response_json(array("code"=>0,"msg"=>"Fail"));
   }/*}}}*/
- 
- 
+  public function rpcResetPWD()/*{{{*/
+  {
+    $account_id = trim($this->input->post('account_id')); 
+
+    if(!$account_id)
+    {
+      response_json(array("code"=>0,"msg"=>"Fail"));
+      die;
+    }
+   
+    if($this->_resetPWD($account_id))
+    {
+      // send mail
+      $this->_sendPWDeMail($account_id);
+      response_json(array("code"=>1,"msg"=>"OK"));
+    }
+    else
+      response_json(array("code"=>999,"msg"=>"System Error"));
+
+    die;
+  } /*}}}*/
+
+  private function _sendPWDeMail($account_id)
+  {
+    if(!$account_id) return false;
+    return $this->membership_model->sendPWDeMail($account_id); 
+  }
+  private function _resetPWD($account_id)/*{{{*/
+  {
+    if(!$account_id) return false;
+    
+    return $this->membership_model->setRePWD($account_id) ;
+  }/*}}}*/
   private function _getConfirm($account_id)/*{{{*/
   {
     if(!$account_id) return false;

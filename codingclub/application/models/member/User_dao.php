@@ -75,5 +75,10 @@ class User_dao extends Common_dao
     return $this->actModelFuc($aConfig, $aParam);
   }/*}}}*/
 
+  public function resetPWD($aParam='')/*{{{*/
+  {
+    $aConfig = $this->queryInfoMem['updatePWD'];
+    return $this->actModelFuc($aConfig, $aParam);
+  }/*}}}*/
 }
 ?>
