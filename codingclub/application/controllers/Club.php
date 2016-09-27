@@ -19,10 +19,10 @@ class Club extends CI_Controller {
     $sUserInfo = getCookieInfo();
     $oUserInfo = json_decode($sUserInfo);      
 
-    if(!$oUserInfo->usn)
-    {
-      header('Location: '.HOSTURL.'/Login?burl=club/juniorsoftwareall'); 
-    }
+//  if(!$oUserInfo->usn)
+//  {
+//    header('Location: '.HOSTURL.'/Login?burl=club/juniorsoftwareall'); 
+//  }
     if($oUserInfo)
     {  
       $aLogin['login']  = 'display:none'; 
