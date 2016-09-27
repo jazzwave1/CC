@@ -125,12 +125,12 @@
               <div class="f_jusocl_box_date">11/5 ~ 11/26  매주 (토) + 12/3(토) 데모데이</div>
               <div class="f_jusocl_box_btn"><a href="<?=$aProgramURL['iotmaker']?>">신청하기</a></div>
             </div>
-            <div class="f_event_grey hackerthon_soon">
+            <!--div class="f_event_grey hackerthon_soon">
               <div class="f_event_sub">2016 제2회 코딩클럽 해커톤</div>
               <div class="f_event_title"><strong>CODE</strong>PLAY</div>
               <div class="f_event_catchphrase">상상해海서 아이디魚를 건지다</div>
               <div class="f_event_date">2016.10.22</div>
-            </div>
+            </div-->
           </div>
         </div>
 
