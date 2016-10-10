@@ -131,10 +131,10 @@
                       <th scope="row">후원</th>                      
                       <td><?=$oCourseInfo?$oCourseInfo->sponsor:"&nbsp;"?></td>
                     </tr>
-                    <tr>
+                    <!--tr>
                       <th scope="row">참가비</th>                      
                       <td><?=$oCourseInfo?$oCourseInfo->recruit:"&nbsp;"?></td>
-                    </tr>
+                    </tr-->
                   </tbody>
                 </table>
               </div>
