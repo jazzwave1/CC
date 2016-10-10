@@ -47,32 +47,8 @@
 <!--form name="fo" action="submit.php" method="post"-->
 <body id="wrapper" class="basic_pg pg_jusocl">
 
-    <nav class="navbar  navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?=JHOSTURL?>/club/juniorsoftware"><strong>주니어</strong>소프트웨어클럽</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right" >
-            <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_about">주니어소프트웨어클럽이란?</a></li>
-            <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_ongoing">모집중</a></li>
-            <li><a href="<?=JHOSTURL?>/club/juniorsoftware#jusocl_contents">프로그램</a></li>
-            <li><a href="http://codingclubs.org" target='_blank'>코딩클럽</a></li>
-            <li class="sign_in" style="<?=$aJoinStyle['join']?>"><a href="<?=HOSTURL?>/member/memberJoinAccount?burl=club/juniorsoftware">회원가입</a></li>
-            <li class="my_page" style="<?=$aJoinStyle['mypage']?>"><a href="<?=HOSTURL?>/Member/mypage">마이페이지</a></li>
-            <li class="sign_up" style="<?=$aLoginStyle['login']?>"><a href="<?=HOSTURL?>/Login?burl=club/juniorsoftware">로그인</a></li>
-            <li class="sign_out" id="bLogout" style="<?=$aLoginStyle['logout']?>" ><a href="#">로그아웃</a></li>
- 
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+<!-- menu layout templte -->
+  <?=$menu?> 
 
   <!-- container :: s -->
   <section id="container">
@@ -123,7 +99,7 @@
                     </tr>
                     <tr>
                       <th scope="row">참가방법</th>                      
-                      <td><strong>참가비</strong>&nbsp;20만원 (참가비납입 신한은행 110-203-879580 )<br><strong>참가신청</strong>&nbsp;www.codingclubs.org / contact.codingclub@gmail.com<br><strong>문의</strong>&nbsp;010-3245-8095</td>
+                      <td><strong>참가신청</strong>&nbsp;www.codingclubs.org / contact.codingclub@gmail.com</td>
                     </tr>
                     <tr>
                       <th scope="row">DEMO_DAY</th>                      

@@ -38,7 +38,13 @@ class Club extends CI_Controller {
       $aJoinStyle['mypage'] = 'display:none'; 
 
     }
-      
+    
+    // layout setting data
+    $aMenuInfo = array(
+      'aLoginStyle' => $aLogin
+      ,'aJoinStyle' => $aJoinStyle
+    );
+     
     $aCourseIDX  = $this->_getActiveCourse('junior');
     $aCourseInfo = $this->_setCourseInfo($aCourseIDX); 
     $aJunior     = $this->_getSangseInfo($aCourseInfo, $aCourseIDX);   
@@ -57,6 +63,7 @@ class Club extends CI_Controller {
       ,'aJunior'     => $aJunior
       ,'aApp'        => $aApp
       ,'aIot'        => $aIot
+      ,'menu' => $this->load->view('club/menu_layout', $aMenuInfo, true)
     );
 
     $this->load->view('club/juniorsoftwareclub_all', $data); 
@@ -87,6 +94,11 @@ class Club extends CI_Controller {
       $aJoinStyle['join'] = ''; 
       $aJoinStyle['mypage'] = 'display:none'; 
     }
+    // layout setting data
+    $aMenuInfo = array(
+      'aLoginStyle' => $aLogin
+      ,'aJoinStyle' => $aJoinStyle
+    );
 
     $aCourse = $this->_getActiveCourse();
     $data = array(
@@ -97,8 +109,7 @@ class Club extends CI_Controller {
         ,'appdesigner'    => JHOSTURL.'/club/junior/'.$aCourse['app']['designer']
         ,'iotmaker'       => JHOSTURL.'/club/junior/'.$aCourse['iot']['maker']
       )
-      ,'aLoginStyle' => $aLogin
-      ,'aJoinStyle' => $aJoinStyle
+      ,'menu' => $this->load->view('club/menu_layout', $aMenuInfo, true)
     );
     $this->load->view('club/juniorsoftware', $data); 
   }/*}}}*/
@@ -127,9 +138,8 @@ class Club extends CI_Controller {
       $aJoinStyle['join'] = ''; 
       $aJoinStyle['mypage'] = 'display:none'; 
     }
-
    
-    if(!$courseIDX)
+    if(!$courseIDX)/*{{{*/
     {
       // active 한 프로그램 리스트를 가지고 온다
       // 3개 메이커, 디자이너, 해커
@@ -153,7 +163,12 @@ class Club extends CI_Controller {
         }
       }
       
-      $data = array(
+      // layout setting data
+      $aMenuInfo = array(
+         'aLoginStyle' => $aLogin
+        ,'aJoinStyle' => $aJoinStyle
+      );
+      $data = array(/*{{{*/
         'aJunior' => array(
             'maker' => array(
               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['maker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
@@ -171,12 +186,11 @@ class Club extends CI_Controller {
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
         )
-        ,'aLoginStyle' => $aLogin
-        ,'aJoinStyle' => $aJoinStyle
-      );
+        ,'menu' => $this->load->view('club/menu_layout', $aMenuInfo, true)
+      );/*}}}*/
 
       $this->load->view('club/junior', $data); 
-    }
+    }/*}}}*/
     else
     {
       $this->program($courseIDX);
@@ -208,6 +222,11 @@ class Club extends CI_Controller {
       $aJoinStyle['mypage'] = 'display:none'; 
     }
     
+    $aMenuInfo = array(
+      'aLoginStyle' => $aLogin
+      ,'aJoinStyle' => $aJoinStyle
+    );
+
     if(!$courseIDX)
     {
       // active 한 프로그램 리스트를 가지고 온다
@@ -233,28 +252,27 @@ class Club extends CI_Controller {
         }
       }
       
-      $data = array(
+      $data = array(/*{{{*/
         'aJunior' => array(
-            'maker' => array(
-              'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['maker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
-              ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
-              ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['maker']]
-            )
-            ,'designer' => array(
-               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['designer']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
-              ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['designer']]
-            )
-            ,'hacker' => array(
-               'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['hacker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
-              ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
-              ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
-            )
+          'maker' => array(
+            'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['maker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['maker'])
+            ,'bReq'   => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['maker']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['maker'])
+            ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['maker']]
+          )
+          ,'designer' => array(
+             'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['designer']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['designer'])
+            ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['designer']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['designer'])
+            ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['designer']]
+          )
+          ,'hacker' => array(
+             'bSangse' => array('bTitle'=>$aCourseInfo[$aCourseIDX['hacker']]->bTitle, 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> JHOSTURL.'/club/program/'.$aCourseIDX['hacker'])
+            ,'bReq'    => array('bTitle'=>'프로그램 신청하기', 'bViewState'=>$aCourseInfo[$aCourseIDX['hacker']]->bViewState, 'sTargetURL'=> HOSTURL.'/member/reqprogram/'.$aCourseIDX['hacker'])
+            ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
+          )
         )
-        ,'aLoginStyle' => $aLogin
-        ,'aJoinStyle' => $aJoinStyle
-      );
-
+        ,'menu' => $this->load->view('club/menu_layout', $aMenuInfo, true)
+      );/*}}}*/
+      
       $this->load->view('club/app', $data); 
     }
     else
@@ -289,6 +307,11 @@ class Club extends CI_Controller {
       $aJoinStyle['mypage'] = 'display:none'; 
     }
     
+    $aMenuInfo = array(
+      'aLoginStyle' => $aLogin
+      ,'aJoinStyle' => $aJoinStyle
+    );
+
     if(!$courseIDX)
     {
       // active 한 프로그램 리스트를 가지고 온다
@@ -332,8 +355,7 @@ class Club extends CI_Controller {
               ,'oCourseInfo' => $aCourseInfo[$aCourseIDX['hacker']]
             )
           )
-        ,'aLoginStyle' => $aLogin
-        ,'aJoinStyle' => $aJoinStyle
+        ,'menu' => $this->load->view('club/menu_layout', $aMenuInfo, true)
       );
       $this->load->view('club/iot', $data); 
     }
